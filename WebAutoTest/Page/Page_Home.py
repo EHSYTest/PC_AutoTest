@@ -1,0 +1,66 @@
+from Page_Base import Page
+from selenium.webdriver.common.action_chains import ActionChains
+from selenium.common.exceptions import ElementNotVisibleException, WebDriverException
+
+
+class Home(Page):
+    """首页"""
+    login = ('by.id', 'refresh-name')
+    logout = ('by.id', 'refresh-loginout')
+    frame = 'loginpop-iframe'
+    username_send = ('by.class_name', 'login_messageName')
+    password_send = ('by.class_name', 'pwd')
+    login_button = ('by.class_name', 'loginpop-btn')
+
+    category_tool = ('by.xpath', '//ul/li[1]/a[1]/span')
+    category_taozhuang = ('by.link_text', '综合套装')
+
+    my_ehsy = ('by.class_name', 'my-ehsy-show')
+    my_collection = ('by.class_name', 'header-my-collection')
+    quick_order = ('by.link_text', '快速下单')
+
+    search_send = ('by.class_name', 's-input')
+    search_button = ('by.class_name', 's-btn')
+
+    my_cart = ('by.link_text', '我的购物车')
+
+    brand_bosch = ('by.xpath', "//a[@href='/brand-57']")
+
+    def category_tree_click(self):
+        category_tool = self.element_find(self.category_tool)
+        ActionChains(self.driver).move_to_element(category_tool).perform()
+        self.element_find(self.category_taozhuang).click()
+
+    def search_sku(self):
+        self.element_find(self.search_send).send_keys('MAD618')
+        self.element_find(self.search_button).click()
+
+    def quick_order_click(self):
+        self.element_find(self.quick_order).click()
+        self.switch_to_new_window()
+
+    def brand_click(self):
+        self.element_find(self.brand_bosch).click()
+        self.switch_to_new_window()
+
+    def go_my_collection(self):
+        element = self.element_find(self.my_ehsy)
+        ActionChains(self.driver).move_to_element(element).perform()
+        for i in range(10):
+            try:
+                self.element_find(self.my_collection).click()
+                break
+            except ElementNotVisibleException:
+                continue
+            except WebDriverException:
+                continue
+
+
+
+
+if __name__ == '__main__':
+    from selenium import webdriver
+    driver = webdriver.Chrome()
+    driver.get('http://www-staging.ehsy.com')
+    home = Home(driver)
+    home.category_tree_click()

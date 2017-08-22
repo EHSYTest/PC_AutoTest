@@ -51,13 +51,7 @@ class Page():
             else:
                 pass
         self.driver.switch_to_window(all_handle[handle_quantity-1])
-        """
-        now_handle = self.driver.current_window_handle
-        for window in all_handle:
-            if window != now_handle:
-                new_handle = window
-                self.driver.switch_to_window(new_handle)
-        """
+
     @staticmethod
     def wait_dom(element):
         for i in range(50):

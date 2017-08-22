@@ -5,7 +5,7 @@ from selenium.webdriver.common.keys import Keys
 
 
 class Cart(Page):
-
+    """购物车页面"""
     checkbox_top = ('by.id', 'cart-checkbox-top')
     checkbox_line = ('by.class_name', 'check-box-line')
     checkbox_bottom = ('by.id', 'cart-checkbox-bottom')

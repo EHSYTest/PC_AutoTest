@@ -2,7 +2,7 @@ from Page_Base import Page
 
 
 class OrderResult(Page):
-
+    """订单提交成功页"""
     order_id = ('by.xpath', "//span[@ng-bind='orderId']")
 
     # 您已成功提交请购单，等待审批结果！

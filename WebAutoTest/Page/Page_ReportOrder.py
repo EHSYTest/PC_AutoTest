@@ -3,7 +3,7 @@ from selenium.common.exceptions import StaleElementReferenceException
 
 
 class ReportOrder(Page):
-
+    """报价单页面"""
     report_order_title = ('by.name', 'quotation_Name')
     report_order_province = ('by.name', 'province_id')
     report_order_city = ('by.name', 'city_id')

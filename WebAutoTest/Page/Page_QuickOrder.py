@@ -3,7 +3,7 @@ from selenium.common.exceptions import StaleElementReferenceException, ElementNo
 
 
 class QuickOrder(Page):
-
+    """快速下单页"""
     sku_send = ('by.xpath', '//tr[1]/td[2]/span/form/input')
     quantity_send = ('by.xpath', '//tr[1]/td[3]/span/input')
     add_to_cart = ('by.class_name', 'add-to-cart-com')

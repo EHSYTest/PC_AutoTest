@@ -6,7 +6,7 @@ from selenium.common.exceptions import NoSuchElementException, ElementNotVisible
 
 
 class Order(Page):
-
+    """下单页"""
     # 新增收货地址
     receiving_address_add = ('by.xpath', '//div[2]/div[2]/div[1]/a')
     receiving_name = ('by.id', 'receiving_name')

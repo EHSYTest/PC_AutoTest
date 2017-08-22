@@ -16,7 +16,7 @@ class OrderResult(Page):
         while not order_id.startswith('SO'):
             url = self.driver.current_url
             order_id = url[-20:]
-            print(order_id)
+        print(order_id)
         return order_id
 
     def get_order_id(self):

@@ -5,12 +5,12 @@ from selenium.common.exceptions import ElementNotVisibleException, WebDriverExce
 
 class Home(Page):
     """首页"""
-    login = ('by.id', 'refresh-name')
-    logout = ('by.id', 'refresh-loginout')
+    login_button = ('by.id', 'refresh-name')
+    logout_button = ('by.id', 'refresh-loginout')
     frame = 'loginpop-iframe'
     username_send = ('by.class_name', 'login_messageName')
     password_send = ('by.class_name', 'pwd')
-    login_button = ('by.class_name', 'loginpop-btn')
+    login_action = ('by.class_name', 'loginpop-btn')
 
     category_tool = ('by.xpath', '//ul/li[1]/a[1]/span')
     category_taozhuang = ('by.link_text', '综合套装')
@@ -25,6 +25,14 @@ class Home(Page):
     my_cart = ('by.link_text', '我的购物车')
 
     brand_bosch = ('by.xpath', "//a[@href='/brand-57']")
+
+    def login(self, login_name, password):
+        self.element_find(self.login_button).click()
+        self.driver.switch_to_frame(self.frame)
+        self.element_find(self.username_send).send_keys(login_name)
+        self.element_find(self.password_send).send_keys(password)
+        self.element_find(self.login_action).click()
+        self.driver.switch_to_default_content
 
     def category_tree_click(self):
         category_tool = self.element_find(self.category_tool)
@@ -58,9 +66,3 @@ class Home(Page):
 
 
 
-if __name__ == '__main__':
-    from selenium import webdriver
-    driver = webdriver.Chrome()
-    driver.get('http://www-staging.ehsy.com')
-    home = Home(driver)
-    home.category_tree_click()

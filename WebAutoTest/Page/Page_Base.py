@@ -1,5 +1,4 @@
-from selenium.webdriver.common.by import By
-import requests, time
+import requests
 from selenium.common.exceptions import ElementNotVisibleException
 from configobj import ConfigObj
 
@@ -80,14 +79,6 @@ class Page():
                 break
             except ElementNotVisibleException:
                 continue
-
-    def login(self, login_name, password):
-        self.driver.find_element_by_id('refresh-name').click()
-        self.driver.switch_to_frame('loginpop-iframe')
-        self.driver.find_element_by_class_name('login_messageName').send_keys(login_name)
-        self.driver.find_element_by_class_name('pwd').send_keys(password)
-        self.driver.find_element_by_class_name('loginpop-btn').click()
-        self.driver.switch_to_default_content
 
     @staticmethod
     def config_reader(file, section, option):

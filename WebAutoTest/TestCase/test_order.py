@@ -39,7 +39,7 @@ class TestCase(unittest.TestCase):
         """产线大图页入口-个人用户下单-不开票"""
         login_name = self.page.config_reader('test_order.conf', '个人账号', 'login_name')
         password = self.page.config_reader('test_order.conf', '个人账号', 'password')
-        self.page.login(login_name, password)
+        self.home.login(login_name, password)
         self.home.category_tree_click()
         self.product_list.bigImg_add_to_cart()
         self.cart.element_find(self.cart.go_to_order).click()
@@ -52,7 +52,7 @@ class TestCase(unittest.TestCase):
         """产线列表页入口-分销用户下单-普票"""
         login_name = self.page.config_reader('test_order.conf', '分销账号', 'login_name')
         password = self.page.config_reader('test_order.conf', '分销账号', 'password')
-        self.page.login(login_name, password)
+        self.home.login(login_name, password)
         self.home.category_tree_click()
         self.product_list.list_add_to_cart()
         self.cart.element_find(self.cart.go_to_order).click()
@@ -65,7 +65,7 @@ class TestCase(unittest.TestCase):
         """品牌页入口-分销用户下单-增票"""
         login_name = self.page.config_reader('test_order.conf', '分销账号', 'login_name')
         password = self.page.config_reader('test_order.conf', '分销账号', 'password')
-        self.page.login(login_name, password)
+        self.home.login(login_name, password)
         self.home.brand_click()
         self.product_list.brand_add_to_cart()
         self.cart.element_find(self.cart.go_to_order).click()
@@ -78,7 +78,7 @@ class TestCase(unittest.TestCase):
         """产线列表页入口-终端用户下单-普票"""
         login_name = self.page.config_reader('test_order.conf', '终端账号', 'login_name')
         password = self.page.config_reader('test_order.conf', '终端账号', 'password')
-        self.page.login(login_name, password)
+        self.home.login(login_name, password)
         self.home.category_tree_click()
         self.product_list.list_add_to_cart()
         self.cart.element_find(self.cart.go_to_order).click()
@@ -91,7 +91,7 @@ class TestCase(unittest.TestCase):
         """产品详情页入口-终端用户下单-增票"""
         login_name = self.page.config_reader('test_order.conf', '终端账号', 'login_name')
         password = self.page.config_reader('test_order.conf', '终端账号', 'password')
-        self.page.login(login_name, password)
+        self.home.login(login_name, password)
         self.home.search_sku()
         self.product_list.element_find(self.product_list.sku_result_click).click()
         self.page.switch_to_new_window()
@@ -107,7 +107,7 @@ class TestCase(unittest.TestCase):
         """产线列表页入口-国电用户下单-普票"""
         login_name = self.page.config_reader('test_order.conf', '国电账号', 'login_name')
         password = self.page.config_reader('test_order.conf', '国电账号', 'password')
-        self.page.login(login_name, password)
+        self.home.login(login_name, password)
         self.home.category_tree_click()
         self.product_list.list_add_to_cart()
         self.cart.element_find(self.cart.go_to_order).click()
@@ -120,7 +120,7 @@ class TestCase(unittest.TestCase):
         """快速下单页入口-国电用户下单-增票"""
         login_name = self.page.config_reader('test_order.conf', '国电账号', 'login_name')
         password = self.page.config_reader('test_order.conf', '国电账号', 'password')
-        self.page.login(login_name, password)
+        self.home.login(login_name, password)
         self.home.quick_order_click()
         self.quick_order.quick_add_to_cart()
         self.cart.element_find(self.cart.go_to_order).click()
@@ -133,7 +133,7 @@ class TestCase(unittest.TestCase):
         """产线列表页入口-EAS用户下单-不开票-超过审批额"""
         login_name = self.page.config_reader('test_order.conf', 'EAS账号', 'login_name')
         password = self.page.config_reader('test_order.conf', 'EAS账号', 'password')
-        self.page.login(login_name, password)
+        self.home.login(login_name, password)
         self.home.category_tree_click()
         self.product_list.list_add_to_cart()
         for i in range(10):
@@ -158,7 +158,7 @@ class TestCase(unittest.TestCase):
         """产品详情页入口-EAS用户下单-增票-不超过审批额"""
         login_name = self.page.config_reader('test_order.conf', 'EAS账号', 'login_name')
         password = self.page.config_reader('test_order.conf', 'EAS账号', 'password')
-        self.page.login(login_name, password)
+        self.home.login(login_name, password)
         self.home.search_sku()
         self.product_list.element_find(self.product_list.sku_result_click).click()
         self.page.switch_to_new_window()
@@ -202,7 +202,7 @@ class TestCase(unittest.TestCase):
         """报价单入口-终端用户下单-增票"""
         login_name = self.page.config_reader('test_order.conf', '终端账号', 'login_name')
         password = self.page.config_reader('test_order.conf', '终端账号', 'password')
-        self.page.login(login_name, password)
+        self.home.login(login_name, password)
         self.home.search_sku()
         self.product_list.element_find(self.product_list.sku_result_click).click()
         self.page.switch_to_new_window()
@@ -219,7 +219,6 @@ class TestCase(unittest.TestCase):
     def tearDown(self):
         test_method_name = self._testMethodName
         self.driver.save_screenshot("../TestResult/ScreenShot/%s.png" % test_method_name)
-        super(TestCase, self).tearDown()
         self.driver.quit()
 
 if __name__ == '__main__':

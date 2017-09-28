@@ -7,7 +7,7 @@ class ProductList(Page):
     """产品列表、大图、品牌页、sku搜索结果页"""
     # 大图页
     big_img_icon = ('by.class_name', 'bigImg-icon')
-    bigImg_add_button = ('by.xpath', '//div[5]/div[1]/div[7]/div[2]/span/span')
+    bigImg_add_button = ('by.class_name', 'add-tip')
     jump_to_cart = ('by.class_name', 'jumpToCart')
     continue_shopping = ('by.class_name', 'continue-shopping')
 

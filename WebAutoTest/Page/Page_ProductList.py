@@ -1,5 +1,5 @@
 from Page_Base import Page
-from selenium.common.exceptions import ElementNotVisibleException
+from selenium.common.exceptions import ElementNotVisibleException, WebDriverException
 import time
 
 
@@ -31,8 +31,13 @@ class ProductList(Page):
 
     def bigImg_add_to_cart(self):
         self.element_find(self.big_img_icon).click()
-        time.sleep(5)
-        self.element_find(self.bigImg_add_button).click()
+        time.sleep(0.5)
+        for i in range(10):
+            try:
+                self.element_find(self.bigImg_add_button).click()
+                break
+            except WebDriverException:
+                continue
         self.element_find(self.jump_to_cart).click()
 
     def brand_add_to_cart(self):

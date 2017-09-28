@@ -225,16 +225,16 @@ if __name__ == '__main__':
     suit = unittest.TestSuite()
     case_list = [
                   TestCase('test_order_1'),
-                  TestCase('test_order_2'),
-                  TestCase('test_order_3'),
-                  TestCase('test_order_4'),
-                  TestCase('test_order_5'),
-                  TestCase('test_order_6'),
-                  TestCase('test_order_7'),
-                  TestCase('test_order_8'),
-                  TestCase('test_order_9'),
-                  TestCase('test_order_10'),
-                  TestCase('test_order_11'),
+                  # TestCase('test_order_2'),
+                  # TestCase('test_order_3'),
+                  # TestCase('test_order_4'),
+                  # TestCase('test_order_5'),
+                  # TestCase('test_order_6'),
+                  # TestCase('test_order_7'),
+                  # TestCase('test_order_8'),
+                  # TestCase('test_order_9'),
+                  # TestCase('test_order_10'),
+                  # TestCase('test_order_11'),
                   ]
     suit.addTests(case_list)
     # now = time.strftime("%Y_%m_%d %H_%M_%S")

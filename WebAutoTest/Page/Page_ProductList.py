@@ -7,7 +7,7 @@ class ProductList(Page):
     """产品列表、大图、品牌页、sku搜索结果页"""
     # 大图页
     big_img_icon = ('by.class_name', 'bigImg-icon')
-    bigImg_add_button = ('by.class_name', 'add-tip')
+    bigImg_add_button = ('by.xpath', '//div[5]/div[1]/div[7]/div[2]/span/span')
     jump_to_cart = ('by.class_name', 'jumpToCart')
     continue_shopping = ('by.class_name', 'continue-shopping')
 
@@ -32,12 +32,7 @@ class ProductList(Page):
     def bigImg_add_to_cart(self):
         self.element_find(self.big_img_icon).click()
         time.sleep(0.5)
-        for i in range(10):
-            try:
-                self.element_find(self.bigImg_add_button).click()
-                break
-            except WebDriverException:
-                continue
+        self.element_find(self.bigImg_add_button).click()
         self.element_find(self.jump_to_cart).click()
 
     def brand_add_to_cart(self):

@@ -31,7 +31,7 @@ class ProductList(Page):
 
     def bigImg_add_to_cart(self):
         self.element_find(self.big_img_icon).click()
-        time.sleep(0.5)
+        time.sleep(5)
         self.element_find(self.bigImg_add_button).click()
         self.element_find(self.jump_to_cart).click()
 

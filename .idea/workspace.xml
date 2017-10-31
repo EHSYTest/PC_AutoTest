@@ -2,24 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a665631f-422e-4f1d-88e9-64ed59718bad" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/vcs.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/WebAutoTest/TestResult/ScreenShot/test_order_1.png" afterPath="$PROJECT_DIR$/WebAutoTest/TestResult/ScreenShot/test_order_1.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/WebAutoTest/TestResult/ScreenShot/test_order_2.png" afterPath="$PROJECT_DIR$/WebAutoTest/TestResult/ScreenShot/test_order_2.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/WebAutoTest/TestResult/ScreenShot/test_order_3.png" afterPath="$PROJECT_DIR$/WebAutoTest/TestResult/ScreenShot/test_order_3.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/WebAutoTest/TestResult/ScreenShot/test_order_4.png" afterPath="$PROJECT_DIR$/WebAutoTest/TestResult/ScreenShot/test_order_4.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/WebAutoTest/TestResult/ScreenShot/test_order_5.png" afterPath="$PROJECT_DIR$/WebAutoTest/TestResult/ScreenShot/test_order_5.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/WebAutoTest/TestResult/ScreenShot/test_order_6.png" afterPath="$PROJECT_DIR$/WebAutoTest/TestResult/ScreenShot/test_order_6.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/WebAutoTest/TestResult/ScreenShot/test_order_7.png" afterPath="$PROJECT_DIR$/WebAutoTest/TestResult/ScreenShot/test_order_7.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/WebAutoTest_EHSY_PageObject.iml" afterPath="$PROJECT_DIR$/.idea/WebAutoTest_EHSY_PageObject.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/WebAutoTest/Page/Page_Base.py" afterPath="$PROJECT_DIR$/WebAutoTest/Page/Page_Base.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/WebAutoTest/Page/Page_Cart.py" afterPath="$PROJECT_DIR$/WebAutoTest/Page/Page_Cart.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/WebAutoTest/Page/Page_Home.py" afterPath="$PROJECT_DIR$/WebAutoTest/Page/Page_Home.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/WebAutoTest/Page/Page_Order.py" afterPath="$PROJECT_DIR$/WebAutoTest/Page/Page_Order.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/WebAutoTest/Page/Page_ProductList.py" afterPath="$PROJECT_DIR$/WebAutoTest/Page/Page_ProductList.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/WebAutoTest/TestCase/test_order.py" afterPath="$PROJECT_DIR$/WebAutoTest/TestCase/test_order.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/WebAutoTest/TestResult/order.html" afterPath="$PROJECT_DIR$/WebAutoTest/TestResult/order.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/WebAutoTest/config/test_order.conf" afterPath="$PROJECT_DIR$/WebAutoTest/config/test_order.conf" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -56,8 +39,8 @@
       <file leaf-file-name="Page_Home.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/WebAutoTest/Page/Page_Home.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="102">
-              <caret line="10" column="43" lean-forward="true" selection-start-line="10" selection-start-column="43" selection-end-line="10" selection-end-column="43" />
+            <state relative-caret-position="282">
+              <caret line="19" column="54" lean-forward="true" selection-start-line="19" selection-start-column="54" selection-end-line="19" selection-end-column="54" />
               <folding />
             </state>
           </provider>
@@ -92,6 +75,8 @@
               <caret line="24" column="49" lean-forward="false" selection-start-line="24" selection-start-column="49" selection-end-line="24" selection-end-column="49" />
               <folding>
                 <element signature="e#0#26#0" expanded="true" />
+                <marker date="1509430886706" expanded="true" signature="911:1157" ph="..." />
+                <marker date="1509430886706" expanded="true" signature="1192:1503" ph="..." />
               </folding>
             </state>
           </provider>
@@ -393,6 +378,14 @@
       <option name="presentableId" value="Default" />
       <updated>1506390215075</updated>
     </task>
+    <task id="LOCAL-00001" summary="New">
+      <created>1509430559938</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1509430559938</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -442,6 +435,10 @@
   <component name="VcsContentAnnotationSettings">
     <option name="myLimit" value="2678400000" />
   </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="New" />
+    <option name="LAST_COMMIT_MESSAGE" value="New" />
+  </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <option name="time" value="2" />
@@ -473,6 +470,8 @@
           <caret line="6" column="0" lean-forward="true" selection-start-line="6" selection-start-column="0" selection-end-line="6" selection-end-column="0" />
           <folding>
             <element signature="e#0#26#0" expanded="true" />
+            <marker date="1509430886706" expanded="true" signature="911:1157" ph="..." />
+            <marker date="1509430886706" expanded="true" signature="1192:1503" ph="..." />
           </folding>
         </state>
       </provider>
@@ -529,6 +528,8 @@
           <caret line="35" column="43" lean-forward="true" selection-start-line="35" selection-start-column="43" selection-end-line="35" selection-end-column="43" />
           <folding>
             <element signature="e#0#26#0" expanded="true" />
+            <marker date="1509430886706" expanded="true" signature="911:1157" ph="..." />
+            <marker date="1509430886706" expanded="true" signature="1192:1503" ph="..." />
           </folding>
         </state>
       </provider>
@@ -569,6 +570,8 @@
           <caret line="39" column="35" lean-forward="false" selection-start-line="39" selection-start-column="35" selection-end-line="39" selection-end-column="35" />
           <folding>
             <element signature="e#0#26#0" expanded="true" />
+            <marker date="1509430886706" expanded="true" signature="911:1157" ph="..." />
+            <marker date="1509430886706" expanded="true" signature="1192:1503" ph="..." />
           </folding>
         </state>
       </provider>
@@ -621,6 +624,8 @@
           <caret line="39" column="35" lean-forward="false" selection-start-line="39" selection-start-column="35" selection-end-line="39" selection-end-column="35" />
           <folding>
             <element signature="e#0#26#0" expanded="true" />
+            <marker date="1509430886706" expanded="true" signature="911:1157" ph="..." />
+            <marker date="1509430886706" expanded="true" signature="1192:1503" ph="..." />
           </folding>
         </state>
       </provider>
@@ -764,6 +769,8 @@
           <caret line="24" column="49" lean-forward="false" selection-start-line="24" selection-start-column="49" selection-end-line="24" selection-end-column="49" />
           <folding>
             <element signature="e#0#26#0" expanded="true" />
+            <marker date="1509430886706" expanded="true" signature="911:1157" ph="..." />
+            <marker date="1509430886706" expanded="true" signature="1192:1503" ph="..." />
           </folding>
         </state>
       </provider>
@@ -778,8 +785,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/WebAutoTest/Page/Page_Home.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="10" column="43" lean-forward="true" selection-start-line="10" selection-start-column="43" selection-end-line="10" selection-end-column="43" />
+        <state relative-caret-position="282">
+          <caret line="19" column="54" lean-forward="true" selection-start-line="19" selection-start-column="54" selection-end-line="19" selection-end-column="54" />
           <folding />
         </state>
       </provider>

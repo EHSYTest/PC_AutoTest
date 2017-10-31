@@ -6,28 +6,28 @@ from selenium.webdriver.common.keys import Keys
 
 class Cart(Page):
     """购物车页面"""
-    checkbox_top = ('by.id', 'cart-checkbox-top')
-    checkbox_line = ('by.class_name', 'check-box-line')
-    checkbox_bottom = ('by.id', 'cart-checkbox-bottom')
+    checkbox_top = ('by.class_name', 'check-box-top')
+    checkbox_line = ('by.class_name', 'check-box-center')
+    checkbox_bottom = ('by.class_name', 'check-box-bottom')
 
     quantity_input = ('by.class_name', 'item-num-input')
     quantity_add = ('by.class_name', 'a-add')
     quantity_sub = ('by.class_name', 'a-sub')
 
-    collect_line = ('by.class_name', 'cart-add-collect')
-    collect_bottom = ('by.class_name', 'footer-add-collection-span')
+    # collect_line = ('by.class_name', 'cart-add-collect')
+    collect_bottom = ('by.class_name', 'btn-add-favorite')
 
-    delete_line = ('by.class_name', 'cart-del')
-    delete_bottom = ('by.class_name', 'footer-del-span')
-    layer = ('by.xpath', 'html/body/div[2]/div')
-    delete_all_confirm = ('by.xpath', 'html/body/div[3]/div[3]/a[1]')
+    delete_line = ('by.class_name', 'product-remove')
+    delete_bottom = ('by.class_name', 'btn-delete')
+    # layer = ('by.xpath', 'html/body/div[2]/div')
+    delete_all_confirm = ('by.class_name', 'confirm')
 
-    go_to_order = ('by.class_name', 'submit-order')
-    report_order = ('by.class_name', 'submit-bj')
-    eis_layer = ('by.class_name', 'layui-layer-btn0')
+    go_to_order = ('by.class_name', 'cart-to-checkout-btn')
+    # report_order = ('by.class_name', 'submit-bj')
+    # eis_layer = ('by.class_name', 'layui-layer-btn0')
 
-    del_unvalued_product = ('by.class_name', 'footer-clear-span')
-    product_bottom_add = ('by.xpath', '//div[2]/ul/li[1]/p[4]')
+    # del_unvalued_product = ('by.class_name', 'footer-clear-span')
+    # product_bottom_add = ('by.xpath', '//div[2]/ul/li[1]/p[4]')
 
     def checkbox_selected(self):
         """勾选复选框(限制数量为2）"""

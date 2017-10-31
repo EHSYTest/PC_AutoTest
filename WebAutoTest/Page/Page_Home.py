@@ -5,34 +5,33 @@ from selenium.common.exceptions import ElementNotVisibleException, WebDriverExce
 
 class Home(Page):
     """首页"""
-    login_button = ('by.id', 'refresh-name')
-    logout_button = ('by.id', 'refresh-loginout')
+    login_button = ('by.link_text', '登录')
+    logout_button = ('by.link_text', '退出')
     frame = 'loginpop-iframe'
-    username_send = ('by.class_name', 'login_messageName')
-    password_send = ('by.class_name', 'pwd')
+    username_send = ('by.name', 'username')
+    password_send = ('by.name', 'password')
     login_action = ('by.class_name', 'loginpop-btn')
 
     category_tool = ('by.xpath', '//ul/li[1]/a[1]/span')
     category_taozhuang = ('by.link_text', '综合套装')
 
-    my_ehsy = ('by.class_name', 'my-ehsy-show')
-    my_collection = ('by.class_name', 'header-my-collection')
-    quick_order = ('by.link_text', '快速下单')
+    # my_ehsy = ('by.class_name', 'my-ehsy-show')
+    # my_collection = ('by.class_name', 'header-my-collection')
+    quick_order = ('by.class_name', 'member-discount')
 
-    search_send = ('by.class_name', 's-input')
-    search_button = ('by.class_name', 's-btn')
+    search_send = ('by.name', 'search')
+    search_button = ('by.class_name', 'btn-search')
 
-    my_cart = ('by.link_text', '我的购物车')
+    my_cart = ('by.class_name', 'cart-wrap')
 
-    brand_bosch = ('by.xpath', "//a[@href='/brand-57']")
+    brand_center = ('by.link_text', '品牌中心')
+    brand_bosch = ('by.xpath', "//div[5]/ul[1]/li[1]/a/img")
 
     def login(self, login_name, password):
         self.element_find(self.login_button).click()
-        self.driver.switch_to_frame(self.frame)
         self.element_find(self.username_send).send_keys(login_name)
         self.element_find(self.password_send).send_keys(password)
         self.element_find(self.login_action).click()
-        self.driver.switch_to_default_content
 
     def category_tree_click(self):
         category_tool = self.element_find(self.category_tool)
@@ -48,8 +47,8 @@ class Home(Page):
         self.switch_to_new_window()
 
     def brand_click(self):
+        self.element_find(self.brand_center).click()
         self.element_find(self.brand_bosch).click()
-        self.switch_to_new_window()
 
     def go_my_collection(self):
         element = self.element_find(self.my_ehsy)

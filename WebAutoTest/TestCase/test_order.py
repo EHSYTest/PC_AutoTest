@@ -13,6 +13,7 @@ from Page_OrderResult import OrderResult
 from Page_ProductList import ProductList
 from Page_QuickOrder import QuickOrder
 from Page_ReportOrder import ReportOrder
+from selenium.webdriver.common.action_chains import ActionChains
 
 
 class TestCase(unittest.TestCase):
@@ -22,7 +23,7 @@ class TestCase(unittest.TestCase):
         self.page = Page(self.driver)
         self.environment = self.page.config_reader('environment.conf', 'Environment', 'environment')
         if self.environment == 'staging':
-            self.driver.get('http://www-staging.ehsy.com')
+            self.driver.get('http://opc-test.ehsy.com/mall/index.php')
         elif self.environment == 'production':
             self.driver.get('http://www.ehsy.com')
         self.driver.implicitly_wait(30)
@@ -93,10 +94,11 @@ class TestCase(unittest.TestCase):
         password = self.page.config_reader('test_order.conf', '终端账号', 'password')
         self.home.login(login_name, password)
         self.home.search_sku()
-        self.product_list.element_find(self.product_list.sku_result_click).click()
-        self.page.switch_to_new_window()
+        element = self.page.wait_to_clickable(self.product_list.sku_result_click)
+        element.click()
         self.product_list.element_find(self.product_list.skuContent_add_button).click()
-        self.product_list.element_find(self.product_list.skuContent_jump_to_cart).click()
+        ActionChains(self.driver).move_to_element(self.element_find(self.cart)).perform()
+        self.element_find(self.go_cart).click()
         self.cart.element_find(self.cart.go_to_order).click()
         self.order.choose_vat_invoice()
         self.order.submit_order(account_period=True)
@@ -225,16 +227,16 @@ if __name__ == '__main__':
     suit = unittest.TestSuite()
     case_list = [
                   TestCase('test_order_1'),
-                  TestCase('test_order_2'),
-                  TestCase('test_order_3'),
-                  TestCase('test_order_4'),
-                  TestCase('test_order_5'),
-                  TestCase('test_order_6'),
-                  TestCase('test_order_7'),
-                  TestCase('test_order_8'),
-                  TestCase('test_order_9'),
-                  TestCase('test_order_10'),
-                  TestCase('test_order_11'),
+                  # TestCase('test_order_2'),
+                  # TestCase('test_order_3'),
+                  # TestCase('test_order_4'),
+                  # TestCase('test_order_5'),
+                  # TestCase('test_order_6'),
+                  # TestCase('test_order_7'),
+                  # TestCase('test_order_8'),
+                  # TestCase('test_order_9'),
+                  # TestCase('test_order_10'),
+                  # TestCase('test_order_11'),
                   ]
     suit.addTests(case_list)
     # now = time.strftime("%Y_%m_%d %H_%M_%S")

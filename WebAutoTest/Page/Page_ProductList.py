@@ -1,6 +1,8 @@
 from Page_Base import Page
 from selenium.common.exceptions import ElementNotVisibleException
 import time
+from selenium.webdriver.common.by import By
+from selenium.webdriver.common.action_chains import ActionChains
 
 
 class ProductList(Page):
@@ -8,7 +10,8 @@ class ProductList(Page):
     # 大图页
     big_img_icon = ('by.class_name', 'bigImg-icon')
     bigImg_add_button = ('by.class_name', 'add-tip')
-    jump_to_cart = ('by.class_name', 'jumpToCart')
+    cart = ('by.class_name', 'cart-wrap')
+    go_cart = ('by.link_text', '去购物车结算')
     continue_shopping = ('by.class_name', 'continue-shopping')
 
     # 列表页
@@ -19,28 +22,28 @@ class ProductList(Page):
     brand_add_button = ('by.class_name', 'add-tip')
 
     # 搜索结果页
-    sku_result_click = ('by.xpath', '//div[4]/div/div[2]/a/span')
+    sku_result_click = ('by.xpath', '//div/div/a/div/div/img')
 
     # 产品详情页
-    skuContent_add_button = ('by.class_name', 'add-to-cart-com')
-    skuContent_jump_to_cart = ('by.class_name', 'jumpToCart')
+    skuContent_add_button = ('by.class_name', 'add-to-cart-btn')
 
     def list_add_to_cart(self):
         self.element_find(self.list_add_button).click()
         self.element_find(self.cart_button).click()
+        ActionChains(self.driver).move_to_element(self.element_find(self.cart)).perform()
+        self.element_find(self.go_cart).click()
 
     def bigImg_add_to_cart(self):
-        self.element_find(self.big_img_icon).click()
-        time.sleep(0.5)
+        element = self.wait_to_clickable(self.big_img_icon)
+        element.click()
         self.element_find(self.bigImg_add_button).click()
-        self.element_find(self.jump_to_cart).click()
+        element = self.wait_to_clickable(self.cart)
+        ActionChains(self.driver).move_to_element(element).perform()
+        self.element_find(self.go_cart).click()
 
     def brand_add_to_cart(self):
-        for i in range(10):
-            try:
-                self.element_find(self.brand_add_button).click()
-                break
-            except ElementNotVisibleException:
-                time.sleep(0.2)
-                continue
-        self.element_find(self.jump_to_cart).click()
+        element = self.wait_to_clickable(self.brand_add_button)
+        element.click()
+        element = self.wait_to_clickable(self.cart)
+        ActionChains(self.driver).move_to_element(element).perform()
+        self.element_find(self.go_cart).click()

@@ -1,6 +1,10 @@
 import requests
 from selenium.common.exceptions import ElementNotVisibleException
 from configobj import ConfigObj
+from selenium.webdriver.common.by import By
+from selenium.webdriver.support.ui import WebDriverWait
+from selenium.webdriver.support import expected_conditions
+
 
 class Page():
 
@@ -60,9 +64,9 @@ class Page():
                 pass
 
     @staticmethod
-    def cancel_order(orderId, environment='staging', userId='508107841'):
+    def cancel_order(orderId, environment='test', userId='508107841'):
         if environment == 'staging':
-            url = 'http://oc-staging.ehsy.com/orderCenter/cancel'
+            url = 'http://oc-test.ehsy.com/orderCenter/cancel'
         elif environment == 'production':
             url = 'http://oc.ehsy.com/orderCenter/cancel'
         data = {'orderId': orderId, 'userId': userId}
@@ -85,3 +89,25 @@ class Page():
         config = ConfigObj('../config/' + file)
         content = config[section][option]
         return content
+
+    def wait_to_clickable(self, ele):
+        if ele[0] == 'by.id':
+            way = By.ID
+        if ele[0] == 'by.class_name':
+            way = By.CLASS_NAME
+        if ele[0] == 'by.xpath':
+            way = By.XPATH
+        if ele[0] == 'by.link_text':
+            way = By.LINK_TEXT
+        if ele[0] == 'by.name':
+            way = By.NAME
+        if ele[0] == 'by.partial_link_text':
+            way = By.PARTIAL_LINK_TEXT
+        if ele[0] == 'by.tag_name':
+            way = By.TAG_NAME
+        element = WebDriverWait(self.driver, 5, 0.1).until(
+            expected_conditions.element_to_be_clickable(
+                (way, ele[1])
+            )
+        )
+        return element

@@ -5,14 +5,14 @@ import unittest
 from HTMLTestRunner import HTMLTestRunner
 from selenium import webdriver
 from selenium.common.exceptions import StaleElementReferenceException, NoSuchElementException
-from Page_Base import Page
-from Page_Cart import Cart
-from Page_Home import Home
-from Page_Order import Order
-from Page_OrderResult import OrderResult
-from Page_ProductList import ProductList
-from Page_QuickOrder import QuickOrder
-from Page_ReportOrder import ReportOrder
+from Page.Page_Base import Page
+from Page.Page_Cart import Cart
+from Page.Page_Home import Home
+from Page.Page_Order import Order
+from Page.Page_OrderResult import OrderResult
+from Page.Page_ProductList import ProductList
+from Page.Page_QuickOrder import QuickOrder
+from Page.Page_ReportOrder import ReportOrder
 from selenium.webdriver.common.action_chains import ActionChains
 
 class TestCase(unittest.TestCase):

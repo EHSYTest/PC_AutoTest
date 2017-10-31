@@ -1,4 +1,4 @@
-from Page_Base import Page
+from Page.Page_Base import Page
 
 
 class OrderResult(Page):

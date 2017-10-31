@@ -1,4 +1,4 @@
-from Page_Base import Page
+from Page.Page_Base import Page
 from selenium.webdriver.common.action_chains import ActionChains
 from selenium.common.exceptions import ElementNotVisibleException, WebDriverException
 
@@ -44,7 +44,7 @@ class Home(Page):
 
     def quick_order_click(self):
         self.element_find(self.quick_order).click()
-        self.switch_to_new_window()
+        # self.switch_to_new_window()
 
     def brand_click(self):
         self.element_find(self.brand_center).click()

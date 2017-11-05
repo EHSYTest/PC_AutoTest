@@ -15,6 +15,7 @@ from Page.Page_QuickOrder import QuickOrder
 from Page.Page_ReportOrder import ReportOrder
 from selenium.webdriver.common.action_chains import ActionChains
 
+
 class TestCase(unittest.TestCase):
 
     def setUp(self):
@@ -227,13 +228,13 @@ class TestCase(unittest.TestCase):
 if __name__ == '__main__':
     suit = unittest.TestSuite()
     case_list = [
-                  # TestCase('test_order_1'),
-                  # TestCase('test_order_2'),
-                  # TestCase('test_order_3'),
-                  # TestCase('test_order_4'),
-                  # TestCase('test_order_5'),
-                  # TestCase('test_order_6'),
-                  TestCase('test_order_7'),
+                  TestCase('test_order_1'),
+                  TestCase('test_order_2'),
+                  TestCase('test_order_3'),
+                  TestCase('test_order_4'),
+                  TestCase('test_order_5'),
+                  TestCase('test_order_6'),
+                  # TestCase('test_order_7'),
                   # TestCase('test_order_8'),
                   # TestCase('test_order_9'),
                   # TestCase('test_order_10'),

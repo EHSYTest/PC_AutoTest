@@ -5,14 +5,16 @@ import unittest
 from HTMLTestRunner import HTMLTestRunner
 from selenium import webdriver
 from selenium.common.exceptions import StaleElementReferenceException, NoSuchElementException
-from Page.Page_Base import Page
-from Page.Page_Cart import Cart
-from Page.Page_Home import Home
-from Page.Page_Order import Order
-from Page.Page_OrderResult import OrderResult
-from Page.Page_ProductList import ProductList
-from Page.Page_QuickOrder import QuickOrder
-from Page.Page_ReportOrder import ReportOrder
+from Page_Base import Page
+from Page_Cart import Cart
+from Page_Home import Home
+from Page_Order import Order
+from Page_OrderResult import OrderResult
+from Page_ProductList import ProductList
+from Page_QuickOrder import QuickOrder
+from Page_ReportOrder import ReportOrder
+from Page_MiniCart import MiniCart
+from Page_NormalCart import NormalCart
 from selenium.webdriver.common.action_chains import ActionChains
 
 class TestCase(unittest.TestCase):
@@ -34,6 +36,8 @@ class TestCase(unittest.TestCase):
         self.product_list = ProductList(self.driver)
         self.quick_order = QuickOrder(self.driver)
         self.report_order = ReportOrder(self.driver)
+        self.mini_cart = MiniCart(self.driver)
+        self.normal_cart = NormalCart(self.driver)
 
     def test_order_1(self):
         """产线大图页入口-个人用户下单-不开票"""
@@ -219,6 +223,18 @@ class TestCase(unittest.TestCase):
         orderId = self.order_result.get_so_by_url()
         self.page.cancel_order(orderId, environment=self.environment)  # 接口取消订单
 
+    def test_mini_cart(self):
+        self.mini_cart.add_to_cart()
+        self.mini_cart.mini_cart_edit()
+        self.mini_cart.mini_cart_delete()
+
+    def test_normal_cart(self):
+        self.normal_cart.add_to_cart()
+        # self.normal_cart.nomal_cart_quantity()
+        # self.normal_cart.checkboxs_select()
+        # self.normal_cart.normal_cart_delete()
+        self.normal_cart.normal_cart_collect()
+
     def tearDown(self):
         test_method_name = self._testMethodName
         self.driver.save_screenshot("../TestResult/ScreenShot/%s.png" % test_method_name)
@@ -233,11 +249,13 @@ if __name__ == '__main__':
                   # TestCase('test_order_4'),
                   # TestCase('test_order_5'),
                   # TestCase('test_order_6'),
-                  TestCase('test_order_7'),
+                  # TestCase('test_order_7'),
                   # TestCase('test_order_8'),
                   # TestCase('test_order_9'),
                   # TestCase('test_order_10'),
                   # TestCase('test_order_11'),
+                  # TestCase('test_mini_cart'),
+                    TestCase('test_normal_cart')
                   ]
     suit.addTests(case_list)
     # now = time.strftime("%Y_%m_%d %H_%M_%S")

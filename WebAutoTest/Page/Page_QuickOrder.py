@@ -1,4 +1,4 @@
-from Page.Page_Base import Page
+from Page_Base import Page
 from selenium.webdriver.common.action_chains import ActionChains
 from selenium.common.exceptions import StaleElementReferenceException, ElementNotVisibleException
 

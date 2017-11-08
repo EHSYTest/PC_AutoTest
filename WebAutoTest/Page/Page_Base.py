@@ -105,9 +105,31 @@ class Page():
             way = By.PARTIAL_LINK_TEXT
         if ele[0] == 'by.tag_name':
             way = By.TAG_NAME
-        element = WebDriverWait(self.driver, 5, 0.1).until(
+        element = WebDriverWait(self.driver, 10, 0.1).until(
             expected_conditions.element_to_be_clickable(
                 (way, ele[1])
+            )
+        )
+        return element
+
+    def wait_to_visibility(self,ele):
+        if ele[0] == 'by.id':
+            way = By.ID
+        if ele[0] == 'by.class_name':
+            way = By.CLASS_NAME
+        if ele[0] == 'by.xpath':
+            way = By.XPATH
+        if ele[0] == 'by.link_text':
+            way = By.LINK_TEXT
+        if ele[0] == 'by.name':
+            way = By.NAME
+        if ele[0] == 'by.partial_link_text':
+            way = By.PARTIAL_LINK_TEXT
+        if ele[0] == 'by.tag_name':
+            way = By.TAG_NAME
+        element = WebDriverWait(self.driver, 10, 0.2).until(
+            expected_conditions.visibility_of_element_located(
+                (way,ele[1])
             )
         )
         return element

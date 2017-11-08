@@ -1,4 +1,4 @@
-from Page.Page_Base import Page
+from Page_Base import Page
 import time
 from selenium.common.exceptions import NoSuchElementException
 from selenium.webdriver.common.keys import Keys

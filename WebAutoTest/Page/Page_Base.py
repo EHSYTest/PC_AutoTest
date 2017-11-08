@@ -4,6 +4,7 @@ from configobj import ConfigObj
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions
+from selenium.common.exceptions import StaleElementReferenceException
 
 
 class Page():
@@ -55,13 +56,6 @@ class Page():
                 pass
         self.driver.switch_to_window(all_handle[handle_quantity-1])
 
-    @staticmethod
-    def wait_dom(element):
-        for i in range(50):
-            if element.is_displayed():
-                break
-            else:
-                pass
 
     @staticmethod
     def cancel_order(orderId, environment='test', userId='508107841'):
@@ -75,14 +69,6 @@ class Page():
         print(result['message'])
         assert result['message'] == '订单取消申请提交成功'
 
-    @staticmethod
-    def wait_visible_and_click(element):
-        for i in range(50):
-            try:
-                element.click()
-                break
-            except ElementNotVisibleException:
-                continue
 
     @staticmethod
     def config_reader(file, section, option):
@@ -133,3 +119,10 @@ class Page():
             )
         )
         return element
+
+    def wait_to_stale(self, ele):
+        WebDriverWait(self.driver, 10, 0.1).until(
+            expected_conditions.staleness_of(
+                self.element_find(ele)
+            )
+        )

@@ -15,6 +15,8 @@ class MiniCart(Page):
     empty_prompt = ('by.xpath', '//div[3]/div/div/div/div/span')  #空的迷你购物车
     go_to_cart = ('by.class_name', 'accounts-now') #去购物车结算按钮
 
+    layer = ('by.id', 'ajax-layer-loading')
+
     def add_to_cart(self):
         self.element_find(self.search_sku).send_keys('MAE475')
         self.element_find(self.search_button).click()
@@ -28,17 +30,19 @@ class MiniCart(Page):
         sku_quantity_default = self.element_find(self.quantity_input).get_attribute('value')
         print(sku_quantity_default)
         self.wait_to_clickable(self.quantity_add).click()
-        ele = self.wait_to_clickable(self.quantity_input)
-        sku_quantity_add = self.element_find(self.quantity_input).get_attribute('value')
+        self.wait_to_stale(self.layer)
+        ele = self.element_find(self.quantity_input)
+        sku_quantity_add = ele.get_attribute('value')
         print(sku_quantity_add)
         assert int(sku_quantity_add) == int(sku_quantity_default) + 1
         print("添加+数量成功")
 
         ele = self.wait_to_clickable(self.quantity_sub)
-        self.element_find(self.quantity_sub).click()
-        ele = self.wait_to_clickable(self.quantity_input)
-        sku_quantity_sub = self.element_find(self.quantity_input).get_attribute('value')
-        print (sku_quantity_sub)
+        ele.click()
+        self.wait_to_stale(self.layer)
+        ele = self.element_find(self.quantity_input)
+        sku_quantity_sub = ele.get_attribute('value')
+        print(sku_quantity_sub)
         assert int(sku_quantity_sub) == int(sku_quantity_add) - 1
         print("减少-数量成功")
 

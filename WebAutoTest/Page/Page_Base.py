@@ -1,4 +1,4 @@
-import requests
+import requests, time
 from selenium.common.exceptions import ElementNotVisibleException
 from configobj import ConfigObj
 from selenium.webdriver.common.by import By
@@ -69,12 +69,19 @@ class Page():
         print(result['message'])
         assert result['message'] == '订单取消申请提交成功'
 
-
     @staticmethod
     def config_reader(file, section, option):
         config = ConfigObj('../config/' + file)
         content = config[section][option]
         return content
+
+    def wait_to_unvisible(self, ele):
+        for i in range(30):
+            if self.element_find(ele).is_displayed():
+                time.sleep(0.1)
+                continue
+            else:
+                break
 
     def wait_to_clickable(self, ele):
         if ele[0] == 'by.id':
@@ -113,7 +120,7 @@ class Page():
             way = By.PARTIAL_LINK_TEXT
         if ele[0] == 'by.tag_name':
             way = By.TAG_NAME
-        element = WebDriverWait(self.driver, 10, 0.2).until(
+        element = WebDriverWait(self.driver, 10, 0.2).until_not(
             expected_conditions.visibility_of_element_located(
                 (way,ele[1])
             )

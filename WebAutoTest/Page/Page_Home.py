@@ -28,7 +28,7 @@ class Home(Page):
     brand_bosch = ('by.xpath', "//div[5]/ul[1]/li[1]/a/img")
 
     def login(self, login_name, password):
-        # self.element_find(self.login_button).click()
+        self.element_find(self.login_button).click()
         self.element_find(self.username_send).send_keys(login_name)
         self.element_find(self.password_send).send_keys(password)
         self.element_find(self.login_action).click()
@@ -38,8 +38,8 @@ class Home(Page):
         ActionChains(self.driver).move_to_element(category_tool).perform()
         self.element_find(self.category_taozhuang).click()
 
-    def search_sku(self):
-        self.element_find(self.search_send).send_keys('MAD618')
+    def search_sku(self, product='MAD618'):
+        self.element_find(self.search_send).send_keys(product)
         self.element_find(self.search_button).click()
 
     def quick_order_click(self):

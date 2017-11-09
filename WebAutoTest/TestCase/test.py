@@ -17,6 +17,7 @@ from Page_MiniCart import MiniCart
 from Page_NormalCart import NormalCart
 from selenium.webdriver.common.action_chains import ActionChains
 
+
 class TestCase(unittest.TestCase):
 
     def setUp(self):
@@ -47,10 +48,23 @@ class TestCase(unittest.TestCase):
         self.home.category_tree_click()
         self.product_list.bigImg_add_to_cart()
         self.cart.element_find(self.cart.go_to_order).click()
-        self.order.choose_none_invoice()
-        self.order.element_find(self.order.submit_order_button).click()
-        orderId = self.order_result.get_so_by_url()
-        self.page.cancel_order(orderId, environment=self.environment)
+
+        # self.order.add_receiving_address()
+        # self.order.receiving_address_edit()
+        # self.order.receiving_address_delete()
+
+        # self.order.invoice_normal_personal_add()
+        self.order.invoice_normal_company_add()
+        time.sleep(4)
+        # self.order.invoice_normal_personal_edit()
+        # self.order.invoice_normal_delete()
+        # self.order.invoice_vat_add()
+        # self.order.invoice_vat_delete()
+        self.order.invoice_normal_company_edit()
+        # self.order.choose_none_invoice()
+        # self.order.element_find(self.order.submit_order_button).click()
+        # orderId = self.order_result.get_so_by_url()
+        # self.page.cancel_order(orderId, environment=self.environment)
 
     def test_order_2(self):
         """产线列表页入口-分销用户下单-普票"""
@@ -79,14 +93,21 @@ class TestCase(unittest.TestCase):
         self.page.cancel_order(orderId, environment=self.environment)  # 接口取消订单
 
     def test_order_4(self):
-        """产线列表页入口-终端用户下单-普票"""
+        """搜索页入口-终端用户下单-区域限制-普票"""
         login_name = self.page.config_reader('test_order.conf', '终端账号', 'login_name')
         password = self.page.config_reader('test_order.conf', '终端账号', 'password')
         self.home.login(login_name, password)
-        self.home.category_tree_click()
-        self.product_list.list_add_to_cart()
+        product = self.page.config_reader('data.conf', '区域限制产品', 'product')
+        self.home.search_sku(product)
+        time.sleep(0.5)
+        element = self.page.wait_to_clickable(self.product_list.sku_result_click)
+        element.click()
+        self.page.switch_to_new_window()
+        self.product_list.element_find(self.product_list.skuContent_add_button).click()
+        ActionChains(self.driver).move_to_element(self.product_list.element_find(self.product_list.cart)).perform()
+        self.product_list.element_find(self.product_list.go_cart).click()
         self.cart.element_find(self.cart.go_to_order).click()
-        self.order.choose_normal_invoice()
+        self.order.choose_vat_invoice()
         self.order.element_find(self.order.submit_order_button).click()
         orderId = self.order_result.get_so_by_url()
         self.page.cancel_order(orderId, environment=self.environment)  # 接口取消订单
@@ -243,7 +264,7 @@ class TestCase(unittest.TestCase):
 if __name__ == '__main__':
     suit = unittest.TestSuite()
     case_list = [
-                  # TestCase('test_order_1'),
+                  TestCase('test_order_1'),
                   # TestCase('test_order_2'),
                   # TestCase('test_order_3'),
                   # TestCase('test_order_4'),
@@ -255,7 +276,7 @@ if __name__ == '__main__':
                   # TestCase('test_order_10'),
                   # TestCase('test_order_11'),
                   # TestCase('test_mini_cart'),
-                    TestCase('test_normal_cart')
+                  #   TestCase('test_normal_cart')
                   ]
     suit.addTests(case_list)
     # now = time.strftime("%Y_%m_%d %H_%M_%S")

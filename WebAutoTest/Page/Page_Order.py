@@ -83,8 +83,8 @@ class Order(Page):
         self.element_find(self.add_confirm).click()
         message = self.element_find(self.receiving_address_layer).text
         assert message == '地址添加成功！'
-        if not self.element_find(self.receiving_address_layer).is_displayed():
-            print('收货地址添加成功')
+        self.wait_to_unvisible(self.receiving_address_layer)
+        print('收货地址添加成功')
 
     def receiving_address_edit(self):
         element = self.element_find(self.address_edit)
@@ -103,8 +103,8 @@ class Order(Page):
         self.element_find(self.edit_confirm).click()
         message = self.element_find(self.receiving_address_layer).text
         assert message == '地址编辑成功！'
-        if not self.element_find(self.receiving_address_layer).is_displayed():
-            print('收货地址修改成功')
+        self.wait_to_unvisible(self.receiving_address_layer)
+        print('收货地址修改成功')
 
     def receiving_address_delete(self):
         element = self.element_find(self.address_del)
@@ -114,8 +114,8 @@ class Order(Page):
         self.element_find(self.del_confirm).click()
         message = self.element_find(self.receiving_address_layer).text
         assert message == '地址删除成功！'
-        if not self.element_find(self.receiving_address_layer).is_displayed():
-            print('收货地址删除成功')
+        self.wait_to_unvisible(self.receiving_address_layer)
+        print('收货地址删除成功')
 
     def invoice_normal_company_add(self):
         """新增公司抬头的普票"""
@@ -151,8 +151,8 @@ class Order(Page):
         self.element_find(self.normal_invoice_save).click()
         message = self.element_find(self.invoice_layer).text
         assert message == '发票信息编辑成功！'
-        if not self.element_find(self.invoice_layer).is_displayed():
-            print('普通发票-个人抬头编辑成功')
+        self.wait_to_unvisible(self.invoice_layer)
+        print('普通发票-个人抬头编辑成功')
 
     def invoice_normal_company_edit(self):
         self.element_find(self.choose).click()  # 请选择按钮
@@ -166,8 +166,8 @@ class Order(Page):
         self.element_find(self.normal_invoice_save).click()
         message = self.element_find(self.invoice_layer).text
         assert message == '发票信息编辑成功！'
-        if not self.element_find(self.invoice_layer).is_displayed():
-            print('普通发票-个人抬头编辑成功')
+        self.wait_to_unvisible(self.invoice_layer)
+        print('普通发票-个人抬头编辑成功')
 
     def invoice_normal_delete(self):
         """删除普通发票"""
@@ -179,8 +179,8 @@ class Order(Page):
         self.element_find(self.normal_invoice_del_confirm).click()
         message = self.element_find(self.invoice_layer).text
         assert message == '发票信息删除成功！'
-        if not self.element_find(self.invoice_layer).is_displayed():
-            print('普通发票删除成功')
+        self.wait_to_unvisible(self.invoice_layer)
+        print('普通发票删除成功')
 
     def invoice_vat_delete(self):
         """删除增值税发票"""
@@ -192,8 +192,8 @@ class Order(Page):
         self.element_find(self.bill_del_confirm).click()
         message = self.element_find(self.invoice_layer).text
         assert message == '发票信息删除成功！'
-        if not self.element_find(self.invoice_layer).is_displayed():
-            print('增值税发票删除成功')
+        self.wait_to_unvisible(self.invoice_layer)
+        print('增值税发票删除成功')
 
     def invoice_vat_add(self):
         self.element_find(self.choose).click()  # 请选择按钮
@@ -209,8 +209,8 @@ class Order(Page):
         self.element_find(self.bill_save).click()
         message = self.element_find(self.invoice_layer).text
         assert message == '发票信息添加成功！'
-        if not self.element_find(self.invoice_layer).is_displayed():
-            print('增值税发票添加成功')
+        self.wait_to_unvisible(self.invoice_layer)
+        print('增值税发票添加成功')
 
     def choose_normal_invoice(self):
         """选择普票"""
@@ -233,22 +233,19 @@ class Order(Page):
         self.element_find(self.none_invoice_tab).click()
         self.element_find(self.close).click()
 
-    # def submit_order(self, none_invoice=False, account_period=False):
-    #     element = self.element_find(self.submit_order_button)
-    #     self.wait_visible_and_click(element)
-    #     if none_invoice:
-    #         self.element_find(self.none_invoice_layer).click()
-    #     if account_period:
-    #         self.element_find(self.account_layer).click()
+    def normal_invoice_check(self):
+        self.element_find(self.choose).click()  # 请选择按钮
+        self.element_find(self.normal_invoice_add).click()
+        # self.element_find(self.invoice_title).send_keys('公司抬头普票')
+        self.element_find(self.tax_no).send_keys('1234567890qwert')
+        # self.element_find(self.normal_invoice_save).click()
+        #
+        # message = self.element_find(self.invoice_layer).text
+        # self.element_find(self.choose_invoice_title).send_keys('个人抬头')
+        # self.element_find(self.invoice_title).send_keys('个人抬头普票')
+        # self.element_find(self.normal_invoice_save).click()
+        # message = self.element_find(self.invoice_layer).text
+        # assert message == '发票信息添加成功！'
+        # self.wait_to_unvisible(self.invoice_layer)
+        # print('普通发票-个人抬头添加成功')
 
-    def submit_order_eas(self, none_invoice=False, account_period=False):
-        element = self.element_find(self.submit_order_button)
-        self.wait_visible_and_click(element)
-        if none_invoice:
-            self.element_find(self.none_invoice_layer).click()
-        if account_period:
-            self.element_find(self.account_layer).click()
-        element = self.element_find(self.choose_approve_flow)
-        self.wait_dom(element)
-        element.click()
-        self.element_find(self.submit_approve_flow).click()

@@ -34,6 +34,7 @@ class ProductList(Page):
         self.element_find(self.go_cart).click()
 
     def bigImg_add_to_cart(self):
+        self.wait_to_clickable(self.big_img_icon)
         element = self.wait_to_clickable(self.big_img_icon)
         element.click()
         self.element_find(self.bigImg_add_button).click()

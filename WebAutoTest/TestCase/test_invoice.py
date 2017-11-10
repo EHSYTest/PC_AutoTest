@@ -40,31 +40,52 @@ class TestCase(unittest.TestCase):
         self.mini_cart = MiniCart(self.driver)
         self.normal_cart = NormalCart(self.driver)
 
-    def test_order_1(self):
-        """产线大图页入口-个人用户下单-不开票"""
+    def test_invoice(self):
+        """发票信息增删改"""
         login_name = self.page.config_reader('test_order.conf', '发票地址账号', 'login_name')
         password = self.page.config_reader('test_order.conf', '发票地址账号', 'password')
         self.home.login(login_name, password)
-        self.home.category_tree_click()
-        self.product_list.bigImg_add_to_cart()
+        ActionChains(self.driver).move_to_element(self.cart.element_find(self.product_list.cart)).perform()
+        self.product_list.element_find(self.product_list.go_cart).click()
         self.cart.element_find(self.cart.go_to_order).click()
-
-        # self.order.add_receiving_address()
-        # self.order.receiving_address_edit()
-        # self.order.receiving_address_delete()
-        #
         self.order.invoice_normal_personal_add()
+        self.order.element_find(self.order.close).click()
         self.order.invoice_normal_personal_edit()
+        self.order.element_find(self.order.close).click()
         self.order.invoice_normal_delete()
+        self.order.element_find(self.order.close).click()
         self.order.invoice_normal_company_add()
+        self.order.element_find(self.order.close).click()
         self.order.invoice_normal_company_edit()
+        self.order.element_find(self.order.close).click()
         self.order.invoice_normal_delete()
+        self.order.element_find(self.order.close).click()
         self.order.invoice_vat_add()
+        self.order.element_find(self.order.close).click()
         self.order.invoice_vat_delete()
-        # self.order.choose_none_invoice()
-        # self.order.element_find(self.order.submit_order_button).click()
-        # orderId = self.order_result.get_so_by_url()
-        # self.page.cancel_order(orderId, environment=self.environment)
+        self.order.element_find(self.order.close).click()
+
+    def test_address(self):
+        """收货地址增删改"""
+        login_name = self.page.config_reader('test_order.conf', '发票地址账号', 'login_name')
+        password = self.page.config_reader('test_order.conf', '发票地址账号', 'password')
+        self.home.login(login_name, password)
+        ActionChains(self.driver).move_to_element(self.cart.element_find(self.product_list.cart)).perform()
+        self.product_list.element_find(self.product_list.go_cart).click()
+        self.cart.element_find(self.cart.go_to_order).click()
+        self.order.add_receiving_address()
+        self.order.receiving_address_edit()
+        self.order.receiving_address_delete()
+
+    # def test_invoice_check(self):
+    #     """发票信息填写校验-普票"""
+    #     login_name = self.page.config_reader('test_order.conf', '发票地址账号', 'login_name')
+    #     password = self.page.config_reader('test_order.conf', '发票地址账号', 'password')
+    #     self.home.login(login_name, password)
+    #     ActionChains(self.driver).move_to_element(self.cart.element_find(self.product_list.cart)).perform()
+    #     self.product_list.element_find(self.product_list.go_cart).click()
+    #     self.cart.element_find(self.cart.go_to_order).click()
+    #     self.order.normal_invoice_check()
 
     def tearDown(self):
         test_method_name = self._testMethodName

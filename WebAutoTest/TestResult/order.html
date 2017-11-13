@@ -191,9 +191,9 @@ function showOutput(id, name) {
 
 <div class='heading'>
 <h1>WWW下单——测试报告</h1>
-<p class='attribute'><strong>Start Time:</strong> 2017-11-10 14:47:59</p>
-<p class='attribute'><strong>Duration:</strong> 0:03:43.063758</p>
-<p class='attribute'><strong>Status:</strong> Pass 4 Error 3</p>
+<p class='attribute'><strong>Start Time:</strong> 2017-11-13 16:37:15</p>
+<p class='attribute'><strong>Duration:</strong> 0:00:37.130000</p>
+<p class='attribute'><strong>Status:</strong> Pass 1</p>
 
 <p class='description'>测试情况</p>
 </div>
@@ -225,19 +225,19 @@ function showOutput(id, name) {
     <td>Time</td>
 </tr>
 
-<tr class='errorClass'>
-    <td>TestCase</td>
-    <td>7</td>
-    <td>4</td>
+<tr class='passClass'>
+    <td>TestCart</td>
+    <td>1</td>
+    <td>1</td>
     <td>0</td>
-    <td>3</td>
-    <td><a href="javascript:showClassDetail('c1',7)">Detail</a></td>
+    <td>0</td>
+    <td><a href="javascript:showClassDetail('c1',1)">Detail</a></td>
     <td></td>
     <td>&nbsp;</td>
 </tr>
 
 <tr id='pt1.1' class='hiddenRow'>
-    <td class='none'><div class='testcase'>test_order_1: 产线大图页入口-个人用户下单-不开票</div></td>
+    <td class='none'><div class='testcase'>test_cart_check: 购物车收藏、删除、数量加减、数量编辑、复选框、区域限制校验</div></td>
     <td colspan='5' align='center'>
     
 
@@ -251,8 +251,18 @@ function showOutput(id, name) {
         </div>
         <pre>
         
-pt1.1: SO151029621323246800
-订单取消申请提交成功
+pt1.1: 添加+数量成功
+减少-数量成功
+编辑数量成功
+取消勾选商品成功
+勾选商品成功
+取消全选成功
+全选成功
+取消全选成功
+全选成功
+收藏成功
+全部收藏成功
+商品成功跳转到详情页
 
 
         </pre>
@@ -261,237 +271,20 @@ pt1.1: SO151029621323246800
 
     </td>
     <td align='center'>
-    <a href="./ScreenShot/test_order_1.png" title="./ScreenShot/test_order_1.png">Image</a> 
-    </td>
-    <td></td>
-</tr>
-
-<tr id='pt1.2' class='hiddenRow'>
-    <td class='none'><div class='testcase'>test_order_2: 产线列表页入口-分销用户下单-普票</div></td>
-    <td colspan='5' align='center'>
-    
-
-    <!--css div popup start-->
-    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt1.2')" >
-        pass</a>
-    <div id='div_pt1.2' class="popup_window">
-        <div style='text-align: right; color:red;cursor:pointer'>
-        <a onfocus='this.blur();' onclick="document.getElementById('div_pt1.2').style.display = 'none' " >
-           [x]</a>
-        </div>
-        <pre>
-        
-pt1.2: SO151029623414686600
-订单取消申请提交成功
-
-
-        </pre>
-    </div>
-    <!--css div popup end-->
-
-    </td>
-    <td align='center'>
-    <a href="./ScreenShot/test_order_2.png" title="./ScreenShot/test_order_2.png">Image</a> 
-    </td>
-    <td></td>
-</tr>
-
-<tr id='pt1.3' class='hiddenRow'>
-    <td class='none'><div class='testcase'>test_order_3: 品牌页入口-分销用户下单-增票</div></td>
-    <td colspan='5' align='center'>
-    
-
-    <!--css div popup start-->
-    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt1.3')" >
-        pass</a>
-    <div id='div_pt1.3' class="popup_window">
-        <div style='text-align: right; color:red;cursor:pointer'>
-        <a onfocus='this.blur();' onclick="document.getElementById('div_pt1.3').style.display = 'none' " >
-           [x]</a>
-        </div>
-        <pre>
-        
-pt1.3: SO151029625572178100
-订单取消申请提交成功
-
-
-        </pre>
-    </div>
-    <!--css div popup end-->
-
-    </td>
-    <td align='center'>
-    <a href="./ScreenShot/test_order_3.png" title="./ScreenShot/test_order_3.png">Image</a> 
-    </td>
-    <td></td>
-</tr>
-
-<tr id='ft1.4' class='none'>
-    <td class='errorCase'><div class='testcase'>test_order_4: 搜索页入口-终端用户下单-区域限制-普票</div></td>
-    <td colspan='5' align='center'>
-    
-
-    <!--css div popup start-->
-    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_ft1.4')" >
-        error</a>
-    <div id='div_ft1.4' class="popup_window">
-        <div style='text-align: right; color:red;cursor:pointer'>
-        <a onfocus='this.blur();' onclick="document.getElementById('div_ft1.4').style.display = 'none' " >
-           [x]</a>
-        </div>
-        <pre>
-        
-ft1.4: Traceback (most recent call last):
-  File "C:/Users/rick_zhang/Desktop/EHSY_WebAutoTest_New/WebAutoTest/TestCase/test_order.py", line 97, in test_order_4
-    self.order.choose_vat_invoice()
-  File "../Page\Page_Order.py", line 224, in choose_vat_invoice
-    element = self.element_find(self.choose)
-  File "../Page\Page_Base.py", line 27, in element_find
-    element_find = self.driver.find_element_by_link_text(element[1])
-  File "C:\Users\rick_zhang\AppData\Local\Programs\Python\Python36\lib\site-packages\selenium\webdriver\remote\webdriver.py", line 389, in find_element_by_link_text
-    return self.find_element(by=By.LINK_TEXT, value=link_text)
-  File "C:\Users\rick_zhang\AppData\Local\Programs\Python\Python36\lib\site-packages\selenium\webdriver\remote\webdriver.py", line 843, in find_element
-    'value': value})['value']
-  File "C:\Users\rick_zhang\AppData\Local\Programs\Python\Python36\lib\site-packages\selenium\webdriver\remote\webdriver.py", line 308, in execute
-    self.error_handler.check_response(response)
-  File "C:\Users\rick_zhang\AppData\Local\Programs\Python\Python36\lib\site-packages\selenium\webdriver\remote\errorhandler.py", line 194, in check_response
-    raise exception_class(message, screen, stacktrace)
-selenium.common.exceptions.NoSuchElementException: Message: no such element: Unable to locate element: {"method":"link text","selector":"请选择"}
-  (Session info: chrome=62.0.3202.75)
-  (Driver info: chromedriver=2.33.506120 (e3e53437346286c0bc2d2dc9aa4915ba81d9023f),platform=Windows NT 6.1.7601 SP1 x86_64)
-
-
-
-        </pre>
-    </div>
-    <!--css div popup end-->
-
-    </td>
-    <td align='center'>
-    <a href="./ScreenShot/test_order_4.png" title="./ScreenShot/test_order_4.png">Image</a> 
-    </td>
-    <td></td>
-</tr>
-
-<tr id='pt1.5' class='hiddenRow'>
-    <td class='none'><div class='testcase'>test_order_5: 产品详情页入口-终端用户下单-增票</div></td>
-    <td colspan='5' align='center'>
-    
-
-    <!--css div popup start-->
-    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt1.5')" >
-        pass</a>
-    <div id='div_pt1.5' class="popup_window">
-        <div style='text-align: right; color:red;cursor:pointer'>
-        <a onfocus='this.blur();' onclick="document.getElementById('div_pt1.5').style.display = 'none' " >
-           [x]</a>
-        </div>
-        <pre>
-        
-pt1.5: SO151029636631772600
-订单取消申请提交成功
-
-
-        </pre>
-    </div>
-    <!--css div popup end-->
-
-    </td>
-    <td align='center'>
-    <a href="./ScreenShot/test_order_5.png" title="./ScreenShot/test_order_5.png">Image</a> 
-    </td>
-    <td></td>
-</tr>
-
-<tr id='ft1.6' class='none'>
-    <td class='errorCase'><div class='testcase'>test_order_6: 产线列表页入口-国电用户下单-普票</div></td>
-    <td colspan='5' align='center'>
-    
-
-    <!--css div popup start-->
-    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_ft1.6')" >
-        error</a>
-    <div id='div_ft1.6' class="popup_window">
-        <div style='text-align: right; color:red;cursor:pointer'>
-        <a onfocus='this.blur();' onclick="document.getElementById('div_ft1.6').style.display = 'none' " >
-           [x]</a>
-        </div>
-        <pre>
-        
-ft1.6: Traceback (most recent call last):
-  File "C:/Users/rick_zhang/Desktop/EHSY_WebAutoTest_New/WebAutoTest/TestCase/test_order.py", line 130, in test_order_6
-    orderId = self.order_result.get_so_by_url()
-AttributeError: 'NoneType' object has no attribute 'click'
-
-
-        </pre>
-    </div>
-    <!--css div popup end-->
-
-    </td>
-    <td align='center'>
-    <a href="./ScreenShot/test_order_6.png" title="./ScreenShot/test_order_6.png">Image</a> 
-    </td>
-    <td></td>
-</tr>
-
-<tr id='ft1.7' class='none'>
-    <td class='errorCase'><div class='testcase'>test_order_6: 产线列表页入口-国电用户下单-普票</div></td>
-    <td colspan='5' align='center'>
-    
-
-    <!--css div popup start-->
-    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_ft1.7')" >
-        error</a>
-    <div id='div_ft1.7' class="popup_window">
-        <div style='text-align: right; color:red;cursor:pointer'>
-        <a onfocus='this.blur();' onclick="document.getElementById('div_ft1.7').style.display = 'none' " >
-           [x]</a>
-        </div>
-        <pre>
-        
-ft1.7: Traceback (most recent call last):
-  File "C:/Users/rick_zhang/Desktop/EHSY_WebAutoTest_New/WebAutoTest/TestCase/test_order.py", line 248, in tearDown
-    self.driver.quit()
-  File "C:\Users\rick_zhang\AppData\Local\Programs\Python\Python36\lib\site-packages\selenium\webdriver\remote\webdriver.py", line 919, in save_screenshot
-    return self.get_screenshot_as_file(filename)
-  File "C:\Users\rick_zhang\AppData\Local\Programs\Python\Python36\lib\site-packages\selenium\webdriver\remote\webdriver.py", line 896, in get_screenshot_as_file
-    png = self.get_screenshot_as_png()
-  File "C:\Users\rick_zhang\AppData\Local\Programs\Python\Python36\lib\site-packages\selenium\webdriver\remote\webdriver.py", line 928, in get_screenshot_as_png
-    return base64.b64decode(self.get_screenshot_as_base64().encode('ascii'))
-  File "C:\Users\rick_zhang\AppData\Local\Programs\Python\Python36\lib\site-packages\selenium\webdriver\remote\webdriver.py", line 938, in get_screenshot_as_base64
-    return self.execute(Command.SCREENSHOT)['value']
-  File "C:\Users\rick_zhang\AppData\Local\Programs\Python\Python36\lib\site-packages\selenium\webdriver\remote\webdriver.py", line 308, in execute
-    self.error_handler.check_response(response)
-  File "C:\Users\rick_zhang\AppData\Local\Programs\Python\Python36\lib\site-packages\selenium\webdriver\remote\errorhandler.py", line 194, in check_response
-    raise exception_class(message, screen, stacktrace)
-selenium.common.exceptions.NoSuchWindowException: Message: no such window: target window already closed
-from unknown error: web view not found
-  (Session info: chrome=62.0.3202.75)
-  (Driver info: chromedriver=2.33.506120 (e3e53437346286c0bc2d2dc9aa4915ba81d9023f),platform=Windows NT 6.1.7601 SP1 x86_64)
-
-
-
-        </pre>
-    </div>
-    <!--css div popup end-->
-
-    </td>
-    <td align='center'>
-    <a href="./ScreenShot/test_order_6.png" title="./ScreenShot/test_order_6.png">Image</a> 
+    <a href="./ScreenShot/test_cart_check.png" title="./ScreenShot/test_cart_check.png">Image</a> 
     </td>
     <td></td>
 </tr>
 
 <tr id='total_row'>
     <td>Total</td>
-    <td>7</td>
-    <td class="text text-success">4</td>
+    <td>1</td>
+    <td class="text text-success">1</td>
     <td class="text text-danger">0</td>
-    <td class="text text-warning">3</td>
+    <td class="text text-warning">0</td>
     <td class="text text-warning"></td>
     <td></td>
-    <td>0:03:43</td>
+    <td>0:00:37</td>
 </tr>
 </table>
 

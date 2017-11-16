@@ -13,8 +13,6 @@ from Page_OrderResult import OrderResult
 from Page_ProductList import ProductList
 from Page_QuickOrder import QuickOrder
 from Page_ReportOrder import ReportOrder
-from Page_MiniCart import MiniCart
-from Page_NormalCart import NormalCart
 from selenium.webdriver.common.action_chains import ActionChains
 
 

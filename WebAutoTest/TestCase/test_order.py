@@ -106,7 +106,7 @@ class TestCase(unittest.TestCase):
         self.order.element_find(self.order.submit_order_button).click()
         orderId = self.order_result.get_so_by_url()
         self.page.cancel_order(orderId, environment=self.environment)  # 接口取消订单
-"""
+'''
     def test_order_6(self):
         """产线列表页入口-国电用户下单-普票"""
         login_name = self.page.config_reader('test_order.conf', '国电账号', 'login_name')
@@ -224,7 +224,7 @@ class TestCase(unittest.TestCase):
         test_method_name = self._testMethodName
         self.driver.save_screenshot("../TestResult/ScreenShot/%s.png" % test_method_name)
         self.driver.quit()
-"""
+'''
 if __name__ == '__main__':
     suit = unittest.TestSuite()
     case_list = [

@@ -25,7 +25,7 @@ class TestCase(unittest.TestCase):
         self.page = Page(self.driver)
         self.environment = self.page.config_reader('environment.conf', 'Environment', 'environment')
         if self.environment == 'staging':
-            self.driver.get('http://opc-test.ehsy.com/mall/index.php')
+            self.driver.get('http://ps.ehsy.com/')
         elif self.environment == 'production':
             self.driver.get('http://www.ehsy.com')
         self.driver.implicitly_wait(30)
@@ -80,20 +80,14 @@ class TestCase(unittest.TestCase):
         self.page.cancel_order(orderId, environment=self.environment)  # 接口取消订单
 
     def test_order_4(self):
-        """搜索页入口-终端用户下单-区域限制-普票"""
+        """搜索页入口-终端用户下单-普票"""
         login_name = self.page.config_reader('test_order.conf', '终端账号', 'login_name')
         password = self.page.config_reader('test_order.conf', '终端账号', 'password')
         self.home.login(login_name, password)
-        product = self.page.config_reader('data.conf', '区域限制产品', 'product')
-        self.home.search_sku(product)
-        element = self.page.wait_to_clickable(self.product_list.sku_result_click)
-        element.click()
-        self.page.switch_to_new_window()
-        self.product_list.element_find(self.product_list.skuContent_add_button).click()
-        ActionChains(self.driver).move_to_element(self.product_list.element_find(self.product_list.cart)).perform()
-        self.product_list.element_find(self.product_list.go_cart).click()
+        self.home.category_tree_click()
+        self.product_list.list_add_to_cart()
         self.cart.element_find(self.cart.go_to_order).click()
-        self.order.choose_vat_invoice()
+        self.order.choose_normal_invoice()
         self.order.element_find(self.order.submit_order_button).click()
         orderId = self.order_result.get_so_by_url()
         self.page.cancel_order(orderId, environment=self.environment)  # 接口取消订单
@@ -116,7 +110,7 @@ class TestCase(unittest.TestCase):
         self.order.element_find(self.order.submit_order_button).click()
         orderId = self.order_result.get_so_by_url()
         self.page.cancel_order(orderId, environment=self.environment)  # 接口取消订单
-
+"""
     def test_order_6(self):
         """产线列表页入口-国电用户下单-普票"""
         login_name = self.page.config_reader('test_order.conf', '国电账号', 'login_name')
@@ -246,7 +240,7 @@ class TestCase(unittest.TestCase):
         test_method_name = self._testMethodName
         self.driver.save_screenshot("../TestResult/ScreenShot/%s.png" % test_method_name)
         self.driver.quit()
-
+"""
 if __name__ == '__main__':
     suit = unittest.TestSuite()
     case_list = [
@@ -255,7 +249,7 @@ if __name__ == '__main__':
                   TestCase('test_order_3'),
                   TestCase('test_order_4'),
                   TestCase('test_order_5'),
-                  TestCase('test_order_6'),
+                  # TestCase('test_order_6'),
                   # TestCase('test_order_7'),
                   # TestCase('test_order_8'),
                   # TestCase('test_order_9'),

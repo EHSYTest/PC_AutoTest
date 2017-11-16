@@ -60,7 +60,7 @@ class Page():
     @staticmethod
     def cancel_order(orderId, environment='test', userId='508107841'):
         if environment == 'staging':
-            url = 'http://oc-test.ehsy.com/orderCenter/cancel'
+            url = 'http://oc-staging.ehsy.com/orderCenter/cancel'
         elif environment == 'production':
             url = 'http://oc.ehsy.com/orderCenter/cancel'
         data = {'orderId': orderId, 'userId': userId}

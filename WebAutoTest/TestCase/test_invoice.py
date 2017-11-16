@@ -25,7 +25,7 @@ class TestCase(unittest.TestCase):
         self.page = Page(self.driver)
         self.environment = self.page.config_reader('environment.conf', 'Environment', 'environment')
         if self.environment == 'staging':
-            self.driver.get('http://opc-test.ehsy.com/mall/index.php')
+            self.driver.get('http://ps.ehsy.com')
         elif self.environment == 'production':
             self.driver.get('http://www.ehsy.com')
         self.driver.implicitly_wait(30)

@@ -2,7 +2,6 @@ from Page_Base import Page
 from selenium.webdriver.common.action_chains import ActionChains
 from selenium.common.exceptions import ElementNotVisibleException, WebDriverException
 
-
 class Home(Page):
     """首页"""
     login_button = ('by.link_text', '登录')
@@ -11,6 +10,10 @@ class Home(Page):
     username_send = ('by.name', 'username')
     password_send = ('by.name', 'password')
     login_action = ('by.class_name', 'loginpop-btn')
+    my_ehsy = ('by.class_name', 'ehsy-a')
+
+    #个人中心
+    my_address = ('by.class_name', 'active')  # 进入我的地址标签页
 
     category_tool = ('by.xpath', '//ul/li[1]/a[1]/span')
     category_taozhuang = ('by.link_text', '综合套装')
@@ -54,6 +57,9 @@ class Home(Page):
     def brand_click(self):
         self.element_find(self.brand_center).click()
         self.element_find(self.brand_bosch).click()
+
+    def go_user_center(self):
+        self.element_find(self.my_ehsy).click()
 
     def go_my_collection(self):
         element = self.element_find(self.my_ehsy)

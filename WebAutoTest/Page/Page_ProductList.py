@@ -58,7 +58,7 @@ class ProductList(Page):
 
     def search_add_to_cart(self):
         self.element_find(self.search_sku).clear()
-        self.element_find(self.search_sku).send_keys('MAE830')  # 区域限制商品
+        self.element_find(self.search_sku).send_keys('LAA444')  # 区域限制商品
         self.element_find(self.search_button).click()
         self.wait_to_stale(self.layer)
         self.element_find(self.bigImg_add_button).click()

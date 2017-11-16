@@ -1,16 +1,19 @@
 from Page_Base import Page
 from Page_Home import Home
 from selenium.webdriver.common.action_chains import ActionChains
+from selenium.webdriver.support import expected_conditions
 import time
 
 class NormalCart(Page):
 
     product_name = ('by.class_name', 'product-title') #商品名称
     product_img = ('by.xpath', '//ul/li[1]/a/img') #商品图片
+    MOQ = ('by.xpath', '//div[3]/ul/li[2]/p[2]/span') #商品最小起定量
     skuContent_product_name = ('by.xpath', '//div[2]/div[2]/div[1]/a[2]') #详情页商品名称
     quantity_input = ('by.class_name', 'item-num-input')  ##购物车中商品数量文本框
     quantity_add = ('by.class_name', 'a-add')  #购物车中商品数量增加+
     quantity_sub = ('by.class_name', 'a-sub')  #购物车中商品数量减少-
+    quantity_sub_disable = ('by.class_name', 'disable-sub')
     checkbox = ('by.class_name', 'check-box-center')  #选中某个商品
     checkboxs_top = ('by.class_name', 'check-box-top')  #全选
     checkboxs_bottom = ('by.class_name', 'check-box-bottom')  #全选
@@ -34,8 +37,13 @@ class NormalCart(Page):
     layer = ('by.id', 'ajax-layer-loading')
     layer_notice = ('by.id', 'js-layer-notice')
 
-    def cart_quantity_edit(self):
+    def quantity_add_or_sub(self):
+        MOQ = self.element_find(self.MOQ).text
+        MOQ = MOQ[0:1]
+        print(MOQ)
         sku_quantity_default = self.element_find(self.quantity_input).get_attribute('value')
+        assert int(sku_quantity_default) == int(MOQ)
+        print("商品添加到购物车默认数量为最小起定量")
         self.element_find(self.quantity_add).click()
         self.wait_to_stale(self.layer)
         sku_quantity_add = self.element_find(self.quantity_input).get_attribute('value')
@@ -47,6 +55,48 @@ class NormalCart(Page):
         sku_quantity_sub = self.element_find(self.quantity_input).get_attribute('value')
         assert int(sku_quantity_sub) == int(sku_quantity_add) - 1
         print("减少-数量成功")
+        ele = self.element_find(self.quantity_sub)
+        if self.element_find(self.quantity_sub_disable):
+            print("商品数量已减少到最小起定量")
+        else:
+            ele.click()
+
+    def quantity_edit_check(self):
+        sku_quantity_default = self.element_find(self.quantity_input).get_attribute('value')
+        self.element_find(self.quantity_input).clear()
+        self.element_find(self.quantity_input).send_keys(0)
+        self.element_find(self.blank).click()
+        sku_quantity_input = self.element_find(self.quantity_input).get_attribute('value')
+        assert sku_quantity_input == sku_quantity_default
+        print('商品数量不能小于最小起定量')
+
+        self.element_find(self.quantity_input).clear()
+        self.element_find(self.quantity_input).send_keys(-1)
+        self.element_find(self.blank).click()
+        sku_quantity_input = self.element_find(self.quantity_input).get_attribute('value')
+        assert sku_quantity_input == sku_quantity_default
+        print('商品数量不能小于最小起定量')
+
+        self.element_find(self.quantity_input).clear()
+        self.element_find(self.quantity_input).send_keys('0.1')
+        self.element_find(self.blank).click()
+        sku_quantity_input = self.element_find(self.quantity_input).get_attribute('value')
+        assert sku_quantity_input == sku_quantity_default
+        print('商品数量不能小于最小起定量')
+
+        # self.element_find(self.quantity_input).clear()
+        # self.element_find(self.quantity_input).send_keys('q')
+        # self.element_find(self.blank).click()
+        # sku_quantity_input = self.element_find(self.quantity_input).get_attribute('value')
+        # assert sku_quantity_input == sku_quantity_default
+        # print('商品数量不能小于最小起定量')
+
+        self.element_find(self.quantity_input).clear()
+        self.element_find(self.quantity_input).send_keys(int(sku_quantity_default)-1)
+        self.element_find(self.blank).click()
+        sku_quantity_input = self.element_find(self.quantity_input).get_attribute('value')
+        assert sku_quantity_input == sku_quantity_default
+        print('商品数量不能小于最小起定量')
 
         self.element_find(self.quantity_input).clear()
         self.element_find(self.quantity_input).send_keys(20)
@@ -145,12 +195,13 @@ class NormalCart(Page):
         assert self.driver.title == title_message
         print('商品成功跳转到详情页')
 
-
     def cart_collect(self):
         ###单个商品收藏###
         self.element_find(self.collect).click()
+        loginname = self.config_reader('test_order.conf', '个人账号', 'login_name')
+        password = self.config_reader('test_order.conf', '个人账号', 'password')
         home = Home(self.driver)
-        home.login_other('13111111111', 'qqq111')
+        home.login_other(loginname,password)
         self.element_find(self.collect).click()
         collect_message = self.element_find(self.collect_prompt).text
         assert collect_message == '此商品已成功加入收藏夹！'
@@ -166,8 +217,11 @@ class NormalCart(Page):
 
     def bj_page(self):
         self.element_find(self.bj_button).click()
+        loginname = self.config_reader('test_order.conf', '个人账号', 'login_name')
+        password = self.config_reader('test_order.conf', '个人账号', 'password')
         home = Home(self.driver)
-        home.login_other('13111111111', 'qqq111')
+        home.login_other(loginname,password)
+        self.wait_to_stale(self.layer)
         self.element_find(self.bj_button).click()
         self.wait_to_visibility(self.bj_Crumb)
         assert self.driver.title == '报价单-西域'
@@ -175,13 +229,16 @@ class NormalCart(Page):
 
     def cart_combine(self):
         self.element_find(self.check_button).click()
+        loginname = self.config_reader('test_order.conf', '个人账号', 'login_name')
+        password = self.config_reader('test_order.conf', '个人账号', 'password')
         home = Home(self.driver)
-        home.login_other('13111111111', 'qqq111')
+        home.login_other(loginname,password)
+        self.wait_to_stale(self.layer)
         sku_list = self.elements_find(self.cart_sku)
         list = []
         list.append(sku_list[0].text)
         list.append(sku_list[1].text)
-        assert 'MAE475' in list and 'MAE830' in list
+        assert 'MAE475' in list and 'LAA444' in list
         print("登录成功后购物车商品合并")
         self.element_find(self.check_button).click()
         self.wait_to_clickable(self.delivery_addr)

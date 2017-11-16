@@ -120,7 +120,7 @@ class Page():
             way = By.PARTIAL_LINK_TEXT
         if ele[0] == 'by.tag_name':
             way = By.TAG_NAME
-        element = WebDriverWait(self.driver, 10, 0.2).until_not(
+        element = WebDriverWait(self.driver, 10, 0.2).until(
             expected_conditions.visibility_of_element_located(
                 (way,ele[1])
             )

@@ -23,9 +23,16 @@ class ProductList(Page):
 
     # 搜索结果页
     sku_result_click = ('by.xpath', '//div/div/a/div/div/img')
+    search_sku = ('by.class_name', 'glob-search-input')  # 搜索框
+    search_button = ('by.class_name', 'glob-search-submit')  # 搜索
 
     # 产品详情页
     skuContent_add_button = ('by.class_name', 'add-to-cart-btn')
+
+    #页面刷新浮层
+    layer = ('by.id', 'ajax-layer-loading')
+    #商品添加购物车提示
+    layer_sku = ('by.id', 'ajax-layer-add-cart')
 
     def list_add_to_cart(self):
         self.element_find(self.list_add_button).click()
@@ -48,3 +55,13 @@ class ProductList(Page):
         element = self.wait_to_clickable(self.cart)
         ActionChains(self.driver).move_to_element(element).perform()
         self.element_find(self.go_cart).click()
+
+    def search_add_to_cart(self):
+        self.element_find(self.search_sku).clear()
+        self.element_find(self.search_sku).send_keys('MAE830')  # 区域限制商品
+        self.element_find(self.search_button).click()
+        self.wait_to_stale(self.layer)
+        self.element_find(self.bigImg_add_button).click()
+        element = self.wait_to_clickable(self.cart)
+        ActionChains(self.driver).move_to_element(element).perform()
+        self.wait_to_clickable(self.go_cart).click()

@@ -35,8 +35,6 @@ class TestCase(unittest.TestCase):
         self.product_list = ProductList(self.driver)
         self.quick_order = QuickOrder(self.driver)
         self.report_order = ReportOrder(self.driver)
-        self.mini_cart = MiniCart(self.driver)
-        self.normal_cart = NormalCart(self.driver)
 
     def test_invoice(self):
         """发票信息增删改"""

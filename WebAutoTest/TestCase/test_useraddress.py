@@ -27,8 +27,8 @@ class TestUserAddress(unittest.TestCase):
         password = self.page.config_reader('test_order.conf', '个人账号', 'password')
         self.home.login(loginname, password)
         self.home.go_user_center()
-        self.page.wait_to_stale(self.useraddress.layer)
-        self.useraddress.element_find(self.useraddress.my_address).click()
+        # self.page.wait_to_stale(self.useraddress.layer)
+        self.useraddress.wait_to_clickable(self.useraddress.my_address).click()
         self.page.wait_to_stale(self.useraddress.layer)
         self.useraddress.add_receive_address()
 

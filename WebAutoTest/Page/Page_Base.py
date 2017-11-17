@@ -98,7 +98,7 @@ class Page():
             way = By.PARTIAL_LINK_TEXT
         if ele[0] == 'by.tag_name':
             way = By.TAG_NAME
-        element = WebDriverWait(self.driver, 10, 0.1).until(
+        element = WebDriverWait(self.driver, 20, 0.2).until(
             expected_conditions.element_to_be_clickable(
                 (way, ele[1])
             )

@@ -56,7 +56,7 @@ class Home(Page):
 
     def brand_click(self):
         self.wait_to_clickable(self.brand_center).click()
-        self.element_find(self.brand_bosch).click()
+        self.wait_to_clickable(self.brand_bosch).click()
 
     def go_user_center(self):
         self.wait_to_clickable(self.my_ehsy).click()

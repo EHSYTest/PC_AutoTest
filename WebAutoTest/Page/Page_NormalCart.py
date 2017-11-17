@@ -202,6 +202,7 @@ class NormalCart(Page):
         password = self.config_reader('test_order.conf', '个人账号', 'password')
         home = Home(self.driver)
         home.login_other(loginname,password)
+        self.wait_to_stale(self.layer)
         self.element_find(self.collect).click()
         collect_message = self.element_find(self.collect_prompt).text
         assert collect_message == '此商品已成功加入收藏夹！'

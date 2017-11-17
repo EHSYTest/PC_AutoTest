@@ -26,7 +26,6 @@ class TestUserAddress(unittest.TestCase):
         loginname = self.page.config_reader('test_order.conf', '个人账号', 'login_name')
         password = self.page.config_reader('test_order.conf', '个人账号', 'password')
         self.home.login(loginname, password)
-        self.page.wait_to_stale(self.useraddress.layer)
         self.home.go_user_center()
         self.page.wait_to_stale(self.useraddress.layer)
         self.useraddress.element_find(self.useraddress.my_address).click()

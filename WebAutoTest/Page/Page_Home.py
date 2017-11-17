@@ -59,7 +59,7 @@ class Home(Page):
         self.element_find(self.brand_bosch).click()
 
     def go_user_center(self):
-        self.element_find(self.my_ehsy).click()
+        self.wait_to_clickable(self.my_ehsy).click()
 
     def go_my_collection(self):
         element = self.element_find(self.my_ehsy)

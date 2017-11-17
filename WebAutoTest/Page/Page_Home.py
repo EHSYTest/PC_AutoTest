@@ -31,7 +31,7 @@ class Home(Page):
     brand_bosch = ('by.xpath', "//div[5]/ul[1]/li[1]/a/img")
 
     def login(self, login_name, password):
-        self.element_find(self.login_button).click()
+        self.wait_to_clickable(self.login_button).click()
         self.element_find(self.username_send).send_keys(login_name)
         self.element_find(self.password_send).send_keys(password)
         self.element_find(self.login_action).click()

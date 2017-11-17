@@ -20,17 +20,17 @@ class TestUserAddress(unittest.TestCase):
         self.driver.implicitly_wait(30)
         self.driver.maximize_window()
         self.home = Home(self.driver)
-        self.useraddress = UserAddress(self.driver)
+        self.user_address = UserAddress(self.driver)
 
     def test_receive_address(self):
         loginname = self.page.config_reader('test_order.conf', '个人账号', 'login_name')
         password = self.page.config_reader('test_order.conf', '个人账号', 'password')
         self.home.login(loginname, password)
         self.home.go_user_center()
-        # self.page.wait_to_stale(self.useraddress.layer)
-        self.useraddress.wait_to_clickable(self.useraddress.my_address).click()
-        self.page.wait_to_stale(self.useraddress.layer)
-        self.useraddress.add_receive_address()
+        self.page.wait_to_stale(self.user_address.layer)
+        self.user_address.element_find(self.user_address.my_address).click()
+        self.page.wait_to_stale(self.user_address.layer)
+        self.user_address.add_receive_address()
 
     def tearDown(self):
         test_method_name = self._testMethodName

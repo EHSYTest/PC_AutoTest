@@ -118,6 +118,7 @@ class TestCase(unittest.TestCase):
         self.page.wait_to_unvisible(self.product_list.layer_sku)
         ActionChains(self.driver).move_to_element(self.product_list.element_find(self.product_list.cart)).perform()
         self.product_list.element_find(self.product_list.go_cart).click()
+        self.page.wait_to_stale(self.product_list.layer)
         self.cart.element_find(self.cart.go_to_order).click()
         self.page.wait_to_stale(self.product_list.layer)
         self.order.choose_vat_invoice()

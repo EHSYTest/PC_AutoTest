@@ -21,8 +21,6 @@ class UserAddress(Page):
     layer = ('by.id', 'ajax-layer-loading')
 
     def add_receive_address(self):
-        # self.wait_to_stale(self.layer)
-        self.element_find(self.my_address).click()
         address_num = self.element_find(self.address_num).text
         add_front_num = address_num[4:5]
         self.element_find(self.add_address).click()

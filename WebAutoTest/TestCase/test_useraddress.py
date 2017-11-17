@@ -27,6 +27,8 @@ class TestUserAddress(unittest.TestCase):
         password = self.page.config_reader('test_order.conf', '个人账号', 'password')
         self.home.login(loginname, password)
         self.home.go_user_center()
+        self.page.wait_to_stale(self.useraddress.layer)
+        self.useraddress.element_find(self.useraddress.my_address).click()
         self.useraddress.add_receive_address()
 
     def tearDown(self):
@@ -35,10 +37,11 @@ class TestUserAddress(unittest.TestCase):
         self.driver.quit()
 
 if __name__ == '__main__':
-    suite = unittest.TestSuite()
-    suite.addTest(TestUserAddress('test_receive_address'))
-    file = open('../TestResult/order.html', 'wb')
-    runner = HTMLTestRunner(stream=file, title='WWW下单——测试报告', description='测试情况')
-    runner.run(suite)
-    file.close()
+    unittest.main()
+    # suite = unittest.TestSuite()
+    # suite.addTest(TestUserAddress('test_receive_address'))
+    # file = open('../TestResult/order.html', 'wb')
+    # runner = HTMLTestRunner(stream=file, title='WWW下单——测试报告', description='测试情况')
+    # runner.run(suite)
+    # file.close()
 

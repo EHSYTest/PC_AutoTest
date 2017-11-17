@@ -42,7 +42,9 @@ class TestCase(unittest.TestCase):
         password = self.page.config_reader('test_order.conf', '个人账号', 'password')
         self.home.login(login_name, password)
         self.home.category_tree_click()
+        self.page.wait_to_stale(self.product_list.layer)
         self.product_list.bigImg_add_to_cart()
+        self.page.wait_to_stale(self.product_list.layer)
         self.cart.element_find(self.cart.go_to_order).click()
         self.order.choose_none_invoice()
         self.order.element_find(self.order.submit_order_button).click()
@@ -55,7 +57,9 @@ class TestCase(unittest.TestCase):
         password = self.page.config_reader('test_order.conf', '分销账号', 'password')
         self.home.login(login_name, password)
         self.home.category_tree_click()
+        self.page.wait_to_stale(self.product_list.layer)
         self.product_list.list_add_to_cart()
+        self.page.wait_to_stale(self.product_list.layer)
         self.cart.element_find(self.cart.go_to_order).click()
         self.order.choose_normal_invoice()
         self.order.element_find(self.order.submit_order_button).click()
@@ -67,6 +71,7 @@ class TestCase(unittest.TestCase):
         login_name = self.page.config_reader('test_order.conf', '分销账号', 'login_name')
         password = self.page.config_reader('test_order.conf', '分销账号', 'password')
         self.home.login(login_name, password)
+        # self.page.wait_to_stale(self.product_list.layer)
         self.home.brand_click()
         self.product_list.brand_add_to_cart()
         self.cart.element_find(self.cart.go_to_order).click()
@@ -80,8 +85,14 @@ class TestCase(unittest.TestCase):
         login_name = self.page.config_reader('test_order.conf', '终端账号', 'login_name')
         password = self.page.config_reader('test_order.conf', '终端账号', 'password')
         self.home.login(login_name, password)
-        self.home.category_tree_click()
-        self.product_list.list_add_to_cart()
+        # self.home.category_tree_click()
+        self.home.search_sku()
+        # self.product_list.list_add_to_cart()
+        self.product_list.wait_to_stale(self.product_list.layer)
+        self.product_list.element_find(self.product_list.bigImg_add_button).click()
+        self.product_list.wait_to_unvisible(self.product_list.layer_sku)
+        ActionChains(self.driver).move_to_element(self.cart.element_find(self.product_list.cart)).perform()
+        self.product_list.element_find(self.product_list.go_cart).click()
         self.cart.element_find(self.cart.go_to_order).click()
         self.order.choose_normal_invoice()
         self.order.element_find(self.order.submit_order_button).click()
@@ -94,11 +105,12 @@ class TestCase(unittest.TestCase):
         password = self.page.config_reader('test_order.conf', '终端账号', 'password')
         self.home.login(login_name, password)
         self.home.search_sku()
-        time.sleep(0.5)
+        self.page.wait_to_stale(self.product_list.layer)
         element = self.page.wait_to_clickable(self.product_list.sku_result_click)
         element.click()
         self.page.switch_to_new_window()
         self.product_list.element_find(self.product_list.skuContent_add_button).click()
+        self.page.wait_to_unvisible(self.product_list.layer_sku)
         ActionChains(self.driver).move_to_element(self.product_list.element_find(self.product_list.cart)).perform()
         self.product_list.element_find(self.product_list.go_cart).click()
         self.cart.element_find(self.cart.go_to_order).click()
@@ -106,7 +118,8 @@ class TestCase(unittest.TestCase):
         self.order.element_find(self.order.submit_order_button).click()
         orderId = self.order_result.get_so_by_url()
         self.page.cancel_order(orderId, environment=self.environment)  # 接口取消订单
-'''
+
+    '''
     def test_order_6(self):
         """产线列表页入口-国电用户下单-普票"""
         login_name = self.page.config_reader('test_order.conf', '国电账号', 'login_name')
@@ -219,13 +232,14 @@ class TestCase(unittest.TestCase):
         self.order.submit_order(account_period=True)
         orderId = self.order_result.get_so_by_url()
         self.page.cancel_order(orderId, environment=self.environment)  # 接口取消订单
-
+    '''
     def tearDown(self):
         test_method_name = self._testMethodName
         self.driver.save_screenshot("../TestResult/ScreenShot/%s.png" % test_method_name)
         self.driver.quit()
-'''
+
 if __name__ == '__main__':
+    # unittest.main()
     suit = unittest.TestSuite()
     case_list = [
                   TestCase('test_order_1'),

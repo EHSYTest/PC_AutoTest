@@ -30,6 +30,8 @@ class Home(Page):
     brand_center = ('by.link_text', '品牌中心')
     brand_bosch = ('by.xpath', "//div[5]/ul[1]/li[1]/a/img")
 
+    layer = ('by.id', 'ajax-layer-loading')
+
     def login(self, login_name, password):
         self.wait_to_clickable(self.login_button).click()
         self.element_find(self.username_send).send_keys(login_name)
@@ -56,6 +58,7 @@ class Home(Page):
 
     def brand_click(self):
         self.wait_to_clickable(self.brand_center).click()
+        self.wait_to_stale(self.layer)
         self.wait_to_clickable(self.brand_bosch).click()
 
     def go_user_center(self):

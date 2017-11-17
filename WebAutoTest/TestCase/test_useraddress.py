@@ -29,6 +29,7 @@ class TestUserAddress(unittest.TestCase):
         self.home.go_user_center()
         self.page.wait_to_stale(self.useraddress.layer)
         self.useraddress.element_find(self.useraddress.my_address).click()
+        self.page.wait_to_stale(self.useraddress.layer)
         self.useraddress.add_receive_address()
 
     def tearDown(self):

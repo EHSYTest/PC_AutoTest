@@ -45,6 +45,7 @@ class TestCart(unittest.TestCase):
         self.productList.element_find(self.productList.bigImg_add_button).click()
         self.productList.wait_to_unvisible(self.productList.layer_sku)
         self.productList.search_add_to_cart()
+        self.normal_cart.wait_to_stale(self.normal_cart.layer)
         self.normal_cart.bj_page()
 
     def test_cart_combine(self):
@@ -54,6 +55,7 @@ class TestCart(unittest.TestCase):
         self.productList.element_find(self.productList.bigImg_add_button).click()
         self.productList.wait_to_unvisible(self.productList.layer_sku)
         self.productList.search_add_to_cart()
+        self.normal_cart.wait_to_stale(self.normal_cart.layer)
         self.normal_cart.cart_combine()
 
     def tearDown(self):

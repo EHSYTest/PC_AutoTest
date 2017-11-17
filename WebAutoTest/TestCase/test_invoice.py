@@ -72,6 +72,7 @@ class TestCase(unittest.TestCase):
         self.product_list.element_find(self.product_list.go_cart).click()
         self.page.wait_to_stale(self.product_list.layer)
         self.cart.element_find(self.cart.go_to_order).click()
+        self.page.wait_to_stale(self.product_list.layer)
         self.order.add_receiving_address()
         self.order.receiving_address_edit()
         self.order.receiving_address_delete()

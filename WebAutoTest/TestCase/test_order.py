@@ -116,7 +116,7 @@ class TestCase(unittest.TestCase):
         element.click()
         self.page.switch_to_new_window()
         # self.page.wait_to_stale(self.product_list.layer)
-        self.product_list.element_find(self.product_list.skuContent_add_button).click()
+        self.product_list.element_find(self.skuContent_add_button).click()
         self.page.wait_to_unvisible(self.product_list.layer_sku)
         ActionChains(self.driver).move_to_element(self.product_list.element_find(self.product_list.cart)).perform()
         self.product_list.element_find(self.product_list.go_cart).click()

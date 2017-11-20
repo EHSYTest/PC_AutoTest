@@ -1,5 +1,6 @@
 import sys
 sys.path.append('../Page')
+from HTMLTestRunner import HTMLTestRunner
 import unittest
 from selenium import webdriver
 from Page_Base import Page
@@ -242,24 +243,24 @@ class TestOrder(unittest.TestCase):
         self.driver.save_screenshot("../TestResult/ScreenShot/%s.png" % test_method_name)
         self.driver.quit()
 
-# if __name__ == '__main__':
-    # suit = unittest.TestSuite()
-    # case_list = [
-    #               TestCase('test_order_1'),
-    #               TestCase('test_order_2'),
-    #               TestCase('test_order_3'),
-    #               TestCase('test_order_4'),
-    #               TestCase('test_order_5'),
-    #               # TestCase('test_order_6'),
-    #               # TestCase('test_order_7'),
-    #               # TestCase('test_order_8'),
-    #               # TestCase('test_order_9'),
-    #               # TestCase('test_order_10'),
-    #               # TestCase('test_order_11')
-    #               ]
-    # suit.addTests(case_list)
-    # # now = time.strftime("%Y_%m_%d %H_%M_%S")
-    # file = open('../TestResult/order.html', 'wb')
-    # runner = HTMLTestRunner(stream=file, title='WWW下单——测试报告', description='测试情况')
-    # runner.run(suit)
-    # file.close()
+if __name__ == '__main__':
+    suit = unittest.TestSuite()
+    case_list = [
+                  TestOrder('test_order_1'),
+    #               TestOrder('test_order_2'),
+    #               TestOrder('test_order_3'),
+    #               TestOrder('test_order_4'),
+    #               TestOrder('test_order_5'),
+    #               # TestOrder('test_order_6'),
+    #               # TestOrder('test_order_7'),
+    #               # TestOrder('test_order_8'),
+    #               # TestOrder('test_order_9'),
+    #               # TestOrder('test_order_10'),
+    #               # TestOrder('test_order_11')
+                  ]
+    suit.addTests(case_list)
+    # now = time.strftime("%Y_%m_%d %H_%M_%S")
+    file = open('../TestResult/order.html', 'wb')
+    runner = HTMLTestRunner(stream=file, title='WWW下单——测试报告', description='测试情况')
+    runner.run(suit)
+    file.close()

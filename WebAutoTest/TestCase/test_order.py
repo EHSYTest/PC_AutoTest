@@ -245,8 +245,7 @@ class TestOrder(unittest.TestCase):
         self.driver.save_screenshot("../TestResult/ScreenShot/%s.png" % test_method_name)
         self.driver.quit()
 
-if __name__ == '__main__':
-    unittest.main()
+# if __name__ == '__main__':
     # suit = unittest.TestSuite()
     # case_list = [
     #               TestCase('test_order_1'),

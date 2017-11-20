@@ -1,8 +1,6 @@
 import sys
 sys.path.append('../Page')
-import time
 import unittest
-from HTMLTestRunner import HTMLTestRunner
 from selenium import webdriver
 from Page_Base import Page
 from Page_Cart import Cart

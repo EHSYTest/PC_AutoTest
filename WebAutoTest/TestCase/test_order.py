@@ -16,7 +16,7 @@ from Page_ReportOrder import ReportOrder
 from selenium.webdriver.common.action_chains import ActionChains
 
 
-class TestCase(unittest.TestCase):
+class TestOrder(unittest.TestCase):
 
     def setUp(self):
         self.driver = webdriver.Chrome()

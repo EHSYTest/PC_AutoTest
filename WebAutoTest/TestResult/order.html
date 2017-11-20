@@ -2,7 +2,7 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-    <title>WWW测试报告</title>
+    <title>WWW下单——测试报告</title>
     <meta name="generator" content="HTMLTestRunner 0.8.2"/>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
 	<link rel="stylesheet" href="http://cdn.bootcss.com/bootstrap/3.3.0/css/bootstrap.min.css">
@@ -190,10 +190,10 @@ function showOutput(id, name) {
 --></script>
 
 <div class='heading'>
-<h1>WWW测试报告</h1>
-<p class='attribute'><strong>Start Time:</strong> 2017-11-17 15:39:45</p>
-<p class='attribute'><strong>Duration:</strong> 0:07:13.848490</p>
-<p class='attribute'><strong>Status:</strong> Pass 11</p>
+<h1>WWW下单——测试报告</h1>
+<p class='attribute'><strong>Start Time:</strong> 2017-11-20 11:20:37</p>
+<p class='attribute'><strong>Duration:</strong> 0:00:20.237157</p>
+<p class='attribute'><strong>Status:</strong> Pass 1</p>
 
 <p class='description'>测试情况</p>
 </div>
@@ -226,18 +226,18 @@ function showOutput(id, name) {
 </tr>
 
 <tr class='passClass'>
-    <td>test_cart.TestCart</td>
-    <td>3</td>
-    <td>3</td>
+    <td>TestCase</td>
+    <td>1</td>
+    <td>1</td>
     <td>0</td>
     <td>0</td>
-    <td><a href="javascript:showClassDetail('c1',3)">Detail</a></td>
+    <td><a href="javascript:showClassDetail('c1',1)">Detail</a></td>
     <td></td>
     <td>&nbsp;</td>
 </tr>
 
 <tr id='pt1.1' class='hiddenRow'>
-    <td class='none'><div class='testcase'>test_cart_bj: 购物车报价单生成按钮</div></td>
+    <td class='none'><div class='testcase'>test_order_2: 产线列表页入口-分销用户下单-普票</div></td>
     <td colspan='5' align='center'>
     
 
@@ -251,232 +251,7 @@ function showOutput(id, name) {
         </div>
         <pre>
         
-pt1.1: 成功进入报价单页面
-
-
-        </pre>
-    </div>
-    <!--css div popup end-->
-
-    </td>
-    <td align='center'>
-    <a href="./ScreenShot/test_cart_bj.png" title="./ScreenShot/test_cart_bj.png">Image</a> 
-    </td>
-    <td></td>
-</tr>
-
-<tr id='pt1.2' class='hiddenRow'>
-    <td class='none'><div class='testcase'>test_cart_check: 购物车数量加减、数量编辑、复选框、删除、收藏、区域限制校验、商品详情跳转</div></td>
-    <td colspan='5' align='center'>
-    
-
-    <!--css div popup start-->
-    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt1.2')" >
-        pass</a>
-    <div id='div_pt1.2' class="popup_window">
-        <div style='text-align: right; color:red;cursor:pointer'>
-        <a onfocus='this.blur();' onclick="document.getElementById('div_pt1.2').style.display = 'none' " >
-           [x]</a>
-        </div>
-        <pre>
-        
-pt1.2: 1
-商品添加到购物车默认数量为最小起定量
-添加+数量成功
-减少-数量成功
-商品数量已减少到最小起定量
-商品数量不能小于最小起定量
-商品数量不能小于最小起定量
-商品数量不能小于最小起定量
-商品数量不能小于最小起定量
-编辑数量成功
-取消勾选商品成功
-勾选商品成功
-取消全选成功
-全选成功
-取消全选成功
-全选成功
-收藏成功
-全部收藏成功
-商品成功跳转到详情页
-
-
-        </pre>
-    </div>
-    <!--css div popup end-->
-
-    </td>
-    <td align='center'>
-    <a href="./ScreenShot/test_cart_check.png" title="./ScreenShot/test_cart_check.png">Image</a> 
-    </td>
-    <td></td>
-</tr>
-
-<tr id='pt1.3' class='hiddenRow'>
-    <td class='none'><div class='testcase'>test_cart_combine: 未登录——>登录购物车SKU合并</div></td>
-    <td colspan='5' align='center'>
-    
-
-    <!--css div popup start-->
-    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt1.3')" >
-        pass</a>
-    <div id='div_pt1.3' class="popup_window">
-        <div style='text-align: right; color:red;cursor:pointer'>
-        <a onfocus='this.blur();' onclick="document.getElementById('div_pt1.3').style.display = 'none' " >
-           [x]</a>
-        </div>
-        <pre>
-        
-pt1.3: 登录成功后购物车商品合并
-成功进入提交订单页面
-
-
-        </pre>
-    </div>
-    <!--css div popup end-->
-
-    </td>
-    <td align='center'>
-    <a href="./ScreenShot/test_cart_combine.png" title="./ScreenShot/test_cart_combine.png">Image</a> 
-    </td>
-    <td></td>
-</tr>
-
-<tr class='passClass'>
-    <td>test_invoice.TestCase</td>
-    <td>2</td>
-    <td>2</td>
-    <td>0</td>
-    <td>0</td>
-    <td><a href="javascript:showClassDetail('c2',2)">Detail</a></td>
-    <td></td>
-    <td>&nbsp;</td>
-</tr>
-
-<tr id='pt2.1' class='hiddenRow'>
-    <td class='none'><div class='testcase'>test_address: 收货地址增删改</div></td>
-    <td colspan='5' align='center'>
-    
-
-    <!--css div popup start-->
-    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt2.1')" >
-        pass</a>
-    <div id='div_pt2.1' class="popup_window">
-        <div style='text-align: right; color:red;cursor:pointer'>
-        <a onfocus='this.blur();' onclick="document.getElementById('div_pt2.1').style.display = 'none' " >
-           [x]</a>
-        </div>
-        <pre>
-        
-pt2.1: 收货地址添加成功
-收货地址修改成功
-收货地址删除成功
-
-
-        </pre>
-    </div>
-    <!--css div popup end-->
-
-    </td>
-    <td align='center'>
-    <a href="./ScreenShot/test_address.png" title="./ScreenShot/test_address.png">Image</a> 
-    </td>
-    <td></td>
-</tr>
-
-<tr id='pt2.2' class='hiddenRow'>
-    <td class='none'><div class='testcase'>test_invoice: 发票信息增删改</div></td>
-    <td colspan='5' align='center'>
-    
-
-    <!--css div popup start-->
-    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt2.2')" >
-        pass</a>
-    <div id='div_pt2.2' class="popup_window">
-        <div style='text-align: right; color:red;cursor:pointer'>
-        <a onfocus='this.blur();' onclick="document.getElementById('div_pt2.2').style.display = 'none' " >
-           [x]</a>
-        </div>
-        <pre>
-        
-pt2.2: 普通发票-个人抬头添加成功
-普通发票-个人抬头编辑成功
-普通发票删除成功
-普通发票-公司抬头添加成功
-普通发票-个人抬头编辑成功
-普通发票删除成功
-增值税发票添加成功
-增值税发票删除成功
-
-
-        </pre>
-    </div>
-    <!--css div popup end-->
-
-    </td>
-    <td align='center'>
-    <a href="./ScreenShot/test_invoice.png" title="./ScreenShot/test_invoice.png">Image</a> 
-    </td>
-    <td></td>
-</tr>
-
-<tr class='passClass'>
-    <td>test_order.TestCase</td>
-    <td>5</td>
-    <td>5</td>
-    <td>0</td>
-    <td>0</td>
-    <td><a href="javascript:showClassDetail('c3',5)">Detail</a></td>
-    <td></td>
-    <td>&nbsp;</td>
-</tr>
-
-<tr id='pt3.1' class='hiddenRow'>
-    <td class='none'><div class='testcase'>test_order_1: 产线大图页入口-个人用户下单-不开票</div></td>
-    <td colspan='5' align='center'>
-    
-
-    <!--css div popup start-->
-    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt3.1')" >
-        pass</a>
-    <div id='div_pt3.1' class="popup_window">
-        <div style='text-align: right; color:red;cursor:pointer'>
-        <a onfocus='this.blur();' onclick="document.getElementById('div_pt3.1').style.display = 'none' " >
-           [x]</a>
-        </div>
-        <pre>
-        
-pt3.1: SO151090440876572600
-订单取消申请提交成功
-
-
-        </pre>
-    </div>
-    <!--css div popup end-->
-
-    </td>
-    <td align='center'>
-    <a href="./ScreenShot/test_order_1.png" title="./ScreenShot/test_order_1.png">Image</a> 
-    </td>
-    <td></td>
-</tr>
-
-<tr id='pt3.2' class='hiddenRow'>
-    <td class='none'><div class='testcase'>test_order_2: 产线列表页入口-分销用户下单-普票</div></td>
-    <td colspan='5' align='center'>
-    
-
-    <!--css div popup start-->
-    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt3.2')" >
-        pass</a>
-    <div id='div_pt3.2' class="popup_window">
-        <div style='text-align: right; color:red;cursor:pointer'>
-        <a onfocus='this.blur();' onclick="document.getElementById('div_pt3.2').style.display = 'none' " >
-           [x]</a>
-        </div>
-        <pre>
-        
-pt3.2: SO151090443127527200
+pt1.1: SO151114777562343000
 订单取消申请提交成功
 
 
@@ -491,145 +266,15 @@ pt3.2: SO151090443127527200
     <td></td>
 </tr>
 
-<tr id='pt3.3' class='hiddenRow'>
-    <td class='none'><div class='testcase'>test_order_3: 品牌页入口-分销用户下单-增票</div></td>
-    <td colspan='5' align='center'>
-    
-
-    <!--css div popup start-->
-    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt3.3')" >
-        pass</a>
-    <div id='div_pt3.3' class="popup_window">
-        <div style='text-align: right; color:red;cursor:pointer'>
-        <a onfocus='this.blur();' onclick="document.getElementById('div_pt3.3').style.display = 'none' " >
-           [x]</a>
-        </div>
-        <pre>
-        
-pt3.3: SO151090445127702400
-订单取消申请提交成功
-
-
-        </pre>
-    </div>
-    <!--css div popup end-->
-
-    </td>
-    <td align='center'>
-    <a href="./ScreenShot/test_order_3.png" title="./ScreenShot/test_order_3.png">Image</a> 
-    </td>
-    <td></td>
-</tr>
-
-<tr id='pt3.4' class='hiddenRow'>
-    <td class='none'><div class='testcase'>test_order_4: 搜索页入口-终端用户下单-普票</div></td>
-    <td colspan='5' align='center'>
-    
-
-    <!--css div popup start-->
-    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt3.4')" >
-        pass</a>
-    <div id='div_pt3.4' class="popup_window">
-        <div style='text-align: right; color:red;cursor:pointer'>
-        <a onfocus='this.blur();' onclick="document.getElementById('div_pt3.4').style.display = 'none' " >
-           [x]</a>
-        </div>
-        <pre>
-        
-pt3.4: SO151090447150145300
-订单取消申请提交成功
-
-
-        </pre>
-    </div>
-    <!--css div popup end-->
-
-    </td>
-    <td align='center'>
-    <a href="./ScreenShot/test_order_4.png" title="./ScreenShot/test_order_4.png">Image</a> 
-    </td>
-    <td></td>
-</tr>
-
-<tr id='pt3.5' class='hiddenRow'>
-    <td class='none'><div class='testcase'>test_order_5: 产品详情页入口-终端用户下单-增票</div></td>
-    <td colspan='5' align='center'>
-    
-
-    <!--css div popup start-->
-    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt3.5')" >
-        pass</a>
-    <div id='div_pt3.5' class="popup_window">
-        <div style='text-align: right; color:red;cursor:pointer'>
-        <a onfocus='this.blur();' onclick="document.getElementById('div_pt3.5').style.display = 'none' " >
-           [x]</a>
-        </div>
-        <pre>
-        
-pt3.5: SO151090450282201600
-订单取消申请提交成功
-
-
-        </pre>
-    </div>
-    <!--css div popup end-->
-
-    </td>
-    <td align='center'>
-    <a href="./ScreenShot/test_order_5.png" title="./ScreenShot/test_order_5.png">Image</a> 
-    </td>
-    <td></td>
-</tr>
-
-<tr class='passClass'>
-    <td>test_useraddress.TestUserAddress</td>
-    <td>1</td>
-    <td>1</td>
-    <td>0</td>
-    <td>0</td>
-    <td><a href="javascript:showClassDetail('c4',1)">Detail</a></td>
-    <td></td>
-    <td>&nbsp;</td>
-</tr>
-
-<tr id='pt4.1' class='hiddenRow'>
-    <td class='none'><div class='testcase'>test_receive_address</div></td>
-    <td colspan='5' align='center'>
-    
-
-    <!--css div popup start-->
-    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt4.1')" >
-        pass</a>
-    <div id='div_pt4.1' class="popup_window">
-        <div style='text-align: right; color:red;cursor:pointer'>
-        <a onfocus='this.blur();' onclick="document.getElementById('div_pt4.1').style.display = 'none' " >
-           [x]</a>
-        </div>
-        <pre>
-        
-pt4.1: 添加地址成功
-
-
-        </pre>
-    </div>
-    <!--css div popup end-->
-
-    </td>
-    <td align='center'>
-    <a href="./ScreenShot/test_receive_address.png" title="./ScreenShot/test_receive_address.png">Image</a> 
-    </td>
-    <td></td>
-</tr>
-
 <tr id='total_row'>
     <td>Total</td>
-    <td>11</td>
-    <td class="text text-success">11</td>
+    <td>1</td>
+    <td class="text text-success">1</td>
     <td class="text text-danger">0</td>
     <td class="text text-warning">0</td>
     <td class="text text-warning"></td>
     <td></td>
-    <td>0:07:13</td>
+    <td>0:00:20</td>
 </tr>
 </table>
 

@@ -50,7 +50,7 @@ class Home(Page):
 
     def search_sku(self):
         self.element_find(self.search_send).send_keys('MAE475')
-        self.wait_to_clickable(self.search_button).click()
+        self.element_find(self.search_button).click()
 
     def quick_order_click(self):
         self.element_find(self.quick_order).click()

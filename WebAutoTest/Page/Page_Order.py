@@ -167,7 +167,7 @@ class Order(Page):
         message = self.element_find(self.invoice_layer).text
         assert message == '发票信息编辑成功！'
         self.wait_to_unvisible(self.invoice_layer)
-        print('普通发票-个人抬头编辑成功')
+        print('普通发票-公司抬头编辑成功')
 
     def invoice_normal_delete(self):
         """删除普通发票"""
@@ -234,7 +234,7 @@ class Order(Page):
         message = self.element_find(self.invoice_layer).text
         assert message == '发票信息编辑成功！'
         self.wait_to_unvisible(self.invoice_layer)
-        print('增值税发票添加成功')
+        print('增值税发票编辑成功')
 
     def choose_normal_invoice(self):
         """选择普票"""

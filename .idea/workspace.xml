@@ -2,12 +2,61 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a665631f-422e-4f1d-88e9-64ed59718bad" name="Default" comment="New">
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/WebAutoTest_EHSY_PageObject.iml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/modules.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/vcs.xml" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/WebAutoTest/TestCase/test_order.py" afterPath="$PROJECT_DIR$/WebAutoTest/TestCase/test_order.py" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/README.md" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebAutoTest/.gitignore" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebAutoTest/.idea/WebAutoTest.iml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebAutoTest/.idea/inspectionProfiles/Project_Default.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebAutoTest/.idea/misc.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebAutoTest/.idea/modules.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebAutoTest/.idea/workspace.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebAutoTest/HTMLTestRunner.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebAutoTest/Page/Page_Base.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebAutoTest/Page/Page_Cart.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebAutoTest/Page/Page_Home.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebAutoTest/Page/Page_NormalCart.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebAutoTest/Page/Page_Order.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebAutoTest/Page/Page_OrderResult.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebAutoTest/Page/Page_ProductList.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebAutoTest/Page/Page_QuickOrder.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebAutoTest/Page/Page_ReportOrder.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebAutoTest/Page/Page_UserAddress.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebAutoTest/Page/__init__.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebAutoTest/TestCase/__init__.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebAutoTest/TestCase/geckodriver.log" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebAutoTest/TestCase/run_test.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebAutoTest/TestCase/test_cart.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebAutoTest/TestCase/test_order.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebAutoTest/TestCase/test_order_page.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebAutoTest/TestCase/test_useraddress.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebAutoTest/TestResult/ScreenShot/test.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebAutoTest/TestResult/ScreenShot/test_checkbox.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebAutoTest/TestResult/ScreenShot/test_collect.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebAutoTest/TestResult/ScreenShot/test_delete.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebAutoTest/TestResult/ScreenShot/test_invoice.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebAutoTest/TestResult/ScreenShot/test_order_10.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebAutoTest/TestResult/ScreenShot/test_order_11.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebAutoTest/TestResult/ScreenShot/test_order_7.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebAutoTest/TestResult/ScreenShot/test_order_8.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebAutoTest/TestResult/ScreenShot/test_order_9.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebAutoTest/TestResult/ScreenShot/test_quantity.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebAutoTest/TestResult/ScreenShot/test_receiving_address.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebAutoTest/TestResult/cart&amp;invoice_report.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebAutoTest/TestResult/cart_report.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebAutoTest/TestResult/order.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebAutoTest/TestResult/order_page.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebAutoTest/config/data.conf" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebAutoTest/config/environment.conf" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebAutoTest/config/test_order.conf" afterPath="" />
     </list>
     <ignored path="WebAutoTest/.idea/" />
     <ignored path="WebAutoTest/config/" />
     <ignored path="WebAutoTest/TestResult/" />
+    <ignored path=".idea/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -55,8 +104,8 @@
       <file leaf-file-name="test_order.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/WebAutoTest/TestCase/test_order.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="126">
-              <caret line="249" column="16" lean-forward="false" selection-start-line="249" selection-start-column="16" selection-end-line="249" selection-end-column="16" />
+            <state relative-caret-position="80">
+              <caret line="4" column="30" lean-forward="true" selection-start-line="4" selection-start-column="30" selection-end-line="4" selection-end-column="30" />
               <folding />
             </state>
           </provider>
@@ -144,6 +193,7 @@
         <option value="$PROJECT_DIR$/WebAutoTest/TestCase/test_order_page.py" />
         <option value="$PROJECT_DIR$/WebAutoTest/Page/Page_Home.py" />
         <option value="$PROJECT_DIR$/WebAutoTest/Page/Page_Order.py" />
+        <option value="$PROJECT_DIR$/WebAutoTest/.gitignore" />
         <option value="$PROJECT_DIR$/WebAutoTest/TestCase/test_order.py" />
       </list>
     </option>
@@ -169,8 +219,8 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scratches" />
       <pane id="Scope" />
+      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -240,7 +290,7 @@
   <component name="PropertiesComponent">
     <property name="Git.Branch.Popup.ShowAllRemotes" value="true" />
     <property name="settings.editor.selected.configurable" value="project.propVCSSupport.Ignored.Files" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/WebAutoTest/TestResult" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/.idea" />
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -575,14 +625,28 @@
       <option name="project" value="LOCAL" />
       <updated>1511160056905</updated>
     </task>
-    <option name="localTasksCounter" value="18" />
+    <task id="LOCAL-00018" summary="New">
+      <created>1511160391296</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1511160391296</updated>
+    </task>
+    <task id="LOCAL-00019" summary="New">
+      <created>1511161344392</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1511161344392</updated>
+    </task>
+    <option name="localTasksCounter" value="20" />
     <servers />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="754" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24355084" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2511381" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3284553" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3284553" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -646,14 +710,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/WebAutoTest/Page/Page_Order.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/WebAutoTest/TestCase/run_test.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1020">
@@ -964,14 +1020,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/WebAutoTest/Page/Page_Order.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="4560">
-          <caret line="232" column="40" lean-forward="false" selection-start-line="232" selection-start-column="40" selection-end-line="232" selection-end-column="40" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/WebAutoTest/Page/Page_Base.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1480">
@@ -1022,10 +1070,25 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/WebAutoTest/.gitignore">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="40">
+          <caret line="2" column="13" lean-forward="true" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/WebAutoTest/Page/Page_Order.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="4560">
+          <caret line="232" column="40" lean-forward="false" selection-start-line="232" selection-start-column="40" selection-end-line="232" selection-end-column="40" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/WebAutoTest/TestCase/test_order.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="126">
-          <caret line="249" column="16" lean-forward="false" selection-start-line="249" selection-start-column="16" selection-end-line="249" selection-end-column="16" />
+        <state relative-caret-position="80">
+          <caret line="4" column="30" lean-forward="true" selection-start-line="4" selection-start-column="30" selection-end-line="4" selection-end-column="30" />
           <folding />
         </state>
       </provider>

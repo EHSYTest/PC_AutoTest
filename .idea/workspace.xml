@@ -8,7 +8,6 @@
       <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/vcs.xml" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/README.md" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/WebAutoTest/.gitignore" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/WebAutoTest/.idea/WebAutoTest.iml" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/WebAutoTest/.idea/inspectionProfiles/Project_Default.xml" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/WebAutoTest/.idea/misc.xml" afterPath="" />
@@ -53,10 +52,10 @@
       <change type="DELETED" beforePath="$PROJECT_DIR$/WebAutoTest/config/environment.conf" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/WebAutoTest/config/test_order.conf" afterPath="" />
     </list>
+    <ignored path=".idea/" />
     <ignored path="WebAutoTest/.idea/" />
     <ignored path="WebAutoTest/config/" />
     <ignored path="WebAutoTest/TestResult/" />
-    <ignored path=".idea/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -79,11 +78,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name=".gitignore" pinned="false" current-in-tab="true">
+      <file leaf-file-name=".gitignore" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/.gitignore">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="60">
-              <caret line="3" column="16" lean-forward="false" selection-start-line="3" selection-start-column="16" selection-end-line="3" selection-end-column="16" />
+              <caret line="3" column="26" lean-forward="true" selection-start-line="3" selection-start-column="26" selection-end-line="3" selection-end-column="26" />
               <folding />
             </state>
           </provider>
@@ -102,7 +101,7 @@
       <file leaf-file-name="Page_Base.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/WebAutoTest/Page/Page_Base.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1480">
+            <state relative-caret-position="20">
               <caret line="80" column="31" lean-forward="false" selection-start-line="80" selection-start-column="31" selection-end-line="80" selection-end-column="31" />
               <folding>
                 <element signature="e#0#21#0" expanded="true" />
@@ -124,18 +123,18 @@
       <file leaf-file-name="test_order_page.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/WebAutoTest/TestCase/test_order_page.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1000">
+            <state relative-caret-position="316">
               <caret line="50" column="17" lean-forward="false" selection-start-line="50" selection-start-column="17" selection-end-line="50" selection-end-column="17" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Page_Order.py" pinned="false" current-in-tab="false">
+      <file leaf-file-name="Page_Order.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/WebAutoTest/Page/Page_Order.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="4560">
-              <caret line="232" column="40" lean-forward="false" selection-start-line="232" selection-start-column="40" selection-end-line="232" selection-end-column="40" />
+            <state relative-caret-position="216">
+              <caret line="227" column="38" lean-forward="true" selection-start-line="227" selection-start-column="38" selection-end-line="227" selection-end-column="38" />
               <folding />
             </state>
           </provider>
@@ -201,10 +200,10 @@
         <option value="$PROJECT_DIR$/WebAutoTest/Page/Page_ProductList.py" />
         <option value="$PROJECT_DIR$/WebAutoTest/TestCase/test_order_page.py" />
         <option value="$PROJECT_DIR$/WebAutoTest/Page/Page_Home.py" />
-        <option value="$PROJECT_DIR$/WebAutoTest/Page/Page_Order.py" />
         <option value="$PROJECT_DIR$/WebAutoTest/.gitignore" />
         <option value="$PROJECT_DIR$/WebAutoTest/TestCase/test_order.py" />
         <option value="$PROJECT_DIR$/WebAutoTest/TestCase/run_test.py" />
+        <option value="$PROJECT_DIR$/WebAutoTest/Page/Page_Order.py" />
       </list>
     </option>
   </component>
@@ -264,7 +263,7 @@
   <component name="PropertiesComponent">
     <property name="Git.Branch.Popup.ShowAllRemotes" value="true" />
     <property name="settings.editor.selected.configurable" value="project.propVCSSupport.Ignored.Files" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/.idea" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/WebAutoTest/TestResult" />
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -627,7 +626,14 @@
       <option name="project" value="LOCAL" />
       <updated>1511161750470</updated>
     </task>
-    <option name="localTasksCounter" value="22" />
+    <task id="LOCAL-00022" summary="New">
+      <created>1511162102308</created>
+      <option name="number" value="00022" />
+      <option name="presentableId" value="LOCAL-00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1511162102308</updated>
+    </task>
+    <option name="localTasksCounter" value="23" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -998,24 +1004,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/WebAutoTest/Page/Page_Base.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1480">
-          <caret line="80" column="31" lean-forward="false" selection-start-line="80" selection-start-column="31" selection-end-line="80" selection-end-column="31" />
-          <folding>
-            <element signature="e#0#21#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/WebAutoTest/TestCase/test_order_page.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1000">
-          <caret line="50" column="17" lean-forward="false" selection-start-line="50" selection-start-column="17" selection-end-line="50" selection-end-column="17" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/WebAutoTest/config/data.conf">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="20">
@@ -1037,14 +1025,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/WebAutoTest/Page/Page_Order.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="4560">
-          <caret line="232" column="40" lean-forward="false" selection-start-line="232" selection-start-column="40" selection-end-line="232" selection-end-column="40" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/WebAutoTest/TestCase/test_order.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="140">
@@ -1053,10 +1033,36 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/.gitignore">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="60">
+          <caret line="3" column="26" lean-forward="true" selection-start-line="3" selection-start-column="26" selection-end-line="3" selection-end-column="26" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/WebAutoTest/TestCase/test_cart.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="518">
           <caret line="75" column="0" lean-forward="false" selection-start-line="75" selection-start-column="0" selection-end-line="75" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/WebAutoTest/Page/Page_Base.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="20">
+          <caret line="80" column="31" lean-forward="false" selection-start-line="80" selection-start-column="31" selection-end-line="80" selection-end-column="31" />
+          <folding>
+            <element signature="e#0#21#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/WebAutoTest/TestCase/test_order_page.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="316">
+          <caret line="50" column="17" lean-forward="false" selection-start-line="50" selection-start-column="17" selection-end-line="50" selection-end-column="17" />
           <folding />
         </state>
       </provider>
@@ -1071,10 +1077,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/.gitignore">
+    <entry file="file://$PROJECT_DIR$/WebAutoTest/Page/Page_Order.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="3" column="16" lean-forward="false" selection-start-line="3" selection-start-column="16" selection-end-line="3" selection-end-column="16" />
+        <state relative-caret-position="216">
+          <caret line="227" column="38" lean-forward="true" selection-start-line="227" selection-start-column="38" selection-end-line="227" selection-end-column="38" />
           <folding />
         </state>
       </provider>

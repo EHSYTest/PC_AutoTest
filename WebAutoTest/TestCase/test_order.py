@@ -4,7 +4,6 @@ import time
 import unittest
 from HTMLTestRunner import HTMLTestRunner
 from selenium import webdriver
-from selenium.common.exceptions import StaleElementReferenceException, NoSuchElementException
 from Page_Base import Page
 from Page_Cart import Cart
 from Page_Home import Home

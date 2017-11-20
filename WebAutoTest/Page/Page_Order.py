@@ -212,6 +212,30 @@ class Order(Page):
         self.wait_to_unvisible(self.invoice_layer)
         print('增值税发票添加成功')
 
+    def invoice_vat_edit(self):
+        """删除增值税发票"""
+        self.element_find(self.choose).click()  # 请选择按钮
+        self.element_find(self.vat_invoice_tab).click()
+        element = self.element_find(self.first_bill)
+        ActionChains(self.driver).move_to_element(element).perform()
+        self.element_find(self.bill_edit).click()
+        self.element_find(self.bill_title).send_keys('修改')
+        ele = self.element_find(self.bill_tax_no)
+        ele.send_keys(Keys.BACK_SPACE)
+        ele.send_keys('w')
+        self.element_find(self.bill_address).send_keys('修改')
+        ele = self.element_find(self.bill_phone)
+        ele.send_keys(Keys.BACK_SPACE)
+        ele.send_keys('6')
+        self.element_find(self.bill_bank).send_keys('修改')
+        self.element_find(self.bill_bank_account).send_keys('78')
+        self.element_find(self.bill_set_default).click()
+        self.element_find(self.bill_save).click()
+        message = self.element_find(self.invoice_layer).text
+        assert message == '发票信息编辑成功！'
+        self.wait_to_unvisible(self.invoice_layer)
+        print('增值税发票添加成功')
+
     def choose_normal_invoice(self):
         """选择普票"""
         self.element_find(self.choose).click()

@@ -60,6 +60,8 @@ class TestOrderPage(unittest.TestCase):
         self.order.element_find(self.order.close).click()
         self.order.invoice_vat_add()
         self.order.element_find(self.order.close).click()
+        self.order.invoice_vat_edit()
+        self.order.element_find(self.order.close).click()
         self.order.invoice_vat_delete()
         self.order.element_find(self.order.close).click()
 

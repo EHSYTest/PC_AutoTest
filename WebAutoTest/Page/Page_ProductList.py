@@ -37,23 +37,21 @@ class ProductList(Page):
     def list_add_to_cart(self):
         self.element_find(self.list_add_button).click()
         self.element_find(self.cart_button).click()
+        self.wait_to_unvisible(self.layer_sku)
         ActionChains(self.driver).move_to_element(self.element_find(self.cart)).perform()
         self.element_find(self.go_cart).click()
 
     def bigImg_add_to_cart(self):
-        element = self.wait_to_clickable(self.big_img_icon)
-        time.sleep(0.5)
-        element.click()
+        self.element_find(self.big_img_icon).click()
         self.element_find(self.bigImg_add_button).click()
-        element = self.wait_to_clickable(self.cart)
-        ActionChains(self.driver).move_to_element(element).perform()
+        self.wait_to_unvisible(self.layer_sku)
+        ActionChains(self.driver).move_to_element(self.element_find(self.cart)).perform()
         self.element_find(self.go_cart).click()
 
     def brand_add_to_cart(self):
-        element = self.wait_to_clickable(self.brand_add_button)
-        element.click()
-        element = self.wait_to_clickable(self.cart)
-        ActionChains(self.driver).move_to_element(element).perform()
+        self.element_find(self.brand_add_button).click()
+        self.wait_to_unvisible(self.layer_sku)
+        ActionChains(self.driver).move_to_element(self.element_find(self.cart)).perform()
         self.element_find(self.go_cart).click()
 
     def search_add_to_cart(self):

@@ -33,6 +33,7 @@ class TestOrder(unittest.TestCase):
         self.product_list = ProductList(self.driver)
         self.quick_order = QuickOrder(self.driver)
         self.report_order = ReportOrder(self.driver)
+        self.wait_to_stale(self.layer)
 
     def test_order_1(self):
         """产线大图页入口-个人用户下单-不开票"""
@@ -41,7 +42,7 @@ class TestOrder(unittest.TestCase):
         self.home.login(login_name, password)
         self.home.category_tree_click()
         self.product_list.bigImg_add_to_cart()
-        self.cart.element_find(self.cart.go_to_order).click()
+        self.cart.wait_to_clickable(self.cart.go_to_order).click()
         self.order.choose_none_invoice()
         self.order.element_find(self.order.submit_order_button).click()
         self.order.element_find(self.order.notice_layer).click()
@@ -54,11 +55,8 @@ class TestOrder(unittest.TestCase):
         password = self.page.config_reader('test_order.conf', '分销账号', 'password')
         self.home.login(login_name, password)
         self.home.category_tree_click()
-        self.page.wait_to_stale(self.product_list.layer)
         self.product_list.list_add_to_cart()
-        self.page.wait_to_stale(self.product_list.layer)
-        self.cart.element_find(self.cart.go_to_order).click()
-        self.page.wait_to_stale(self.product_list.layer)
+        self.cart.wait_to_clickable(self.cart.go_to_order).click()
         self.order.choose_normal_invoice()
         self.order.element_find(self.order.submit_order_button).click()
         orderId = self.order_result.get_so_by_url()
@@ -73,7 +71,7 @@ class TestOrder(unittest.TestCase):
         self.page.wait_to_stale(self.product_list.layer)
         self.product_list.brand_add_to_cart()
         self.page.wait_to_stale(self.product_list.layer)
-        self.cart.element_find(self.cart.go_to_order).click()
+        self.cart.wait_to_clickable(self.cart.go_to_order).click()
         self.page.wait_to_stale(self.product_list.layer)
         self.order.choose_vat_invoice()
         self.order.element_find(self.order.submit_order_button).click()
@@ -91,7 +89,7 @@ class TestOrder(unittest.TestCase):
         self.product_list.wait_to_unvisible(self.product_list.layer_sku)
         ActionChains(self.driver).move_to_element(self.cart.element_find(self.product_list.cart)).perform()
         self.product_list.element_find(self.product_list.go_cart).click()
-        self.cart.element_find(self.cart.go_to_order).click()
+        self.cart.wait_to_clickable(self.cart.go_to_order).click()
         self.page.wait_to_stale(self.product_list.layer)
         self.order.choose_normal_invoice()
         self.order.element_find(self.order.submit_order_button).click()
@@ -114,7 +112,7 @@ class TestOrder(unittest.TestCase):
         ActionChains(self.driver).move_to_element(self.product_list.element_find(self.product_list.cart)).perform()
         self.product_list.element_find(self.product_list.go_cart).click()
         self.page.wait_to_stale(self.product_list.layer)
-        self.cart.element_find(self.cart.go_to_order).click()
+        self.cart.wait_to_clickable(self.cart.go_to_order).click()
         self.page.wait_to_stale(self.product_list.layer)
         self.order.choose_vat_invoice()
         self.order.element_find(self.order.submit_order_button).click()
@@ -129,7 +127,7 @@ class TestOrder(unittest.TestCase):
         self.home.login(login_name, password)
         self.home.category_tree_click()
         self.product_list.list_add_to_cart()
-        self.cart.element_find(self.cart.go_to_order).click()
+        self.cart.wait_to_clickable(self.cart.go_to_order).click()
         self.order.choose_vat_invoice()
         self.order.element_find(self.order.submit_order_button).click()
         orderId = self.order_result.get_so_by_url()
@@ -142,7 +140,7 @@ class TestOrder(unittest.TestCase):
         self.home.login(login_name, password)
         self.home.quick_order_click()
         self.quick_order.quick_add_to_cart()
-        self.cart.element_find(self.cart.go_to_order).click()
+        self.cart.wait_to_clickable(self.cart.go_to_order).click()
         self.order.choose_vat_invoice()
         self.order.element_find(self.order.submit_order_button).click()
         orderId = self.order_result.get_so_by_url()
@@ -162,7 +160,7 @@ class TestOrder(unittest.TestCase):
                 break
             except StaleElementReferenceException:
                 continue
-        self.cart.element_find(self.cart.go_to_order).click()
+        self.cart.wait_to_clickable(self.cart.go_to_order).click()
         self.order.choose_none_invoice()
         self.order.submit_order_eas(none_invoice=True)
         for i in range(30):
@@ -183,7 +181,7 @@ class TestOrder(unittest.TestCase):
         self.page.switch_to_new_window()
         self.product_list.element_find(self.product_list.skuContent_add_button).click()
         self.product_list.element_find(self.product_list.skuContent_jump_to_cart).click()
-        self.cart.element_find(self.cart.go_to_order).click()
+        self.cart.wait_to_clickable(self.cart.go_to_order).click()
         self.order.choose_vat_invoice()
         self.order.submit_order_eas()
         for i in range(10):

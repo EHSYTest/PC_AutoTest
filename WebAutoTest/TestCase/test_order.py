@@ -1,7 +1,7 @@
 import sys
 sys.path.append('../Page')
 from HTMLTestRunner import HTMLTestRunner
-import unittest
+import unittest, time
 from selenium import webdriver
 from Page_Base import Page
 from Page_Cart import Cart
@@ -33,7 +33,7 @@ class TestOrder(unittest.TestCase):
         self.product_list = ProductList(self.driver)
         self.quick_order = QuickOrder(self.driver)
         self.report_order = ReportOrder(self.driver)
-        self.home.wait_to_stale(self.home.layer)
+        time.sleep(0.5)
 
     def test_order_1(self):
         """产线大图页入口-个人用户下单-不开票"""

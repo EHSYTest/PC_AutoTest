@@ -191,9 +191,9 @@ function showOutput(id, name) {
 
 <div class='heading'>
 <h1>WWW下单——测试报告</h1>
-<p class='attribute'><strong>Start Time:</strong> 2017-11-24 16:47:59</p>
-<p class='attribute'><strong>Duration:</strong> 0:00:22.257273</p>
-<p class='attribute'><strong>Status:</strong> Pass 1</p>
+<p class='attribute'><strong>Start Time:</strong> 2017-11-24 18:08:59</p>
+<p class='attribute'><strong>Duration:</strong> 0:00:19.766131</p>
+<p class='attribute'><strong>Status:</strong> Error 1</p>
 
 <p class='description'>测试情况</p>
 </div>
@@ -225,34 +225,42 @@ function showOutput(id, name) {
     <td>Time</td>
 </tr>
 
-<tr class='passClass'>
+<tr class='errorClass'>
     <td>TestOrder</td>
     <td>1</td>
+    <td>0</td>
+    <td>0</td>
     <td>1</td>
-    <td>0</td>
-    <td>0</td>
     <td><a href="javascript:showClassDetail('c1',1)">Detail</a></td>
     <td></td>
     <td>&nbsp;</td>
 </tr>
 
-<tr id='pt1.1' class='hiddenRow'>
-    <td class='none'><div class='testcase'>test_order_1: 产线大图页入口-个人用户下单-不开票</div></td>
+<tr id='ft1.1' class='none'>
+    <td class='errorCase'><div class='testcase'>test_order_1: 产线大图页入口-个人用户下单-不开票</div></td>
     <td colspan='5' align='center'>
     
 
     <!--css div popup start-->
-    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt1.1')" >
-        pass</a>
-    <div id='div_pt1.1' class="popup_window">
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_ft1.1')" >
+        error</a>
+    <div id='div_ft1.1' class="popup_window">
         <div style='text-align: right; color:red;cursor:pointer'>
-        <a onfocus='this.blur();' onclick="document.getElementById('div_pt1.1').style.display = 'none' " >
+        <a onfocus='this.blur();' onclick="document.getElementById('div_ft1.1').style.display = 'none' " >
            [x]</a>
         </div>
         <pre>
         
-pt1.1: SO151151303370810800
-订单取消申请提交成功
+ft1.1: Traceback (most recent call last):
+  File "C:/Users/rick_zhang/Desktop/EHSY_WebAutoTest_New/WebAutoTest/TestCase/test_order.py", line 36, in setUp
+    self.home.wait_to_stale(self.home.layer)
+  File "../Page\Page_Base.py", line 133, in wait_to_stale
+    self.element_find(ele)
+  File "C:\Users\rick_zhang\AppData\Local\Programs\Python\Python36\lib\site-packages\selenium\webdriver\support\wait.py", line 71, in until
+    value = method(self._driver)
+  File "C:\Users\rick_zhang\AppData\Local\Programs\Python\Python36\lib\site-packages\selenium\webdriver\support\expected_conditions.py", line 301, in __call__
+    self.element.is_enabled()
+AttributeError: 'NoneType' object has no attribute 'is_enabled'
 
 
         </pre>
@@ -269,12 +277,12 @@ pt1.1: SO151151303370810800
 <tr id='total_row'>
     <td>Total</td>
     <td>1</td>
-    <td class="text text-success">1</td>
+    <td class="text text-success">0</td>
     <td class="text text-danger">0</td>
-    <td class="text text-warning">0</td>
+    <td class="text text-warning">1</td>
     <td class="text text-warning"></td>
     <td></td>
-    <td>0:00:22</td>
+    <td>0:00:19</td>
 </tr>
 </table>
 

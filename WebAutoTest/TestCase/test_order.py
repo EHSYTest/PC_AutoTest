@@ -33,7 +33,7 @@ class TestOrder(unittest.TestCase):
         self.product_list = ProductList(self.driver)
         self.quick_order = QuickOrder(self.driver)
         self.report_order = ReportOrder(self.driver)
-        self.wait_to_stale(self.layer)
+        self.home.wait_to_stale(self.home.layer)
 
     def test_order_1(self):
         """产线大图页入口-个人用户下单-不开票"""

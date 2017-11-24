@@ -42,6 +42,7 @@ class ProductList(Page):
         self.element_find(self.go_cart).click()
 
     def bigImg_add_to_cart(self):
+        time.sleep(0.5)
         self.element_find(self.big_img_icon).click()
         self.element_find(self.bigImg_add_button).click()
         self.wait_to_unvisible(self.layer_sku)

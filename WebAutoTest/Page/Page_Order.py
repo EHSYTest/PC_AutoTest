@@ -25,7 +25,7 @@ class Order(Page):
     edit_confirm = ('by.class_name', 'confirm')
 
     # 删除收货地址
-    address_del = ('by.xpath', '//ul/li[1]/a[1]')
+    address_del = ('by.xpath', '//*[@id="js-shipping-address-id"]/ul/li[1]/a[1]')
     del_confirm = ('by.xpath', '//div[3]/div[1]/button[2]')
 
     # 普通发票
@@ -65,7 +65,7 @@ class Order(Page):
 
     # 提交订单
     submit_order_button = ('by.class_name', 'btn-order-submit')
-    # account_layer = ('by.class_name', 'layui-layer-btn0')
+    notice_layer = ('by.xpath', '//button[@class="confirm"]')
     # none_invoice_layer = ('by.class_name', 'layui-layer-btn0')
     # choose_approve_flow = ('by.name', 'approveFlowItem')
     # submit_approve_flow = ('by.class_name', 'eps-submit-btn')
@@ -83,7 +83,7 @@ class Order(Page):
         self.element_find(self.add_confirm).click()
         message = self.element_find(self.receiving_address_layer).text
         assert message == '地址添加成功！'
-        self.wait_to_unvisible(self.receiving_address_layer)
+        self.wait_to_stale(self.receiving_address_layer)
         print('收货地址添加成功')
 
     def receiving_address_edit(self):
@@ -103,7 +103,7 @@ class Order(Page):
         self.element_find(self.edit_confirm).click()
         message = self.element_find(self.receiving_address_layer).text
         assert message == '地址编辑成功！'
-        self.wait_to_unvisible(self.receiving_address_layer)
+        self.wait_to_stale(self.receiving_address_layer)
         print('收货地址修改成功')
 
     def receiving_address_delete(self):
@@ -114,7 +114,7 @@ class Order(Page):
         self.element_find(self.del_confirm).click()
         message = self.element_find(self.receiving_address_layer).text
         assert message == '地址删除成功！'
-        self.wait_to_unvisible(self.receiving_address_layer)
+        self.wait_to_stale(self.receiving_address_layer)
         print('收货地址删除成功')
 
     def invoice_normal_company_add(self):
@@ -126,7 +126,7 @@ class Order(Page):
         self.element_find(self.normal_invoice_save).click()
         message = self.element_find(self.invoice_layer).text
         assert message == '发票信息添加成功！'
-        self.wait_to_unvisible(self.invoice_layer)
+        self.wait_to_stale(self.invoice_layer)
         print('普通发票-公司抬头添加成功')
 
     def invoice_normal_personal_add(self):
@@ -138,7 +138,7 @@ class Order(Page):
         self.element_find(self.normal_invoice_save).click()
         message = self.element_find(self.invoice_layer).text
         assert message == '发票信息添加成功！'
-        self.wait_to_unvisible(self.invoice_layer)
+        self.wait_to_stale(self.invoice_layer)
         print('普通发票-个人抬头添加成功')
 
     def invoice_normal_personal_edit(self):
@@ -151,7 +151,7 @@ class Order(Page):
         self.element_find(self.normal_invoice_save).click()
         message = self.element_find(self.invoice_layer).text
         assert message == '发票信息编辑成功！'
-        self.wait_to_unvisible(self.invoice_layer)
+        self.wait_to_stale(self.invoice_layer)
         print('普通发票-个人抬头编辑成功')
 
     def invoice_normal_company_edit(self):
@@ -166,7 +166,7 @@ class Order(Page):
         self.element_find(self.normal_invoice_save).click()
         message = self.element_find(self.invoice_layer).text
         assert message == '发票信息编辑成功！'
-        self.wait_to_unvisible(self.invoice_layer)
+        self.wait_to_stale(self.invoice_layer)
         print('普通发票-公司抬头编辑成功')
 
     def invoice_normal_delete(self):
@@ -179,7 +179,7 @@ class Order(Page):
         self.element_find(self.normal_invoice_del_confirm).click()
         message = self.element_find(self.invoice_layer).text
         assert message == '发票信息删除成功！'
-        self.wait_to_unvisible(self.invoice_layer)
+        self.wait_to_stale(self.invoice_layer)
         print('普通发票删除成功')
 
     def invoice_vat_delete(self):
@@ -192,7 +192,7 @@ class Order(Page):
         self.element_find(self.bill_del_confirm).click()
         message = self.element_find(self.invoice_layer).text
         assert message == '发票信息删除成功！'
-        self.wait_to_unvisible(self.invoice_layer)
+        self.wait_to_stale(self.invoice_layer)
         print('增值税发票删除成功')
 
     def invoice_vat_add(self):
@@ -209,7 +209,7 @@ class Order(Page):
         self.element_find(self.bill_save).click()
         message = self.element_find(self.invoice_layer).text
         assert message == '发票信息添加成功！'
-        self.wait_to_unvisible(self.invoice_layer)
+        self.wait_to_stale(self.invoice_layer)
         print('增值税发票添加成功')
 
     def invoice_vat_edit(self):
@@ -233,7 +233,7 @@ class Order(Page):
         self.element_find(self.bill_save).click()
         message = self.element_find(self.invoice_layer).text
         assert message == '发票信息编辑成功！'
-        self.wait_to_unvisible(self.invoice_layer)
+        self.wait_to_stale(self.invoice_layer)
         print('增值税发票编辑成功')
 
     def choose_normal_invoice(self):
@@ -270,6 +270,6 @@ class Order(Page):
         # self.element_find(self.normal_invoice_save).click()
         # message = self.element_find(self.invoice_layer).text
         # assert message == '发票信息添加成功！'
-        # self.wait_to_unvisible(self.invoice_layer)
+        # self.wait_to_stale(self.invoice_layer)
         # print('普通发票-个人抬头添加成功')
 

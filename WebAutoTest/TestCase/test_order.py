@@ -40,13 +40,11 @@ class TestOrder(unittest.TestCase):
         password = self.page.config_reader('test_order.conf', '个人账号', 'password')
         self.home.login(login_name, password)
         self.home.category_tree_click()
-        self.page.wait_to_stale(self.product_list.layer)
         self.product_list.bigImg_add_to_cart()
-        self.page.wait_to_stale(self.product_list.layer)
         self.cart.element_find(self.cart.go_to_order).click()
-        self.page.wait_to_stale(self.product_list.layer)
         self.order.choose_none_invoice()
         self.order.element_find(self.order.submit_order_button).click()
+        self.order.element_find(self.order.notice_layer).click()
         orderId = self.order_result.get_so_by_url()
         self.page.cancel_order(orderId, environment=self.environment)  # 接口取消订单
 
@@ -93,7 +91,6 @@ class TestOrder(unittest.TestCase):
         self.product_list.wait_to_unvisible(self.product_list.layer_sku)
         ActionChains(self.driver).move_to_element(self.cart.element_find(self.product_list.cart)).perform()
         self.product_list.element_find(self.product_list.go_cart).click()
-        self.page.wait_to_stale(self.product_list.layer)
         self.cart.element_find(self.cart.go_to_order).click()
         self.page.wait_to_stale(self.product_list.layer)
         self.order.choose_normal_invoice()

@@ -36,16 +36,14 @@ class TestOrderPage(unittest.TestCase):
         self.quick_order = QuickOrder(self.driver)
         self.report_order = ReportOrder(self.driver)
 
-    def test_invoice(self):
-        """发票信息增删改"""
-        login_name = self.page.config_reader('test_order.conf', '发票地址账号', 'login_name')
-        password = self.page.config_reader('test_order.conf', '发票地址账号', 'password')
+    def test_invoice_1(self):
+        """发票信息增删改-个人"""
+        login_name = self.page.config_reader('test_order.conf', '个人地址发票账号', 'login_name')
+        password = self.page.config_reader('test_order.conf', '个人地址发票账号', 'password')
         self.home.login(login_name, password)
         ActionChains(self.driver).move_to_element(self.cart.element_find(self.product_list.cart)).perform()
         self.product_list.element_find(self.product_list.go_cart).click()
-        self.page.wait_to_stale(self.product_list.layer)
         self.cart.element_find(self.cart.go_to_order).click()
-        self.page.wait_to_stale(self.product_list.layer)
         self.order.invoice_normal_personal_add()
         self.order.element_find(self.order.close).click()
         self.order.invoice_normal_personal_edit()
@@ -65,16 +63,92 @@ class TestOrderPage(unittest.TestCase):
         self.order.invoice_vat_delete()
         self.order.element_find(self.order.close).click()
 
-    def test_address(self):
-        """收货地址增删改"""
-        login_name = self.page.config_reader('test_order.conf', '发票地址账号', 'login_name')
-        password = self.page.config_reader('test_order.conf', '发票地址账号', 'password')
+    def test_invoice_2(self):
+        """发票信息增删改-分销"""
+        login_name = self.page.config_reader('test_order.conf', '分销地址发票账号', 'login_name')
+        password = self.page.config_reader('test_order.conf', '分销地址发票账号', 'password')
         self.home.login(login_name, password)
         ActionChains(self.driver).move_to_element(self.cart.element_find(self.product_list.cart)).perform()
         self.product_list.element_find(self.product_list.go_cart).click()
-        self.page.wait_to_stale(self.product_list.layer)
         self.cart.element_find(self.cart.go_to_order).click()
-        self.page.wait_to_stale(self.product_list.layer)
+        self.order.invoice_normal_personal_add()
+        self.order.element_find(self.order.close).click()
+        self.order.invoice_normal_personal_edit()
+        self.order.element_find(self.order.close).click()
+        self.order.invoice_normal_delete()
+        self.order.element_find(self.order.close).click()
+        self.order.invoice_normal_company_add()
+        self.order.element_find(self.order.close).click()
+        self.order.invoice_normal_company_edit()
+        self.order.element_find(self.order.close).click()
+        self.order.invoice_normal_delete()
+        self.order.element_find(self.order.close).click()
+        self.order.invoice_vat_add()
+        self.order.element_find(self.order.close).click()
+        self.order.invoice_vat_edit()
+        self.order.element_find(self.order.close).click()
+        self.order.invoice_vat_delete()
+        self.order.element_find(self.order.close).click()
+
+    def test_invoice_3(self):
+        """发票信息增删改-终端"""
+        login_name = self.page.config_reader('test_order.conf', '终端地址发票账号', 'login_name')
+        password = self.page.config_reader('test_order.conf', '终端地址发票账号', 'password')
+        self.home.login(login_name, password)
+        ActionChains(self.driver).move_to_element(self.cart.element_find(self.product_list.cart)).perform()
+        self.product_list.element_find(self.product_list.go_cart).click()
+        self.cart.element_find(self.cart.go_to_order).click()
+        self.order.invoice_normal_personal_add()
+        self.order.element_find(self.order.close).click()
+        self.order.invoice_normal_personal_edit()
+        self.order.element_find(self.order.close).click()
+        self.order.invoice_normal_delete()
+        self.order.element_find(self.order.close).click()
+        self.order.invoice_normal_company_add()
+        self.order.element_find(self.order.close).click()
+        self.order.invoice_normal_company_edit()
+        self.order.element_find(self.order.close).click()
+        self.order.invoice_normal_delete()
+        self.order.element_find(self.order.close).click()
+        self.order.invoice_vat_add()
+        self.order.element_find(self.order.close).click()
+        self.order.invoice_vat_edit()
+        self.order.element_find(self.order.close).click()
+        self.order.invoice_vat_delete()
+        self.order.element_find(self.order.close).click()
+
+    def test_address_1(self):
+        """收货地址增删改-个人"""
+        login_name = self.page.config_reader('test_order.conf', '个人地址发票账号', 'login_name')
+        password = self.page.config_reader('test_order.conf', '个人地址发票账号', 'password')
+        self.home.login(login_name, password)
+        ActionChains(self.driver).move_to_element(self.cart.element_find(self.product_list.cart)).perform()
+        self.product_list.element_find(self.product_list.go_cart).click()
+        self.cart.element_find(self.cart.go_to_order).click()
+        self.order.add_receiving_address()
+        self.order.receiving_address_edit()
+        self.order.receiving_address_delete()
+
+    def test_address_2(self):
+        """收货地址增删改-分销"""
+        login_name = self.page.config_reader('test_order.conf', '分销地址发票账号', 'login_name')
+        password = self.page.config_reader('test_order.conf', '分销地址发票账号', 'password')
+        self.home.login(login_name, password)
+        ActionChains(self.driver).move_to_element(self.cart.element_find(self.product_list.cart)).perform()
+        self.product_list.element_find(self.product_list.go_cart).click()
+        self.cart.element_find(self.cart.go_to_order).click()
+        self.order.add_receiving_address()
+        self.order.receiving_address_edit()
+        self.order.receiving_address_delete()
+
+    def test_address_3(self):
+        """收货地址增删改-终端"""
+        login_name = self.page.config_reader('test_order.conf', '终端地址发票账号', 'login_name')
+        password = self.page.config_reader('test_order.conf', '终端地址发票账号', 'password')
+        self.home.login(login_name, password)
+        ActionChains(self.driver).move_to_element(self.cart.element_find(self.product_list.cart)).perform()
+        self.product_list.element_find(self.product_list.go_cart).click()
+        self.cart.element_find(self.cart.go_to_order).click()
         self.order.add_receiving_address()
         self.order.receiving_address_edit()
         self.order.receiving_address_delete()

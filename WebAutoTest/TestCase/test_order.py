@@ -60,6 +60,7 @@ class TestOrder(unittest.TestCase):
         self.product_list.list_add_to_cart()
         self.home.wait_to_stale(self.home.layer)
         self.cart.wait_to_clickable(self.cart.go_to_order).click()
+        self.home.wait_to_stale(self.home.layer)
         self.order.choose_normal_invoice()
         self.order.element_find(self.order.submit_order_button).click()
         orderId = self.order_result.get_so_by_url()

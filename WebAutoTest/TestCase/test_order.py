@@ -33,7 +33,6 @@ class TestOrder(unittest.TestCase):
         self.product_list = ProductList(self.driver)
         self.quick_order = QuickOrder(self.driver)
         self.report_order = ReportOrder(self.driver)
-        time.sleep(0.5)
 
     def test_order_1(self):
         """产线大图页入口-个人用户下单-不开票"""
@@ -41,6 +40,7 @@ class TestOrder(unittest.TestCase):
         password = self.page.config_reader('test_order.conf', '个人账号', 'password')
         self.home.login(login_name, password)
         self.home.category_tree_click()
+        self.home.wait_to_stale(self.home.layer)
         self.product_list.bigImg_add_to_cart()
         self.cart.wait_to_clickable(self.cart.go_to_order).click()
         self.order.choose_none_invoice()
@@ -68,7 +68,6 @@ class TestOrder(unittest.TestCase):
         password = self.page.config_reader('test_order.conf', '分销账号', 'password')
         self.home.login(login_name, password)
         self.home.brand_click()
-        self.page.wait_to_stale(self.product_list.layer)
         self.product_list.brand_add_to_cart()
         self.page.wait_to_stale(self.product_list.layer)
         self.cart.wait_to_clickable(self.cart.go_to_order).click()

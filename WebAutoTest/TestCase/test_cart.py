@@ -45,7 +45,7 @@ class TestCart(unittest.TestCase):
         self.productList.element_find(self.productList.bigImg_add_button).click()
         self.productList.wait_to_unvisible(self.productList.layer_sku)
         self.productList.search_add_to_cart()
-        self.normal_cart.wait_to_stale(self.normal_cart.layer)
+        # self.normal_cart.wait_to_stale(self.normal_cart.layer)
         self.normal_cart.bj_page()
 
     def test_cart_combine(self):
@@ -72,6 +72,6 @@ if __name__ == '__main__':
     # file = open('../TestResult/order.html', 'wb')
     # runner = HTMLTestRunner(stream=file, title='WWW下单——测试报告', description='测试情况')
     # runner.run(suite)
-    # file.close()
+    # # file.close()
 
 

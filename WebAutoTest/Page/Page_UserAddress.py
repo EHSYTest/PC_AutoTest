@@ -17,6 +17,10 @@ class UserAddress(Page):
     confirm_button = ('by.class_name', 'confirm')
     cancel_button = ('by.class_name', 'cancel')
 
+    #修改地址
+    edit_address = ('by.xpath', '//div/ul/li[2]/div[4]/a[1]')
+    receiver = ('by.class_name', 'rall-div1')
+
     #loading
     layer = ('by.id', 'ajax-layer-loading')
 
@@ -39,3 +43,21 @@ class UserAddress(Page):
         add_after_num = address_num[4:5]
         assert int(add_after_num) == int(add_front_num) + 1
         print('添加地址成功')
+
+    def edit_receive_address(self):
+        self.element_find(self.edit_address).click()
+        self.element_find(self.receiver_name).send_keys('-修改')
+        self.element_find(self.company_name).send_keys('-修改')
+        self.element_find(self.province).send_keys('江苏省')
+        self.element_find(self.city).send_keys('宿迁市')
+        self.element_find(self.area).send_keys('宿城区')
+        self.element_find(self.detail_address).send_keys('-修改')
+        self.element_find(self.phone).send_keys('14222222222')
+        self.element_find(self.telephone).send_keys('020-00000000-0000')
+        self.element_find(self.checkbox_defaultAddress).click()
+        self.element_find(self.confirm_button).click()
+        self.wait_to_stale(self.layer)
+        receiver_name = self.element_find(self.receiver).text
+        assert receiver_name == '测试-修改'
+        print('修改地址成功')
+

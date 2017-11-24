@@ -242,10 +242,10 @@ if __name__ == '__main__':
     suit = unittest.TestSuite()
     case_list = [
                   TestOrder('test_order_1'),
-    #               TestOrder('test_order_2'),
-    #               TestOrder('test_order_3'),
-    #               TestOrder('test_order_4'),
-    #               TestOrder('test_order_5'),
+                  TestOrder('test_order_2'),
+                  TestOrder('test_order_3'),
+                  TestOrder('test_order_4'),
+                  TestOrder('test_order_5'),
     #               # TestOrder('test_order_6'),
     #               # TestOrder('test_order_7'),
     #               # TestOrder('test_order_8'),

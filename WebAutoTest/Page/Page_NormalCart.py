@@ -8,7 +8,6 @@ class NormalCart(Page):
 
     product_name = ('by.class_name', 'product-title') #商品名称
     product_img = ('by.xpath', '//ul/li[1]/a/img') #商品图片
-    MOQ = ('by.xpath', '//div[3]/ul/li[2]/p[2]/span') #商品最小起定量
     skuContent_product_name = ('by.xpath', '//div[2]/div[2]/div[1]/a[2]') #详情页商品名称
     quantity_input = ('by.class_name', 'item-num-input')  ##购物车中商品数量文本框
     quantity_add = ('by.class_name', 'a-add')  #购物车中商品数量增加+
@@ -38,12 +37,7 @@ class NormalCart(Page):
     layer_notice = ('by.id', 'js-layer-notice')
 
     def quantity_add_or_sub(self):
-        MOQ = self.element_find(self.MOQ).text
-        MOQ = MOQ[0:1]
-        print(MOQ)
         sku_quantity_default = self.element_find(self.quantity_input).get_attribute('value')
-        assert int(sku_quantity_default) == int(MOQ)
-        print("商品添加到购物车默认数量为最小起定量")
         self.element_find(self.quantity_add).click()
         self.wait_to_stale(self.layer)
         sku_quantity_add = self.element_find(self.quantity_input).get_attribute('value')
@@ -208,13 +202,13 @@ class NormalCart(Page):
         assert collect_message == '此商品已成功加入收藏夹！'
         print('收藏成功')
         ###全部收藏###
-        self.wait_to_unvisible(self.layer_notice)
+        self.wait_to_stale(self.layer_notice)
         self.element_find(self.collects).click()
         self.wait_to_stale(self.layer)
         collects_message = self.element_find(self.collects_prompt).text
         assert collects_message == '选中的商品已收藏成功！'
+        self.wait_to_stale(self.layer_notice)
         print('全部收藏成功')
-        self.wait_to_unvisible(self.layer_notice)
 
     def bj_page(self):
         self.element_find(self.bj_button).click()

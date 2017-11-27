@@ -42,6 +42,7 @@ class TestOrder(unittest.TestCase):
         self.home.category_tree_click()
         self.home.wait_to_stale(self.home.layer)
         self.product_list.bigImg_add_to_cart()
+        self.home.wait_to_stale(self.home.layer)
         self.cart.wait_to_clickable(self.cart.go_to_order).click()
         self.home.wait_to_stale(self.home.layer)
         self.order.choose_none_invoice()
@@ -259,6 +260,7 @@ class TestOrder(unittest.TestCase):
         """产线列表页入口-分销定制产线用户下单-普票"""
         login_name = self.page.config_reader('test_order.conf', '产线定制-分销', 'login_name')
         password = self.page.config_reader('test_order.conf', '产线定制-分销', 'password')
+        self.home.wait_to_stale(self.home.layer)
         self.home.login(login_name, password)
         attr_class = self.home.element_find(self.home.category_knife).get_attribute('class')
         assert 'disabled' in attr_class
@@ -277,6 +279,7 @@ class TestOrder(unittest.TestCase):
         """产线列表页入口-终端定制产线用户下单-增票"""
         login_name = self.page.config_reader('test_order.conf', '产线定制-终端', 'login_name')
         password = self.page.config_reader('test_order.conf', '产线定制-终端', 'password')
+        self.home.wait_to_stale(self.home.layer)
         self.home.login(login_name, password)
         attr_class = self.home.element_find(self.home.category_knife).get_attribute('class')
         assert 'disabled' in attr_class

@@ -2,6 +2,7 @@ from Page_Base import Page
 from selenium.webdriver.common.action_chains import ActionChains
 from selenium.common.exceptions import ElementNotVisibleException, WebDriverException
 
+
 class Home(Page):
     """首页"""
     login_button = ('by.xpath', '//*[@id="js-logininfo"]/div[1]/div/a[1]')
@@ -12,7 +13,7 @@ class Home(Page):
     login_action = ('by.class_name', 'loginpop-btn')
     my_ehsy = ('by.class_name', 'ehsy-a')
 
-    #个人中心
+    # 个人中心
     my_address = ('by.class_name', 'active')  # 进入我的地址标签页
 
     category_tool = ('by.xpath', '//ul/li[1]/a[1]/span')

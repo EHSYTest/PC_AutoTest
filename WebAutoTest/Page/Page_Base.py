@@ -4,7 +4,7 @@ from configobj import ConfigObj
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions
-from selenium.common.exceptions import StaleElementReferenceException
+from selenium.common import exceptions
 
 
 class Page():
@@ -130,8 +130,8 @@ class Page():
     def wait_to_stale(self, ele):
         try:
             element = self.element_find(ele)
-            WebDriverWait(self.driver, 10, 0.5).until(
+            WebDriverWait(self.driver, 20, 0.5).until(
                 expected_conditions.staleness_of(element)
             )
-        except expected_conditions.NoSuchElementException:
+        except exceptions.NoSuchElementException or exceptions.TimeoutException:
             return None

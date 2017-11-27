@@ -112,6 +112,7 @@ class TestOrder(unittest.TestCase):
         element = self.page.element_find(self.product_list.sku_result_click)
         element.click()
         self.page.switch_to_new_window()
+        self.home.wait_to_stale(self.home.layer)
         self.product_list.element_find(self.product_list.skuContent_add_button).click()
         self.page.wait_to_unvisible(self.product_list.layer_sku)
         ActionChains(self.driver).move_to_element(self.product_list.element_find(self.product_list.cart)).perform()

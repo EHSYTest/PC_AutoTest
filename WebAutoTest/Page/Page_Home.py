@@ -4,8 +4,8 @@ from selenium.common.exceptions import ElementNotVisibleException, WebDriverExce
 
 class Home(Page):
     """首页"""
-    login_button = ('by.link_text', '登录')
-    logout_button = ('by.link_text', '退出')
+    login_button = ('by.xpath', '//*[@id="js-logininfo"]/div[1]/div/a[1]')
+    logout_button = ('by.xpath', '//div[1]/span/a[2]')
     frame = 'loginpop-iframe'
     username_send = ('by.name', 'username')
     password_send = ('by.name', 'password')

@@ -17,6 +17,7 @@ class Home(Page):
 
     category_tool = ('by.xpath', '//ul/li[1]/a[1]/span')
     category_taozhuang = ('by.link_text', '综合套装')
+    category_knife = ('by.xpath', '//li[2]/a[1]/span')
 
     # my_ehsy = ('by.class_name', 'my-ehsy-show')
     # my_collection = ('by.class_name', 'header-my-collection')

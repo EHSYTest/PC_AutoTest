@@ -8,8 +8,7 @@ class OrderResult(Page):
     # 您已成功提交请购单，等待审批结果！
     eas_message = ('by.xpath', 'html/body/div[1]/div[2]/div[2]/div[1]/div[1]/p[1]/strong')
 
-    eis_staging_url = 'http://www-staging.ehsy.com/utils/punchout-request'
-    eis_production_url = 'http://www.ehsy.com/utils/punchout-request'
+    eis_message = ('by.xpath', '//h2/span')
 
     def get_so_by_url(self):
         order_id = ''

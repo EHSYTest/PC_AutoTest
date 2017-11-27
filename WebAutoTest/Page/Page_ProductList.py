@@ -29,9 +29,9 @@ class ProductList(Page):
     # 产品详情页
     skuContent_add_button = ('by.class_name', 'add-to-cart-btn')
 
-    #页面刷新浮层
+    # 页面刷新浮层
     layer = ('by.id', 'ajax-layer-loading')
-    #商品添加购物车提示
+    # 商品添加购物车提示
     layer_sku = ('by.id', 'ajax-layer-add-cart')
 
     def list_add_to_cart(self):

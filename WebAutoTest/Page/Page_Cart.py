@@ -14,17 +14,15 @@ class Cart(Page):
     quantity_add = ('by.class_name', 'a-add')
     quantity_sub = ('by.class_name', 'a-sub')
 
-    # collect_line = ('by.class_name', 'cart-add-collect')
     collect_bottom = ('by.class_name', 'btn-add-favorite')
 
     delete_line = ('by.class_name', 'product-remove')
     delete_bottom = ('by.class_name', 'btn-delete')
-    # layer = ('by.xpath', 'html/body/div[2]/div')
     delete_all_confirm = ('by.class_name', 'confirm')
 
     go_to_order = ('by.class_name', 'cart-to-checkout-btn')
-    # report_order = ('by.class_name', 'submit-bj')
-    # eis_layer = ('by.class_name', 'layui-layer-btn0')
+    report_order = ('by.class_name', 'cart-to-bj-btn')
+    eis_confirm = ('by.xpath', '//div[1]/button[2]')
 
     # del_unvalued_product = ('by.class_name', 'footer-clear-span')
     # product_bottom_add = ('by.xpath', '//div[2]/ul/li[1]/p[4]')
@@ -121,6 +119,3 @@ class Cart(Page):
         assert value2 == '20'
         print('数量输入修改成功')
 
-    def submit_order_eis(self):
-        self.element_find(self.go_to_order).click()
-        self.element_find(self.eis_layer).click()

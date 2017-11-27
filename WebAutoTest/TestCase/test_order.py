@@ -84,7 +84,7 @@ class TestOrder(unittest.TestCase):
         self.page.cancel_order(orderId, environment=self.environment)  # 接口取消订单
 
     def test_order_4(self):
-        """搜索页入口-终端用户下单-普票"""
+        """详情页入口-终端用户下单-普票"""
         login_name = self.page.config_reader('test_order.conf', '终端账号', 'login_name')
         password = self.page.config_reader('test_order.conf', '终端账号', 'password')
         self.home.login(login_name, password)

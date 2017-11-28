@@ -238,18 +238,17 @@ class Order(Page):
 
     def choose_normal_invoice(self):
         """选择普票"""
-        self.element_find(self.choose).click()
-        self.element_find(self.normal_invoice_tab).click()
-        self.element_find(self.first_normal_invoice).click()
-        self.element_find(self.close).click()
+        self.wait_click(self.choose)
+        self.wait_click(self.normal_invoice_tab)
+        self.wait_click(self.first_normal_invoice)
+        self.wait_click(self.close)
 
     def choose_vat_invoice(self):
         """选择增票"""
-        element = self.element_find(self.choose)
-        element.click()
-        self.element_find(self.vat_invoice_tab).click()
-        self.element_find(self.first_bill).click()
-        self.element_find(self.close).click()
+        self.wait_click(self.choose)
+        self.wait_click(self.vat_invoice_tab)
+        self.wait_click(self.first_bill)
+        self.wait_click(self.close)
 
     def choose_none_invoice(self):
         """选择不开票"""

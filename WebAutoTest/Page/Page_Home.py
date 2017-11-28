@@ -56,12 +56,10 @@ class Home(Page):
 
     def quick_order_click(self):
         self.element_find(self.quick_order).click()
-        # self.switch_to_new_window()
 
     def brand_click(self):
-        self.wait_to_clickable(self.brand_center).click()
-        self.wait_to_stale(self.layer)
-        self.wait_to_clickable(self.brand_bosch).click()
+        self.wait_click(self.brand_center)
+        self.wait_click(self.brand_bosch)
 
     def go_user_center(self):
         self.wait_to_clickable(self.my_ehsy).click()

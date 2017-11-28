@@ -54,13 +54,10 @@ class TestOrder(unittest.TestCase):
         password = self.page.config_reader('test_order.conf', '分销账号', 'password')
         self.home.login(login_name, password)
         self.home.category_tree_click()
-        self.home.wait_to_stale(self.home.layer)
         self.product_list.list_add_to_cart()
-        self.home.wait_to_stale(self.home.layer)
-        self.cart.element_find(self.cart.go_to_order).click()
-        self.home.wait_to_stale(self.home.layer)
+        self.cart.wait_click(self.cart.go_to_order)
         self.order.choose_normal_invoice()
-        self.order.element_find(self.order.submit_order_button).click()
+        self.order.wait_click(self.order.submit_order_button)
         orderId = self.order_result.get_so_by_url()
         self.page.cancel_order(orderId, environment=self.environment)  # 接口取消订单
 
@@ -70,13 +67,10 @@ class TestOrder(unittest.TestCase):
         password = self.page.config_reader('test_order.conf', '分销账号', 'password')
         self.home.login(login_name, password)
         self.home.brand_click()
-        self.home.wait_to_stale(self.home.layer)
         self.product_list.brand_add_to_cart()
-        self.page.wait_to_stale(self.product_list.layer)
-        self.cart.element_find(self.cart.go_to_order).click()
-        self.page.wait_to_stale(self.product_list.layer)
+        self.cart.wait_click(self.cart.go_to_order)
         self.order.choose_vat_invoice()
-        self.order.element_find(self.order.submit_order_button).click()
+        self.order.wait_click(self.order.submit_order_button)
         orderId = self.order_result.get_so_by_url()
         self.page.cancel_order(orderId, environment=self.environment)  # 接口取消订单
 
@@ -85,18 +79,13 @@ class TestOrder(unittest.TestCase):
         login_name = self.page.config_reader('test_order.conf', '终端账号', 'login_name')
         password = self.page.config_reader('test_order.conf', '终端账号', 'password')
         self.home.login(login_name, password)
-        self.home.wait_to_stale(self.home.layer)
         self.home.search_sku()
-        self.product_list.wait_to_stale(self.product_list.layer)
-        self.product_list.element_find(self.product_list.bigImg_add_button).click()
-        self.product_list.wait_to_unvisible(self.product_list.layer_sku)
+        self.product_list.wait_click(self.product_list.bigImg_add_button)
         ActionChains(self.driver).move_to_element(self.cart.element_find(self.product_list.cart)).perform()
-        self.product_list.element_find(self.product_list.go_cart).click()
-        self.home.wait_to_stale(self.home.layer)
-        self.cart.element_find(self.cart.go_to_order).click()
-        self.page.wait_to_stale(self.product_list.layer)
+        self.product_list.wait_click(self.product_list.go_cart)
+        self.cart.wait_click(self.cart.go_to_order)
         self.order.choose_normal_invoice()
-        self.order.element_find(self.order.submit_order_button).click()
+        self.order.wait_click(self.order.submit_order_button)
         orderId = self.order_result.get_so_by_url()
         self.page.cancel_order(orderId, environment=self.environment)  # 接口取消订单
 
@@ -106,20 +95,14 @@ class TestOrder(unittest.TestCase):
         password = self.page.config_reader('test_order.conf', '终端账号', 'password')
         self.home.login(login_name, password)
         self.home.search_sku()
-        self.page.wait_to_stale(self.product_list.layer)
-        element = self.page.element_find(self.product_list.sku_result_click)
-        element.click()
+        self.page.wait_click(self.product_list.sku_result_click)
         self.page.switch_to_new_window()
-        self.home.wait_to_stale(self.home.layer)
-        self.product_list.element_find(self.product_list.skuContent_add_button).click()
-        self.page.wait_to_unvisible(self.product_list.layer_sku)
+        self.product_list.wait_click(self.product_list.skuContent_add_button)
         ActionChains(self.driver).move_to_element(self.product_list.element_find(self.product_list.cart)).perform()
-        self.product_list.element_find(self.product_list.go_cart).click()
-        self.page.wait_to_stale(self.product_list.layer)
-        self.cart.element_find(self.cart.go_to_order).click()
-        self.page.wait_to_stale(self.product_list.layer)
+        self.product_list.wait_click(self.product_list.go_cart)
+        self.cart.wait_click(self.cart.go_to_order)
         self.order.choose_vat_invoice()
-        self.order.element_find(self.order.submit_order_button).click()
+        self.order.wait_click(self.order.submit_order_button)
         orderId = self.order_result.get_so_by_url()
         self.page.cancel_order(orderId, environment=self.environment)  # 接口取消订单
 
@@ -129,11 +112,11 @@ class TestOrder(unittest.TestCase):
     #     password = self.page.config_reader('test_order.conf', '国电账号', 'password')
     #     self.home.login(login_name, password)
     #     self.home.category_tree_click()
-    #     self.home.wait_to_stale(self.home.layer)
+    #     
     #     self.product_list.list_add_to_cart()
-    #     self.home.wait_to_stale(self.home.layer)
+    #     
     #     self.cart.element_find(self.cart.go_to_order).click()
-    #     self.home.wait_to_stale(self.home.layer)
+    #     
     #     self.order.choose_normal_invoice()
     #     self.order.element_find(self.order.submit_order_button).click()
     #     orderId = self.order_result.get_so_by_url()
@@ -203,18 +186,13 @@ class TestOrder(unittest.TestCase):
         url = self.page.config_reader('test_order.conf', 'EIS_URL', 'URL_FORM')
         self.driver.get(url)
         self.home.search_sku()
-        self.page.wait_to_stale(self.product_list.layer)
-        element = self.page.element_find(self.product_list.sku_result_click)
-        element.click()
+        self.page.wait_click(self.product_list.sku_result_click)
         self.page.switch_to_new_window()
-        self.home.wait_to_stale(self.home.layer)
-        self.product_list.element_find(self.product_list.skuContent_add_button).click()
-        self.page.wait_to_unvisible(self.product_list.layer_sku)
+        self.product_list.wait_click(self.product_list.skuContent_add_button)
         ActionChains(self.driver).move_to_element(self.product_list.element_find(self.product_list.cart)).perform()
-        self.product_list.element_find(self.product_list.go_cart).click()
-        self.page.wait_to_stale(self.product_list.layer)
-        self.cart.element_find(self.cart.go_to_order).click()
-        self.cart.element_find(self.cart.eis_confirm).click()
+        self.product_list.wait_click(self.product_list.go_cart)
+        self.cart.wait_click(self.cart.go_to_order)
+        self.cart.wait_click(self.cart.eis_confirm)
         message = self.order_result.element_find(self.order_result.eis_message).text
         assert message == '推送成功'
 
@@ -224,9 +202,8 @@ class TestOrder(unittest.TestCase):
         self.driver.get(url)
         self.home.category_tree_click()
         self.product_list.list_add_to_cart()
-        self.home.wait_to_stale(self.home.layer)
-        self.cart.element_find(self.cart.go_to_order).click()
-        self.cart.element_find(self.cart.eis_confirm).click()
+        self.cart.wait_click(self.cart.go_to_order)
+        self.cart.wait_click(self.cart.eis_confirm)
         message = self.order_result.element_find(self.order_result.eis_message).text
         assert message == '推送成功'
 
@@ -236,21 +213,16 @@ class TestOrder(unittest.TestCase):
         password = self.page.config_reader('test_order.conf', '终端账号', 'password')
         self.home.login(login_name, password)
         self.home.search_sku()
-        self.page.wait_to_stale(self.product_list.layer)
-        element = self.page.element_find(self.product_list.sku_result_click)
-        element.click()
+        self.page.wait_click(self.product_list.sku_result_click)
         self.page.switch_to_new_window()
-        self.home.wait_to_stale(self.home.layer)
-        self.product_list.element_find(self.product_list.skuContent_add_button).click()
-        self.page.wait_to_unvisible(self.product_list.layer_sku)
+        self.product_list.wait_click(self.product_list.skuContent_add_button)
         ActionChains(self.driver).move_to_element(self.product_list.element_find(self.product_list.cart)).perform()
-        self.product_list.element_find(self.product_list.go_cart).click()
-        self.page.wait_to_stale(self.product_list.layer)
-        self.cart.element_find(self.cart.report_order).click()
+        self.product_list.wait_click(self.product_list.go_cart)
+        self.cart.wait_click(self.cart.report_order)
         self.report_order.create_order_by_report_order()
         self.report_order.switch_to_new_window(handle_quantity=3)
         self.order.choose_vat_invoice()
-        self.order.element_find(self.order.submit_order_button).click()
+        self.order.wait_click(self.order.submit_order_button)
         orderId = self.order_result.get_so_by_url()
         self.page.cancel_order(orderId, environment=self.environment)  # 接口取消订单
 
@@ -262,13 +234,10 @@ class TestOrder(unittest.TestCase):
         attr_class = self.home.element_find(self.home.category_knife).get_attribute('class')
         assert 'disabled' in attr_class
         self.home.category_tree_click()
-        self.home.wait_to_stale(self.home.layer)
         self.product_list.list_add_to_cart()
-        self.home.wait_to_stale(self.home.layer)
-        self.cart.element_find(self.cart.go_to_order).click()
-        self.home.wait_to_stale(self.home.layer)
+        self.cart.wait_click(self.cart.go_to_order)
         self.order.choose_normal_invoice()
-        self.order.element_find(self.order.submit_order_button).click()
+        self.order.wait_click(self.order.submit_order_button)
         orderId = self.order_result.get_so_by_url()
         self.page.cancel_order(orderId, environment=self.environment)  # 接口取消订单
 
@@ -280,13 +249,10 @@ class TestOrder(unittest.TestCase):
         attr_class = self.home.element_find(self.home.category_knife).get_attribute('class')
         assert 'disabled' in attr_class
         self.home.category_tree_click()
-        self.home.wait_to_stale(self.home.layer)
         self.product_list.list_add_to_cart()
-        self.home.wait_to_stale(self.home.layer)
-        self.cart.element_find(self.cart.go_to_order).click()
-        self.home.wait_to_stale(self.home.layer)
+        self.cart.wait_click(self.cart.go_to_order)
         self.order.choose_vat_invoice()
-        self.order.element_find(self.order.submit_order_button).click()
+        self.order.wait_click(self.order.submit_order_button)
         orderId = self.order_result.get_so_by_url()
         self.page.cancel_order(orderId, environment=self.environment)  # 接口取消订单
 
@@ -299,19 +265,19 @@ if __name__ == '__main__':
     suit = unittest.TestSuite()
     case_list = [
                   TestOrder('test_order_1'),
-                  # TestOrder('test_order_2'),
-                  # TestOrder('test_order_3'),
-                  # TestOrder('test_order_4'),
-                  # TestOrder('test_order_5'),
+                  TestOrder('test_order_2'),
+                  TestOrder('test_order_3'),
+                  TestOrder('test_order_4'),
+                  TestOrder('test_order_5'),
                   # TestOrder('test_order_6'),
                   # TestOrder('test_order_7'),
                   # TestOrder('test_order_8'),
                   # TestOrder('test_order_9'),
-                  # TestOrder('test_order_10'),
-                  # TestOrder('test_order_11'),
-                  # TestOrder('test_order_12'),
-                  # TestOrder('test_order_13'),
-                  # TestOrder('test_order_14'),
+                  TestOrder('test_order_10'),
+                  TestOrder('test_order_11'),
+                  TestOrder('test_order_12'),
+                  TestOrder('test_order_13'),
+                  TestOrder('test_order_14'),
     ]
     suit.addTests(case_list)
     # now = time.strftime("%Y_%m_%d %H_%M_%S")

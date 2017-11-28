@@ -35,11 +35,10 @@ class ProductList(Page):
     layer_sku = ('by.id', 'ajax-layer-add-cart')
 
     def list_add_to_cart(self):
-        self.element_find(self.list_add_button).click()
-        self.element_find(self.cart_button).click()
-        self.wait_to_unvisible(self.layer_sku)
+        self.wait_click(self.list_add_button)
+        self.wait_click(self.cart_button)
         ActionChains(self.driver).move_to_element(self.element_find(self.cart)).perform()
-        self.element_find(self.go_cart).click()
+        self.wait_click(self.go_cart)
 
     def bigImg_add_to_cart(self):
         self.wait_click(self.big_img_icon)
@@ -48,17 +47,15 @@ class ProductList(Page):
         self.wait_click(self.go_cart)
 
     def brand_add_to_cart(self):
-        self.element_find(self.brand_add_button).click()
-        self.wait_to_unvisible(self.layer_sku)
+        self.wait_click(self.brand_add_button)
         ActionChains(self.driver).move_to_element(self.element_find(self.cart)).perform()
-        self.element_find(self.go_cart).click()
+        self.wait_click(self.go_cart)
 
     def search_add_to_cart(self):
         self.element_find(self.search_sku).clear()
         self.element_find(self.search_sku).send_keys('LAA444')  # 区域限制商品
-        self.element_find(self.search_button).click()
-        self.wait_to_stale(self.layer)
-        self.element_find(self.bigImg_add_button).click()
+        self.wait_click(self.search_button)
+        self.wait_click(self.bigImg_add_button)
         element = self.wait_to_clickable(self.cart)
         ActionChains(self.driver).move_to_element(element).perform()
-        self.wait_to_clickable(self.go_cart).click()
+        self.wait_click(self.go_cart)

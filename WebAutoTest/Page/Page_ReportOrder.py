@@ -19,9 +19,8 @@ class ReportOrder(Page):
         self.element_find(self.report_order_title).send_keys('测试报价单')
         self.element_find(self.report_order_province).send_keys('江苏省')
         self.element_find(self.report_order_city).send_keys('南京市')
-        self.element_find(self.report_order_invoice).click()
-        self.element_find(self.report_order_price).click()
-        self.element_find(self.create_report_order).click()
-        time.sleep(1)
-        self.element_find(self.report_order_change_to_order).click()
+        self.wait_click(self.report_order_invoice)
+        self.wait_click(self.report_order_price)
+        self.wait_click(self.create_report_order)
+        self.wait_click(self.report_order_change_to_order)
 

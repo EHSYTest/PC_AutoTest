@@ -141,7 +141,7 @@ class Page():
     def wait_click(self, ele):
         flag = expected_conditions.presence_of_element_located((By.ID, 'ajax-layer-loading'))
         if flag:
-            self.wait_to_stale(flag)
+            self.wait_to_stale(self.driver.find_element_by_id('ajax-layer-loading'))
             self.element_find(ele).click()
         else:
             print('Nolayer')

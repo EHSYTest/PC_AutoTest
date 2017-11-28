@@ -36,15 +36,16 @@ class TestOrder(unittest.TestCase):
 
     def test_order_1(self):
         """产线大图页入口-个人用户下单-不开票"""
+        self.driver.implicitly_wait(30)
         login_name = self.page.config_reader('test_order.conf', '个人账号', 'login_name')
         password = self.page.config_reader('test_order.conf', '个人账号', 'password')
         self.home.login(login_name, password)
         self.home.category_tree_click()
-        self.home.wait_to_stale(self.home.layer)
+        
         self.product_list.bigImg_add_to_cart()
-        self.home.wait_to_stale(self.home.layer)
+        
         self.cart.element_find(self.cart.go_to_order).click()
-        self.home.wait_to_stale(self.home.layer)
+        
         self.order.choose_none_invoice()
         self.order.element_find(self.order.submit_order_button).click()
         self.order.element_find(self.order.notice_layer).click()
@@ -53,15 +54,17 @@ class TestOrder(unittest.TestCase):
 
     def test_order_2(self):
         """产线列表页入口-分销用户下单-普票"""
+        self.driver.implicitly_wait(30)
+
         login_name = self.page.config_reader('test_order.conf', '分销账号', 'login_name')
         password = self.page.config_reader('test_order.conf', '分销账号', 'password')
         self.home.login(login_name, password)
         self.home.category_tree_click()
-        self.home.wait_to_stale(self.home.layer)
+        
         self.product_list.list_add_to_cart()
-        self.home.wait_to_stale(self.home.layer)
+        
         self.cart.element_find(self.cart.go_to_order).click()
-        self.home.wait_to_stale(self.home.layer)
+        
         self.order.choose_normal_invoice()
         self.order.element_find(self.order.submit_order_button).click()
         orderId = self.order_result.get_so_by_url()
@@ -69,11 +72,13 @@ class TestOrder(unittest.TestCase):
 
     def test_order_3(self):
         """品牌页入口-分销用户下单-增票"""
+        self.driver.implicitly_wait(30)
+
         login_name = self.page.config_reader('test_order.conf', '分销账号', 'login_name')
         password = self.page.config_reader('test_order.conf', '分销账号', 'password')
         self.home.login(login_name, password)
         self.home.brand_click()
-        self.home.wait_to_stale(self.home.layer)
+        
         self.product_list.brand_add_to_cart()
         self.page.wait_to_stale(self.product_list.layer)
         self.cart.element_find(self.cart.go_to_order).click()
@@ -85,17 +90,19 @@ class TestOrder(unittest.TestCase):
 
     def test_order_4(self):
         """详情页入口-终端用户下单-普票"""
+        self.driver.implicitly_wait(30)
+
         login_name = self.page.config_reader('test_order.conf', '终端账号', 'login_name')
         password = self.page.config_reader('test_order.conf', '终端账号', 'password')
         self.home.login(login_name, password)
-        self.home.wait_to_stale(self.home.layer)
+        
         self.home.search_sku()
         self.product_list.wait_to_stale(self.product_list.layer)
         self.product_list.element_find(self.product_list.bigImg_add_button).click()
         self.product_list.wait_to_unvisible(self.product_list.layer_sku)
         ActionChains(self.driver).move_to_element(self.cart.element_find(self.product_list.cart)).perform()
         self.product_list.element_find(self.product_list.go_cart).click()
-        self.home.wait_to_stale(self.home.layer)
+        
         self.cart.element_find(self.cart.go_to_order).click()
         self.page.wait_to_stale(self.product_list.layer)
         self.order.choose_normal_invoice()
@@ -105,6 +112,8 @@ class TestOrder(unittest.TestCase):
 
     def test_order_5(self):
         """产品详情页入口-终端用户下单-增票"""
+        self.driver.implicitly_wait(30)
+
         login_name = self.page.config_reader('test_order.conf', '终端账号', 'login_name')
         password = self.page.config_reader('test_order.conf', '终端账号', 'password')
         self.home.login(login_name, password)
@@ -113,7 +122,7 @@ class TestOrder(unittest.TestCase):
         element = self.page.element_find(self.product_list.sku_result_click)
         element.click()
         self.page.switch_to_new_window()
-        self.home.wait_to_stale(self.home.layer)
+        
         self.product_list.element_find(self.product_list.skuContent_add_button).click()
         self.page.wait_to_unvisible(self.product_list.layer_sku)
         ActionChains(self.driver).move_to_element(self.product_list.element_find(self.product_list.cart)).perform()
@@ -132,11 +141,11 @@ class TestOrder(unittest.TestCase):
     #     password = self.page.config_reader('test_order.conf', '国电账号', 'password')
     #     self.home.login(login_name, password)
     #     self.home.category_tree_click()
-    #     self.home.wait_to_stale(self.home.layer)
+    #     
     #     self.product_list.list_add_to_cart()
-    #     self.home.wait_to_stale(self.home.layer)
+    #     
     #     self.cart.element_find(self.cart.go_to_order).click()
-    #     self.home.wait_to_stale(self.home.layer)
+    #     
     #     self.order.choose_normal_invoice()
     #     self.order.element_find(self.order.submit_order_button).click()
     #     orderId = self.order_result.get_so_by_url()
@@ -203,6 +212,8 @@ class TestOrder(unittest.TestCase):
 
     def test_order_10(self):
         """产品详情页入口-EIS用户下单-表单"""
+        self.driver.implicitly_wait(30)
+
         url = self.page.config_reader('test_order.conf', 'EIS_URL', 'URL_FORM')
         self.driver.get(url)
         self.home.search_sku()
@@ -210,7 +221,7 @@ class TestOrder(unittest.TestCase):
         element = self.page.element_find(self.product_list.sku_result_click)
         element.click()
         self.page.switch_to_new_window()
-        self.home.wait_to_stale(self.home.layer)
+        
         self.product_list.element_find(self.product_list.skuContent_add_button).click()
         self.page.wait_to_unvisible(self.product_list.layer_sku)
         ActionChains(self.driver).move_to_element(self.product_list.element_find(self.product_list.cart)).perform()
@@ -223,12 +234,13 @@ class TestOrder(unittest.TestCase):
 
     def test_order_11(self):
         """产品列表页入口-EIS用户下单-CXML"""
+        self.driver.implicitly_wait(30)
+
         url = self.page.config_reader('test_order.conf', 'EIS_URL', 'URL_CXML')
         self.driver.get(url)
         self.home.category_tree_click()
-        self.home.wait_to_stale(self.home.layer)
         self.product_list.list_add_to_cart()
-        self.home.wait_to_stale(self.home.layer)
+        
         self.cart.element_find(self.cart.go_to_order).click()
         self.cart.element_find(self.cart.eis_confirm).click()
         message = self.order_result.element_find(self.order_result.eis_message).text
@@ -244,7 +256,7 @@ class TestOrder(unittest.TestCase):
         element = self.page.element_find(self.product_list.sku_result_click)
         element.click()
         self.page.switch_to_new_window()
-        self.home.wait_to_stale(self.home.layer)
+        
         self.product_list.element_find(self.product_list.skuContent_add_button).click()
         self.page.wait_to_unvisible(self.product_list.layer_sku)
         ActionChains(self.driver).move_to_element(self.product_list.element_find(self.product_list.cart)).perform()
@@ -266,11 +278,11 @@ class TestOrder(unittest.TestCase):
         attr_class = self.home.element_find(self.home.category_knife).get_attribute('class')
         assert 'disabled' in attr_class
         self.home.category_tree_click()
-        self.home.wait_to_stale(self.home.layer)
+        
         self.product_list.list_add_to_cart()
-        self.home.wait_to_stale(self.home.layer)
+        
         self.cart.element_find(self.cart.go_to_order).click()
-        self.home.wait_to_stale(self.home.layer)
+        
         self.order.choose_normal_invoice()
         self.order.element_find(self.order.submit_order_button).click()
         orderId = self.order_result.get_so_by_url()
@@ -284,11 +296,11 @@ class TestOrder(unittest.TestCase):
         attr_class = self.home.element_find(self.home.category_knife).get_attribute('class')
         assert 'disabled' in attr_class
         self.home.category_tree_click()
-        self.home.wait_to_stale(self.home.layer)
+        
         self.product_list.list_add_to_cart()
-        self.home.wait_to_stale(self.home.layer)
+        
         self.cart.element_find(self.cart.go_to_order).click()
-        self.home.wait_to_stale(self.home.layer)
+        
         self.order.choose_vat_invoice()
         self.order.element_find(self.order.submit_order_button).click()
         orderId = self.order_result.get_so_by_url()

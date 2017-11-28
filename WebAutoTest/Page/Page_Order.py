@@ -71,7 +71,7 @@ class Order(Page):
     # submit_approve_flow = ('by.class_name', 'eps-submit-btn')
 
     def add_receiving_address(self):
-        self.element_find(self.receiving_address_add).click()
+        self.wait_click(self.receiving_address_add)
         self.element_find(self.receiving_name).send_keys('自动化测试')
         self.element_find(self.company_name).send_keys('自动化测试公司')
         self.element_find(self.province).send_keys('安徽省')
@@ -79,18 +79,16 @@ class Order(Page):
         self.element_find(self.area).send_keys('望江县')
         self.element_find(self.detailed_address).send_keys('自动化测试地址')
         self.element_find(self.receiving_phone).send_keys('15150681507')
-        self.element_find(self.setDefaultAddress).click()
-        self.element_find(self.add_confirm).click()
+        self.wait_click(self.setDefaultAddress)
+        self.wait_click(self.add_confirm)
         message = self.element_find(self.receiving_address_layer).text
         assert message == '地址添加成功！'
-        self.wait_to_stale(self.receiving_address_layer)
         print('收货地址添加成功')
 
     def receiving_address_edit(self):
         element = self.element_find(self.address_edit)
         ActionChains(self.driver).move_to_element(element).perform()     # 鼠标悬停展现不可见的编辑按钮
-        element = self.wait_to_clickable(self.address_edit)
-        element.click()
+        self.wait_click(self.address_edit)
         self.element_find(self.receiving_name).send_keys('修改')
         self.element_find(self.company_name).send_keys('修改')
         self.element_find(self.province).send_keys('江苏省')
@@ -100,125 +98,115 @@ class Order(Page):
         mobile = self.element_find(self.receiving_phone)
         mobile.send_keys(Keys.BACK_SPACE)
         mobile.send_keys('8')
-        self.element_find(self.edit_confirm).click()
+        self.wait_click(self.edit_confirm)
         message = self.element_find(self.receiving_address_layer).text
         assert message == '地址编辑成功！'
-        self.wait_to_stale(self.receiving_address_layer)
         print('收货地址修改成功')
 
     def receiving_address_delete(self):
         element = self.element_find(self.address_del)
         ActionChains(self.driver).move_to_element(element).perform()
-        element = self.wait_to_clickable(self.address_del)
-        element.click()
-        self.element_find(self.del_confirm).click()
+        self.wait_click(self.address_del)
+        self.wait_click(self.del_confirm)
         message = self.element_find(self.receiving_address_layer).text
         assert message == '地址删除成功！'
-        self.wait_to_stale(self.receiving_address_layer)
         print('收货地址删除成功')
 
     def invoice_normal_company_add(self):
         """新增公司抬头的普票"""
-        self.element_find(self.choose).click()  # 请选择按钮
-        self.element_find(self.normal_invoice_add).click()
+        self.wait_click(self.choose)  # 请选择按钮
+        self.wait_click(self.normal_invoice_add)
         self.element_find(self.invoice_title).send_keys('公司抬头普票')
         self.element_find(self.tax_no).send_keys('1234567890qwert')
-        self.element_find(self.normal_invoice_save).click()
+        self.wait_click(self.normal_invoice_save)
         message = self.element_find(self.invoice_layer).text
         assert message == '发票信息添加成功！'
-        self.wait_to_stale(self.invoice_layer)
         print('普通发票-公司抬头添加成功')
 
     def invoice_normal_personal_add(self):
         """新增个人抬头的普票"""
-        self.element_find(self.choose).click()  # 请选择按钮
-        self.element_find(self.normal_invoice_add).click()
+        self.wait_click(self.choose)  # 请选择按钮
+        self.wait_click(self.normal_invoice_add)
         self.element_find(self.choose_invoice_title).send_keys('个人抬头')
         self.element_find(self.invoice_title).send_keys('个人抬头普票')
-        self.element_find(self.normal_invoice_save).click()
+        self.wait_click(self.normal_invoice_save)
         message = self.element_find(self.invoice_layer).text
         assert message == '发票信息添加成功！'
-        self.wait_to_stale(self.invoice_layer)
         print('普通发票-个人抬头添加成功')
 
     def invoice_normal_personal_edit(self):
-        self.element_find(self.choose).click()  # 请选择按钮
+        self.wait_click(self.choose) # 请选择按钮
         element = self.element_find(self.first_normal_invoice)
         ActionChains(self.driver).move_to_element(element).perform()
-        self.element_find(self.normal_invoice_edit).click()
+        self.wait_click(self.normal_invoice_edit)
         self.element_find(self.choose_invoice_title).send_keys('个人抬头')
         self.element_find(self.invoice_title).send_keys('修改')
-        self.element_find(self.normal_invoice_save).click()
+        self.wait_click(self.normal_invoice_save)
         message = self.element_find(self.invoice_layer).text
         assert message == '发票信息编辑成功！'
-        self.wait_to_stale(self.invoice_layer)
         print('普通发票-个人抬头编辑成功')
 
     def invoice_normal_company_edit(self):
-        self.element_find(self.choose).click()  # 请选择按钮
+        self.wait_click(self.choose) # 请选择按钮
         element = self.element_find(self.first_normal_invoice)
         ActionChains(self.driver).move_to_element(element).perform()
-        self.element_find(self.normal_invoice_edit).click()
+        self.wait_click(self.normal_invoice_edit)
         self.element_find(self.invoice_title).send_keys('修改')
         ele = self.element_find(self.tax_no)
         ele.send_keys(Keys.BACK_SPACE)
         ele.send_keys('1')
-        self.element_find(self.normal_invoice_save).click()
+        self.wait_click(self.normal_invoice_save)
         message = self.element_find(self.invoice_layer).text
         assert message == '发票信息编辑成功！'
-        self.wait_to_stale(self.invoice_layer)
         print('普通发票-公司抬头编辑成功')
 
     def invoice_normal_delete(self):
         """删除普通发票"""
-        self.element_find(self.choose).click()  # 请选择按钮
-        self.element_find(self.normal_invoice_tab).click()
+        self.wait_click(self.choose)  # 请选择按钮
+        self.wait_click(self.normal_invoice_tab)
         element = self.element_find(self.first_normal_invoice)
         ActionChains(self.driver).move_to_element(element).perform()
-        self.element_find(self.normal_invoice_del).click()
-        self.element_find(self.normal_invoice_del_confirm).click()
+        self.wait_click(self.normal_invoice_del)
+        self.wait_click(self.normal_invoice_del_confirm)
         message = self.element_find(self.invoice_layer).text
         assert message == '发票信息删除成功！'
-        self.wait_to_stale(self.invoice_layer)
         print('普通发票删除成功')
 
     def invoice_vat_delete(self):
         """删除增值税发票"""
-        self.element_find(self.choose).click()  # 请选择按钮
-        self.element_find(self.vat_invoice_tab).click()
+        self.wait_click(self.choose) # 请选择按钮
+        self.wait_click(self.vat_invoice_tab)
         element = self.element_find(self.first_bill)
         ActionChains(self.driver).move_to_element(element).perform()
-        self.element_find(self.bill_del).click()
-        self.element_find(self.bill_del_confirm).click()
+        self.wait_click(self.bill_del)
+        self.wait_click(self.bill_del_confirm)
         message = self.element_find(self.invoice_layer).text
         assert message == '发票信息删除成功！'
-        self.wait_to_stale(self.invoice_layer)
         print('增值税发票删除成功')
 
     def invoice_vat_add(self):
-        self.element_find(self.choose).click()  # 请选择按钮
-        self.element_find(self.vat_invoice_tab).click()
-        self.element_find(self.bill_add).click()
+        self.wait_click(self.choose)# 请选择按钮
+        self.wait_click(self.vat_invoice_tab)
+        self.wait_click(self.bill_add)
         self.element_find(self.bill_title).send_keys('自动化测试增票')
         self.element_find(self.bill_tax_no).send_keys('1234567890123qwert')
         self.element_find(self.bill_address).send_keys('上海市浦东新区凌阳大厦')
         self.element_find(self.bill_phone).send_keys('15150681507')
         self.element_find(self.bill_bank).send_keys('上海银行')
         self.element_find(self.bill_bank_account).send_keys('123456')
-        self.element_find(self.bill_set_default).click()
-        self.element_find(self.bill_save).click()
+        self.wait_click(self.bill_set_default)
+        self.wait_click(self.bill_save)
         message = self.element_find(self.invoice_layer).text
         assert message == '发票信息添加成功！'
-        self.wait_to_stale(self.invoice_layer)
         print('增值税发票添加成功')
 
     def invoice_vat_edit(self):
         """删除增值税发票"""
-        self.element_find(self.choose).click()  # 请选择按钮
-        self.element_find(self.vat_invoice_tab).click()
+        self.wait_click(self.choose)  # 请选择按钮
+        self.wait_click(self.vat_invoice_tab)
         element = self.element_find(self.first_bill)
         ActionChains(self.driver).move_to_element(element).perform()
-        self.element_find(self.bill_edit).click()
+        self.wait_click(self.bill_edit)
         self.element_find(self.bill_title).send_keys('修改')
         ele = self.element_find(self.bill_tax_no)
         ele.send_keys(Keys.BACK_SPACE)
@@ -229,11 +217,10 @@ class Order(Page):
         ele.send_keys('6')
         self.element_find(self.bill_bank).send_keys('修改')
         self.element_find(self.bill_bank_account).send_keys('78')
-        self.element_find(self.bill_set_default).click()
-        self.element_find(self.bill_save).click()
+        self.wait_click(self.bill_set_default)
+        self.wait_click(self.bill_save)
         message = self.element_find(self.invoice_layer).text
         assert message == '发票信息编辑成功！'
-        self.wait_to_stale(self.invoice_layer)
         print('增值税发票编辑成功')
 
     def choose_normal_invoice(self):
@@ -257,8 +244,8 @@ class Order(Page):
         self.wait_click(self.close)
 
     def normal_invoice_check(self):
-        self.element_find(self.choose).click()  # 请选择按钮
-        self.element_find(self.normal_invoice_add).click()
+        self.wait_click(self.choose)  # 请选择按钮
+        self.wait_click(self.normal_invoice_add)
         # self.element_find(self.invoice_title).send_keys('公司抬头普票')
         self.element_find(self.tax_no).send_keys('1234567890qwert')
         # self.element_find(self.normal_invoice_save).click()
@@ -269,6 +256,5 @@ class Order(Page):
         # self.element_find(self.normal_invoice_save).click()
         # message = self.element_find(self.invoice_layer).text
         # assert message == '发票信息添加成功！'
-        # self.wait_to_stale(self.invoice_layer)
         # print('普通发票-个人抬头添加成功')
 

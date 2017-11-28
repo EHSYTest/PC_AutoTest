@@ -11,6 +11,7 @@ class Page():
 
     def __init__(self, driver):
         self.driver = driver
+        self.layer = ('by.id', 'ajax-layer-loading')
 
     def element_find(self, element):
         if element[0] == 'by.id':
@@ -129,20 +130,19 @@ class Page():
 
     def wait_to_stale(self, ele):
         try:
-            element = self.element_find(ele)
             WebDriverWait(self.driver, 20, 0.5).until(
-                expected_conditions.staleness_of(element)
+                expected_conditions.staleness_of(ele)
             )
         except exceptions.NoSuchElementException:
             print('wait_to_stale: exceptions.NoSuchElementException')
         except exceptions.TimeoutException:
-            print('wait_to_stale: exceptions.NoSuchElementException')
+            print('wait_to_stale: exceptions.TimeoutException')
 
     def wait_click(self, ele):
-        for i in range(30):
-            try:
-                self.element_find(ele).click()
-                break
-            except exceptions.WebDriverException:
-                time.sleep(0.3)
-                continue
+        try:
+            layer = self.element_find(self.layer)
+        except exceptions.NoSuchElementException:
+            self.element_find(ele).click()
+        else:
+            self.wait_to_stale(layer)
+            self.element_find(ele).click()

@@ -266,7 +266,7 @@ class TestOrder(unittest.TestCase):
         attr_class = self.home.element_find(self.home.category_knife).get_attribute('class')
         assert 'disabled' in attr_class
         self.home.category_tree_click()
-        # self.home.wait_to_stale(self.home.layer)
+        self.home.wait_to_stale(self.home.layer)
         self.product_list.list_add_to_cart()
         self.home.wait_to_stale(self.home.layer)
         self.cart.element_find(self.cart.go_to_order).click()

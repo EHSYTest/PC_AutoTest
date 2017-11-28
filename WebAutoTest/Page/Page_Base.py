@@ -130,7 +130,7 @@ class Page():
 
     def wait_to_stale(self, ele):
         try:
-            WebDriverWait(self.driver, 20, 0.5).until(
+            WebDriverWait(self.driver, 5, 0.5).until(
                 expected_conditions.staleness_of(ele)
             )
         except exceptions.NoSuchElementException:

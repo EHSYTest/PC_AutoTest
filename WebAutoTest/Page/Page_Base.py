@@ -142,7 +142,9 @@ class Page():
         try:
             layer = self.element_find(self.layer)
         except exceptions.NoSuchElementException:
+            print('Nolayer    '+layer)
             self.element_find(ele).click()
         else:
+            print('layer    '+layer)
             self.wait_to_stale(layer)
             self.element_find(ele).click()

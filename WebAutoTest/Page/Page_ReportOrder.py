@@ -1,5 +1,6 @@
 from Page_Base import Page
 from selenium.common.exceptions import StaleElementReferenceException
+import time
 
 
 class ReportOrder(Page):
@@ -21,6 +22,6 @@ class ReportOrder(Page):
         self.element_find(self.report_order_invoice).click()
         self.element_find(self.report_order_price).click()
         self.element_find(self.create_report_order).click()
-        self.wait_to_stale(self.layer)
+        time.sleep(1)
         self.element_find(self.report_order_change_to_order).click()
 

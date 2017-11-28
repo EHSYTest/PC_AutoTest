@@ -139,8 +139,9 @@ class Page():
             print('wait_to_stale: exceptions.TimeoutException')
 
     def wait_click(self, ele):
-        if expected_conditions.presence_of_element_located((By.ID, 'ajax-layer-loading')):
-            self.wait_to_stale(self.driver.find_element_by_id('ajax-layer-loading'))
+        flag = expected_conditions.presence_of_element_located((By.ID, 'ajax-layer-loading'))
+        if flag:
+            self.wait_to_stale(flag)
             self.element_find(ele).click()
         else:
             print('Nolayer')

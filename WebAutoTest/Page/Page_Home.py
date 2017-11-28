@@ -35,10 +35,10 @@ class Home(Page):
     layer = ('by.id', 'ajax-layer-loading')
 
     def login(self, login_name, password):
-        self.element_find(self.login_button).click()
+        self.wait_click(self.login_button)
         self.element_find(self.username_send).send_keys(login_name)
         self.element_find(self.password_send).send_keys(password)
-        self.element_find(self.login_action).click()
+        self.wait_click(self.login_action)
 
     def login_other(self, login_name, password):
         self.element_find(self.username_send).send_keys(login_name)

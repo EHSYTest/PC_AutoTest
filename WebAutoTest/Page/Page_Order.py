@@ -253,9 +253,9 @@ class Order(Page):
 
     def choose_none_invoice(self):
         """选择不开票"""
-        self.element_find(self.choose).click()
-        self.element_find(self.none_invoice_tab).click()
-        self.element_find(self.close).click()
+        self.wait_click(self.choose)
+        self.wait_click(self.none_invoice_tab)
+        self.wait_click(self.close)
 
     def normal_invoice_check(self):
         self.element_find(self.choose).click()  # 请选择按钮

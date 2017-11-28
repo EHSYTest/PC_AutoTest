@@ -41,10 +41,10 @@ class TestOrder(unittest.TestCase):
         self.home.login(login_name, password)
         self.home.category_tree_click()
         self.product_list.bigImg_add_to_cart()
-        self.cart.wclick(self.cart.element_find(self.cart.go_to_order))
+        self.cart.wait_click(self.cart.go_to_order)
         self.order.choose_none_invoice()
-        self.order.wclick(self.order.element_find(self.order.submit_order_button))
-        self.order.wclick(self.order.element_find(self.order.notice_layer))
+        self.order.wait_click(self.order.submit_order_button)
+        self.order.wait_click(self.order.notice_layer)
         orderId = self.order_result.get_so_by_url()
         self.page.cancel_order(orderId, environment=self.environment)  # 接口取消订单
 

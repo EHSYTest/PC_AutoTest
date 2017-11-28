@@ -142,7 +142,7 @@ class Page():
         try:
             layer = self.element_find(self.layer)
         except exceptions.NoSuchElementException:
-            print('Nolayer    '+layer)
+            print('Nolayer')
             self.element_find(ele).click()
         else:
             print('layer    '+layer)

@@ -18,13 +18,13 @@ class TestOrder(unittest.TestCase):
 
     def setUp(self):
         self.driver = webdriver.Chrome()
+        self.driver.implicitly_wait(30)
         self.page = Page(self.driver)
         self.environment = self.page.config_reader('environment.conf', 'Environment', 'environment')
         if self.environment == 'staging':
             self.driver.get('http://ps.ehsy.com/')
         elif self.environment == 'production':
             self.driver.get('http://www.ehsy.com')
-        self.driver.implicitly_wait(30)
         self.driver.maximize_window()
         self.cart = Cart(self.driver)
         self.home = Home(self.driver)
@@ -36,7 +36,6 @@ class TestOrder(unittest.TestCase):
 
     def test_order_1(self):
         """产线大图页入口-个人用户下单-不开票"""
-        self.driver.implicitly_wait(30)
         login_name = self.page.config_reader('test_order.conf', '个人账号', 'login_name')
         password = self.page.config_reader('test_order.conf', '个人账号', 'password')
         self.home.login(login_name, password)
@@ -54,8 +53,6 @@ class TestOrder(unittest.TestCase):
 
     def test_order_2(self):
         """产线列表页入口-分销用户下单-普票"""
-        self.driver.implicitly_wait(30)
-
         login_name = self.page.config_reader('test_order.conf', '分销账号', 'login_name')
         password = self.page.config_reader('test_order.conf', '分销账号', 'password')
         self.home.login(login_name, password)
@@ -72,8 +69,6 @@ class TestOrder(unittest.TestCase):
 
     def test_order_3(self):
         """品牌页入口-分销用户下单-增票"""
-        self.driver.implicitly_wait(30)
-
         login_name = self.page.config_reader('test_order.conf', '分销账号', 'login_name')
         password = self.page.config_reader('test_order.conf', '分销账号', 'password')
         self.home.login(login_name, password)
@@ -90,8 +85,6 @@ class TestOrder(unittest.TestCase):
 
     def test_order_4(self):
         """详情页入口-终端用户下单-普票"""
-        self.driver.implicitly_wait(30)
-
         login_name = self.page.config_reader('test_order.conf', '终端账号', 'login_name')
         password = self.page.config_reader('test_order.conf', '终端账号', 'password')
         self.home.login(login_name, password)
@@ -112,8 +105,6 @@ class TestOrder(unittest.TestCase):
 
     def test_order_5(self):
         """产品详情页入口-终端用户下单-增票"""
-        self.driver.implicitly_wait(30)
-
         login_name = self.page.config_reader('test_order.conf', '终端账号', 'login_name')
         password = self.page.config_reader('test_order.conf', '终端账号', 'password')
         self.home.login(login_name, password)
@@ -212,8 +203,6 @@ class TestOrder(unittest.TestCase):
 
     def test_order_10(self):
         """产品详情页入口-EIS用户下单-表单"""
-        self.driver.implicitly_wait(30)
-
         url = self.page.config_reader('test_order.conf', 'EIS_URL', 'URL_FORM')
         self.driver.get(url)
         self.home.search_sku()
@@ -234,8 +223,6 @@ class TestOrder(unittest.TestCase):
 
     def test_order_11(self):
         """产品列表页入口-EIS用户下单-CXML"""
-        self.driver.implicitly_wait(30)
-
         url = self.page.config_reader('test_order.conf', 'EIS_URL', 'URL_CXML')
         self.driver.get(url)
         self.home.category_tree_click()
@@ -315,19 +302,19 @@ if __name__ == '__main__':
     suit = unittest.TestSuite()
     case_list = [
                   TestOrder('test_order_1'),
-                  TestOrder('test_order_2'),
-                  TestOrder('test_order_3'),
-                  TestOrder('test_order_4'),
-                  TestOrder('test_order_5'),
+                  # TestOrder('test_order_2'),
+                  # TestOrder('test_order_3'),
+                  # TestOrder('test_order_4'),
+                  # TestOrder('test_order_5'),
                   # TestOrder('test_order_6'),
                   # TestOrder('test_order_7'),
                   # TestOrder('test_order_8'),
                   # TestOrder('test_order_9'),
-                  TestOrder('test_order_10'),
-                  TestOrder('test_order_11'),
-                  TestOrder('test_order_12'),
-                  TestOrder('test_order_13'),
-                  TestOrder('test_order_14'),
+                  # TestOrder('test_order_10'),
+                  # TestOrder('test_order_11'),
+                  # TestOrder('test_order_12'),
+                  # TestOrder('test_order_13'),
+                  # TestOrder('test_order_14'),
     ]
     suit.addTests(case_list)
     # now = time.strftime("%Y_%m_%d %H_%M_%S")

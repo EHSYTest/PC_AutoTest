@@ -42,10 +42,11 @@ class ProductList(Page):
         self.element_find(self.go_cart).click()
 
     def bigImg_add_to_cart(self):
-        self.wclick(self.big_img_icon)
-        self.wclick(self.bigImg_add_button)
+        ele = self.element_find(self.big_img_icon)
+        self.wclick(ele)
+        self.wclick(self.element_find(self.bigImg_add_button))
         ActionChains(self.driver).move_to_element(self.element_find(self.cart)).perform()
-        self.wclick(self.go_cart)
+        self.wclick(self.element_find(self.go_cart))
 
     def brand_add_to_cart(self):
         self.element_find(self.brand_add_button).click()

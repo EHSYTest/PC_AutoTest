@@ -138,11 +138,11 @@ class Page():
         except exceptions.TimeoutException:
             print('wait_to_stale: exceptions.NoSuchElementException')
 
-    def wclick(self, element):
+    def wait_click(self, ele):
         for i in range(30):
-            if element.is_enabled():
-                element.click()
+            try:
+                self.element_find(ele).click()
                 break
-            else:
+            except exceptions.WebDriverException:
                 time.sleep(0.3)
                 continue

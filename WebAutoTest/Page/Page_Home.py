@@ -48,7 +48,7 @@ class Home(Page):
     def category_tree_click(self):
         category_tool = self.element_find(self.category_tool)
         ActionChains(self.driver).move_to_element(category_tool).perform()
-        self.wclick(self.element_find(self.category_taozhuang))
+        self.wait_click(self.category_taozhuang)
 
     def search_sku(self):
         self.element_find(self.search_send).send_keys('MAE475')

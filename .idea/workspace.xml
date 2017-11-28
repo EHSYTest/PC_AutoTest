@@ -25,8 +25,8 @@
       <file leaf-file-name="Page_Base.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/WebAutoTest/Page/Page_Base.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="207">
-              <caret line="145" column="35" lean-forward="false" selection-start-line="145" selection-start-column="35" selection-end-line="145" selection-end-column="35" />
+            <state relative-caret-position="127">
+              <caret line="141" column="88" lean-forward="false" selection-start-line="141" selection-start-column="88" selection-end-line="141" selection-end-column="88" />
               <folding>
                 <element signature="e#0#21#0" expanded="true" />
               </folding>
@@ -546,13 +546,6 @@
       <option name="presentableId" value="Default" />
       <updated>1506390215075</updated>
     </task>
-    <task id="LOCAL-00012" summary="New">
-      <created>1511148720391</created>
-      <option name="number" value="00012" />
-      <option name="presentableId" value="LOCAL-00012" />
-      <option name="project" value="LOCAL" />
-      <updated>1511148720391</updated>
-    </task>
     <task id="LOCAL-00013" summary="New">
       <created>1511155251732</created>
       <option name="number" value="00013" />
@@ -889,7 +882,14 @@
       <option name="project" value="LOCAL" />
       <updated>1511855971761</updated>
     </task>
-    <option name="localTasksCounter" value="61" />
+    <task id="LOCAL-00061" summary="By Rick">
+      <created>1511857231309</created>
+      <option name="number" value="00061" />
+      <option name="presentableId" value="LOCAL-00061" />
+      <option name="project" value="LOCAL" />
+      <updated>1511857231309</updated>
+    </task>
+    <option name="localTasksCounter" value="62" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -1349,8 +1349,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/WebAutoTest/Page/Page_Base.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="207">
-          <caret line="145" column="35" lean-forward="false" selection-start-line="145" selection-start-column="35" selection-end-line="145" selection-end-column="35" />
+        <state relative-caret-position="127">
+          <caret line="141" column="88" lean-forward="false" selection-start-line="141" selection-start-column="88" selection-end-line="141" selection-end-column="88" />
           <folding>
             <element signature="e#0#21#0" expanded="true" />
           </folding>

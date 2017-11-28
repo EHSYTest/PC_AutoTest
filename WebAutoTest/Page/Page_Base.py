@@ -139,7 +139,7 @@ class Page():
             print('wait_to_stale: exceptions.TimeoutException')
 
     def wait_click(self, ele):
-        if expected_conditions.presence_of_element_located(By.ID, 'ajax-layer-loading'):
+        if expected_conditions.presence_of_element_located((By.ID, 'ajax-layer-loading')):
             print(ele+'layer')
             layer = self.element_find(self.layer)
             self.wait_to_stale(layer)

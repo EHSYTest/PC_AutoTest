@@ -42,7 +42,7 @@ class ProductList(Page):
         self.element_find(self.go_cart).click()
 
     def bigImg_add_to_cart(self):
-        self.element_find(self.big_img_icon).click()
+        self.wait_to_clickable(self.big_img_icon).click()
         self.element_find(self.bigImg_add_button).click()
         self.wait_to_unvisible(self.layer_sku)
         ActionChains(self.driver).move_to_element(self.element_find(self.cart)).perform()

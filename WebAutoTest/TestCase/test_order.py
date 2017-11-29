@@ -12,7 +12,9 @@ from Page_ProductList import ProductList
 from Page_QuickOrder import QuickOrder
 from Page_ReportOrder import ReportOrder
 from selenium.webdriver.common.action_chains import ActionChains
-
+import smtplib
+from email.mime.text import MIMEText
+from email.header import Header
 
 class TestOrder(unittest.TestCase):
 
@@ -265,23 +267,25 @@ if __name__ == '__main__':
     suit = unittest.TestSuite()
     case_list = [
                   TestOrder('test_order_01'),
-                  TestOrder('test_order_02'),
-                  TestOrder('test_order_03'),
-                  TestOrder('test_order_04'),
-                  TestOrder('test_order_05'),
+                  # TestOrder('test_order_02'),
+                  # TestOrder('test_order_03'),
+                  # TestOrder('test_order_04'),
+                  # TestOrder('test_order_05'),
                   # TestOrder('test_order_06'),
                   # TestOrder('test_order_07'),
                   # TestOrder('test_order_08'),
                   # TestOrder('test_order_09'),
-                  TestOrder('test_order_10'),
-                  TestOrder('test_order_11'),
-                  TestOrder('test_order_12'),
-                  TestOrder('test_order_13'),
-                  TestOrder('test_order_14'),
+                  # TestOrder('test_order_10'),
+                  # TestOrder('test_order_11'),
+                  # TestOrder('test_order_12'),
+                  # TestOrder('test_order_13'),
+                  # TestOrder('test_order_14'),
     ]
     suit.addTests(case_list)
     # now = time.strftime("%Y_%m_%d %H_%M_%S")
     file = open('../TestResult/order.html', 'wb')
     runner = HTMLTestRunner(stream=file, title='WWW下单——测试报告', description='测试情况')
-    runner.run(suit)
+    result = runner.run(suit)
     file.close()
+
+

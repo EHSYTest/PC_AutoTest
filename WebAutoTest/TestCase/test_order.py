@@ -34,7 +34,7 @@ class TestOrder(unittest.TestCase):
         self.quick_order = QuickOrder(self.driver)
         self.report_order = ReportOrder(self.driver)
 
-    def test_order_1(self):
+    def test_order_01(self):
         """产线大图页入口-个人用户下单-不开票"""
         login_name = self.page.config_reader('test_order.conf', '个人账号', 'login_name')
         password = self.page.config_reader('test_order.conf', '个人账号', 'password')
@@ -48,7 +48,7 @@ class TestOrder(unittest.TestCase):
         orderId = self.order_result.get_so_by_url()
         self.page.cancel_order(orderId, environment=self.environment)  # 接口取消订单
 
-    def test_order_2(self):
+    def test_order_02(self):
         """产线列表页入口-分销用户下单-普票"""
         login_name = self.page.config_reader('test_order.conf', '分销账号', 'login_name')
         password = self.page.config_reader('test_order.conf', '分销账号', 'password')
@@ -61,7 +61,7 @@ class TestOrder(unittest.TestCase):
         orderId = self.order_result.get_so_by_url()
         self.page.cancel_order(orderId, environment=self.environment)  # 接口取消订单
 
-    def test_order_3(self):
+    def test_order_03(self):
         """品牌页入口-分销用户下单-增票"""
         login_name = self.page.config_reader('test_order.conf', '分销账号', 'login_name')
         password = self.page.config_reader('test_order.conf', '分销账号', 'password')
@@ -74,7 +74,7 @@ class TestOrder(unittest.TestCase):
         orderId = self.order_result.get_so_by_url()
         self.page.cancel_order(orderId, environment=self.environment)  # 接口取消订单
 
-    def test_order_4(self):
+    def test_order_04(self):
         """详情页入口-终端用户下单-普票"""
         login_name = self.page.config_reader('test_order.conf', '终端账号', 'login_name')
         password = self.page.config_reader('test_order.conf', '终端账号', 'password')
@@ -89,7 +89,7 @@ class TestOrder(unittest.TestCase):
         orderId = self.order_result.get_so_by_url()
         self.page.cancel_order(orderId, environment=self.environment)  # 接口取消订单
 
-    def test_order_5(self):
+    def test_order_05(self):
         """产品详情页入口-终端用户下单-增票"""
         login_name = self.page.config_reader('test_order.conf', '终端账号', 'login_name')
         password = self.page.config_reader('test_order.conf', '终端账号', 'password')
@@ -106,7 +106,7 @@ class TestOrder(unittest.TestCase):
         orderId = self.order_result.get_so_by_url()
         self.page.cancel_order(orderId, environment=self.environment)  # 接口取消订单
 
-    # def test_order_6(self):
+    # def test_order_06(self):
     #     """产线列表页入口-国电用户下单-普票"""
     #     login_name = self.page.config_reader('test_order.conf', '国电账号', 'login_name')
     #     password = self.page.config_reader('test_order.conf', '国电账号', 'password')
@@ -122,7 +122,7 @@ class TestOrder(unittest.TestCase):
     #     orderId = self.order_result.get_so_by_url()
     #     self.page.cancel_order(orderId, environment=self.environment)  # 接口取消订单
     #
-    # def test_order_7(self):
+    # def test_order_07(self):
     #     """快速下单页入口-国电用户下单-增票"""
     #     login_name = self.page.config_reader('test_order.conf', '国电账号', 'login_name')
     #     password = self.page.config_reader('test_order.conf', '国电账号', 'password')
@@ -135,7 +135,7 @@ class TestOrder(unittest.TestCase):
     #     orderId = self.order_result.get_so_by_url()
     #     self.page.cancel_order(orderId, environment=self.environment)  # 接口取消订单
     #
-    # def test_order_8(self):
+    # def test_order_08(self):
     #     """产线列表页入口-EAS用户下单-不开票-超过审批额"""
     #     login_name = self.page.config_reader('test_order.conf', 'EAS账号', 'login_name')
     #     password = self.page.config_reader('test_order.conf', 'EAS账号', 'password')
@@ -160,7 +160,7 @@ class TestOrder(unittest.TestCase):
     #         except AssertionError:
     #             continue
     #
-    # def test_order_9(self):
+    # def test_order_09(self):
     #     """产品详情页入口-EAS用户下单-增票-不超过审批额"""
     #     login_name = self.page.config_reader('test_order.conf', 'EAS账号', 'login_name')
     #     password = self.page.config_reader('test_order.conf', 'EAS账号', 'password')
@@ -264,15 +264,15 @@ class TestOrder(unittest.TestCase):
 if __name__ == '__main__':
     suit = unittest.TestSuite()
     case_list = [
-                  TestOrder('test_order_1'),
-                  TestOrder('test_order_2'),
-                  TestOrder('test_order_3'),
-                  TestOrder('test_order_4'),
-                  TestOrder('test_order_5'),
-                  # TestOrder('test_order_6'),
-                  # TestOrder('test_order_7'),
-                  # TestOrder('test_order_8'),
-                  # TestOrder('test_order_9'),
+                  TestOrder('test_order_01'),
+                  TestOrder('test_order_02'),
+                  TestOrder('test_order_03'),
+                  TestOrder('test_order_04'),
+                  TestOrder('test_order_05'),
+                  # TestOrder('test_order_06'),
+                  # TestOrder('test_order_07'),
+                  # TestOrder('test_order_08'),
+                  # TestOrder('test_order_09'),
                   TestOrder('test_order_10'),
                   TestOrder('test_order_11'),
                   TestOrder('test_order_12'),

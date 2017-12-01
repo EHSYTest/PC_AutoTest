@@ -50,19 +50,19 @@ class Home(Page):
         ActionChains(self.driver).move_to_element(category_tool).perform()
         self.wait_click(self.category_taozhuang)
 
-    def search_sku(self):
-        self.element_find(self.search_send).send_keys('MAE475')
-        self.element_find(self.search_button).click()
+    def search_sku(self, sku='MAD618'):
+        self.element_find(self.search_send).send_keys(sku)
+        self.wait_click(self.search_button)
 
     def quick_order_click(self):
-        self.element_find(self.quick_order).click()
+        self.wait_click(self.quick_order)
 
     def brand_click(self):
         self.wait_click(self.brand_center)
         self.wait_click(self.brand_bosch)
 
     def go_user_center(self):
-        self.wait_to_clickable(self.my_ehsy).click()
+        self.wait_click(self.my_ehsy)
 
     def go_my_collection(self):
         element = self.element_find(self.my_ehsy)

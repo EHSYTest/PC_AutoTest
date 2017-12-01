@@ -25,9 +25,12 @@ class ProductList(Page):
     sku_result_click = ('by.xpath', '//div/div/a/div/div/img')
     search_sku = ('by.class_name', 'glob-search-input')  # 搜索框
     search_button = ('by.class_name', 'glob-search-submit')  # 搜索
+    unit_price = ('by.xpath', '//span/span[2]')
 
     # 产品详情页
     skuContent_add_button = ('by.class_name', 'add-to-cart-btn')
+    discount_price = ('by.class_name', 'show-price')
+    price = ('by.xpath', '//del/span')
 
     # 页面刷新浮层
     layer = ('by.id', 'ajax-layer-loading')

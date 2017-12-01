@@ -24,6 +24,7 @@ class Cart(Page):
     report_order = ('by.class_name', 'cart-to-bj-btn')
     eis_confirm = ('by.xpath', '//div[1]/button[2]')
 
+    unit_price = ('by.xpath', '//ul/li[3]/p')
     # del_unvalued_product = ('by.class_name', 'footer-clear-span')
     # product_bottom_add = ('by.xpath', '//div[2]/ul/li[1]/p[4]')
 

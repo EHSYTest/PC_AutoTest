@@ -30,7 +30,7 @@ class ProductList(Page):
     # 产品详情页
     skuContent_add_button = ('by.class_name', 'add-to-cart-btn')
     discount_price = ('by.class_name', 'show-price')
-    price = ('by.xpath', '//del/span')
+    del_price = ('by.xpath', '//del/span')
 
     # 页面刷新浮层
     layer = ('by.id', 'ajax-layer-loading')

@@ -5,7 +5,7 @@ from email.mime.text import MIMEText
 from email.header import Header
 
 test_dir = './'
-discover = unittest.defaultTestLoader.discover(test_dir, pattern='test*.py')
+discover = unittest.defaultTestLoader.discover(test_dir, pattern='test_order.py')
 
 
 def send_email(dir, flag):
@@ -27,6 +27,7 @@ def send_email(dir, flag):
 if __name__ == '__main__':
     file = open('../TestResult/order.html', 'wb')
     runner = HTMLTestRunner(stream=file, title='EHSY-WWW自动化测试报告', description='自动化测试详情')
+    print(discover)
     result = runner.run(discover)
     file.close()
 

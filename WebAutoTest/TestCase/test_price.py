@@ -38,17 +38,17 @@ class TestPrice(unittest.TestCase):
 
     def price_assert(self, dis, csp=False, promotion=False):
         # csp: csp产品标志； promotion: 促销产品标志
-        if csp:     # 若csp,取csp配置
+        if csp:     # 若csp,取csp产品和价格
             product = self.page.config_reader('data.conf', 'csp_price_product', 'csp_product')
             price = self.page.config_reader('data.conf', 'csp_price_product', 'csp_price')
             price = float(price)
-        elif promotion:     # 若促销，取促销配置
+        elif promotion:     # 若促销，取促销产品和价格
             product = self.page.config_reader('data.conf', 'promotion_price_product', 'promotion_product')
             origin_price = self.page.config_reader('data.conf', 'promotion_price_product', 'origin_price')
             promotion_price = self.page.config_reader('data.conf', 'promotion_price_product', 'promotion_price')
             discount_price = float('%.2f' % (float(origin_price) * dis))
             price = min(float(promotion_price), discount_price)
-        else:   # 若普通，取普通配置
+        else:   # 若普通，取普通产品和价格
             product = self.page.config_reader('data.conf', 'price_product', 'product')
             price = self.page.config_reader('data.conf', 'price_product', 'price')
             price = float('%.2f' % (float(price) * dis))
@@ -86,7 +86,7 @@ class TestPrice(unittest.TestCase):
         password = self.page.config_reader('test_price.conf', '个人', 'password')
         self.home.login(login_name, password)
         self.price_assert(dis=1)
-
+    
     def test_price_02(self):
         """价格测试-分销-待审核"""
         login_name = self.page.config_reader('test_price.conf', '分销-待审核', 'login_name')

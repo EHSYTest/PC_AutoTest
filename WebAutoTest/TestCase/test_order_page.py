@@ -23,7 +23,7 @@ class TestOrderPage(unittest.TestCase):
         self.page = Page(self.driver)
         self.environment = self.page.config_reader('environment.conf', 'Environment', 'environment')
         if self.environment == 'staging':
-            self.driver.get('http://ps.ehsy.com')
+            self.driver.get('http://opc-test.ehsy.com/mall')
         elif self.environment == 'production':
             self.driver.get('http://www.ehsy.com')
         self.driver.implicitly_wait(30)
@@ -153,15 +153,17 @@ class TestOrderPage(unittest.TestCase):
         self.order.receiving_address_edit()
         self.order.receiving_address_delete()
 
-    # def test_invoice_check(self):
-    #     """发票信息填写校验-普票"""
-    #     login_name = self.page.config_reader('test_order.conf', '发票地址账号', 'login_name')
-    #     password = self.page.config_reader('test_order.conf', '发票地址账号', 'password')
-    #     self.home.login(login_name, password)
-    #     ActionChains(self.driver).move_to_element(self.cart.element_find(self.product_list.cart)).perform()
-    #     self.product_list.element_find(self.product_list.go_cart).click()
-    #     self.cart.element_find(self.cart.go_to_order).click()
-    #     self.order.normal_invoice_check()
+    def test_invoice_check(self):
+        """发票信息填写校验-普票"""
+        login_name = self.page.config_reader('test_order.conf', '个人地址发票账号', 'login_name')
+        password = self.page.config_reader('test_order.conf', '个人地址发票账号', 'password')
+        self.home.login(login_name, password)
+        ActionChains(self.driver).move_to_element(self.cart.element_find(self.product_list.cart)).perform()
+        self.product_list.wait_click(self.product_list.go_cart)
+        self.cart.wait_click(self.cart.go_to_order)
+        self.order.normal_invoice_check()
+        self.order.wait_click(self.order.close)
+        self.order.vat_invoice_check()
 
     def tearDown(self):
         test_method_name = self._testMethodName

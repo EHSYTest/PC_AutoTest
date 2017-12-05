@@ -8,13 +8,14 @@ from Page_NormalCart import NormalCart
 from Page_Home import Home
 from Page_ProductList import ProductList
 
+
 class TestCart(unittest.TestCase):
     def setUp(self):
         self.driver = webdriver.Chrome()
         self.page = Page(self.driver)
         self.environment = self.page.config_reader('environment.conf', 'Environment', 'environment')
         if self.environment == 'staging':
-            self.driver.get('http://ps.ehsy.com')
+            self.driver.get('http://opc-test.ehsy.com/mall')
         else:
             self.driver.get('http://www.ehsy.com')
         self.driver.implicitly_wait(30)

@@ -11,10 +11,6 @@ from Page_OrderResult import OrderResult
 from Page_ProductList import ProductList
 from Page_QuickOrder import QuickOrder
 from Page_ReportOrder import ReportOrder
-from selenium.webdriver.common.action_chains import ActionChains
-import smtplib
-from email.mime.text import MIMEText
-from email.header import Header
 
 
 class TestOrder(unittest.TestCase):
@@ -26,7 +22,7 @@ class TestOrder(unittest.TestCase):
         self.page = Page(self.driver)
         self.environment = self.page.config_reader('environment.conf', 'Environment', 'environment')
         if self.environment == 'staging':
-            self.driver.get('http://ps.ehsy.com/')
+            self.driver.get('http://opc-test.ehsy.com/mall')
         elif self.environment == 'production':
             self.driver.get('http://www.ehsy.com')
         self.driver.maximize_window()
@@ -85,8 +81,7 @@ class TestOrder(unittest.TestCase):
         self.home.login(login_name, password)
         self.home.search_sku()
         self.product_list.wait_click(self.product_list.bigImg_add_button)
-        ActionChains(self.driver).move_to_element(self.cart.element_find(self.product_list.cart)).perform()
-        self.product_list.wait_click(self.product_list.go_cart)
+        self.product_list.wait_click(self.product_list.jump_to_cart)
         self.cart.wait_click(self.cart.go_to_order)
         self.order.choose_normal_invoice()
         self.order.wait_click(self.order.submit_order_button)
@@ -102,43 +97,39 @@ class TestOrder(unittest.TestCase):
         self.page.wait_click(self.product_list.sku_result_click)
         self.page.switch_to_new_window()
         self.product_list.wait_click(self.product_list.skuContent_add_button)
-        ActionChains(self.driver).move_to_element(self.product_list.element_find(self.product_list.cart)).perform()
-        self.product_list.wait_click(self.product_list.go_cart)
+        self.product_list.wait_click(self.product_list.jump_to_cart)
         self.cart.wait_click(self.cart.go_to_order)
         self.order.choose_vat_invoice()
         self.order.wait_click(self.order.submit_order_button)
         orderId = self.order_result.get_so_by_url()
         self.page.cancel_order(orderId, environment=self.environment)  # 接口取消订单
 
-    # def test_order_06(self):
-    #     """产线列表页入口-国电用户下单-普票"""
-    #     login_name = self.page.config_reader('test_order.conf', '国电账号', 'login_name')
-    #     password = self.page.config_reader('test_order.conf', '国电账号', 'password')
-    #     self.home.login(login_name, password)
-    #     self.home.category_tree_click()
-    #     
-    #     self.product_list.list_add_to_cart()
-    #     
-    #     self.cart.element_find(self.cart.go_to_order).click()
-    #     
-    #     self.order.choose_normal_invoice()
-    #     self.order.element_find(self.order.submit_order_button).click()
-    #     orderId = self.order_result.get_so_by_url()
-    #     self.page.cancel_order(orderId, environment=self.environment)  # 接口取消订单
-    #
-    # def test_order_07(self):
-    #     """快速下单页入口-国电用户下单-增票"""
-    #     login_name = self.page.config_reader('test_order.conf', '国电账号', 'login_name')
-    #     password = self.page.config_reader('test_order.conf', '国电账号', 'password')
-    #     self.home.login(login_name, password)
-    #     self.home.quick_order_click()
-    #     self.quick_order.quick_add_to_cart()
-    #     self.cart.element_find(self.cart.go_to_order).click()
-    #     self.order.choose_vat_invoice()
-    #     self.order.element_find(self.order.submit_order_button).click()
-    #     orderId = self.order_result.get_so_by_url()
-    #     self.page.cancel_order(orderId, environment=self.environment)  # 接口取消订单
-    #
+    def test_order_06(self):
+        """产线列表页入口-国电用户下单-普票"""
+        login_name = self.page.config_reader('test_order.conf', '国电账号', 'login_name')
+        password = self.page.config_reader('test_order.conf', '国电账号', 'password')
+        self.home.login(login_name, password)
+        self.home.category_tree_click()
+        self.product_list.list_add_to_cart()
+        self.cart.wait_click(self.cart.go_to_order)
+        self.order.choose_normal_invoice()
+        self.order.wait_click(self.order.submit_order_button)
+        orderId = self.order_result.get_so_by_url()
+        self.page.cancel_order(orderId, environment=self.environment)  # 接口取消订单
+
+    def test_order_07(self):
+        """快速下单页入口-国电用户下单-增票"""
+        login_name = self.page.config_reader('test_order.conf', '国电账号', 'login_name')
+        password = self.page.config_reader('test_order.conf', '国电账号', 'password')
+        self.home.login(login_name, password)
+        self.home.quick_order_click()
+        self.quick_order.quick_add_to_cart()
+        self.cart.wait_click(self.cart.go_to_order)
+        self.order.choose_vat_invoice()
+        self.order.wait_click(self.order.submit_order_button)
+        orderId = self.order_result.get_so_by_url()
+        self.page.cancel_order(orderId, environment=self.environment)  # 接口取消订单
+
     # def test_order_08(self):
     #     """产线列表页入口-EAS用户下单-不开票-超过审批额"""
     #     login_name = self.page.config_reader('test_order.conf', 'EAS账号', 'login_name')
@@ -193,8 +184,7 @@ class TestOrder(unittest.TestCase):
         self.page.wait_click(self.product_list.sku_result_click)
         self.page.switch_to_new_window()
         self.product_list.wait_click(self.product_list.skuContent_add_button)
-        ActionChains(self.driver).move_to_element(self.product_list.element_find(self.product_list.cart)).perform()
-        self.product_list.wait_click(self.product_list.go_cart)
+        self.product_list.wait_click(self.product_list.jump_to_cart)
         self.cart.wait_click(self.cart.go_to_order)
         self.cart.wait_click(self.cart.eis_confirm)
         message = self.order_result.element_find(self.order_result.eis_message).text
@@ -212,7 +202,7 @@ class TestOrder(unittest.TestCase):
         assert message == '推送成功'
 
     def test_order_12(self):
-        """报价单入口-终端用户下单-增票"""
+        """报价单入口-终端用户下单-增票(报价地址与收货地址一致)"""
         login_name = self.page.config_reader('test_order.conf', '终端账号', 'login_name')
         password = self.page.config_reader('test_order.conf', '终端账号', 'password')
         self.home.login(login_name, password)
@@ -220,17 +210,39 @@ class TestOrder(unittest.TestCase):
         self.page.wait_click(self.product_list.sku_result_click)
         self.page.switch_to_new_window()
         self.product_list.wait_click(self.product_list.skuContent_add_button)
-        ActionChains(self.driver).move_to_element(self.product_list.element_find(self.product_list.cart)).perform()
-        self.product_list.wait_click(self.product_list.go_cart)
+        self.product_list.wait_click(self.product_list.jump_to_cart)
         self.cart.wait_click(self.cart.report_order)
-        self.report_order.create_order_by_report_order()
-        self.report_order.switch_to_new_window(handle_quantity=3)
+        self.report_order.create_order_by_report_order('北京市', '北京市')
+        self.report_order.switch_to_new_window(handle_quantity=2)
         self.order.choose_vat_invoice()
         self.order.wait_click(self.order.submit_order_button)
         orderId = self.order_result.get_so_by_url()
         self.page.cancel_order(orderId, environment=self.environment)  # 接口取消订单
 
     def test_order_13(self):
+        """报价单入口-终端用户下单-普票(报价地址与收货地址不一致)"""
+        login_name = self.page.config_reader('test_order.conf', '终端账号', 'login_name')
+        password = self.page.config_reader('test_order.conf', '终端账号', 'password')
+        self.home.login(login_name, password)
+        self.home.search_sku()
+        self.page.wait_click(self.product_list.sku_result_click)
+        self.page.switch_to_new_window()
+        self.product_list.wait_click(self.product_list.skuContent_add_button)
+        self.product_list.wait_click(self.product_list.jump_to_cart)
+        self.cart.wait_click(self.cart.report_order)
+        self.report_order.create_order_by_report_order('江苏省', '南京市')
+        self.report_order.switch_to_new_window(handle_quantity=2)
+        self.order.choose_normal_invoice()
+        self.order.wait_click(self.order.submit_order_button)
+        alert_text = self.order.element_find(self.order.div_alert).text
+        assert alert_text == '收货地址和报价城市不一致'
+        self.order.wait_click(self.order.alert_confirm)
+        self.order.elements_find(self.order.receiving_address)[1].click()
+        self.order.wait_click(self.order.submit_order_button)
+        orderId = self.order_result.get_so_by_url()
+        self.page.cancel_order(orderId, environment=self.environment)  # 接口取消订单
+
+    def test_order_14(self):
         """产线列表页入口-分销定制产线用户下单-普票"""
         login_name = self.page.config_reader('test_order.conf', '产线定制-分销', 'login_name')
         password = self.page.config_reader('test_order.conf', '产线定制-分销', 'password')
@@ -245,7 +257,7 @@ class TestOrder(unittest.TestCase):
         orderId = self.order_result.get_so_by_url()
         self.page.cancel_order(orderId, environment=self.environment)  # 接口取消订单
 
-    def test_order_14(self):
+    def test_order_15(self):
         """产线列表页入口-终端定制产线用户下单-增票"""
         login_name = self.page.config_reader('test_order.conf', '产线定制-终端', 'login_name')
         password = self.page.config_reader('test_order.conf', '产线定制-终端', 'password')
@@ -269,8 +281,8 @@ if __name__ == '__main__':
     suit = unittest.TestSuite()
     case_list = [
                   TestOrder('test_order_01'),
-                  # TestOrder('test_order_02'),
-                  # TestOrder('test_order_03'),
+                  TestOrder('test_order_02'),
+                  TestOrder('test_order_03'),
                   # TestOrder('test_order_04'),
                   # TestOrder('test_order_05'),
                   # TestOrder('test_order_06'),
@@ -282,6 +294,7 @@ if __name__ == '__main__':
                   # TestOrder('test_order_12'),
                   # TestOrder('test_order_13'),
                   # TestOrder('test_order_14'),
+                  # TestOrder('test_order_15'),
     ]
     suit.addTests(case_list)
     # now = time.strftime("%Y_%m_%d %H_%M_%S")

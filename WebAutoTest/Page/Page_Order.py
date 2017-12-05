@@ -3,7 +3,7 @@ import time
 from selenium.webdriver.common.action_chains import ActionChains
 from selenium.webdriver.common.keys import Keys
 from selenium.common.exceptions import NoSuchElementException, ElementNotVisibleException, WebDriverException
-
+from selenium.webdriver.common.alert import Alert
 
 class Order(Page):
     """下单页"""
@@ -19,6 +19,7 @@ class Order(Page):
     setDefaultAddress = ('by.name', 'is_default')
     add_confirm = ('by.class_name', 'confirm')
     receiving_address_layer = ('by.class_name', 'content')
+    receiving_address = ('by.class_name', 'list-li')   # find elements
 
     # 编辑收货地址
     address_edit = ('by.xpath', '//ul/li[1]/a[2]')
@@ -41,7 +42,8 @@ class Order(Page):
     normal_invoice_edit = ('by.xpath', '//*[@id="js-invoice-info-1"]/p[1]/span[2]/a[1]')
     normal_invoice_del_confirm = ('by.xpath', '//div[3]/div[1]/button[2]')
     normal_invoice_tab = ('by.xpath', "//ul/li[1][contains(text(),'普通发票')]")
-
+    div_alert = ('by.xpath', '//*[@id="js-layer-alert"]/div[1]/div[2]/div')    
+    alert_confirm = ('by.xpath', '//div[1]/div[3]/div[1]/button')
     close = ('by.class_name', 'close')
 
     # 增值税发票
@@ -174,7 +176,7 @@ class Order(Page):
 
     def invoice_vat_delete(self):
         """删除增值税发票"""
-        self.wait_click(self.choose) # 请选择按钮
+        self.wait_click(self.choose)   # 请选择按钮
         self.wait_click(self.vat_invoice_tab)
         element = self.element_find(self.first_bill)
         ActionChains(self.driver).move_to_element(element).perform()
@@ -245,16 +247,180 @@ class Order(Page):
 
     def normal_invoice_check(self):
         self.wait_click(self.choose)  # 请选择按钮
+        self.wait_click(self.normal_invoice_tab)
         self.wait_click(self.normal_invoice_add)
-        # self.element_find(self.invoice_title).send_keys('公司抬头普票')
-        self.element_find(self.tax_no).send_keys('1234567890qwert')
-        # self.element_find(self.normal_invoice_save).click()
-        #
-        # message = self.element_find(self.invoice_layer).text
-        # self.element_find(self.choose_invoice_title).send_keys('个人抬头')
-        # self.element_find(self.invoice_title).send_keys('个人抬头普票')
-        # self.element_find(self.normal_invoice_save).click()
-        # message = self.element_find(self.invoice_layer).text
-        # assert message == '发票信息添加成功！'
-        # print('普通发票-个人抬头添加成功')
 
+        # 发票抬头不为空
+        self.element_find(self.choose_invoice_title).send_keys('个人抬头')
+        self.wait_click(self.normal_invoice_save)
+        alert_text = self.element_find(self.div_alert).text
+        assert alert_text == '请输入发票抬头'
+        self.wait_click(self.alert_confirm)
+
+        # 税号不为空
+        self.element_find(self.choose_invoice_title).send_keys('公司抬头')
+        self.element_find(self.invoice_title).send_keys('测试发票')
+        self.wait_click(self.normal_invoice_save)
+        alert_text = self.element_find(self.div_alert).text
+        assert alert_text == '请输入税号'
+        self.wait_click(self.alert_confirm)
+
+        # 税号不能为14位
+        self.element_find(self.tax_no).send_keys('12345678909876')
+        self.wait_click(self.normal_invoice_save)
+        alert_text = self.element_find(self.div_alert).text
+        assert alert_text == '请输入15位或18位纳税人识别码'
+        self.wait_click(self.alert_confirm)
+
+        # 税号不能为16位
+        self.element_find(self.tax_no).send_keys(54)
+        self.wait_click(self.normal_invoice_save)
+        alert_text = self.element_find(self.div_alert).text
+        assert alert_text == '请输入15位或18位纳税人识别码'
+        self.wait_click(self.alert_confirm)
+
+        # 税号不能为17位
+        self.element_find(self.tax_no).send_keys(3)
+        self.wait_click(self.normal_invoice_save)
+        alert_text = self.element_find(self.div_alert).text
+        assert alert_text == '请输入15位或18位纳税人识别码'
+        self.wait_click(self.alert_confirm)
+
+        # 税号不能为19位
+        self.element_find(self.tax_no).send_keys(21)
+        self.wait_click(self.normal_invoice_save)
+        alert_text = self.element_find(self.div_alert).text
+        assert alert_text == '请输入15位或18位纳税人识别码'
+        self.wait_click(self.alert_confirm)
+
+        # 税号不能含特殊字符
+        self.element_find(self.tax_no).send_keys(Keys.BACK_SPACE, Keys.BACK_SPACE, '$')
+        self.wait_click(self.normal_invoice_save)
+        alert_text = self.element_find(self.div_alert).text
+        assert alert_text == '请输入15位或18位纳税人识别码'
+        self.wait_click(self.alert_confirm)
+
+        # 发票抬头不能为空
+        self.element_find(self.invoice_title).clear()
+        self.element_find(self.tax_no).send_keys(Keys.BACK_SPACE, 'A')
+        self.wait_click(self.normal_invoice_save)
+        alert_text = self.element_find(self.div_alert).text
+        assert alert_text == '请输入发票抬头'
+        self.wait_click(self.alert_confirm)
+
+        self.element_find(self.invoice_title).send_keys('发票抬头')
+        self.wait_click(self.normal_invoice_save)
+        message = self.element_find(self.invoice_layer).text
+        assert message == '发票信息添加成功！'
+
+        # 删除添加的发票
+        element = self.element_find(self.first_normal_invoice)
+        ActionChains(self.driver).move_to_element(element).perform()
+        self.wait_click(self.normal_invoice_del)
+        self.wait_click(self.normal_invoice_del_confirm)
+        message = self.element_find(self.invoice_layer).text
+        assert message == '发票信息删除成功！'
+
+    def vat_invoice_check(self):
+        self.wait_click(self.choose)    # 请选择按钮
+        self.wait_click(self.vat_invoice_tab)
+        self.wait_click(self.bill_add)
+
+        # 单位名称不为空
+        self.element_find(self.bill_tax_no).send_keys('1234567890123qwert')
+        self.element_find(self.bill_address).send_keys('上海市浦东新区凌阳大厦')
+        self.element_find(self.bill_phone).send_keys('15150681507')
+        self.element_find(self.bill_bank).send_keys('上海银行')
+        self.element_find(self.bill_bank_account).send_keys('123456')
+        self.wait_click(self.bill_save)
+        alert_text = self.element_find(self.div_alert).text
+        assert alert_text == '请输入单位名称'
+        self.wait_click(self.alert_confirm)
+
+        # 注册地址不为空
+        self.element_find(self.bill_title).send_keys('自动化测试增票')
+        self.element_find(self.bill_address).clear()
+        self.wait_click(self.bill_save)
+        alert_text = self.element_find(self.div_alert).text
+        assert alert_text == '请输入注册地址'
+        self.wait_click(self.alert_confirm)
+
+        # 注册电话不为空
+        self.element_find(self.bill_address).send_keys('上海市浦东新区凌阳大厦')
+        self.element_find(self.bill_phone).clear()
+        self.wait_click(self.bill_save)
+        alert_text = self.element_find(self.div_alert).text
+        assert alert_text == '请输入注册电话'
+        self.wait_click(self.alert_confirm)
+
+        # 开户银行不为空
+        self.element_find(self.bill_phone).send_keys('15150681507')
+        self.element_find(self.bill_bank).clear()
+        self.wait_click(self.bill_save)
+        alert_text = self.element_find(self.div_alert).text
+        assert alert_text == '请输入开户银行'
+        self.wait_click(self.alert_confirm)
+
+        # 银行账号不为空
+        self.element_find(self.bill_bank).send_keys('上海银行')
+        self.element_find(self.bill_bank_account).clear()
+        self.wait_click(self.bill_save)
+        alert_text = self.element_find(self.div_alert).text
+        assert alert_text == '请输入银行账号'
+        self.wait_click(self.alert_confirm)
+
+        # 税号不为空
+        self.element_find(self.bill_bank_account).send_keys('123456')
+        self.element_find(self.bill_tax_no).clear()
+        self.wait_click(self.bill_save)
+        alert_text = self.element_find(self.div_alert).text
+        assert alert_text == '请输入纳税人识别码'
+        self.wait_click(self.alert_confirm)
+
+        # 税号不为14位
+        self.element_find(self.bill_tax_no).send_keys('12345678901234')
+        self.wait_click(self.bill_save)
+        alert_text = self.element_find(self.div_alert).text
+        assert alert_text == '请输入15位或18位纳税人识别码'
+        self.wait_click(self.alert_confirm)
+
+        # 税号不为16位
+        self.element_find(self.bill_tax_no).send_keys('56')
+        self.wait_click(self.bill_save)
+        alert_text = self.element_find(self.div_alert).text
+        assert alert_text == '请输入15位或18位纳税人识别码'
+        self.wait_click(self.alert_confirm)
+
+        # 税号不为17位
+        self.element_find(self.bill_tax_no).send_keys('7')
+        self.wait_click(self.bill_save)
+        alert_text = self.element_find(self.div_alert).text
+        assert alert_text == '请输入15位或18位纳税人识别码'
+        self.wait_click(self.alert_confirm)
+
+        # 税号不为19位
+        self.element_find(self.bill_tax_no).send_keys('89')
+        self.wait_click(self.bill_save)
+        alert_text = self.element_find(self.div_alert).text
+        assert alert_text == '请输入15位或18位纳税人识别码'
+        self.wait_click(self.alert_confirm)
+
+        # 税号不含特殊字符
+        self.element_find(self.bill_tax_no).send_keys(Keys.BACK_SPACE, Keys.BACK_SPACE, '￥')
+        self.wait_click(self.bill_save)
+        alert_text = self.element_find(self.div_alert).text
+        assert alert_text == '请输入15位或18位纳税人识别码'
+        self.wait_click(self.alert_confirm)
+
+        self.element_find(self.bill_tax_no).send_keys(Keys.BACK_SPACE, 'A')
+        self.wait_click(self.bill_save)
+        message = self.element_find(self.invoice_layer).text
+        assert message == '发票信息添加成功！'
+
+        # 删除添加的发票
+        element = self.element_find(self.first_bill)
+        ActionChains(self.driver).move_to_element(element).perform()
+        self.wait_click(self.bill_del)
+        self.wait_click(self.bill_del_confirm)
+        message = self.element_find(self.invoice_layer).text
+        assert message == '发票信息删除成功！'

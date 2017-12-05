@@ -32,6 +32,8 @@ class ProductList(Page):
     discount_price = ('by.class_name', 'show-price')
     del_price = ('by.xpath', '//del/span')
 
+    # 去购物车结算按钮
+    jump_to_cart = ('by.class_name', 'jumpToCart')
     # 页面刷新浮层
     layer = ('by.id', 'ajax-layer-loading')
     # 商品添加购物车提示
@@ -40,25 +42,15 @@ class ProductList(Page):
     def list_add_to_cart(self):
         self.wait_click(self.list_add_button)
         self.wait_click(self.cart_button)
-        ActionChains(self.driver).move_to_element(self.element_find(self.cart)).perform()
         self.wait_click(self.go_cart)
 
     def bigImg_add_to_cart(self):
         self.wait_click(self.big_img_icon)
         self.wait_click(self.bigImg_add_button)
-        ActionChains(self.driver).move_to_element(self.element_find(self.cart)).perform()
         self.wait_click(self.go_cart)
 
     def brand_add_to_cart(self):
         self.wait_click(self.brand_add_button)
-        ActionChains(self.driver).move_to_element(self.element_find(self.cart)).perform()
         self.wait_click(self.go_cart)
 
-    def search_add_to_cart(self):
-        self.element_find(self.search_sku).clear()
-        self.element_find(self.search_sku).send_keys('LAA444')  # 区域限制商品
-        self.wait_click(self.search_button)
-        self.wait_click(self.bigImg_add_button)
-        element = self.wait_to_clickable(self.cart)
-        ActionChains(self.driver).move_to_element(element).perform()
-        self.wait_click(self.go_cart)
+

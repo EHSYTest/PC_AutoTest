@@ -11,13 +11,11 @@ class QuickOrder(Page):
     cart = ('by.xpath', '/html/body/div[1]/div[2]/div[3]/a')
     go_cart = ('by.link_text', '去购物车结算')
 
-    def quick_add_to_cart(self):
-        self.element_find(self.sku_send).send_keys('MAD618')
+    def quick_add_to_cart(self, product='MAD618'):
+        self.element_find(self.sku_send).send_keys(product)
         self.element_find(self.quantity_send).send_keys(10)
-        self.element_find(self.add_to_cart).click()
-        element = self.wait_to_clickable(self.cart)
-        ActionChains(self.driver).move_to_element(element).perform()
-        self.element_find(self.go_cart).click()
+        self.wait_click(self.add_to_cart)
+        self.wait_click(self.go_cart)
 
 
 

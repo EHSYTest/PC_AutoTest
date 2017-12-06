@@ -85,6 +85,7 @@ class TestOrder(unittest.TestCase):
         self.cart.wait_click(self.cart.go_to_order)
         self.order.choose_normal_invoice()
         self.order.wait_click(self.order.submit_order_button)
+        self.order.wait_click(self.order.notice_layer)
         orderId = self.order_result.get_so_by_url()
         self.page.cancel_order(orderId, environment=self.environment)  # 接口取消订单
 
@@ -101,6 +102,7 @@ class TestOrder(unittest.TestCase):
         self.cart.wait_click(self.cart.go_to_order)
         self.order.choose_vat_invoice()
         self.order.wait_click(self.order.submit_order_button)
+        self.order.wait_click(self.order.notice_layer)
         orderId = self.order_result.get_so_by_url()
         self.page.cancel_order(orderId, environment=self.environment)  # 接口取消订单
 
@@ -281,8 +283,8 @@ if __name__ == '__main__':
     suit = unittest.TestSuite()
     case_list = [
                   TestOrder('test_order_01'),
-                  TestOrder('test_order_02'),
-                  TestOrder('test_order_03'),
+                  # TestOrder('test_order_02'),
+                  # TestOrder('test_order_03'),
                   # TestOrder('test_order_04'),
                   # TestOrder('test_order_05'),
                   # TestOrder('test_order_06'),

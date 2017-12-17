@@ -308,7 +308,32 @@ class Order(Page):
         assert alert_text == '请输入发票抬头'
         self.wait_click(self.alert_confirm)
 
-        self.element_find(self.invoice_title).send_keys('发票抬头')
+        # 发票抬头不能全数字
+        self.element_find(self.invoice_title).send_keys('111')
+        self.wait_click(self.normal_invoice_save)
+        alert_text = self.element_find(self.div_alert).text
+        assert alert_text == '公司名称不能全数字！'
+        self.wait_click(self.alert_confirm)
+
+        # 公司名称不能全字母
+        self.element_find(self.invoice_title).clear()
+        self.element_find(self.invoice_title).send_keys('AAA')
+        self.wait_click(self.normal_invoice_save)
+        alert_text = self.element_find(self.div_alert).text
+        assert alert_text == '公司名称不能全字母！'
+        self.wait_click(self.alert_confirm)
+
+        # 发票抬头不能包含特殊字符
+        self.element_find(self.invoice_title).clear()
+        self.element_find(self.invoice_title).send_keys('@123')
+        self.wait_click(self.normal_invoice_save)
+        alert_text = self.element_find(self.div_alert).text
+        assert alert_text == '公司名称只能由中文、英文、数字（）()组成'
+        self.wait_click(self.alert_confirm)
+
+        # 发票抬头可以包含中文、英文、数字（）()和_-
+        self.element_find(self.invoice_title).clear()
+        self.element_find(self.invoice_title).send_keys('（Test测试111_-()）')
         self.wait_click(self.normal_invoice_save)
         message = self.element_find(self.invoice_layer).text
         assert message == '发票信息添加成功！'
@@ -337,8 +362,32 @@ class Order(Page):
         assert alert_text == '请输入单位名称'
         self.wait_click(self.alert_confirm)
 
+        # 发票抬头不能全数字
+        self.element_find(self.bill_title).send_keys('111')
+        self.wait_click(self.normal_invoice_save)
+        alert_text = self.element_find(self.div_alert).text
+        assert alert_text == '公司名称不能全数字！'
+        self.wait_click(self.alert_confirm)
+
+        # 公司名称不能全字母
+        self.element_find(self.bill_title).clear()
+        self.element_find(self.bill_title).send_keys('AAA')
+        self.wait_click(self.normal_invoice_save)
+        alert_text = self.element_find(self.div_alert).text
+        assert alert_text == '公司名称不能全字母！'
+        self.wait_click(self.alert_confirm)
+
+        # 发票抬头不能包含特殊字符
+        self.element_find(self.bill_title).clear()
+        self.element_find(self.bill_title).send_keys('@123')
+        self.wait_click(self.normal_invoice_save)
+        alert_text = self.element_find(self.div_alert).text
+        assert alert_text == '公司名称只能由中文、英文、数字（）()组成'
+        self.wait_click(self.alert_confirm)
+
         # 注册地址不为空
-        self.element_find(self.bill_title).send_keys('自动化测试增票')
+        self.element_find(self.bill_title).clear()
+        self.element_find(self.bill_title).send_keys('（Test测试111_-()）')
         self.element_find(self.bill_address).clear()
         self.wait_click(self.bill_save)
         alert_text = self.element_find(self.div_alert).text

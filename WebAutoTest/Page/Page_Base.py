@@ -11,7 +11,6 @@ class Page():
 
     def __init__(self, driver):
         self.driver = driver
-        self.layer = ('by.id', 'ajax-layer-loading')
 
     def element_find(self, element):
         if element[0] == 'by.id':
@@ -146,4 +145,5 @@ class Page():
             except exceptions.WebDriverException:
                 time.sleep(0.2)
                 continue
+
 

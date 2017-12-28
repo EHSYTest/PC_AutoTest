@@ -20,6 +20,9 @@ class Home(Page):
     category_taozhuang = ('by.link_text', '综合套装')
     category_knife = ('by.xpath', '//li[2]/a[1]/span')
 
+    powerchina_l1_category = ('by.link_text', '成套装备产品')
+    powerchina_l2_category = ('by.link_text', '护理床')
+
     # my_ehsy = ('by.class_name', 'my-ehsy-show')
     # my_collection = ('by.class_name', 'header-my-collection')
     quick_order = ('by.class_name', 'member-discount')
@@ -45,10 +48,10 @@ class Home(Page):
         self.element_find(self.password_send).send_keys(password)
         self.element_find(self.login_action).click()
 
-    def category_tree_click(self):
-        category_tool = self.element_find(self.category_tool)
-        ActionChains(self.driver).move_to_element(category_tool).perform()
-        self.wait_click(self.category_taozhuang)
+    def category_tree_click(self, l1_category=category_tool, l2_category=category_taozhuang):
+        l1_category = self.element_find(l1_category)
+        ActionChains(self.driver).move_to_element(l1_category).perform()
+        self.wait_click(l2_category)
 
     def search_sku(self, sku='MAD618'):
         self.element_find(self.search_send).send_keys(sku)

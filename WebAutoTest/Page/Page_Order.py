@@ -44,7 +44,7 @@ class Order(Page):
     normal_invoice_tab = ('by.xpath', "//ul/li[1][contains(text(),'普通发票')]")
     div_alert = ('by.xpath', '//*[@id="js-layer-alert"]/div[1]/div[2]/div')    
     alert_confirm = ('by.xpath', '//div[1]/div[3]/div[1]/button')
-    close = ('by.class_name', 'close')
+    confirm = ('by.class_name', 'confirm')
 
     # 增值税发票
     vat_invoice_tab = ('by.xpath', "//ul/li[2][contains(text(),'增值税发票')]")
@@ -149,7 +149,7 @@ class Order(Page):
         print('普通发票-个人抬头编辑成功')
 
     def invoice_normal_company_edit(self):
-        self.wait_click(self.choose) # 请选择按钮
+        self.wait_click(self.choose)   # 请选择按钮
         element = self.element_find(self.first_normal_invoice)
         ActionChains(self.driver).move_to_element(element).perform()
         self.wait_click(self.normal_invoice_edit)
@@ -230,20 +230,20 @@ class Order(Page):
         self.wait_click(self.choose)
         self.wait_click(self.normal_invoice_tab)
         self.wait_click(self.first_normal_invoice)
-        self.wait_click(self.close)
+        self.wait_click(self.confirm)
 
     def choose_vat_invoice(self):
         """选择增票"""
         self.wait_click(self.choose)
         self.wait_click(self.vat_invoice_tab)
         self.wait_click(self.first_bill)
-        self.wait_click(self.close)
+        self.wait_click(self.confirm)
 
     def choose_none_invoice(self):
         """选择不开票"""
         self.wait_click(self.choose)
         self.wait_click(self.none_invoice_tab)
-        self.wait_click(self.close)
+        self.wait_click(self.confirm)
 
     def normal_invoice_check(self):
         self.wait_click(self.choose)  # 请选择按钮

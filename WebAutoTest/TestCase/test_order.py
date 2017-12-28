@@ -22,7 +22,7 @@ class TestOrder(unittest.TestCase):
         self.page = Page(self.driver)
         self.environment = self.page.config_reader('environment.conf', 'Environment', 'environment')
         if self.environment == 'staging':
-            self.driver.get('http://opc-test.ehsy.com/mall')
+            self.driver.get('http://ps.ehsy.com')
         elif self.environment == 'production':
             self.driver.get('http://www.ehsy.com')
         self.driver.maximize_window()
@@ -283,20 +283,20 @@ if __name__ == '__main__':
     suit = unittest.TestSuite()
     case_list = [
                   TestOrder('test_order_01'),
-                  # TestOrder('test_order_02'),
-                  # TestOrder('test_order_03'),
-                  # TestOrder('test_order_04'),
-                  # TestOrder('test_order_05'),
-                  # TestOrder('test_order_06'),
-                  # TestOrder('test_order_07'),
+                  TestOrder('test_order_02'),
+                  TestOrder('test_order_03'),
+                  TestOrder('test_order_04'),
+                  TestOrder('test_order_05'),
+                  TestOrder('test_order_06'),
+                  TestOrder('test_order_07'),
                   # TestOrder('test_order_08'),
                   # TestOrder('test_order_09'),
-                  # TestOrder('test_order_10'),
-                  # TestOrder('test_order_11'),
-                  # TestOrder('test_order_12'),
-                  # TestOrder('test_order_13'),
-                  # TestOrder('test_order_14'),
-                  # TestOrder('test_order_15'),
+                  TestOrder('test_order_10'),
+                  TestOrder('test_order_11'),
+                  TestOrder('test_order_12'),
+                  TestOrder('test_order_13'),
+                  TestOrder('test_order_14'),
+                  TestOrder('test_order_15'),
     ]
     suit.addTests(case_list)
     # now = time.strftime("%Y_%m_%d %H_%M_%S")

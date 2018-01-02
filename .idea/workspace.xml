@@ -2,15 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a665631f-422e-4f1d-88e9-64ed59718bad" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/WebAutoTest/Page/Page_PersonalCenter.py" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebAutoTest/TestCase/My_Function.py" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/WebAutoTest/Page/Page_Base.py" afterPath="$PROJECT_DIR$/WebAutoTest/Page/Page_Base.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/WebAutoTest/Page/Page_Cart.py" afterPath="$PROJECT_DIR$/WebAutoTest/Page/Page_Cart.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/WebAutoTest/Page/Page_Order.py" afterPath="$PROJECT_DIR$/WebAutoTest/Page/Page_Order.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/WebAutoTest/Page/Page_OrderResult.py" afterPath="$PROJECT_DIR$/WebAutoTest/Page/Page_OrderResult.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/WebAutoTest/TestCase/test_order.py" afterPath="$PROJECT_DIR$/WebAutoTest/TestCase/test_order.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/WebAutoTest/TestCase/run_test.py" afterPath="$PROJECT_DIR$/WebAutoTest/TestCase/run_test.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/WebAutoTest/TestCase/test_powerchina.py" afterPath="$PROJECT_DIR$/WebAutoTest/TestCase/test_powerchina.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/WebAutoTest/TestResult/order.html" afterPath="$PROJECT_DIR$/WebAutoTest/TestResult/order.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/WebAutoTest/config/test_order.conf" afterPath="$PROJECT_DIR$/WebAutoTest/config/test_order.conf" />
     </list>
     <ignored path=".idea/" />
     <ignored path="WebAutoTest/.idea/" />
@@ -41,22 +38,34 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="test_order.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="test_order.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/WebAutoTest/TestCase/test_order.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="5800">
-              <caret line="328" column="38" lean-forward="false" selection-start-line="328" selection-start-column="38" selection-end-line="328" selection-end-column="38" />
+            <state relative-caret-position="1020">
+              <caret line="51" column="28" lean-forward="true" selection-start-line="51" selection-start-column="28" selection-end-line="51" selection-end-column="28" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="run_test.py" pinned="false" current-in-tab="false">
+      <file leaf-file-name="test_powerchina.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/WebAutoTest/TestCase/test_powerchina.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="242">
+              <caret line="201" column="5" lean-forward="true" selection-start-line="201" selection-start-column="5" selection-end-line="201" selection-end-column="5" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="run_test.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/WebAutoTest/TestCase/run_test.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="380">
-              <caret line="21" column="36" lean-forward="false" selection-start-line="21" selection-start-column="36" selection-end-line="21" selection-end-column="36" />
-              <folding />
+            <state relative-caret-position="-98">
+              <caret line="3" column="27" lean-forward="true" selection-start-line="3" selection-start-column="27" selection-end-line="3" selection-end-column="27" />
+              <folding>
+                <element signature="e#0#20#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -94,8 +103,8 @@
       <file leaf-file-name="Page_Base.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/WebAutoTest/Page/Page_Base.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="336">
-              <caret line="165" column="21" lean-forward="true" selection-start-line="165" selection-start-column="21" selection-end-line="165" selection-end-column="21" />
+            <state relative-caret-position="200">
+              <caret line="10" column="31" lean-forward="true" selection-start-line="10" selection-start-column="31" selection-end-line="10" selection-end-column="31" />
               <folding>
                 <element signature="e#0#21#0" expanded="true" />
               </folding>
@@ -201,16 +210,16 @@
         <option value="$PROJECT_DIR$/WebAutoTest/Page/Page_Home.py" />
         <option value="$PROJECT_DIR$/WebAutoTest/TestCase/test_order_page.py" />
         <option value="$PROJECT_DIR$/WebAutoTest/Page/My_Function.py" />
-        <option value="$PROJECT_DIR$/WebAutoTest/TestCase/run_test.py" />
-        <option value="$PROJECT_DIR$/WebAutoTest/TestCase/test_powerchina.py" />
-        <option value="$PROJECT_DIR$/WebAutoTest/TestCase/My_Function.py" />
         <option value="$PROJECT_DIR$/WebAutoTest/Page/Page_Order.py" />
         <option value="$PROJECT_DIR$/WebAutoTest/config/test_order.conf" />
         <option value="$PROJECT_DIR$/WebAutoTest/Page/Page_Cart.py" />
         <option value="$PROJECT_DIR$/WebAutoTest/Page/Page_OrderResult.py" />
         <option value="$PROJECT_DIR$/WebAutoTest/Page/Page_PersonalCenter.py" />
-        <option value="$PROJECT_DIR$/WebAutoTest/Page/Page_Base.py" />
         <option value="$PROJECT_DIR$/WebAutoTest/TestCase/test_order.py" />
+        <option value="$PROJECT_DIR$/WebAutoTest/TestCase/My_Function.py" />
+        <option value="$PROJECT_DIR$/WebAutoTest/TestCase/run_test.py" />
+        <option value="$PROJECT_DIR$/WebAutoTest/Page/Page_Base.py" />
+        <option value="$PROJECT_DIR$/WebAutoTest/TestCase/test_powerchina.py" />
       </list>
     </option>
   </component>
@@ -359,7 +368,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python.test_order">
+  <component name="RunManager" selected="Python.My_Function">
     <configuration default="false" name="test_order" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -539,9 +548,9 @@
     </list>
     <recent_temporary>
       <list size="5">
-        <item index="0" class="java.lang.String" itemvalue="Python.test_order" />
-        <item index="1" class="java.lang.String" itemvalue="Python.test_powerchina" />
-        <item index="2" class="java.lang.String" itemvalue="Python.My_Function" />
+        <item index="0" class="java.lang.String" itemvalue="Python.My_Function" />
+        <item index="1" class="java.lang.String" itemvalue="Python.test_order" />
+        <item index="2" class="java.lang.String" itemvalue="Python.test_powerchina" />
         <item index="3" class="java.lang.String" itemvalue="Python.run_test" />
         <item index="4" class="java.lang.String" itemvalue="Python.test_order_page" />
       </list>
@@ -560,13 +569,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1506390215075</updated>
-    </task>
-    <task id="LOCAL-00034" summary="By Rick">
-      <created>1511527367423</created>
-      <option name="number" value="00034" />
-      <option name="presentableId" value="LOCAL-00034" />
-      <option name="project" value="LOCAL" />
-      <updated>1511527367423</updated>
     </task>
     <task id="LOCAL-00035" summary="By Rick">
       <created>1511527754922</created>
@@ -904,7 +906,14 @@
       <option name="project" value="LOCAL" />
       <updated>1514452217843</updated>
     </task>
-    <option name="localTasksCounter" value="83" />
+    <task id="LOCAL-00083" summary="By Rick">
+      <created>1514874791325</created>
+      <option name="number" value="00083" />
+      <option name="presentableId" value="LOCAL-00083" />
+      <option name="project" value="LOCAL" />
+      <updated>1514874791328</updated>
+    </task>
+    <option name="localTasksCounter" value="84" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -1005,13 +1014,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$USER_HOME$/AppData/Local/Programs/Python/Python36/Lib/site-packages/configobj.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-5059">
-          <caret line="1173" column="8" lean-forward="false" selection-start-line="1173" selection-start-column="8" selection-end-line="1173" selection-end-column="8" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/../PageObjects/WebAutoTest/Page/Page_Order.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="146">
@@ -1241,24 +1243,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/WebAutoTest/TestCase/test_powerchina.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="4000">
-          <caret line="200" column="46" lean-forward="false" selection-start-line="200" selection-start-column="46" selection-end-line="200" selection-end-column="46" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/WebAutoTest/Page/Page_ProductList.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="190">
           <caret line="41" column="8" lean-forward="false" selection-start-line="41" selection-start-column="8" selection-end-line="41" selection-end-column="8" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/WebAutoTest/TestCase/My_Function.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="380">
-          <caret line="19" column="0" lean-forward="true" selection-start-line="19" selection-start-column="0" selection-end-line="19" selection-end-column="0" />
         </state>
       </provider>
     </entry>
@@ -1295,16 +1283,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/WebAutoTest/Page/Page_Base.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="336">
-          <caret line="165" column="21" lean-forward="true" selection-start-line="165" selection-start-column="21" selection-end-line="165" selection-end-column="21" />
-          <folding>
-            <element signature="e#0#21#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/WebAutoTest/Page/Page_OrderResult.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="140">
@@ -1329,19 +1307,55 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/WebAutoTest/TestCase/run_test.py">
+    <entry file="file://$PROJECT_DIR$/WebAutoTest/TestResult/PowerChina.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="380">
-          <caret line="21" column="36" lean-forward="false" selection-start-line="21" selection-start-column="36" selection-end-line="21" selection-end-column="36" />
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/WebAutoTest/TestCase/test_order.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="5800">
-          <caret line="328" column="38" lean-forward="false" selection-start-line="328" selection-start-column="38" selection-end-line="328" selection-end-column="38" />
+        <state relative-caret-position="1020">
+          <caret line="51" column="28" lean-forward="true" selection-start-line="51" selection-start-column="28" selection-end-line="51" selection-end-column="28" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/WebAutoTest/Page/Page_Base.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="200">
+          <caret line="10" column="31" lean-forward="true" selection-start-line="10" selection-start-column="31" selection-end-line="10" selection-end-column="31" />
+          <folding>
+            <element signature="e#0#21#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/WebAutoTest/TestCase/My_Function.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="336">
+          <caret line="17" column="25" lean-forward="true" selection-start-line="17" selection-start-column="25" selection-end-line="17" selection-end-column="25" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/WebAutoTest/TestCase/test_powerchina.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="242">
+          <caret line="201" column="5" lean-forward="true" selection-start-line="201" selection-start-column="5" selection-end-line="201" selection-end-column="5" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/WebAutoTest/TestCase/run_test.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-98">
+          <caret line="3" column="27" lean-forward="true" selection-start-line="3" selection-start-column="27" selection-end-line="3" selection-end-column="27" />
+          <folding>
+            <element signature="e#0#20#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

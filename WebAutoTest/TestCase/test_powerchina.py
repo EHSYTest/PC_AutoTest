@@ -12,7 +12,7 @@ from Page_ProductList import ProductList
 from Page_QuickOrder import QuickOrder
 from Page_ReportOrder import ReportOrder
 from selenium.webdriver.common.action_chains import ActionChains
-from My_Function import send_email
+from Page_Base import AssistFunction
 
 
 class PowerChinaOrder(unittest.TestCase):
@@ -192,13 +192,13 @@ if __name__ == '__main__':
     suit = unittest.TestSuite()
     case_list = [
                   PowerChinaOrder('test_powerchina_01'),
-                  # PowerChinaOrder('test_powerchina_02'),
-                  # PowerChinaOrder('test_powerchina_03'),
-                  # PowerChinaOrder('test_powerchina_04'),
-                  # PowerChinaOrder('test_powerchina_05'),
-                  # PowerChinaOrderPage('test_invoice'),
-                  # PowerChinaOrderPage('test_address'),
-                  # PowerChinaOrderPage('test_invoice_check'),
+                  PowerChinaOrder('test_powerchina_02'),
+                  PowerChinaOrder('test_powerchina_03'),
+                  PowerChinaOrder('test_powerchina_04'),
+                  PowerChinaOrder('test_powerchina_05'),
+                  PowerChinaOrderPage('test_invoice'),
+                  PowerChinaOrderPage('test_address'),
+                  PowerChinaOrderPage('test_invoice_check'),
     ]
     suit.addTests(case_list)
     # now = time.strftime("%Y_%m_%d %H_%M_%S")
@@ -215,6 +215,6 @@ if __name__ == '__main__':
         msg = 'Success!'
 
     dir = '../TestResult/PowerChina.html'
-    send_email(dir, msg)
+    AssistFunction().send_email(dir, msg)
 
 

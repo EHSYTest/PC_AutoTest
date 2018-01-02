@@ -6,6 +6,9 @@ from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions
 from selenium.common import exceptions
 import pymysql
+import smtplib
+from email.mime.text import MIMEText
+from email.header import Header
 
 
 class Page():
@@ -165,3 +168,20 @@ class Page():
         con.close()
         return result
 
+
+class AssistFunction():
+
+    @staticmethod
+    def send_email(dir, flag):
+        report = open(dir, 'rb')
+        mail_body = report.read()
+        report.close()
+        msg = MIMEText(mail_body, 'html', 'utf-8')
+        msg['Subject'] = Header('EHSY-自动化测试报告-' + flag, 'utf-8')
+        msg['From'] = 'EHSY自动化测试'
+        msg['To'] = 'it_test@ehsy.com'
+        smtp = smtplib.SMTP()
+        smtp.connect('smtp.exmail.qq.com')
+        smtp.login('rick_zhang@ehsy.com', '690903Zr')
+        smtp.sendmail('rick_zhang@ehsy.com', ['it_test@ehsy.com'], msg.as_string())
+        smtp.quit()

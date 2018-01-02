@@ -5,6 +5,7 @@ from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions
 from selenium.common import exceptions
+import pymysql
 
 
 class Page():
@@ -43,7 +44,7 @@ class Page():
         if element[0] == 'by.link_text':
             elements_find = self.driver.find_elements_by_link_text(element[1])
         if element[0] == 'by.partial_link_text':
-            elements_find = self.driver
+            elements_find = self.driver.find_elements_by_partial_link_text(element[1])
         return elements_find
 
     def switch_to_new_window(self, handle_quantity=2):
@@ -58,7 +59,7 @@ class Page():
 
 
     @staticmethod
-    def cancel_order(orderId, environment='test', userId='508107841'):
+    def cancel_order(orderId, environment='staging', userId='508107841'):
         if environment == 'staging':
             url = 'http://oc-staging.ehsy.com/orderCenter/cancel'
         elif environment == 'production':
@@ -146,4 +147,21 @@ class Page():
                 time.sleep(0.2)
                 continue
 
+    @staticmethod
+    def db_con(database, sql):
+        if database == 'oc-staging':
+            con = pymysql.connect(
+                    host='118.178.189.137',
+                    user='root',
+                    password='ehsy2017',
+                    port=3306,
+                    charset='utf8',
+                    cursorclass=pymysql.cursors.DictCursor   # sql查询结果转为字典类型
+                )
+        cr = con.cursor()
+        cr.execute(sql)
+        con.commit()
+        result = cr.fetchall()
+        con.close()
+        return result
 

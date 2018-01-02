@@ -11,7 +11,7 @@ from Page_OrderResult import OrderResult
 from Page_ProductList import ProductList
 from Page_QuickOrder import QuickOrder
 from Page_ReportOrder import ReportOrder
-
+from Page_PersonalCenter import PersonalCenter
 
 class TestOrder(unittest.TestCase):
 
@@ -33,6 +33,7 @@ class TestOrder(unittest.TestCase):
         self.product_list = ProductList(self.driver)
         self.quick_order = QuickOrder(self.driver)
         self.report_order = ReportOrder(self.driver)
+        self.personal_center = PersonalCenter(self.driver)
 
     def test_order_01(self):
         """产线大图页入口-个人用户下单-不开票"""
@@ -75,7 +76,7 @@ class TestOrder(unittest.TestCase):
         self.page.cancel_order(orderId, environment=self.environment)  # 接口取消订单
 
     def test_order_04(self):
-        """详情页入口-终端用户下单-普票"""
+        """搜索页入口-终端用户下单-普票"""
         login_name = self.page.config_reader('test_order.conf', '终端账号', 'login_name')
         password = self.page.config_reader('test_order.conf', '终端账号', 'password')
         self.home.login(login_name, password)
@@ -107,76 +108,111 @@ class TestOrder(unittest.TestCase):
         self.page.cancel_order(orderId, environment=self.environment)  # 接口取消订单
 
     def test_order_06(self):
-        """产线列表页入口-国电用户下单-普票"""
-        login_name = self.page.config_reader('test_order.conf', '国电账号', 'login_name')
-        password = self.page.config_reader('test_order.conf', '国电账号', 'password')
-        self.home.login(login_name, password)
-        self.home.category_tree_click()
-        self.product_list.list_add_to_cart()
-        self.cart.wait_click(self.cart.go_to_order)
-        self.order.choose_normal_invoice()
-        self.order.wait_click(self.order.submit_order_button)
-        orderId = self.order_result.get_so_by_url()
-        self.page.cancel_order(orderId, environment=self.environment)  # 接口取消订单
-
-    def test_order_07(self):
-        """快速下单页入口-国电用户下单-增票"""
-        login_name = self.page.config_reader('test_order.conf', '国电账号', 'login_name')
-        password = self.page.config_reader('test_order.conf', '国电账号', 'password')
+        """快速下单页入口-终端用户下单-增票"""
+        login_name = self.page.config_reader('test_order.conf', '终端账号', 'login_name')
+        password = self.page.config_reader('test_order.conf', '终端账号', 'password')
         self.home.login(login_name, password)
         self.home.quick_order_click()
         self.quick_order.quick_add_to_cart()
         self.cart.wait_click(self.cart.go_to_order)
         self.order.choose_vat_invoice()
         self.order.wait_click(self.order.submit_order_button)
+        self.order.wait_click(self.order.notice_layer)
         orderId = self.order_result.get_so_by_url()
         self.page.cancel_order(orderId, environment=self.environment)  # 接口取消订单
 
-    # def test_order_08(self):
-    #     """产线列表页入口-EAS用户下单-不开票-超过审批额"""
-    #     login_name = self.page.config_reader('test_order.conf', 'EAS账号', 'login_name')
-    #     password = self.page.config_reader('test_order.conf', 'EAS账号', 'password')
-    #     self.home.login(login_name, password)
-    #     self.home.category_tree_click()
-    #     self.product_list.list_add_to_cart()
-    #     for i in range(10):
-    #         try:
-    #             self.cart.element_find(self.cart.quantity_input).send_keys(0)  # 修改数量为10，使其超出审批额1000
-    #             time.sleep(2)
-    #             break
-    #         except StaleElementReferenceException:
-    #             continue
-    #     self.cart.element_find(self.cart.go_to_order).click()
-    #     self.order.choose_none_invoice()
-    #     self.order.submit_order_eas(none_invoice=True)
-    #     for i in range(30):
-    #         try:
-    #             message = self.order_result.element_find(self.order_result.eas_message).text
-    #             assert message == '您已成功提交请购单，等待审批结果！'
-    #             break
-    #         except AssertionError:
-    #             continue
-    #
-    # def test_order_09(self):
-    #     """产品详情页入口-EAS用户下单-增票-不超过审批额"""
-    #     login_name = self.page.config_reader('test_order.conf', 'EAS账号', 'login_name')
-    #     password = self.page.config_reader('test_order.conf', 'EAS账号', 'password')
-    #     self.home.login(login_name, password)
-    #     self.home.search_sku()
-    #     self.product_list.element_find(self.product_list.sku_result_click).click()
-    #     self.page.switch_to_new_window()
-    #     self.product_list.element_find(self.product_list.skuContent_add_button).click()
-    #     self.product_list.element_find(self.product_list.skuContent_jump_to_cart).click()
-    #     self.cart.element_find(self.cart.go_to_order).click()
-    #     self.order.choose_vat_invoice()
-    #     self.order.submit_order_eas()
-    #     for i in range(10):
-    #         try:
-    #             orderId = self.order_result.get_order_id()
-    #             break
-    #         except NoSuchElementException:
-    #             continue
-    #     self.page.cancel_order(orderId, environment=self.environment)  # 接口取消订单
+    def test_order_07(self):
+        """产线列表页入口-EAS用户下单-超过审批额-审批通过"""
+        login_name = self.page.config_reader('test_order.conf', 'EAS账号', 'login_name')
+        password = self.page.config_reader('test_order.conf', 'EAS账号', 'password')
+        self.home.login(login_name, password)
+        self.home.category_tree_click()
+        self.product_list.list_add_to_cart()
+        self.cart.element_find(self.cart.quantity_input).send_keys(0)  # 修改数量为10，使其超出审批额1000
+        self.cart.wait_click(self.cart.unit_price)
+        self.cart.wait_click(self.cart.go_to_order)
+        self.cart.wait_click(self.cart.choose_company_eas)
+        self.cart.wait_click(self.cart.choose_purchaseteam_eas)
+        self.cart.wait_click(self.cart.eas_confirm)
+        self.order.choose_vat_invoice()
+        self.order.wait_click(self.order.submit_order_button)
+        self.order.wait_click(self.order.notice_layer)
+        self.order.wait_click(self.order.choose_eas_flow)
+        self.order.wait_click(self.order.confirm)
+        pr_number = self.order_result.get_pr_by_url()
+        self.home.wait_click(self.home.logout_button)
+        login_name = self.page.config_reader('test_order.conf', 'EAS审批人账号', 'login_name')
+        password = self.page.config_reader('test_order.conf', 'EAS审批人账号', 'password')
+        self.home.login(login_name, password)
+        self.home.wait_click(self.home.my_ehsy)
+        self.personal_center.wait_click(self.personal_center.menu_approve)
+        pr_number_assert = self.personal_center.element_find(self.personal_center.first_pr_number).text
+        assert pr_number == pr_number_assert
+        self.personal_center.wait_click(self.personal_center.first_approve_menu)
+        self.personal_center.approve_pr(status='pass')
+        # 取消订单
+        sql = "select a.ORDER_ID from oc.order_info a where a.EXTERNAL_ORDER_NO='"+pr_number+"'"
+        sql_result = self.page.db_con('oc-staging', sql)
+        SO = sql_result[0]['ORDER_ID']
+        print(SO)
+        self.page.cancel_order(SO)
+
+    def test_order_08(self):
+        """产线大图页入口-EAS用户下单-超过审批额-审批驳回"""
+        login_name = self.page.config_reader('test_order.conf', 'EAS账号', 'login_name')
+        password = self.page.config_reader('test_order.conf', 'EAS账号', 'password')
+        self.home.login(login_name, password)
+        self.home.category_tree_click()
+        self.product_list.bigImg_add_to_cart()
+        self.cart.element_find(self.cart.quantity_input).send_keys(0)  # 修改数量为10，使其超出审批额1000
+        self.cart.wait_click(self.cart.unit_price)
+        self.cart.wait_click(self.cart.go_to_order)
+        self.cart.wait_click(self.cart.choose_company_eas)
+        self.cart.wait_click(self.cart.choose_purchaseteam_eas)
+        self.cart.wait_click(self.cart.eas_confirm)
+        self.order.choose_vat_invoice()
+        self.order.wait_click(self.order.submit_order_button)
+        self.order.wait_click(self.order.notice_layer)
+        self.order.wait_click(self.order.choose_eas_flow)
+        self.order.wait_click(self.order.confirm)
+        pr_number = self.order_result.get_pr_by_url()
+        self.home.wait_click(self.home.logout_button)
+        login_name = self.page.config_reader('test_order.conf', 'EAS审批人账号', 'login_name')
+        password = self.page.config_reader('test_order.conf', 'EAS审批人账号', 'password')
+        self.home.login(login_name, password)
+        self.home.wait_click(self.home.my_ehsy)
+        self.personal_center.wait_click(self.personal_center.menu_approve)
+        pr_number_assert = self.personal_center.element_find(self.personal_center.first_pr_number).text
+        assert pr_number == pr_number_assert
+        self.personal_center.wait_click(self.personal_center.first_approve_menu)
+        self.personal_center.approve_pr(status='reject')
+
+    def test_order_09(self):
+        """搜索页入口-EAS用户下单-不超过审批额-自动审批"""
+        login_name = self.page.config_reader('test_order.conf', 'EAS账号', 'login_name')
+        password = self.page.config_reader('test_order.conf', 'EAS账号', 'password')
+        self.home.login(login_name, password)
+        self.home.search_sku()
+        self.product_list.wait_click(self.product_list.bigImg_add_button)
+        self.product_list.wait_click(self.product_list.jump_to_cart)
+        self.cart.wait_click(self.cart.go_to_order)
+        self.cart.wait_click(self.cart.choose_company_eas)
+        self.cart.wait_click(self.cart.choose_purchaseteam_eas)
+        self.cart.wait_click(self.cart.eas_confirm)
+        self.order.choose_vat_invoice()
+        self.order.wait_click(self.order.submit_order_button)
+        self.order.wait_click(self.order.notice_layer)
+        self.order.wait_click(self.order.choose_eas_flow)
+        self.order.wait_click(self.order.confirm)
+        pr_number = self.order_result.get_pr_by_url()
+        message = self.order_result.element_find(self.order_result.eas_message).text
+        assert message == '您提交的请购单已审批通过，请做好收货准备！'
+        # 取消订单
+        sql = "select a.ORDER_ID from oc.order_info a where a.EXTERNAL_ORDER_NO='" + pr_number + "'"
+        sql_result = self.page.db_con('oc-staging', sql)
+        SO = sql_result[0]['ORDER_ID']
+        print(SO)
+        self.page.cancel_order(SO)
 
     def test_order_10(self):
         """产品详情页入口-EIS用户下单-表单"""
@@ -289,8 +325,8 @@ if __name__ == '__main__':
                   TestOrder('test_order_05'),
                   TestOrder('test_order_06'),
                   TestOrder('test_order_07'),
-                  # TestOrder('test_order_08'),
-                  # TestOrder('test_order_09'),
+                  TestOrder('test_order_08'),
+                  TestOrder('test_order_09'),
                   TestOrder('test_order_10'),
                   TestOrder('test_order_11'),
                   TestOrder('test_order_12'),

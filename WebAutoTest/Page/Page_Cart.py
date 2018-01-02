@@ -28,8 +28,10 @@ class Cart(Page):
     unit_price = ('by.xpath', '//ul/li[3]/p')
     total_price = ('by.class_name', 'price-price')
     discount = ('by.xpath', '//div[2]/div/div[2]/span[2]')
-    # del_unvalued_product = ('by.class_name', 'footer-clear-span')
-    # product_bottom_add = ('by.xpath', '//div[2]/ul/li[1]/p[4]')
+
+    choose_company_eas = ('by.xpath', '//li[1]/div[2]/select/option[2]')
+    choose_purchaseteam_eas = ('by.xpath', '//li[2]/div[2]/select/option[2]')
+    eas_confirm = ('by.class_name', 'confirm')
 
     def checkbox_selected(self):
         """勾选复选框(限制数量为2）"""

@@ -72,6 +72,8 @@ class Order(Page):
     # choose_approve_flow = ('by.name', 'approveFlowItem')
     # submit_approve_flow = ('by.class_name', 'eps-submit-btn')
 
+    choose_eas_flow = ('by.class_name', 'eps-approveflowId ')
+
     def add_receiving_address(self):
         self.wait_click(self.receiving_address_add)
         self.element_find(self.receiving_name).send_keys('自动化测试')

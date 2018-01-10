@@ -15,7 +15,7 @@ class QuickOrder(Page):
         self.element_find(self.sku_send).send_keys(product)
         self.element_find(self.quantity_send).send_keys(10)
         self.wait_click(self.add_to_cart)
-        self.wait_click(self.go_cart)
+
 
 
 

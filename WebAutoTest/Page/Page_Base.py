@@ -11,7 +11,7 @@ from email.mime.text import MIMEText
 from email.header import Header
 
 
-class Page():
+class Page(object):
 
     def __init__(self, driver):
         self.driver = driver

@@ -13,6 +13,7 @@ from Page_QuickOrder import QuickOrder
 from Page_ReportOrder import ReportOrder
 from Page_PersonalCenter import PersonalCenter
 
+
 class TestOrder(unittest.TestCase):
 
     def setUp(self):
@@ -254,6 +255,7 @@ class TestOrder(unittest.TestCase):
         self.report_order.switch_to_new_window(handle_quantity=2)
         self.order.choose_vat_invoice()
         self.order.wait_click(self.order.submit_order_button)
+        self.order.wait_click(self.order.notice_layer)
         orderId = self.order_result.get_so_by_url()
         self.page.cancel_order(orderId, environment=self.environment)  # 接口取消订单
 
@@ -277,6 +279,7 @@ class TestOrder(unittest.TestCase):
         self.order.wait_click(self.order.alert_confirm)
         self.order.elements_find(self.order.receiving_address)[1].click()
         self.order.wait_click(self.order.submit_order_button)
+        self.order.wait_click(self.order.notice_layer)
         orderId = self.order_result.get_so_by_url()
         self.page.cancel_order(orderId, environment=self.environment)  # 接口取消订单
 

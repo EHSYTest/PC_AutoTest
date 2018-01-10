@@ -5,6 +5,7 @@ from selenium.webdriver.common.keys import Keys
 from selenium.common.exceptions import NoSuchElementException, ElementNotVisibleException, WebDriverException
 from selenium.webdriver.common.alert import Alert
 
+
 class Order(Page):
     """下单页"""
     # 新增收货地址
@@ -16,6 +17,7 @@ class Order(Page):
     area = ('by.name', 'area_id')
     detailed_address = ('by.name', 'detail_address')
     receiving_phone = ('by.name', 'cell_phone')
+    receiving_telephone = ('by.name', 'telephone')
     setDefaultAddress = ('by.name', 'is_default')
     add_confirm = ('by.class_name', 'confirm')
     receiving_address_layer = ('by.class_name', 'content')
@@ -28,6 +30,10 @@ class Order(Page):
     # 删除收货地址
     address_del = ('by.xpath', '//*[@id="js-shipping-address-id"]/ul/li[1]/a[1]')
     del_confirm = ('by.xpath', '//div[3]/div[1]/button[2]')
+
+    # 收货地址填写提示
+    address_alert = ('by.class_name', 'error')
+    phone_alert = ('by.xpath', '//p[7]/span')
 
     # 普通发票
     choose = ('by.link_text', '请选择')
@@ -115,6 +121,127 @@ class Order(Page):
         message = self.element_find(self.receiving_address_layer).text
         assert message == '地址删除成功！'
         print('收货地址删除成功')
+
+    def receiving_address_check(self):
+        self.wait_click(self.receiving_address_add)     # 添加收货地址按钮
+
+        # 收货人不能为空
+        self.element_find(self.company_name).send_keys('自动化测试公司')
+        self.element_find(self.province).send_keys('安徽省')
+        self.element_find(self.city).send_keys('安庆市')
+        self.element_find(self.area).send_keys('望江县')
+        self.element_find(self.detailed_address).send_keys('自动化测试地址')
+        self.element_find(self.receiving_phone).send_keys('15150681507')
+        self.element_find(self.receiving_telephone).send_keys('021-05562345')
+        self.wait_click(self.add_confirm)
+        message = self.element_find(self.address_alert).text
+        assert message == '请填写收件人名称'
+
+        # 省市区不能为空
+        self.element_find(self.receiving_name).send_keys('自动化测试')
+        self.element_find(self.province).send_keys('请选择省份')
+        self.wait_click(self.add_confirm)
+        message = self.element_find(self.address_alert).text
+        assert message == '请选择省、市、区'
+        self.element_find(self.province).send_keys('安徽省')
+        self.wait_click(self.add_confirm)
+        message = self.element_find(self.address_alert).text
+        assert message == '请选择省、市、区'
+        self.element_find(self.city).send_keys('安庆市')
+        self.wait_click(self.add_confirm)
+        message = self.element_find(self.address_alert).text
+        assert message == '请选择省、市、区'
+
+        # 详细地址不能为空
+        self.element_find(self.area).send_keys('望江县')
+        self.element_find(self.detailed_address).clear()
+        self.wait_click(self.add_confirm)
+        message = self.element_find(self.address_alert).text
+        assert message == '请填写详细地址'
+
+        # 手机号不能为10位
+        self.element_find(self.detailed_address).send_keys('自动化测试地址')
+        self.element_find(self.receiving_phone).send_keys(Keys.BACK_SPACE)
+        self.wait_click(self.add_confirm)
+        message = self.element_find(self.address_alert).text
+        assert message == '请输入正确的手机号码'
+
+        # 手机号不能为12位
+        self.element_find(self.receiving_phone).send_keys('77')
+        self.wait_click(self.add_confirm)
+        message = self.element_find(self.address_alert).text
+        assert message == '请输入正确的手机号码'
+
+        # 手机号首位为1
+        for i in ('0', '2', '3', '4', '5', '6', '7', '8', '9'):
+            self.element_find(self.receiving_phone).clear()
+            self.element_find(self.receiving_phone).send_keys(i+'5150681507')
+            self.wait_click(self.add_confirm)
+            message = self.element_find(self.address_alert).text
+            assert message == '请输入正确的手机号码'
+
+        # 手机号第二位为3,4,5,7,8
+        for i in ('0', '1', '2', '6', '9'):
+            self.element_find(self.receiving_phone).clear()
+            self.element_find(self.receiving_phone).send_keys('1'+i+'150681507')
+            self.wait_click(self.add_confirm)
+            message = self.element_find(self.address_alert).text
+            assert message == '请输入正确的手机号码'
+        self.element_find(self.receiving_phone).clear()
+        self.element_find(self.receiving_phone).send_keys('13150681507')
+        self.wait_click(self.add_confirm)
+        message = self.element_find(self.receiving_address_layer).text
+        assert message == '地址添加成功！'
+        for i in ('4', '5', '7', '8'):
+            element = self.element_find(self.address_edit)
+            ActionChains(self.driver).move_to_element(element).perform()  # 鼠标悬停展现不可见的编辑按钮
+            self.wait_click(self.address_edit)
+            self.element_find(self.receiving_phone).clear()
+            self.element_find(self.receiving_phone).send_keys('1' + i + '150681507')
+            self.wait_click(self.add_confirm)
+            message = self.element_find(self.receiving_address_layer).text
+            assert message == '地址编辑成功！'
+
+        # 手机固话至少填一个
+        element = self.element_find(self.address_edit)
+        ActionChains(self.driver).move_to_element(element).perform()  # 鼠标悬停展现不可见的编辑按钮
+        self.wait_click(self.address_edit)
+        self.element_find(self.receiving_phone).clear()
+        self.element_find(self.receiving_telephone).clear()
+        self.element_find(self.receiving_phone).send_keys('15150681507')
+        self.wait_click(self.add_confirm)
+        message = self.element_find(self.receiving_address_layer).text
+        assert message == '地址编辑成功！'
+
+        element = self.element_find(self.address_edit)
+        ActionChains(self.driver).move_to_element(element).perform()  # 鼠标悬停展现不可见的编辑按钮
+        self.wait_click(self.address_edit)
+        self.element_find(self.receiving_phone).clear()
+        self.element_find(self.receiving_telephone).clear()
+        self.element_find(self.receiving_telephone).send_keys('021-05562345')
+        self.wait_click(self.add_confirm)
+        message = self.element_find(self.receiving_address_layer).text
+        assert message == '地址编辑成功！'
+
+        element = self.element_find(self.address_edit)
+        ActionChains(self.driver).move_to_element(element).perform()  # 鼠标悬停展现不可见的编辑按钮
+        self.wait_click(self.address_edit)
+        self.element_find(self.receiving_phone).clear()
+        self.element_find(self.receiving_telephone).clear()
+        self.element_find(self.receiving_phone).send_keys('15150681507')
+        self.element_find(self.receiving_telephone).send_keys('021-05562345')
+        self.wait_click(self.add_confirm)
+        message = self.element_find(self.receiving_address_layer).text
+        assert message == '地址编辑成功！'
+
+        # 公司名称选填
+        element = self.element_find(self.address_edit)
+        ActionChains(self.driver).move_to_element(element).perform()  # 鼠标悬停展现不可见的编辑按钮
+        self.wait_click(self.address_edit)
+        self.element_find(self.company_name).clear()
+        self.wait_click(self.add_confirm)
+        message = self.element_find(self.receiving_address_layer).text
+        assert message == '地址编辑成功！'
 
     def invoice_normal_company_add(self):
         """新增公司抬头的普票"""

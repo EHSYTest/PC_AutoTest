@@ -41,7 +41,7 @@ class Cart(Page):
             if checkboxes[i].is_selected():
                 pass
             else:
-                checkboxes[i].click()
+                self.wait_click(checkboxes[i])
                 time.sleep(1)
 
     def checkbox_unselected(self):
@@ -50,7 +50,7 @@ class Cart(Page):
         for i in range(min(len(checkboxes), 2)):
             checkboxes = self.elements_find(self.checkbox_line)
             if checkboxes[i].is_selected():
-                checkboxes[i].click()
+                self.wait_click(checkboxes[i])
                 time.sleep(1)
             else:
                 pass
@@ -63,7 +63,7 @@ class Cart(Page):
             except NoSuchElementException:
                 break
             if del_list:
-                del_list.click()
+                self.wait_click(del_list)
                 time.sleep(1)
                 message = self.element_find(self.layer).text
                 assert message == '已从购物车中删除此商品'
@@ -71,8 +71,8 @@ class Cart(Page):
 
     def sku_del_all(self):
         """批量删除sku"""
-        self.element_find(self.delete_bottom).click()
-        self.element_find(self.delete_all_confirm).click()
+        self.wait_click(self.delete_bottom)
+        self.wait_click(self.delete_all_confirm)
         message = self.element_find(self.layer).text
         print(message)
         assert message == '已从购物车中删除此商品'
@@ -80,7 +80,7 @@ class Cart(Page):
     def sku_collect(self):
         """加入收藏"""
         collect_list = self.element_find(self.collect_line)
-        collect_list.click()
+        self.wait_click(collect_list)
         for j in range(30):
             message = self.element_find(self.layer).text
             if message == '加入收藏成功。':
@@ -93,7 +93,7 @@ class Cart(Page):
 
     def sku_collect_all(self):
         """批量加入收藏夹"""
-        self.element_find(self.collect_bottom).click()
+        self.wait_click(self.collect_bottom)
         message = self.element_find(self.layer).text
         print(message)
         assert message == '加入收藏成功。'
@@ -102,14 +102,14 @@ class Cart(Page):
         """修改sku数量"""
         quantity = self.element_find(self.quantity_input)
         quantity_value1 = int(quantity.get_attribute('value'))
-        self.element_find(self.quantity_add).click()
+        self.wait_click(self.quantity_add)
         time.sleep(0.5)
         quantity = self.element_find(self.quantity_input)
         quantity_value2 = int(quantity.get_attribute('value'))
         assert quantity_value2 == quantity_value1 + 1
         print('数量+修改成功')
 
-        self.element_find(self.quantity_sub).click()
+        self.wait_click(self.quantity_sub)
         time.sleep(0.5)
         quantity = self.element_find(self.quantity_input)
         quantity_value3 = int(quantity.get_attribute('value'))

@@ -53,4 +53,8 @@ class ProductList(Page):
         self.wait_click(self.brand_add_button)
         self.wait_click(self.go_cart)
 
+    def searchResult_add_to_cart(self):
+        self.wait_click(self.bigImg_add_button)
+        self.wait_click(self.go_cart)
+
 

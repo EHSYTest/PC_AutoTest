@@ -5,10 +5,9 @@ from HTMLTestRunner import HTMLTestRunner
 from selenium import webdriver
 from Page_Base import Page
 from Page_Home import Home
-from Page_UserAddress import UserAddress
+from Page_UserInvoice import UserInvoice
 
-
-class TestUserAddress(unittest.TestCase):
+class TestUserInvoice(unittest.TestCase):
     def setUp(self):
         self.driver = webdriver.Chrome()
         self.page = Page(self.driver)
@@ -20,30 +19,31 @@ class TestUserAddress(unittest.TestCase):
         self.driver.implicitly_wait(30)
         self.driver.maximize_window()
         self.home = Home(self.driver)
-        self.page = Page(self.driver)
-        self.user_address = UserAddress(self.driver)
+        self.user_invoice = UserInvoice(self.driver)
 
-    def test_address_personal(self):
+    def test_invoice(self):
         loginname = self.page.config_reader('test_order.conf', '地址发票账号-个人', 'login_name')
         password = self.page.config_reader('test_order.conf', '地址发票账号-个人', 'password')
         self.home.login(loginname, password)
         self.home.go_user_center()
-        self.page.wait_click(self.user_address.my_address)
-        ###通用地址###
-        self.user_address.add_currency_address()
-        self.user_address.edit_currency_address()
-        self.user_address.set_default_currency_address()
-        self.user_address.delete_currency_address()
-        ###收货地址###
-        self.user_address.add_receive_address()
-        self.user_address.edit_receive_address()
-        self.user_address.set_default_receive_address()
-        self.user_address.delete_receive_address()
-        ###发票地址###
-        self.user_address.add_invoice_address()
-        self.user_address.edit_invoice_address()
-        self.user_address.set_default_invoice_address()
-        self.user_address.delete_invoice_address()
+        self.user_invoice.wait_click(self.user_invoice.my_invoice)
+        ###公司类型的发票###
+        self.user_invoice.add_company_invoice()
+        self.user_invoice.edit_company_invoice()
+        self.user_invoice.company_change_personal()
+        self.user_invoice.set_default_invoice()
+        self.user_invoice.delete_normal_invoice()
+        ###个人类型发票###
+        self.user_invoice.add_personal_invoice()
+        self.user_invoice.edit_personal_invoice()
+        self.user_invoice.personal_change_company()
+        self.user_invoice.set_default_invoice()
+        self.user_invoice.delete_normal_invoice()
+        ###增值税发票###
+        self.user_invoice.add_receipt_invoice()
+        self.user_invoice.edit_receipt_invoice()
+        self.user_invoice.set_default_receipt_invoice()
+        self.user_invoice.del_receipt_invoice()
 
     def tearDown(self):
         test_method_name = self._testMethodName
@@ -53,9 +53,8 @@ class TestUserAddress(unittest.TestCase):
 if __name__ == '__main__':
     unittest.main()
     # suite = unittest.TestSuite()
-    # suite.addTest(TestUserAddress('test_address_personal'))
-    # file = open('../TestResult/order.html', 'wb')
-    # runner = HTMLTestRunner(stream=file, title='用户地址测试报告', description='测试情况')
+    # suite.addTest(TestUserInvoice('test_invoice'))
+    # file = ('../../TestResult/order.html', 'wb')
+    # runner = HTMLTestRunner(stream=file, title='用户发票测试报告', description='测试情况')
     # runner.run(suite)
     # file.close()
-

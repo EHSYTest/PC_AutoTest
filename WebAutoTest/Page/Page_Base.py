@@ -134,7 +134,7 @@ class Page(object):
     def wait_to_stale(self, ele):
         try:
             WebDriverWait(self.driver, 5, 0.5).until(
-                expected_conditions.staleness_of(ele)
+                expected_conditions.staleness_of(self.element_find(ele))
             )
         except exceptions.NoSuchElementException:
             print('wait_to_stale: exceptions.NoSuchElementException')
@@ -149,6 +149,13 @@ class Page(object):
             except exceptions.WebDriverException:
                 time.sleep(0.2)
                 continue
+
+    def isElementExist(self,ele):
+        try:
+            self.element_find(ele)
+            return True
+        except:
+            return False
 
     @staticmethod
     def db_con(database, sql):

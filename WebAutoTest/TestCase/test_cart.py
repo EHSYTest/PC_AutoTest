@@ -8,14 +8,13 @@ from Page_NormalCart import NormalCart
 from Page_Home import Home
 from Page_ProductList import ProductList
 
-
 class TestCart(unittest.TestCase):
     def setUp(self):
         self.driver = webdriver.Chrome()
         self.page = Page(self.driver)
         self.environment = self.page.config_reader('environment.conf', 'Environment', 'environment')
         if self.environment == 'staging':
-            self.driver.get('http://opc-test.ehsy.com/mall')
+            self.driver.get('http://ps.ehsy.com')
         else:
             self.driver.get('http://www.ehsy.com')
         self.driver.implicitly_wait(30)
@@ -25,39 +24,48 @@ class TestCart(unittest.TestCase):
         self.normal_cart = NormalCart(self.driver)
 
     def test_cart_check(self):
-        """购物车数量加减、数量编辑、复选框、删除、收藏、区域限制校验、商品详情跳转"""
-        self.home.search_sku()
-        self.productList.wait_to_stale(self.productList.layer)
-        self.productList.element_find(self.productList.bigImg_add_button).click()
-        self.productList.wait_to_unvisible(self.productList.layer_sku)
-        self.productList.search_add_to_cart()
+        ###购物车数量加减、数量编辑、复选框、收藏、商品详情跳转###
+        sku = self.page.config_reader('data.conf' , '普通商品', 'product')
+        self.home.search_sku(sku)
+        self.productList.searchResult_add_to_cart()
         self.normal_cart.quantity_add_or_sub()
+        self.normal_cart.wait_to_stale(self.normal_cart.layer)
         self.normal_cart.quantity_edit_check()
+        self.normal_cart.wait_to_stale(self.normal_cart.layer)
         self.normal_cart.cart_checkboxs_select()
-        # self.normal_cart.cart_delete()
         self.normal_cart.cart_collect()
-        self.normal_cart.area_limit_sku()
         self.normal_cart.product_click()
 
+    def test_cart_areaLimit(self):
+        ###购物车区域限制商品###
+        sku = self.page.config_reader('data.conf', '区域限制产品', 'product')
+        self.home.search_sku(sku)
+        self.productList.searchResult_add_to_cart()
+        self.normal_cart.area_limit_sku()
+
     def test_cart_bj(self):
-        """购物车报价单生成按钮"""
-        self.home.search_sku()
-        self.productList.wait_to_stale(self.productList.layer)
-        self.productList.element_find(self.productList.bigImg_add_button).click()
-        self.productList.wait_to_unvisible(self.productList.layer_sku)
-        self.productList.search_add_to_cart()
-        # self.normal_cart.wait_to_stale(self.normal_cart.layer)
+        ###购物车报价单生成按钮###
+        sku = self.page.config_reader('data.conf', '区域限制产品', 'product')
+        self.home.search_sku(sku)
+        self.productList.searchResult_add_to_cart()
         self.normal_cart.bj_page()
 
     def test_cart_combine(self):
-        """未登录——>登录购物车SKU合并"""
-        self.home.search_sku()
-        self.productList.wait_to_stale(self.productList.layer)
-        self.productList.element_find(self.productList.bigImg_add_button).click()
-        self.productList.wait_to_unvisible(self.productList.layer_sku)
-        self.productList.search_add_to_cart()
-        self.normal_cart.wait_to_stale(self.normal_cart.layer)
+        ###未登录——>登录购物车SKU合并###
+        sku = self.page.config_reader('data.conf', '普通商品', 'product')
+        self.home.search_sku(sku)
+        self.productList.searchResult_add_to_cart()
         self.normal_cart.cart_combine()
+
+    def test_cart_delete(self):
+        ###购物车商品删除###
+        sku = self.page.config_reader('data.conf', '区域限制产品', 'product')
+        self.home.search_sku(sku)
+        self.productList.searchResult_add_to_cart()
+        loginname = self.page.config_reader('test_order.conf', '地址发票账号-个人', 'login_name')
+        password = self.page.config_reader('test_order.conf', '地址发票账号-个人', 'password')
+        self.home.login(loginname, password)
+        self.normal_cart.cart_delete()
 
     def tearDown(self):
         test_method_name = self._testMethodName
@@ -68,11 +76,13 @@ if __name__ == '__main__':
     unittest.main()
     # suite = unittest.TestSuite()
     # suite.addTest(TestCart('test_cart_check'))
+    # suite.addTest(TestCart('test_cart_areaLimit'))
     # suite.addTest(TestCart('test_cart_bj'))
     # suite.addTest(TestCart('test_cart_combine'))
+    # suite.addTest(TestCart('test_cart_delete'))
     # file = open('../TestResult/order.html', 'wb')
     # runner = HTMLTestRunner(stream=file, title='WWW下单——测试报告', description='测试情况')
     # runner.run(suite)
-    # # file.close()
+    # file.close()
 
 

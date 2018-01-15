@@ -23,7 +23,7 @@ class TestPrice(unittest.TestCase):
         self.page = Page(self.driver)
         self.environment = self.page.config_reader('environment.conf', 'Environment', 'environment')
         if self.environment == 'staging':
-            self.driver.get('http://opc-test.ehsy.com/mall')
+            self.driver.get('http://ps.ehsy.com/mall')
         elif self.environment == 'production':
             self.driver.get('http://www.ehsy.com')
         self.driver.implicitly_wait(30)
@@ -52,9 +52,11 @@ class TestPrice(unittest.TestCase):
             product = self.page.config_reader('data.conf', 'price_product', 'product')
             price = self.page.config_reader('data.conf', 'price_product', 'price')
             price = float('%.2f' % (float(price) * dis))
+            print(price)
         # 搜索结果页价格验证
         self.home.search_sku(product)
         search_price = self.product_list.element_find(self.product_list.unit_price).text[2:]
+        print(float(search_price))
         assert price == float(search_price)
         # 产品详情页价格验证
         self.page.wait_click(self.product_list.sku_result_click)
@@ -170,11 +172,10 @@ class TestPrice(unittest.TestCase):
         self.driver.quit()
 
 if __name__ == '__main__':
-    unittest.main()
-    # suite = unittest.TestSuite()
-    # suite.addTest(TestCase('test_invoice'))
-    # suite.addTest(TestCase('test_address'))
-    # file = open('../TestResult/order.html', 'wb')
-    # runner = HTMLTestRunner(stream=file, title='WWW下单——测试报告', description='测试情况')
-    # runner.run(suite)
-    # file.close()
+    # unittest.main()
+    suite = unittest.TestSuite()
+    suite.addTest(TestPrice('test_price_12'))
+    file = open('../TestResult/order.html', 'wb')
+    runner = HTMLTestRunner(stream=file, title='WWW下单——测试报告', description='测试情况')
+    runner.run(suite)
+    file.close()

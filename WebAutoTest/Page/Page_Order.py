@@ -37,6 +37,7 @@ class Order(Page):
 
     # 普通发票
     choose = ('by.link_text', '请选择')
+    normal_invoice_tab = ('by.xpath', "//ul/li[2][contains(text(),'普通发票')]")
     normal_invoice_add = ('by.link_text', '+新增普通发票')
     choose_invoice_title = ('by.name', 'sub_type')
     invoice_title = ('by.name', 'title')
@@ -257,6 +258,7 @@ class Order(Page):
     def invoice_normal_personal_add(self):
         """新增个人抬头的普票"""
         self.wait_click(self.choose)  # 请选择按钮
+        self.wait_click(self.normal_invoice_tab)  #普通发票tab
         self.wait_click(self.normal_invoice_add)
         self.element_find(self.choose_invoice_title).send_keys('个人抬头')
         self.element_find(self.invoice_title).send_keys('个人抬头普票')

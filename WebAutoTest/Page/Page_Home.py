@@ -53,7 +53,7 @@ class Home(Page):
         ActionChains(self.driver).move_to_element(l1_category).perform()
         self.wait_click(l2_category)
 
-    def search_sku(self, sku):
+    def search_sku(self, sku = 'MAD618'):
         self.element_find(self.search_send).send_keys(sku)
         self.wait_click(self.search_button)
 

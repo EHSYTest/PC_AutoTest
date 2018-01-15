@@ -21,9 +21,57 @@ class TestUserInvoice(unittest.TestCase):
         self.home = Home(self.driver)
         self.user_invoice = UserInvoice(self.driver)
 
-    def test_invoice(self):
+    def test_invoice_personal(self):
         loginname = self.page.config_reader('test_order.conf', '地址发票账号-个人', 'login_name')
         password = self.page.config_reader('test_order.conf', '地址发票账号-个人', 'password')
+        self.home.login(loginname, password)
+        self.home.go_user_center()
+        self.user_invoice.wait_click(self.user_invoice.my_invoice)
+        ###公司类型的发票###
+        self.user_invoice.add_company_invoice()
+        self.user_invoice.edit_company_invoice()
+        self.user_invoice.company_change_personal()
+        self.user_invoice.set_default_invoice()
+        self.user_invoice.delete_normal_invoice()
+        ###个人类型发票###
+        self.user_invoice.add_personal_invoice()
+        self.user_invoice.edit_personal_invoice()
+        self.user_invoice.personal_change_company()
+        self.user_invoice.set_default_invoice()
+        self.user_invoice.delete_normal_invoice()
+        ###增值税发票###
+        self.user_invoice.add_receipt_invoice()
+        self.user_invoice.edit_receipt_invoice()
+        self.user_invoice.set_default_receipt_invoice()
+        self.user_invoice.del_receipt_invoice()
+
+    def test_invoice_company_distribution(self):
+        loginname = self.page.config_reader('test_order.conf', '地址发票账号-分销', 'login_name')
+        password = self.page.config_reader('test_order.conf', '地址发票账号-分销', 'password')
+        self.home.login(loginname, password)
+        self.home.go_user_center()
+        self.user_invoice.wait_click(self.user_invoice.my_invoice)
+        ###公司类型的发票###
+        self.user_invoice.add_company_invoice()
+        self.user_invoice.edit_company_invoice()
+        self.user_invoice.company_change_personal()
+        self.user_invoice.set_default_invoice()
+        self.user_invoice.delete_normal_invoice()
+        ###个人类型发票###
+        self.user_invoice.add_personal_invoice()
+        self.user_invoice.edit_personal_invoice()
+        self.user_invoice.personal_change_company()
+        self.user_invoice.set_default_invoice()
+        self.user_invoice.delete_normal_invoice()
+        ###增值税发票###
+        self.user_invoice.add_receipt_invoice()
+        self.user_invoice.edit_receipt_invoice()
+        self.user_invoice.set_default_receipt_invoice()
+        self.user_invoice.del_receipt_invoice()
+
+    def test_invoice_company_terminal(self):
+        loginname = self.page.config_reader('test_order.conf', '地址发票账号-终端', 'login_name')
+        password = self.page.config_reader('test_order.conf', '地址发票账号-终端', 'password')
         self.home.login(loginname, password)
         self.home.go_user_center()
         self.user_invoice.wait_click(self.user_invoice.my_invoice)

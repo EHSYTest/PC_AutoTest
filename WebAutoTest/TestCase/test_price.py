@@ -172,10 +172,10 @@ class TestPrice(unittest.TestCase):
         self.driver.quit()
 
 if __name__ == '__main__':
-    # unittest.main()
-    suite = unittest.TestSuite()
-    suite.addTest(TestPrice('test_price_12'))
-    file = open('../TestResult/order.html', 'wb')
-    runner = HTMLTestRunner(stream=file, title='WWW下单——测试报告', description='测试情况')
-    runner.run(suite)
-    file.close()
+    unittest.main()
+    # suite = unittest.TestSuite()
+    # suite.addTest(TestPrice('test_price_12'))
+    # file = open('../TestResult/order.html', 'wb')
+    # runner = HTMLTestRunner(stream=file, title='WWW下单——测试报告', description='测试情况')
+    # runner.run(suite)
+    # file.close()

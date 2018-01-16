@@ -4,7 +4,7 @@ sys.path.append('../Page')
 from Page_Base import AssistFunction
 
 test_dir = './'
-discover = unittest.defaultTestLoader.discover(test_dir, pattern='test_order.py')
+discover = unittest.defaultTestLoader.discover(test_dir, pattern='test_*.py')
 
 
 if __name__ == '__main__':

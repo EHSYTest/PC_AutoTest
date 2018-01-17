@@ -24,8 +24,8 @@ class TestUserAddress(unittest.TestCase):
         self.user_address = UserAddress(self.driver)
 
     def test_address_personal(self):
-        loginname = self.page.config_reader('test_order.conf', '地址发票账号-个人', 'login_name')
-        password = self.page.config_reader('test_order.conf', '地址发票账号-个人', 'password')
+        loginname = self.page.config_reader('test_order.conf', '地址发票账号_个人', 'login_name')
+        password = self.page.config_reader('test_order.conf', '地址发票账号_个人', 'password')
         self.home.login(loginname, password)
         self.home.go_user_center()
         self.page.wait_click(self.user_address.my_address)

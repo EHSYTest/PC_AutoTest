@@ -62,8 +62,8 @@ class TestCart(unittest.TestCase):
         sku = self.page.config_reader('data.conf', '区域限制产品', 'product')
         self.home.search_sku(sku)
         self.productList.searchResult_add_to_cart()
-        loginname = self.page.config_reader('test_order.conf', '地址发票账号-个人', 'login_name')
-        password = self.page.config_reader('test_order.conf', '地址发票账号-个人', 'password')
+        loginname = self.page.config_reader('test_order.conf', '地址发票账号_个人', 'login_name')
+        password = self.page.config_reader('test_order.conf', '地址发票账号_个人', 'password')
         self.home.login(loginname, password)
         self.normal_cart.cart_delete()
 
@@ -73,16 +73,12 @@ class TestCart(unittest.TestCase):
         self.driver.quit()
 
 if __name__ == '__main__':
-    unittest.main()
-    # suite = unittest.TestSuite()
-    # suite.addTest(TestCart('test_cart_check'))
-    # suite.addTest(TestCart('test_cart_areaLimit'))
-    # suite.addTest(TestCart('test_cart_bj'))
-    # suite.addTest(TestCart('test_cart_combine'))
-    # suite.addTest(TestCart('test_cart_delete'))
-    # file = open('../TestResult/EHSY_AutoTest.html', 'wb')
-    # runner = HTMLTestRunner(stream=file, title='WWW下单——测试报告', description='测试情况')
-    # runner.run(suite)
-    # file.close()
+    # unittest.main()
+    suite = unittest.TestSuite()
+    suite.addTest(TestCart('test_cart_delete'))
+    file = open('../TestResult/EHSY_AutoTest.html', 'wb')
+    runner = HTMLTestRunner(stream=file, title='WWW下单——测试报告', description='测试情况')
+    runner.run(suite)
+    file.close()
 
 

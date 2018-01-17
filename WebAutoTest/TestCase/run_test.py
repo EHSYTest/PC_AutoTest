@@ -19,7 +19,7 @@ if __name__ == '__main__':
         msg = 'Failed!'
     else:
         msg = 'Success!'
-    dir = '../TestResult/order.html'
+    dir = '../TestResult/EHSY_AutoTest.html'
     AssistFunction().send_email(dir, msg)
 
 

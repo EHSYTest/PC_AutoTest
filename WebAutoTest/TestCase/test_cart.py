@@ -33,7 +33,7 @@ class TestCart(unittest.TestCase):
         self.normal_cart.quantity_edit_check()
         self.normal_cart.wait_to_stale(self.normal_cart.layer)
         self.normal_cart.cart_checkboxs_select()
-        self.normal_cart.cart_collect()
+        # self.normal_cart.cart_collect()
         self.normal_cart.product_click()
 
     def test_cart_areaLimit(self):
@@ -75,7 +75,7 @@ class TestCart(unittest.TestCase):
 if __name__ == '__main__':
     # unittest.main()
     suite = unittest.TestSuite()
-    suite.addTest(TestCart('test_cart_delete'))
+    suite.addTest(TestCart('test_cart_check'))
     file = open('../TestResult/EHSY_AutoTest.html', 'wb')
     runner = HTMLTestRunner(stream=file, title='WWW下单——测试报告', description='测试情况')
     runner.run(suite)

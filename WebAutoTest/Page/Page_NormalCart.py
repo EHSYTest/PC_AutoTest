@@ -177,7 +177,8 @@ class NormalCart(Page):
         self.wait_click(self.product_img)
         ele = self.wait_to_visibility(self.skuContent_product_name)
         title_message = ele.text
-        assert self.driver.title == title_message
+        explore_title = self.driver.title[:-19]
+        assert explore_title == title_message
         print('商品成功跳转到详情页！')
 
     def area_limit_sku(self):

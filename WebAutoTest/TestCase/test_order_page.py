@@ -184,7 +184,7 @@ if __name__ == '__main__':
     unittest.main()
     # suite = unittest.TestSuite()
     # suite.addTest(TestOrderPage('test_address_check'))
-    # file = open('../TestResult/order.html', 'wb')
+    # file = open('../TestResult/EHSY_AutoTest.html', 'wb')
     # runner = HTMLTestRunner(stream=file, title='WWW下单——测试报告', description='测试情况')
     # runner.run(suite)
     # file.close()

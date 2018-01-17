@@ -329,24 +329,24 @@ if __name__ == '__main__':
     suit = unittest.TestSuite()
     case_list = [
                   TestOrder('test_order_01'),
-                  # TestOrder('test_order_02'),
-                  # TestOrder('test_order_03'),
-                  # TestOrder('test_order_04'),
-                  # TestOrder('test_order_05'),
-                  # TestOrder('test_order_06'),
-                  # TestOrder('test_order_07'),
-                  # TestOrder('test_order_08'),
-                  # TestOrder('test_order_09'),
-                  # TestOrder('test_order_10'),
-                  # TestOrder('test_order_11'),
-                  # TestOrder('test_order_12'),
-                  # TestOrder('test_order_13'),
-                  # TestOrder('test_order_14'),
-                  # TestOrder('test_order_15'),
+                  TestOrder('test_order_02'),
+                  TestOrder('test_order_03'),
+                  TestOrder('test_order_04'),
+                  TestOrder('test_order_05'),
+                  TestOrder('test_order_06'),
+                  TestOrder('test_order_07'),
+                  TestOrder('test_order_08'),
+                  TestOrder('test_order_09'),
+                  TestOrder('test_order_10'),
+                  TestOrder('test_order_11'),
+                  TestOrder('test_order_12'),
+                  TestOrder('test_order_13'),
+                  TestOrder('test_order_14'),
+                  TestOrder('test_order_15')
     ]
     suit.addTests(case_list)
     # now = time.strftime("%Y_%m_%d %H_%M_%S")
-    file = open('../TestResult/order.html', 'wb')
+    file = open('../TestResult/EHSY_AutoTest.html', 'wb')
     runner = HTMLTestRunner(stream=file, title='WWW下单——测试报告', description='测试情况')
     result = runner.run(suit)
     file.close()

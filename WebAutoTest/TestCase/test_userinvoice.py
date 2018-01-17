@@ -22,8 +22,8 @@ class TestUserInvoice(unittest.TestCase):
         self.user_invoice = UserInvoice(self.driver)
 
     def test_invoice_personal(self):
-        loginname = self.page.config_reader('test_order.conf', '地址发票账号-个人', 'login_name')
-        password = self.page.config_reader('test_order.conf', '地址发票账号-个人', 'password')
+        loginname = self.page.config_reader('test_order.conf', '地址发票账号_个人', 'login_name')
+        password = self.page.config_reader('test_order.conf', '地址发票账号_个人', 'password')
         self.home.login(loginname, password)
         self.home.go_user_center()
         self.user_invoice.wait_click(self.user_invoice.my_invoice)
@@ -102,7 +102,7 @@ if __name__ == '__main__':
     unittest.main()
     # suite = unittest.TestSuite()
     # suite.addTest(TestUserInvoice('test_invoice'))
-    # file = ('../../TestResult/order.html', 'wb')
+    # file = ('../../TestResult/EHSY_AutoTest.html', 'wb')
     # runner = HTMLTestRunner(stream=file, title='用户发票测试报告', description='测试情况')
     # runner.run(suite)
     # file.close()

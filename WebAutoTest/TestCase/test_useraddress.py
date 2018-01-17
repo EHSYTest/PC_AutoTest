@@ -24,8 +24,8 @@ class TestUserAddress(unittest.TestCase):
         self.user_address = UserAddress(self.driver)
 
     def test_address_personal(self):
-        loginname = self.page.config_reader('test_order.conf', '地址发票账号-个人', 'login_name')
-        password = self.page.config_reader('test_order.conf', '地址发票账号-个人', 'password')
+        loginname = self.page.config_reader('test_order.conf', '地址发票账号_个人', 'login_name')
+        password = self.page.config_reader('test_order.conf', '地址发票账号_个人', 'password')
         self.home.login(loginname, password)
         self.home.go_user_center()
         self.page.wait_click(self.user_address.my_address)
@@ -98,7 +98,7 @@ if __name__ == '__main__':
     unittest.main()
     # suite = unittest.TestSuite()
     # suite.addTest(TestUserAddress('test_address_personal'))
-    # file = open('../TestResult/order.html', 'wb')
+    # file = open('../TestResult/EHSY_AutoTest.html', 'wb')
     # runner = HTMLTestRunner(stream=file, title='用户地址测试报告', description='测试情况')
     # runner.run(suite)
     # file.close()

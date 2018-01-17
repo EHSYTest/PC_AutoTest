@@ -91,7 +91,7 @@ class PowerChinaOrder(unittest.TestCase):
         self.page.cancel_order(orderId, environment=self.environment)  # 接口取消订单
 
     def test_powerchina_05(self):
-        """产品详情页入口-终端用户下单-增票"""
+        """详情页入口-增票"""
         login_name = self.page.config_reader('test_order.conf', 'PowerChina_User', 'login_name')
         password = self.page.config_reader('test_order.conf', 'PowerChina_User', 'password')
         self.home.login(login_name, password)
@@ -192,13 +192,13 @@ if __name__ == '__main__':
     suit = unittest.TestSuite()
     case_list = [
                   PowerChinaOrder('test_powerchina_01'),
-                  # PowerChinaOrder('test_powerchina_02'),
-                  # PowerChinaOrder('test_powerchina_03'),
-                  # PowerChinaOrder('test_powerchina_04'),
-                  # PowerChinaOrder('test_powerchina_05'),
-                  # PowerChinaOrderPage('test_invoice'),
-                  # PowerChinaOrderPage('test_address'),
-                  # PowerChinaOrderPage('test_invoice_check'),
+                  PowerChinaOrder('test_powerchina_02'),
+                  PowerChinaOrder('test_powerchina_03'),
+                  PowerChinaOrder('test_powerchina_04'),
+                  PowerChinaOrder('test_powerchina_05'),
+                  PowerChinaOrderPage('test_invoice'),
+                  PowerChinaOrderPage('test_address'),
+                  PowerChinaOrderPage('test_invoice_check'),
     ]
     suit.addTests(case_list)
     # now = time.strftime("%Y_%m_%d %H_%M_%S")

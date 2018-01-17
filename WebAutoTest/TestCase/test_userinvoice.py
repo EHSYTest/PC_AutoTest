@@ -102,7 +102,7 @@ if __name__ == '__main__':
     unittest.main()
     # suite = unittest.TestSuite()
     # suite.addTest(TestUserInvoice('test_invoice'))
-    # file = ('../../TestResult/order.html', 'wb')
+    # file = ('../../TestResult/EHSY_AutoTest.html', 'wb')
     # runner = HTMLTestRunner(stream=file, title='用户发票测试报告', description='测试情况')
     # runner.run(suite)
     # file.close()

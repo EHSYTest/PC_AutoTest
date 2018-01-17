@@ -98,7 +98,7 @@ if __name__ == '__main__':
     unittest.main()
     # suite = unittest.TestSuite()
     # suite.addTest(TestUserAddress('test_address_personal'))
-    # file = open('../TestResult/order.html', 'wb')
+    # file = open('../TestResult/EHSY_AutoTest.html', 'wb')
     # runner = HTMLTestRunner(stream=file, title='用户地址测试报告', description='测试情况')
     # runner.run(suite)
     # file.close()

@@ -80,7 +80,7 @@ if __name__ == '__main__':
     # suite.addTest(TestCart('test_cart_bj'))
     # suite.addTest(TestCart('test_cart_combine'))
     # suite.addTest(TestCart('test_cart_delete'))
-    # file = open('../TestResult/order.html', 'wb')
+    # file = open('../TestResult/EHSY_AutoTest.html', 'wb')
     # runner = HTMLTestRunner(stream=file, title='WWW下单——测试报告', description='测试情况')
     # runner.run(suite)
     # file.close()

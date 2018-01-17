@@ -3,8 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="a665631f-422e-4f1d-88e9-64ed59718bad" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/WebAutoTest/Page/Page_Base.py" afterPath="$PROJECT_DIR$/WebAutoTest/Page/Page_Base.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/WebAutoTest/TestCase/powerchina.py" afterPath="$PROJECT_DIR$/WebAutoTest/TestCase/powerchina.py" />
     </list>
     <ignored path=".idea/" />
     <ignored path="WebAutoTest/.idea/" />
@@ -46,7 +44,7 @@
       <file leaf-file-name="powerchina.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/WebAutoTest/TestCase/powerchina.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="168">
+            <state relative-caret-position="568">
               <caret line="198" column="48" lean-forward="false" selection-start-line="198" selection-start-column="48" selection-end-line="198" selection-end-column="48" />
               <folding />
             </state>
@@ -555,13 +553,6 @@
       <option name="presentableId" value="Default" />
       <updated>1506390215075</updated>
     </task>
-    <task id="LOCAL-00042" summary="By Rick">
-      <created>1511772968200</created>
-      <option name="number" value="00042" />
-      <option name="presentableId" value="LOCAL-00042" />
-      <option name="project" value="LOCAL" />
-      <updated>1511772968200</updated>
-    </task>
     <task id="LOCAL-00043" summary="By Rick">
       <created>1511773472241</created>
       <option name="number" value="00043" />
@@ -898,7 +889,14 @@
       <option name="project" value="LOCAL" />
       <updated>1516166762873</updated>
     </task>
-    <option name="localTasksCounter" value="91" />
+    <task id="LOCAL-00091" summary="By Rick">
+      <created>1516181443346</created>
+      <option name="number" value="00091" />
+      <option name="presentableId" value="LOCAL-00091" />
+      <option name="project" value="LOCAL" />
+      <updated>1516181443349</updated>
+    </task>
+    <option name="localTasksCounter" value="92" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -1322,7 +1320,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/WebAutoTest/TestCase/powerchina.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="168">
+        <state relative-caret-position="568">
           <caret line="198" column="48" lean-forward="false" selection-start-line="198" selection-start-column="48" selection-end-line="198" selection-end-column="48" />
           <folding />
         </state>

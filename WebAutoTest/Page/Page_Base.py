@@ -150,7 +150,7 @@ class Page(object):
                 time.sleep(0.2)
                 continue
 
-    def isElementExist(self,ele):
+    def isElementExist(self, ele):
         try:
             self.element_find(ele)
             return True

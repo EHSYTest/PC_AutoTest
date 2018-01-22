@@ -14,9 +14,9 @@ class TestUserAddress(unittest.TestCase):
         self.page = Page(self.driver)
         self.environment = self.page.config_reader('environment.conf', 'Environment', 'environment')
         if self.environment == 'staging':
-            self.driver.get('http://new.ehsy.com')
+            self.driver.get('http://ps.ehsy.com')
         else:
-            self.driver.get('http://http://www.ehsy.com')
+            self.driver.get('http://new.ehsy.com')
         self.driver.implicitly_wait(30)
         self.driver.maximize_window()
         self.home = Home(self.driver)
@@ -24,8 +24,8 @@ class TestUserAddress(unittest.TestCase):
         self.user_address = UserAddress(self.driver)
 
     def test_address_personal(self):
-        loginname = self.page.config_reader('test_order.conf', 'Rick测试账号_个人发票地址', 'login_name')
-        password = self.page.config_reader('test_order.conf', 'Rick测试账号_个人发票地址', 'password')
+        loginname = self.page.config_reader('test_order.conf', '个人地址发票账号', 'login_name')
+        password = self.page.config_reader('test_order.conf', '个人地址发票账号', 'password')
         self.home.login(loginname, password)
         self.home.go_user_center()
         self.page.wait_click(self.user_address.my_address)
@@ -46,8 +46,8 @@ class TestUserAddress(unittest.TestCase):
         self.user_address.delete_invoice_address()
 
     def test_address_company_distribution(self):
-        loginname = self.page.config_reader('test_order.conf', 'Rick测试账号_分销发票地址', 'login_name')
-        password = self.page.config_reader('test_order.conf', 'Rick测试账号_分销发票地址', 'password')
+        loginname = self.page.config_reader('test_order.conf', '分销地址发票账号', 'login_name')
+        password = self.page.config_reader('test_order.conf', '分销地址发票账号', 'password')
         self.home.login(loginname, password)
         self.home.go_user_center()
         self.page.wait_click(self.user_address.my_address)
@@ -68,8 +68,8 @@ class TestUserAddress(unittest.TestCase):
         self.user_address.delete_invoice_address()
 
     def test_address_company_terminal(self):
-        loginname = self.page.config_reader('test_order.conf', 'Rick测试账号_终端发票地址', 'login_name')
-        password = self.page.config_reader('test_order.conf', 'Rick测试账号_终端发票地址', 'password')
+        loginname = self.page.config_reader('test_order.conf', '终端地址发票账号', 'login_name')
+        password = self.page.config_reader('test_order.conf', '终端地址发票账号', 'password')
         self.home.login(loginname, password)
         self.home.go_user_center()
         self.page.wait_click(self.user_address.my_address)

@@ -22,8 +22,8 @@ class TestUserInvoice(unittest.TestCase):
         self.user_invoice = UserInvoice(self.driver)
 
     def test_invoice_personal(self):
-        loginname = self.page.config_reader('test_order.conf', 'Rick测试账号_个人发票地址', 'login_name')
-        password = self.page.config_reader('test_order.conf', 'Rick测试账号_个人发票地址', 'password')
+        loginname = self.page.config_reader('test_order.conf', '个人地址发票账号', 'login_name')
+        password = self.page.config_reader('test_order.conf', '个人地址发票账号', 'password')
         self.home.login(loginname, password)
         self.home.go_user_center()
         self.user_invoice.wait_click(self.user_invoice.my_invoice)
@@ -46,8 +46,8 @@ class TestUserInvoice(unittest.TestCase):
         self.user_invoice.del_receipt_invoice()
 
     def test_invoice_company_distribution(self):
-        loginname = self.page.config_reader('test_order.conf', 'Rick测试账号_分销发票地址', 'login_name')
-        password = self.page.config_reader('test_order.conf', 'Rick测试账号_分销发票地址', 'password')
+        loginname = self.page.config_reader('test_order.conf', '分销地址发票账号', 'login_name')
+        password = self.page.config_reader('test_order.conf', '分销地址发票账号', 'password')
         self.home.login(loginname, password)
         self.home.go_user_center()
         self.user_invoice.wait_click(self.user_invoice.my_invoice)
@@ -70,8 +70,8 @@ class TestUserInvoice(unittest.TestCase):
         self.user_invoice.del_receipt_invoice()
 
     def test_invoice_company_terminal(self):
-        loginname = self.page.config_reader('test_order.conf', 'Rick测试账号_终端发票地址', 'login_name')
-        password = self.page.config_reader('test_order.conf', 'Rick测试账号_终端发票地址', 'password')
+        loginname = self.page.config_reader('test_order.conf', '终端地址发票账号', 'login_name')
+        password = self.page.config_reader('test_order.conf', '终端地址发票账号', 'password')
         self.home.login(loginname, password)
         self.home.go_user_center()
         self.user_invoice.wait_click(self.user_invoice.my_invoice)

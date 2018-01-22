@@ -1,10 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="a665631f-422e-4f1d-88e9-64ed59718bad" name="Default" comment="By Rick">
+    <list default="true" id="a665631f-422e-4f1d-88e9-64ed59718bad" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/WebAutoTest/config/data.conf" afterPath="$PROJECT_DIR$/WebAutoTest/config/data.conf" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/WebAutoTest/config/environment.conf" afterPath="$PROJECT_DIR$/WebAutoTest/config/environment.conf" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/WebAutoTest/TestCase/test_useraddress.py" afterPath="$PROJECT_DIR$/WebAutoTest/TestCase/test_useraddress.py" />
     </list>
     <ignored path=".idea/" />
     <ignored path="WebAutoTest/.idea/" />
@@ -23,11 +22,11 @@
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="test_useraddress.py" pinned="false" current-in-tab="false">
+      <file leaf-file-name="test_useraddress.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/WebAutoTest/TestCase/test_useraddress.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="156">
-              <caret line="99" column="59" lean-forward="true" selection-start-line="99" selection-start-column="59" selection-end-line="99" selection-end-column="59" />
+            <state relative-caret-position="196">
+              <caret line="99" column="20" lean-forward="false" selection-start-line="99" selection-start-column="20" selection-end-line="99" selection-end-column="20" />
               <folding />
             </state>
           </provider>
@@ -85,7 +84,7 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="data.conf" pinned="false" current-in-tab="true">
+      <file leaf-file-name="data.conf" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/WebAutoTest/config/data.conf">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="240">
@@ -198,6 +197,7 @@
     <option name="FORCE_PUSH_ALLOWED" value="false" />
     <push-targets>
       <push-target-info target-remote="origin" target-branch="staging" repo="$PROJECT_DIR$" source="develop2" />
+      <push-target-info target-remote="origin" target-branch="develop" repo="$PROJECT_DIR$" source="staging" />
     </push-targets>
   </component>
   <component name="IdeDocumentHistory">
@@ -238,12 +238,12 @@
         <option value="$PROJECT_DIR$/WebAutoTest/TestCase/test_order.py" />
         <option value="$PROJECT_DIR$/WebAutoTest/TestCase/test_price.py" />
         <option value="$PROJECT_DIR$/WebAutoTest/TestCase/test_order_page.py" />
-        <option value="$PROJECT_DIR$/WebAutoTest/TestCase/test_useraddress.py" />
         <option value="$PROJECT_DIR$/WebAutoTest/TestCase/test_userinvoice.py" />
         <option value="$PROJECT_DIR$/WebAutoTest/TestCase/test_cart.py" />
         <option value="$PROJECT_DIR$/WebAutoTest/Page/Page_NormalCart.py" />
         <option value="$PROJECT_DIR$/WebAutoTest/config/environment.conf" />
         <option value="$PROJECT_DIR$/WebAutoTest/config/data.conf" />
+        <option value="$PROJECT_DIR$/WebAutoTest/TestCase/test_useraddress.py" />
       </list>
     </option>
   </component>
@@ -594,13 +594,6 @@
       <option name="presentableId" value="Default" />
       <updated>1506390215075</updated>
     </task>
-    <task id="LOCAL-00047" summary="By Rick">
-      <created>1511839900439</created>
-      <option name="number" value="00047" />
-      <option name="presentableId" value="LOCAL-00047" />
-      <option name="project" value="LOCAL" />
-      <updated>1511839900439</updated>
-    </task>
     <task id="LOCAL-00048" summary="By Rick">
       <created>1511847288046</created>
       <option name="number" value="00048" />
@@ -937,7 +930,14 @@
       <option name="project" value="LOCAL" />
       <updated>1516626079144</updated>
     </task>
-    <option name="localTasksCounter" value="96" />
+    <task id="LOCAL-00096" summary="By Rick">
+      <created>1516626276407</created>
+      <option name="number" value="00096" />
+      <option name="presentableId" value="LOCAL-00096" />
+      <option name="project" value="LOCAL" />
+      <updated>1516626276407</updated>
+    </task>
+    <option name="localTasksCounter" value="97" />
     <servers />
   </component>
   <component name="TodoView">
@@ -1331,14 +1331,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/WebAutoTest/TestCase/test_useraddress.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="156">
-          <caret line="99" column="59" lean-forward="true" selection-start-line="99" selection-start-column="59" selection-end-line="99" selection-end-column="59" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/WebAutoTest/TestCase/test_userinvoice.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="620">
@@ -1387,6 +1379,14 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/WebAutoTest/config/data.conf">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="240">
+          <caret line="12" column="18" lean-forward="true" selection-start-line="12" selection-start-column="18" selection-end-line="12" selection-end-column="18" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/WebAutoTest/config/environment.conf">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="40">
@@ -1395,10 +1395,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/WebAutoTest/config/data.conf">
+    <entry file="file://$PROJECT_DIR$/WebAutoTest/TestCase/test_useraddress.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="240">
-          <caret line="12" column="18" lean-forward="true" selection-start-line="12" selection-start-column="18" selection-end-line="12" selection-end-column="18" />
+        <state relative-caret-position="196">
+          <caret line="99" column="20" lean-forward="false" selection-start-line="99" selection-start-column="20" selection-end-line="99" selection-end-column="20" />
           <folding />
         </state>
       </provider>

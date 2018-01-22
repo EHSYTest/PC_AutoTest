@@ -14,7 +14,7 @@ class TestUserAddress(unittest.TestCase):
         self.page = Page(self.driver)
         self.environment = self.page.config_reader('environment.conf', 'Environment', 'environment')
         if self.environment == 'staging':
-            self.driver.get('http://ps.ehsy.com')
+            self.driver.get('http://new.ehsy.com')
         else:
             self.driver.get('http://http://www.ehsy.com')
         self.driver.implicitly_wait(30)

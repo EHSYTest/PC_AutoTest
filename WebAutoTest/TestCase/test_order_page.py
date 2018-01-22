@@ -25,7 +25,7 @@ class TestOrderPage(unittest.TestCase):
         if self.environment == 'staging':
             self.driver.get('http://ps.ehsy.com')
         elif self.environment == 'production':
-            self.driver.get('http://www.ehsy.com')
+            self.driver.get('http://new.ehsy.com')
         self.driver.implicitly_wait(30)
         self.driver.maximize_window()
         self.cart = Cart(self.driver)

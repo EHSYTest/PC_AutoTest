@@ -25,7 +25,7 @@ class TestOrder(unittest.TestCase):
         if self.environment == 'staging':
             self.driver.get('http://ps.ehsy.com')
         elif self.environment == 'production':
-            self.driver.get('http://www.ehsy.com')
+            self.driver.get('http://new.ehsy.com')
         self.driver.maximize_window()
         self.cart = Cart(self.driver)
         self.home = Home(self.driver)
@@ -155,10 +155,10 @@ class TestOrder(unittest.TestCase):
         self.personal_center.approve_pr(status='pass')
         # 取消订单
         sql = "select a.ORDER_ID from oc.order_info a where a.EXTERNAL_ORDER_NO='"+pr_number+"'"
-        sql_result = self.page.db_con('oc-staging', sql)
+        sql_result = self.page.db_con(self.environment, sql)
         SO = sql_result[0]['ORDER_ID']
         print(SO)
-        self.page.cancel_order(SO)
+        self.page.cancel_order(SO, environment=self.environment)
 
     def test_order_08(self):
         """产线大图页入口-EAS用户下单-超过审批额-审批驳回"""
@@ -208,15 +208,12 @@ class TestOrder(unittest.TestCase):
         # self.order.wait_click(self.order.notice_layer)
         self.order.wait_click(self.order.choose_eas_flow)
         self.order.wait_click(self.order.confirm)
-        pr_number = self.order_result.get_pr_by_url()
+        so = self.order_result.get_so_by_url()
+        print(so)
         message = self.order_result.element_find(self.order_result.eas_message).text
-        assert message == '您提交的请购单已审批通过，请做好收货准备！'
+        assert message == '订单已提交，请尽快完成支付！'
         # 取消订单
-        sql = "select a.ORDER_ID from oc.order_info a where a.EXTERNAL_ORDER_NO='" + pr_number + "'"
-        sql_result = self.page.db_con('oc-staging', sql)
-        SO = sql_result[0]['ORDER_ID']
-        print(SO)
-        self.page.cancel_order(SO)
+        self.page.cancel_order(so, environment=self.environment)
 
     def test_order_10(self):
         """产品详情页入口-EIS用户下单-表单"""
@@ -328,21 +325,21 @@ class TestOrder(unittest.TestCase):
 if __name__ == '__main__':
     suit = unittest.TestSuite()
     case_list = [
-                  TestOrder('test_order_01'),
-                  TestOrder('test_order_02'),
-                  TestOrder('test_order_03'),
-                  TestOrder('test_order_04'),
-                  TestOrder('test_order_05'),
-                  TestOrder('test_order_06'),
-                  TestOrder('test_order_07'),
-                  TestOrder('test_order_08'),
-                  TestOrder('test_order_09'),
-                  TestOrder('test_order_10'),
-                  TestOrder('test_order_11'),
-                  TestOrder('test_order_12'),
+                  # TestOrder('test_order_01'),
+                  # TestOrder('test_order_02'),
+                  # TestOrder('test_order_03'),
+                  # TestOrder('test_order_04'),
+                  # TestOrder('test_order_05'),
+                  # TestOrder('test_order_06'),
+                  # TestOrder('test_order_07'),
+                  # TestOrder('test_order_08'),
+                  # TestOrder('test_order_09'),
+                  # TestOrder('test_order_10'),
+                  # TestOrder('test_order_11'),
+                  # TestOrder('test_order_12'),
                   TestOrder('test_order_13'),
-                  TestOrder('test_order_14'),
-                  TestOrder('test_order_15')
+                  # TestOrder('test_order_14'),
+                  # TestOrder('test_order_15')
     ]
     suit.addTests(case_list)
     # now = time.strftime("%Y_%m_%d %H_%M_%S")

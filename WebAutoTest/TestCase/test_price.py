@@ -108,7 +108,7 @@ class TestPrice(unittest.TestCase):
         login_name = self.page.config_reader('test_price.conf', '分销-已认证', 'login_name')
         password = self.page.config_reader('test_price.conf', '分销-已认证', 'password')
         self.home.login(login_name, password)
-        self.price_assert(dis=0.88)
+        self.price_assert(dis=0.90)
 
     def test_price_05(self):
         """价格测试-终端-待审核"""
@@ -157,7 +157,7 @@ class TestPrice(unittest.TestCase):
         login_name = self.page.config_reader('test_price.conf', '分销-已认证', 'login_name')
         password = self.page.config_reader('test_price.conf', '分销-已认证', 'password')
         self.home.login(login_name, password)
-        self.price_assert(dis=0.88, promotion=True)
+        self.price_assert(dis=0.90, promotion=True)
 
     def test_price_12(self):
         """促销价格测试-终端-已认证"""

@@ -159,7 +159,7 @@ class Page(object):
 
     @staticmethod
     def db_con(database, sql):
-        if database == 'oc-staging':
+        if database == 'staging':
             con = pymysql.connect(
                     host='118.178.189.137',
                     user='root',
@@ -168,6 +168,15 @@ class Page(object):
                     charset='utf8',
                     cursorclass=pymysql.cursors.DictCursor   # sql查询结果转为字典类型
                 )
+        if database == 'production':
+            con = pymysql.connect(
+                host='112.124.96.28',
+                user='ehsy_readonly',
+                password='Ehsy2017',
+                port=4040,
+                charset='utf8',
+                cursorclass=pymysql.cursors.DictCursor  # sql查询结果转为字典类型
+            )
         cr = con.cursor()
         cr.execute(sql)
         con.commit()

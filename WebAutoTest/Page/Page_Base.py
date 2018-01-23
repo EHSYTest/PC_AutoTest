@@ -54,9 +54,11 @@ class Page(object):
         # 切换到刚打开的新窗口
         while True:
             all_handle = self.driver.window_handles
+            print(all_handle)
             if len(all_handle) == handle_quantity:
                 break
             else:
+                time.sleep(1)
                 pass
         self.driver.switch_to_window(all_handle[handle_quantity-1])
 
@@ -147,7 +149,7 @@ class Page(object):
                 self.element_find(ele).click()
                 break
             except exceptions.WebDriverException:
-                time.sleep(0.2)
+                time.sleep(0.5)
                 continue
 
     def isElementExist(self, ele):

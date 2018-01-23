@@ -45,7 +45,7 @@ class TestCart(unittest.TestCase):
 
     def test_cart_bj(self):
         ###购物车报价单生成按钮###
-        sku = self.page.config_reader('data.conf', '区域限制产品', 'product')
+        sku = self.page.config_reader('data.conf', '普通商品', 'product')
         self.home.search_sku(sku)
         self.productList.searchResult_add_to_cart()
         self.normal_cart.bj_page()

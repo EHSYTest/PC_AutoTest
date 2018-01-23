@@ -153,8 +153,8 @@ class NormalCart(Page):
     def cart_collect(self):
         ###单个商品收藏###
         self.wait_click(self.collect)
-        loginname = self.config_reader('test_order.conf', '个人地址发票账号', 'login_name')
-        password = self.config_reader('test_order.conf', '个人地址发票账号', 'password')
+        loginname = self.config_reader('test_order.conf', '个人账号', 'login_name')
+        password = self.config_reader('test_order.conf', '个人账号', 'password')
         home = Home(self.driver)
         home.login_other(loginname,password)
         if self.isElementExist(self.collect):
@@ -188,8 +188,8 @@ class NormalCart(Page):
 
     def bj_page(self):
         self.wait_click(self.bj_button)
-        loginname = self.config_reader('test_order.conf', '个人地址发票账号', 'login_name')
-        password = self.config_reader('test_order.conf', '个人地址发票账号', 'password')
+        loginname = self.config_reader('test_order.conf', '个人账号', 'login_name')
+        password = self.config_reader('test_order.conf', '个人账号', 'password')
         home = Home(self.driver)
         home.login_other(loginname,password)
         self.wait_click(self.bj_button)
@@ -199,8 +199,8 @@ class NormalCart(Page):
 
     def cart_combine(self):
         self.wait_click(self.check_button)
-        loginname = self.config_reader('test_order.conf', '个人地址发票账号', 'login_name')
-        password = self.config_reader('test_order.conf', '个人地址发票账号', 'password')
+        loginname = self.config_reader('test_order.conf', '个人账号', 'login_name')
+        password = self.config_reader('test_order.conf', '个人账号', 'password')
         home = Home(self.driver)
         home.login_other(loginname,password)
         sku_list = self.elements_find(self.cart_sku)

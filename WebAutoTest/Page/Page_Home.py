@@ -37,6 +37,8 @@ class Home(Page):
 
     layer = ('by.id', 'ajax-layer-loading')
 
+    cxml_url = ('by.xpath', '//url')
+
     def login(self, login_name, password):
         self.wait_click(self.login_button)
         self.element_find(self.username_send).send_keys(login_name)

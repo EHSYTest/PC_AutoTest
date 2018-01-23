@@ -101,7 +101,6 @@ class UserInvoice(Page):
         time.sleep(2)
         invoice_num = self.element_find(self.invoice_num).text
         del_after_num = invoice_num[2:3]
-        print(del_after_num, del_front_num)
         assert int(del_front_num) == int(del_after_num) + 1
         print('发票删除成功！')
 

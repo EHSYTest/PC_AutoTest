@@ -28,7 +28,7 @@ class ProductList(Page):
     unit_price = ('by.xpath', '//span/span[2]')
 
     # 产品详情页
-    skuContent_add_button = ('by.xpath', '//div[2]/div[5]/div/a')
+    skuContent_add_button = ('by.class_name', 'add-to-cart-btn')
     discount_price = ('by.class_name', 'show-price')
     del_price = ('by.xpath', '//del/span')
 

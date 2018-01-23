@@ -1,5 +1,6 @@
 from Page_Base import Page
 from selenium.webdriver.common.action_chains import ActionChains
+import time
 
 
 class UserAddress(Page):
@@ -51,6 +52,7 @@ class UserAddress(Page):
         self.element_find(self.telephone).send_keys('020-88888888-8888')
         self.wait_click(self.checkbox_defaultAddress)
         self.wait_click(self.confirm_button)
+        time.sleep(2)
         address_num = self.element_find(self.address_num).text
         add_after_num = address_num[4:5]
         assert int(add_after_num) == int(add_front_num) + 1
@@ -71,6 +73,7 @@ class UserAddress(Page):
         self.element_find(self.telephone).send_keys('020-00000000-0000')
         self.wait_click(self.checkbox_defaultAddress)
         self.wait_click(self.confirm_button)
+        time.sleep(2)
         receiver_name = self.element_find(self.receiver).text
         assert receiver_name == '测试-修改'
         print('通用地址修改成功！')
@@ -90,6 +93,7 @@ class UserAddress(Page):
         del_front_num = address_num[4:5]
         self.wait_click(self.delete_address)
         self.wait_click(self.confirm)
+        time.sleep(2)
         address_num = self.element_find(self.address_num).text
         del_after_num = address_num[4:5]
         assert int(del_front_num) == int(del_after_num) + 1
@@ -111,6 +115,7 @@ class UserAddress(Page):
         self.element_find(self.telephone).send_keys('020-88888888-8888')
         self.wait_click(self.checkbox_defaultAddress)
         self.wait_click(self.confirm_button)
+        time.sleep(2)
         address_num = self.element_find(self.address_num).text
         add_after_num = address_num[4:5]
         assert int(add_after_num) == int(add_front_num) + 1
@@ -131,6 +136,7 @@ class UserAddress(Page):
         self.element_find(self.telephone).send_keys('020-00000000-0000')
         self.wait_click(self.checkbox_defaultAddress)
         self.wait_click(self.confirm_button)
+        time.sleep(2)
         receiver_name = self.element_find(self.receiver).text
         assert receiver_name == '测试-修改'
         print('收货地址修改成功！')
@@ -150,6 +156,7 @@ class UserAddress(Page):
         del_front_num = address_num[4:5]
         self.wait_click(self.delete_address)
         self.wait_click(self.confirm)
+        time.sleep(2)
         address_num = self.element_find(self.address_num).text
         del_after_num = address_num[4:5]
         assert int(del_front_num) == int(del_after_num) + 1
@@ -171,6 +178,7 @@ class UserAddress(Page):
         self.element_find(self.telephone).send_keys('020-88888888-8888')
         self.wait_click(self.checkbox_defaultAddress)
         self.wait_click(self.confirm_button)
+        time.sleep(2)
         address_num = self.element_find(self.address_num).text
         add_after_num = address_num[4:5]
         assert int(add_after_num) == int(add_front_num) + 1
@@ -191,6 +199,7 @@ class UserAddress(Page):
         self.element_find(self.telephone).send_keys('020-00000000-0000')
         self.wait_click(self.checkbox_defaultAddress)
         self.wait_click(self.confirm_button)
+        time.sleep(2)
         receiver_name = self.element_find(self.receiver).text
         assert receiver_name == '测试-修改'
         print('发票地址修改成功！')
@@ -210,6 +219,7 @@ class UserAddress(Page):
         del_front_num = address_num[4:5]
         self.wait_click(self.delete_address)
         self.wait_click(self.confirm)
+        time.sleep(2)
         address_num = self.element_find(self.address_num).text
         del_after_num = address_num[4:5]
         assert int(del_front_num) == int(del_after_num) + 1

@@ -101,7 +101,7 @@ class TestUserInvoice(unittest.TestCase):
 if __name__ == '__main__':
     unittest.main()
     # suite = unittest.TestSuite()
-    # suite.addTest(TestUserInvoice('test_invoice'))
+    # suite.addTest(TestUserInvoice('test_invoice_personal'))
     # file = ('../../TestResult/EHSY_AutoTest.html', 'wb')
     # runner = HTMLTestRunner(stream=file, title='用户发票测试报告', description='测试情况')
     # runner.run(suite)

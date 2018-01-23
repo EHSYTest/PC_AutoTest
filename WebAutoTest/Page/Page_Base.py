@@ -144,12 +144,12 @@ class Page(object):
             print('wait_to_stale: exceptions.TimeoutException')
 
     def wait_click(self, ele):
-        for i in range(30):
+        for i in range(50):
             try:
                 self.element_find(ele).click()
                 break
             except exceptions.WebDriverException:
-                time.sleep(0.5)
+                time.sleep(1)
                 continue
 
     def isElementExist(self, ele):

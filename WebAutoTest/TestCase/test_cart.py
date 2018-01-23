@@ -62,8 +62,8 @@ class TestCart(unittest.TestCase):
         sku = self.page.config_reader('data.conf', '区域限制产品', 'product')
         self.home.search_sku(sku)
         self.productList.searchResult_add_to_cart()
-        loginname = self.page.config_reader('test_order.conf', '个人地址发票账号', 'login_name')
-        password = self.page.config_reader('test_order.conf', '个人地址发票账号', 'password')
+        loginname = self.page.config_reader('test_order.conf', '个人账号', 'login_name')
+        password = self.page.config_reader('test_order.conf', '个人账号', 'password')
         self.home.login(loginname, password)
         self.normal_cart.cart_delete()
 

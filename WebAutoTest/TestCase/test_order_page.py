@@ -183,7 +183,7 @@ class TestOrderPage(unittest.TestCase):
 if __name__ == '__main__':
     # unittest.main()
     suite = unittest.TestSuite()
-    suite.addTests([TestOrderPage('test_address_2'), TestOrderPage('test_address_3')])
+    suite.addTests([TestOrderPage('test_address_3')])
     file = open('../TestResult/EHSY_AutoTest.html', 'wb')
     runner = HTMLTestRunner(stream=file, title='WWW下单——测试报告', description='测试情况')
     runner.run(suite)

@@ -222,7 +222,7 @@ class TestOrder(unittest.TestCase):
         sku = self.page.config_reader('data.conf', '普通商品', 'product')
         self.home.search_sku(sku)
         self.page.wait_click(self.product_list.sku_result_click)
-        self.page.switch_to_new_window()
+        # self.page.switch_to_new_window()
         self.product_list.wait_click(self.product_list.skuContent_add_button)
         self.product_list.wait_click(self.product_list.jump_to_cart)
         self.cart.wait_click(self.cart.go_to_order)
@@ -334,10 +334,10 @@ if __name__ == '__main__':
                   # TestOrder('test_order_07'),
                   # TestOrder('test_order_08'),
                   # TestOrder('test_order_09'),
-                  # TestOrder('test_order_10'),
+                  TestOrder('test_order_10'),
                   # TestOrder('test_order_11'),
                   # TestOrder('test_order_12'),
-                  TestOrder('test_order_13'),
+                  # TestOrder('test_order_13'),
                   # TestOrder('test_order_14'),
                   # TestOrder('test_order_15')
     ]

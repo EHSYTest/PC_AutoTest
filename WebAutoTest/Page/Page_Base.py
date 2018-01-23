@@ -54,7 +54,6 @@ class Page(object):
         # 切换到刚打开的新窗口
         while True:
             all_handle = self.driver.window_handles
-            print(all_handle)
             if len(all_handle) == handle_quantity:
                 break
             else:

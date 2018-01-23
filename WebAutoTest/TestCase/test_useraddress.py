@@ -97,7 +97,7 @@ class TestUserAddress(unittest.TestCase):
 if __name__ == '__main__':
     # unittest.main()
     suite = unittest.TestSuite()
-    suite.addTest(TestUserAddress('test_address_personal'))
+    suite.addTest(TestUserAddress('test_address_company_terminal'))
     file = open('../TestResult/EHSY_AutoTest.html', 'wb')
     runner = HTMLTestRunner(stream=file, title='用户地址测试报告', description='测试情况')
     runner.run(suite)

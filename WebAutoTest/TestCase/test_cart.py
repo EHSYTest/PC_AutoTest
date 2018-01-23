@@ -73,12 +73,12 @@ class TestCart(unittest.TestCase):
         self.driver.quit()
 
 if __name__ == '__main__':
-    unittest.main()
-    # suite = unittest.TestSuite()
-    # suite.addTest(TestCart('test_cart_check'))
-    # file = open('../TestResult/EHSY_AutoTest.html', 'wb')
-    # runner = HTMLTestRunner(stream=file, title='WWW下单——测试报告', description='测试情况')
-    # runner.run(suite)
-    # file.close()
+    # unittest.main()
+    suite = unittest.TestSuite()
+    suite.addTest(TestCart('test_cart_combine'))
+    file = open('../TestResult/EHSY_AutoTest.html', 'wb')
+    runner = HTMLTestRunner(stream=file, title='WWW下单——测试报告', description='测试情况')
+    runner.run(suite)
+    file.close()
 
 

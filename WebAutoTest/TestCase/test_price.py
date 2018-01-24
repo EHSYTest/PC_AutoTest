@@ -66,7 +66,7 @@ class TestPrice(unittest.TestCase):
         # 购物车页价格验证-单价
         self.product_list.wait_click(self.product_list.skuContent_add_button)
         # ActionChains(self.driver).move_to_element(self.product_list.element_find(self.product_list.cart)).perform()
-        self.product_list.wait_click(self.product_list.go_cart)
+        self.product_list.wait_click(self.product_list.jump_to_cart)
         cart_unit_price = self.cart.element_find(self.cart.unit_price).text[2:]
         assert price == float(cart_unit_price)
         # 购物车页价格验证-总价、折扣优惠

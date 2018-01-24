@@ -65,7 +65,6 @@ class TestPrice(unittest.TestCase):
         assert price == float(detail_price)
         # 购物车页价格验证-单价
         self.product_list.wait_click(self.product_list.skuContent_add_button)
-        # ActionChains(self.driver).move_to_element(self.product_list.element_find(self.product_list.cart)).perform()
         self.product_list.wait_click(self.product_list.jump_to_cart)
         cart_unit_price = self.cart.element_find(self.cart.unit_price).text[2:]
         assert price == float(cart_unit_price)
@@ -172,10 +171,10 @@ class TestPrice(unittest.TestCase):
         self.driver.quit()
 
 if __name__ == '__main__':
-    unittest.main()
-    # suite = unittest.TestSuite()
-    # suite.addTests([TestPrice('test_price_10'), TestPrice('test_price_01')])
-    # file = open('../TestResult/EHSY_AutoTest.html', 'wb')
-    # runner = HTMLTestRunner(stream=file, title='WWW下单——测试报告', description='测试情况')
-    # runner.run(suite)
-    # file.close()
+    # unittest.main()
+    suite = unittest.TestSuite()
+    suite.addTests([TestPrice('test_price_01')])
+    file = open('../TestResult/EHSY_AutoTest.html', 'wb')
+    runner = HTMLTestRunner(stream=file, title='WWW下单——测试报告', description='测试情况')
+    runner.run(suite)
+    file.close()

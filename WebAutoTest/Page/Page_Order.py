@@ -82,6 +82,8 @@ class Order(Page):
 
     choose_eas_flow = ('by.class_name', 'eps-approveflowId ')
 
+    layer = ('by.id', 'ajax-layer-loading')
+
     def add_receiving_address(self):
         self.wait_click(self.receiving_address_add)
         self.element_find(self.receiving_name).send_keys('自动化测试')
@@ -93,7 +95,9 @@ class Order(Page):
         self.element_find(self.receiving_phone).send_keys('15150681507')
         self.wait_click(self.setDefaultAddress)
         self.wait_click(self.add_confirm)
-        message = self.element_find(self.receiving_address_layer).text
+        ele = self.element_find(self.receiving_address_layer)
+        message = ele.text
+        self.wait_to_stale(self.layer)
         assert message == '地址添加成功！'
         print('收货地址添加成功')
 
@@ -111,7 +115,9 @@ class Order(Page):
         mobile.send_keys(Keys.BACK_SPACE)
         mobile.send_keys('8')
         self.wait_click(self.edit_confirm)
-        message = self.element_find(self.receiving_address_layer).text
+        ele = self.element_find(self.receiving_address_layer)
+        message = ele.text
+        self.wait_to_stale(self.layer)
         assert message == '地址编辑成功！'
         print('收货地址修改成功')
 
@@ -120,7 +126,9 @@ class Order(Page):
         ActionChains(self.driver).move_to_element(element).perform()
         self.wait_click(self.address_del)
         self.wait_click(self.del_confirm)
-        message = self.element_find(self.receiving_address_layer).text
+        ele = self.element_find(self.receiving_address_layer)
+        message = ele.text
+        self.wait_to_stale(self.layer)
         assert message == '地址删除成功！'
         print('收货地址删除成功')
 

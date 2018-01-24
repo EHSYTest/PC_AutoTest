@@ -8,7 +8,7 @@ class UserInvoice(Page):
     invoice_num = ('by.class_name', 'ii-list-title')
     receipt_invoice = ('by.link_text', '增值税发票')
 
-    #添加普通发票
+    # 添加普通发票
     add_invoice = ('by.class_name', 'mod-ra-add-btn')
     invoice_type = ('by.name', 'sub_type')
     invoice_title = ('by.xpath', '//p[2]/span[2]/input')
@@ -33,7 +33,7 @@ class UserInvoice(Page):
     bank_account = ('by.name', 'bank_account')
     default_receipt_invoice = ('by.name', 'is_default_invoice')
 
-    #增票修改
+    # 增票修改
     edit_receipt_invoice_btn = ('by.link_text', '修改')
     invoice_company_name = ('by.xpath', '//ul/li[2]/div[1]/p[1]')
 
@@ -73,7 +73,7 @@ class UserInvoice(Page):
         print('公司类型发票修改成功！')
 
     def company_change_personal(self):
-        ###公司类型发票转换成个人类型###
+        '''公司类型发票转换成个人类型'''
         self.wait_click(self.edit_invoice_btn)
         self.element_find(self.invoice_type).send_keys('个人抬头')
         self.wait_click(self.confirm_button)
@@ -84,7 +84,7 @@ class UserInvoice(Page):
         print('公司类型发票转换成个人类型发票成功！')
 
     def set_default_invoice(self):
-        ###设置默认发票（公司/个人）###
+        '''设置默认发票（公司/个人）'''
         invoice_type_name = self.element_find(self.invoice_type_name)
         ActionChains(self.driver).move_to_element(invoice_type_name).perform()
         self.wait_click(self.set_default_invoice_btn)
@@ -92,8 +92,8 @@ class UserInvoice(Page):
         assert default_invoice_lable == '默认发票'
         print('默认发票设置成功！')
 
-    def delete_normal_invoice(self):
-        ###删除发票（公司/个人）###
+    def delete_invoice(self):
+        '''删除发票（公司/个人）'''
         invoice_num = self.element_find(self.invoice_num).text
         del_front_num = invoice_num[2:3]
         self.wait_click(self.del_invoice_btn)
@@ -105,7 +105,7 @@ class UserInvoice(Page):
         print('发票删除成功！')
 
     def add_personal_invoice(self):
-        ###新增个人类型发票###
+        '''新增个人类型发票'''
         invoice_num = self.element_find(self.invoice_num).text
         add_front_num = invoice_num[2:3]
         self.wait_click(self.add_invoice)
@@ -120,7 +120,7 @@ class UserInvoice(Page):
         print('个人类型发票添加成功！')
 
     def edit_personal_invoice(self):
-        ###编辑个人类型发票###
+        '''编辑个人类型发票'''
         self.wait_click(self.edit_invoice_btn)
         self.element_find(self.invoice_title).send_keys('-修改')
         self.wait_click(self.default_invoice)
@@ -130,7 +130,7 @@ class UserInvoice(Page):
         print('个人类型发票修改成功！')
 
     def personal_change_company(self):
-        ###个人类型发票转换成公司类型###
+        '''个人类型发票转换成公司类型'''
         self.wait_click(self.edit_invoice_btn)
         self.element_find(self.invoice_type).send_keys('公司抬头')
         self.element_find(self.tax_no).send_keys('123456789123456789')
@@ -142,7 +142,7 @@ class UserInvoice(Page):
         print('个人类型发票转换成公司类型发票成功！')
 
     def add_receipt_invoice(self):
-        ###新增增值税发票###
+        '''新增增值税发票'''
         self.wait_click(self.receipt_invoice)
         invoice_num = self.element_find(self.invoice_num).text
         add_front_num = invoice_num[2:3]
@@ -162,7 +162,7 @@ class UserInvoice(Page):
         print('增值税发票添加成功！')
 
     def edit_receipt_invoice(self):
-        ###编辑增值税发票###
+        '''编辑增值税发票'''
         self.wait_click(self.edit_receipt_invoice_btn)
         self.element_find(self.company_name).send_keys('-修改')
         self.element_find(self.receipt_tax_no).clear()
@@ -182,7 +182,7 @@ class UserInvoice(Page):
         print('增值税发票修改成功！')
 
     def set_default_receipt_invoice(self):
-        ###设置默认增票###
+        '''设置默认增票'''
         invoice_company_name = self.element_find(self.invoice_company_name)
         ActionChains(self.driver).move_to_element(invoice_company_name).perform()
         self.wait_click(self.set_default_invoice_btn)
@@ -190,17 +190,6 @@ class UserInvoice(Page):
         assert default_invoice_lable == '默认发票'
         print('设置默认增票成功！')
 
-    def del_receipt_invoice(self):
-        ###删除增票###
-        invoice_num = self.element_find(self.invoice_num).text
-        del_front_num = invoice_num[2:3]
-        self.wait_click(self.del_invoice_btn)
-        self.wait_click(self.confirm_button)
-        time.sleep(2)
-        invoice_num = self.element_find(self.invoice_num).text
-        del_after_num = invoice_num[2:3]
-        assert int(del_front_num) == int(del_after_num) + 1
-        print('增值税发票删除成功！')
 
 
 

@@ -200,7 +200,9 @@ class Order(Page):
         self.element_find(self.receiving_phone).clear()
         self.element_find(self.receiving_phone).send_keys('13150681507')
         self.wait_click(self.add_confirm)
-        message = self.element_find(self.receiving_address_layer).text
+        ele = self.element_find(self.receiving_address_layer)
+        message = ele.text
+        self.wait_to_stale(self.layer)
         assert message == '地址添加成功！'
         for i in ('4', '5', '7', '8'):
             element = self.element_find(self.address_edit)
@@ -209,7 +211,9 @@ class Order(Page):
             self.element_find(self.receiving_phone).clear()
             self.element_find(self.receiving_phone).send_keys('1' + i + '150681507')
             self.wait_click(self.add_confirm)
-            message = self.element_find(self.receiving_address_layer).text
+            ele = self.element_find(self.receiving_address_layer)
+            message = ele.text
+            self.wait_to_stale(self.layer)
             assert message == '地址编辑成功！'
 
         # 手机固话至少填一个
@@ -220,7 +224,9 @@ class Order(Page):
         self.element_find(self.receiving_telephone).clear()
         self.element_find(self.receiving_phone).send_keys('15150681507')
         self.wait_click(self.add_confirm)
-        message = self.element_find(self.receiving_address_layer).text
+        ele = self.element_find(self.receiving_address_layer)
+        message = ele.text
+        self.wait_to_stale(self.layer)
         assert message == '地址编辑成功！'
 
         element = self.element_find(self.address_edit)
@@ -230,7 +236,9 @@ class Order(Page):
         self.element_find(self.receiving_telephone).clear()
         self.element_find(self.receiving_telephone).send_keys('021-05562345')
         self.wait_click(self.add_confirm)
-        message = self.element_find(self.receiving_address_layer).text
+        ele = self.element_find(self.receiving_address_layer)
+        message = ele.text
+        self.wait_to_stale(self.layer)
         assert message == '地址编辑成功！'
 
         element = self.element_find(self.address_edit)
@@ -241,7 +249,9 @@ class Order(Page):
         self.element_find(self.receiving_phone).send_keys('15150681507')
         self.element_find(self.receiving_telephone).send_keys('021-05562345')
         self.wait_click(self.add_confirm)
-        message = self.element_find(self.receiving_address_layer).text
+        ele = self.element_find(self.receiving_address_layer)
+        message = ele.text
+        self.wait_to_stale(self.layer)
         assert message == '地址编辑成功！'
 
         # 公司名称选填
@@ -250,7 +260,9 @@ class Order(Page):
         self.wait_click(self.address_edit)
         self.element_find(self.company_name).clear()
         self.wait_click(self.add_confirm)
-        message = self.element_find(self.receiving_address_layer).text
+        ele = self.element_find(self.receiving_address_layer)
+        message = ele.text
+        self.wait_to_stale(self.layer)
         assert message == '地址编辑成功！'
 
     def invoice_normal_company_add(self):

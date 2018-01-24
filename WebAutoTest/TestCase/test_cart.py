@@ -36,12 +36,12 @@ class TestCart(unittest.TestCase):
         # self.normal_cart.cart_collect()
         self.normal_cart.product_click()
 
-    def test_cart_areaLimit(self):
-        ###购物车区域限制商品###
-        sku = self.page.config_reader('data.conf', '区域限制产品', 'product')
-        self.home.search_sku(sku)
-        self.productList.searchResult_add_to_cart()
-        self.normal_cart.area_limit_sku()
+    # def test_cart_areaLimit(self):
+    #     ###购物车区域限制商品###
+    #     sku = self.page.config_reader('data.conf', '区域限制产品', 'product')
+    #     self.home.search_sku(sku)
+    #     self.productList.searchResult_add_to_cart()
+    #     self.normal_cart.area_limit_sku()
 
     def test_cart_bj(self):
         ###购物车报价单生成按钮###

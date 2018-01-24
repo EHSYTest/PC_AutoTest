@@ -29,21 +29,23 @@ class TestUserAddress(unittest.TestCase):
         self.home.login(loginname, password)
         self.home.go_user_center()
         self.page.wait_click(self.user_address.my_address)
-        ###通用地址###
-        self.user_address.add_currency_address()
-        self.user_address.edit_currency_address()
+        # 通用地址
+        self.user_address.add_address()
+        self.user_address.edit_address()
         self.user_address.set_default_currency_address()
-        self.user_address.delete_currency_address()
-        ###收货地址###
-        self.user_address.add_receive_address()
-        self.user_address.edit_receive_address()
+        self.user_address.delete_address()
+        # 收货地址
+        self.page.wait_click(self.user_address.receive_address)
+        self.user_address.add_address()
+        self.user_address.edit_address()
         self.user_address.set_default_receive_address()
-        self.user_address.delete_receive_address()
-        ###发票地址###
-        self.user_address.add_invoice_address()
-        self.user_address.edit_invoice_address()
+        self.user_address.delete_address()
+        # 发票地址
+        self.page.wait_click(self.user_address.invoice_address)
+        self.user_address.add_address()
+        self.user_address.edit_address()
         self.user_address.set_default_invoice_address()
-        self.user_address.delete_invoice_address()
+        self.user_address.delete_address()
 
     def test_address_company_distribution(self):
         loginname = self.page.config_reader('test_order.conf', '分销地址发票账号', 'login_name')
@@ -51,21 +53,23 @@ class TestUserAddress(unittest.TestCase):
         self.home.login(loginname, password)
         self.home.go_user_center()
         self.page.wait_click(self.user_address.my_address)
-        ###通用地址###
-        self.user_address.add_currency_address()
-        self.user_address.edit_currency_address()
+        # 通用地址
+        self.user_address.add_address()
+        self.user_address.edit_address()
         self.user_address.set_default_currency_address()
-        self.user_address.delete_currency_address()
-        ###收货地址###
-        self.user_address.add_receive_address()
-        self.user_address.edit_receive_address()
+        self.user_address.delete_address()
+        # 收货地址
+        self.page.wait_click(self.user_address.receive_address)
+        self.user_address.add_address()
+        self.user_address.edit_address()
         self.user_address.set_default_receive_address()
-        self.user_address.delete_receive_address()
-        ###发票地址###
-        self.user_address.add_invoice_address()
-        self.user_address.edit_invoice_address()
+        self.user_address.delete_address()
+        # 发票地址
+        self.page.wait_click(self.user_address.invoice_address)
+        self.user_address.add_address()
+        self.user_address.edit_address()
         self.user_address.set_default_invoice_address()
-        self.user_address.delete_invoice_address()
+        self.user_address.delete_address()
 
     def test_address_company_terminal(self):
         loginname = self.page.config_reader('test_order.conf', '终端地址发票账号', 'login_name')
@@ -73,21 +77,23 @@ class TestUserAddress(unittest.TestCase):
         self.home.login(loginname, password)
         self.home.go_user_center()
         self.page.wait_click(self.user_address.my_address)
-        ###通用地址###
-        self.user_address.add_currency_address()
-        self.user_address.edit_currency_address()
+        # 通用地址
+        self.user_address.add_address()
+        self.user_address.edit_address()
         self.user_address.set_default_currency_address()
-        self.user_address.delete_currency_address()
-        ###收货地址###
-        self.user_address.add_receive_address()
-        self.user_address.edit_receive_address()
+        self.user_address.delete_address()
+        # 收货地址
+        self.page.wait_click(self.user_address.receive_address)
+        self.user_address.add_address()
+        self.user_address.edit_address()
         self.user_address.set_default_receive_address()
-        self.user_address.delete_receive_address()
-        ###发票地址###
-        self.user_address.add_invoice_address()
-        self.user_address.edit_invoice_address()
+        self.user_address.delete_address()
+        # 发票地址
+        self.page.wait_click(self.user_address.invoice_address)
+        self.user_address.add_address()
+        self.user_address.edit_address()
         self.user_address.set_default_invoice_address()
-        self.user_address.delete_invoice_address()
+        self.user_address.delete_address()
 
     def tearDown(self):
         test_method_name = self._testMethodName
@@ -95,11 +101,11 @@ class TestUserAddress(unittest.TestCase):
         self.driver.quit()
 
 if __name__ == '__main__':
-    # unittest.main()
-    suite = unittest.TestSuite()
-    suite.addTest(TestUserAddress('test_address_company_terminal'))
-    file = open('../TestResult/EHSY_AutoTest.html', 'wb')
-    runner = HTMLTestRunner(stream=file, title='用户地址测试报告', description='测试情况')
-    runner.run(suite)
-    file.close()
+    unittest.main()
+    # suite = unittest.TestSuite()
+    # suite.addTest(TestUserAddress('test_address_company_terminal'))
+    # file = open('../TestResult/EHSY_AutoTest.html', 'wb')
+    # runner = HTMLTestRunner(stream=file, title='用户地址测试报告', description='测试情况')
+    # runner.run(suite)
+    # file.close()
 

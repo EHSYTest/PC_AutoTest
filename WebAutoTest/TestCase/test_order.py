@@ -102,6 +102,7 @@ class TestOrder(unittest.TestCase):
         self.page.wait_click(self.product_list.sku_result_click)
         self.page.switch_to_new_window()
         self.product_list.wait_click(self.product_list.skuContent_add_button)
+        time.sleep(1)
         self.product_list.wait_click(self.product_list.jump_to_cart)
         self.cart.wait_click(self.cart.go_to_order)
         self.order.choose_vat_invoice()
@@ -223,6 +224,7 @@ class TestOrder(unittest.TestCase):
         self.home.search_sku(sku)
         self.page.wait_click(self.product_list.sku_result_click)
         self.product_list.wait_click(self.product_list.skuContent_add_button)
+        time.sleep(1)
         self.product_list.wait_click(self.product_list.jump_to_cart)
         self.cart.wait_click(self.cart.go_to_order)
         self.cart.wait_click(self.cart.eis_confirm)
@@ -326,21 +328,21 @@ class TestOrder(unittest.TestCase):
 if __name__ == '__main__':
     suit = unittest.TestSuite()
     case_list = [
-                  # TestOrder('test_order_01'),
-                  # TestOrder('test_order_02'),
-                  # TestOrder('test_order_03'),
-                  # TestOrder('test_order_04'),
+                  TestOrder('test_order_01'),
+                  TestOrder('test_order_02'),
+                  TestOrder('test_order_03'),
+                  TestOrder('test_order_04'),
                   TestOrder('test_order_05'),
-                  # TestOrder('test_order_06'),
-                  # TestOrder('test_order_07'),
-                  # TestOrder('test_order_08'),
-                  # TestOrder('test_order_09'),
-                  # TestOrder('test_order_10'),
-                  # TestOrder('test_order_11'),
-                  # TestOrder('test_order_12'),
-                  # TestOrder('test_order_13'),
-                  # TestOrder('test_order_14'),
-                  # TestOrder('test_order_15')
+                  TestOrder('test_order_06'),
+                  TestOrder('test_order_07'),
+                  TestOrder('test_order_08'),
+                  TestOrder('test_order_09'),
+                  TestOrder('test_order_10'),
+                  TestOrder('test_order_11'),
+                  TestOrder('test_order_12'),
+                  TestOrder('test_order_13'),
+                  TestOrder('test_order_14'),
+                  TestOrder('test_order_15')
     ]
     suit.addTests(case_list)
     # now = time.strftime("%Y_%m_%d %H_%M_%S")

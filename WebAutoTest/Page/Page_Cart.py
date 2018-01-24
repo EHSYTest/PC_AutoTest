@@ -25,7 +25,7 @@ class Cart(Page):
     report_order = ('by.class_name', 'cart-to-bj-btn')
     eis_confirm = ('by.xpath', '//div[1]/button[2]')
 
-    unit_price = ('by.xpath', '//ul/li[3]/p')
+    unit_price = ('by.class_name', 'td_3')
     total_price = ('by.class_name', 'price-price')
     discount = ('by.xpath', '//div[2]/div/div[2]/span[2]')
 

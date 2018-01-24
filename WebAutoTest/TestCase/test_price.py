@@ -65,6 +65,7 @@ class TestPrice(unittest.TestCase):
         assert price == float(detail_price)
         # 购物车页价格验证-单价
         self.product_list.wait_click(self.product_list.skuContent_add_button)
+        time.sleep(0.5)
         self.product_list.wait_click(self.product_list.jump_to_cart)
         cart_unit_price = self.cart.element_find(self.cart.unit_price).text[2:]
         assert price == float(cart_unit_price)

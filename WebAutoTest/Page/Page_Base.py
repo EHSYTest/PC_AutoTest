@@ -144,6 +144,8 @@ class Page(object):
 
     def wait_click(self, ele):
         for i in range(50):
+            if i == 40:     # 长时间点击无效，刷新页面
+                self.driver.refresh()
             try:
                 self.element_find(ele).click()
                 break

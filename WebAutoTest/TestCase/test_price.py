@@ -52,22 +52,23 @@ class TestPrice(unittest.TestCase):
             product = self.page.config_reader('data.conf', 'price_product', 'product')
             price = self.page.config_reader('data.conf', 'price_product', 'price')
             price = float('%.2f' % (float(price) * dis))
-            print(price)
+        print('price: %f' % price)
         # 搜索结果页价格验证
         self.home.search_sku(product)
         search_price = self.product_list.element_find(self.product_list.unit_price).text[2:]
-        print(float(search_price))
+        print('search_price: %s' % float(search_price))
         assert price == float(search_price)
         # 产品详情页价格验证
         self.page.wait_click(self.product_list.sku_result_click)
         self.page.switch_to_new_window()
         detail_price = self.product_list.element_find(self.product_list.discount_price).text[2:]
+        print('detail_price: %s' % detail_price)
         assert price == float(detail_price)
         # 购物车页价格验证-单价
         self.product_list.wait_click(self.product_list.skuContent_add_button)
-        time.sleep(0.5)
         self.product_list.wait_click(self.product_list.jump_to_cart)
         cart_unit_price = self.cart.element_find(self.cart.unit_price).text[2:]
+        print('cart_unit_price: %s' % cart_unit_price)
         assert price == float(cart_unit_price)
         # 购物车页价格验证-总价、折扣优惠
         qty = self.cart.element_find(self.cart.quantity_input).get_attribute('value')
@@ -79,6 +80,7 @@ class TestPrice(unittest.TestCase):
             total = price * int(qty) - discount
         total_assert = self.cart.element_find(self.cart.total_price).text[2:]
         discount_assert = self.cart.element_find(self.cart.discount).text[9:]
+        print('total: %f, total_assert: %s, discount: %f, discount_assert: %s' % (total, total_assert, discount, discount_assert))
         assert (total == float(total_assert)) and (discount == float(discount_assert))   # float == float
         self.cart.wait_click(self.cart.delete_line)
 

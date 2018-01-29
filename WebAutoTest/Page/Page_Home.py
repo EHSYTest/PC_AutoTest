@@ -20,7 +20,7 @@ class Home(Page):
     category_taozhuang = ('by.link_text', '综合套装')
     category_knife = ('by.xpath', '//li[2]/a[1]/span')
 
-    powerchina_l1_category = ('by.link_text', '成套装备产品')
+    powerchina_l1_category = ('by.link_text', '主打装备 成套产品')
     powerchina_l2_category = ('by.link_text', '护理床')
 
     # my_ehsy = ('by.class_name', 'my-ehsy-show')

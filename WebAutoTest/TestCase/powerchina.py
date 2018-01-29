@@ -119,9 +119,9 @@ class PowerChinaOrderPage(unittest.TestCase):
         self.page = Page(self.driver)
         self.environment = self.page.config_reader('environment.conf', 'Environment', 'environment')
         if self.environment == 'staging':
-            self.driver.get('http://powerchina.ehsy.com')
+            self.driver.get('http://ps.ehsy.com')
         elif self.environment == 'production':
-            self.driver.get('http://www.ehsy.com')
+            self.driver.get('http://powerchina.ehsy.com')
         self.driver.implicitly_wait(30)
         self.driver.maximize_window()
         self.cart = Cart(self.driver)
@@ -191,11 +191,11 @@ class PowerChinaOrderPage(unittest.TestCase):
 if __name__ == '__main__':
     suit = unittest.TestSuite()
     case_list = [
-                  PowerChinaOrder('test_powerchina_01'),
-                  PowerChinaOrder('test_powerchina_02'),
-                  PowerChinaOrder('test_powerchina_03'),
-                  PowerChinaOrder('test_powerchina_04'),
-                  PowerChinaOrder('test_powerchina_05'),
+                  # PowerChinaOrder('test_powerchina_01'),
+                  # PowerChinaOrder('test_powerchina_02'),
+                  # PowerChinaOrder('test_powerchina_03'),
+                  # PowerChinaOrder('test_powerchina_04'),
+                  # PowerChinaOrder('test_powerchina_05'),
                   PowerChinaOrderPage('test_invoice'),
                   PowerChinaOrderPage('test_address'),
                   PowerChinaOrderPage('test_invoice_check'),

@@ -191,11 +191,11 @@ class PowerChinaOrderPage(unittest.TestCase):
 if __name__ == '__main__':
     suit = unittest.TestSuite()
     case_list = [
-                  # PowerChinaOrder('test_powerchina_01'),
-                  # PowerChinaOrder('test_powerchina_02'),
-                  # PowerChinaOrder('test_powerchina_03'),
-                  # PowerChinaOrder('test_powerchina_04'),
-                  # PowerChinaOrder('test_powerchina_05'),
+                  PowerChinaOrder('test_powerchina_01'),
+                  PowerChinaOrder('test_powerchina_02'),
+                  PowerChinaOrder('test_powerchina_03'),
+                  PowerChinaOrder('test_powerchina_04'),
+                  PowerChinaOrder('test_powerchina_05'),
                   PowerChinaOrderPage('test_invoice'),
                   PowerChinaOrderPage('test_address'),
                   PowerChinaOrderPage('test_invoice_check'),

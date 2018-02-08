@@ -3,35 +3,36 @@ import time
 from selenium.common.exceptions import NoSuchElementException
 from selenium.webdriver.common.keys import Keys
 from selenium.webdriver.common.action_chains import ActionChains
+from selenium.webdriver.common.by import By
 
 
 class Cart(Page):
     """购物车页面"""
-    checkbox_top = ('by.class_name', 'check-box-top')
-    checkbox_line = ('by.class_name', 'check-box-center')
-    checkbox_bottom = ('by.class_name', 'check-box-bottom')
+    checkbox_top = (By.CLASS_NAME, 'check-box-top')
+    checkbox_line = (By.CLASS_NAME, 'check-box-center')
+    checkbox_bottom = (By.CLASS_NAME, 'check-box-bottom')
 
-    quantity_input = ('by.class_name', 'item-num-input')
-    quantity_add = ('by.class_name', 'a-add')
-    quantity_sub = ('by.class_name', 'a-sub')
+    quantity_input = (By.CLASS_NAME, 'item-num-input')
+    quantity_add = (By.CLASS_NAME, 'a-add')
+    quantity_sub = (By.CLASS_NAME, 'a-sub')
 
-    collect_bottom = ('by.class_name', 'btn-add-favorite')
+    collect_bottom = (By.CLASS_NAME, 'btn-add-favorite')
 
-    delete_line = ('by.class_name', 'product-remove')
-    delete_bottom = ('by.class_name', 'btn-delete')
-    delete_all_confirm = ('by.class_name', 'confirm')
+    delete_line = (By.CLASS_NAME, 'product-remove')
+    delete_bottom = (By.CLASS_NAME, 'btn-delete')
+    delete_all_confirm = (By.CLASS_NAME, 'confirm')
 
-    go_to_order = ('by.class_name', 'cart-to-checkout-btn')
-    report_order = ('by.class_name', 'cart-to-bj-btn')
-    eis_confirm = ('by.xpath', '//div[1]/button[2]')
+    go_to_order = (By.CLASS_NAME, 'cart-to-checkout-btn')
+    report_order = (By.CLASS_NAME, 'cart-to-bj-btn')
+    eis_confirm = (By.XPATH, '//div[1]/button[2]')
 
-    unit_price = ('by.class_name', 'td_3')
-    total_price = ('by.class_name', 'price-price')
-    discount = ('by.xpath', '//div[2]/div/div[2]/span[2]')
+    unit_price = (By.CLASS_NAME, 'td_3')
+    total_price = (By.CLASS_NAME, 'price-price')
+    discount = (By.XPATH, '//div[2]/div/div[2]/span[2]')
 
-    choose_company_eas = ('by.xpath', '//li[1]/div[2]/select/option[2]')
-    choose_purchaseteam_eas = ('by.xpath', '//li[2]/div[2]/select/option[2]')
-    eas_confirm = ('by.class_name', 'confirm')
+    choose_company_eas = (By.XPATH, '//li[1]/div[2]/select/option[2]')
+    choose_purchaseteam_eas = (By.XPATH, '//li[2]/div[2]/select/option[2]')
+    eas_confirm = (By.CLASS_NAME, 'confirm')
 
     def checkbox_selected(self):
         """勾选复选框(限制数量为2）"""

@@ -4,85 +4,86 @@ from selenium.webdriver.common.action_chains import ActionChains
 from selenium.webdriver.common.keys import Keys
 from selenium.common.exceptions import NoSuchElementException, ElementNotVisibleException, WebDriverException
 from selenium.webdriver.common.alert import Alert
+from selenium.webdriver.common.by import By
 
 
 class Order(Page):
     """下单页"""
     # 新增收货地址
-    receiving_address_add = ('by.link_text', '+添加新地址')
-    receiving_name = ('by.name', 'receiver_name')
-    company_name = ('by.name', 'company_name')
-    province = ('by.name', 'province_id')
-    city = ('by.name', 'city_id')
-    area = ('by.name', 'area_id')
-    detailed_address = ('by.name', 'detail_address')
-    receiving_phone = ('by.name', 'cell_phone')
-    receiving_telephone = ('by.name', 'telephone')
-    setDefaultAddress = ('by.name', 'is_default')
-    add_confirm = ('by.class_name', 'confirm')
-    receiving_address_layer = ('by.class_name', 'content')
-    receiving_address = ('by.class_name', 'list-li')   # find elements
+    receiving_address_add = (By.LINK_TEXT, '+添加新地址')
+    receiving_name = (By.NAME, 'receiver_name')
+    company_name = (By.NAME, 'company_name')
+    province = (By.NAME, 'province_id')
+    city = (By.NAME, 'city_id')
+    area = (By.NAME, 'area_id')
+    detailed_address = (By.NAME, 'detail_address')
+    receiving_phone = (By.NAME, 'cell_phone')
+    receiving_telephone = (By.NAME, 'telephone')
+    setDefaultAddress = (By.NAME, 'is_default')
+    add_confirm = (By.CLASS_NAME, 'confirm')
+    receiving_address_layer = (By.CLASS_NAME, 'content')
+    receiving_address = (By.CLASS_NAME, 'list-li')   # find elements
 
     # 编辑收货地址
-    address_edit = ('by.xpath', '//ul/li[1]/a[2]')
-    edit_confirm = ('by.class_name', 'confirm')
+    address_edit = (By.XPATH, '//ul/li[1]/a[2]')
+    edit_confirm = (By.CLASS_NAME, 'confirm')
 
     # 删除收货地址
-    address_del = ('by.xpath', '//*[@id="js-shipping-address-id"]/ul/li[1]/a[1]')
-    del_confirm = ('by.xpath', '//div[3]/div[1]/button[2]')
+    address_del = (By.XPATH, '//*[@id="js-shipping-address-id"]/ul/li[1]/a[1]')
+    del_confirm = (By.XPATH, '//div[3]/div[1]/button[2]')
 
     # 收货地址填写提示
-    address_alert = ('by.class_name', 'error')
-    phone_alert = ('by.xpath', '//p[7]/span')
+    address_alert = (By.CLASS_NAME, 'error')
+    phone_alert = (By.XPATH, '//p[7]/span')
 
     # 普通发票
-    choose = ('by.link_text', '请选择')
-    normal_invoice_tab = ('by.xpath', "//ul/li[2][contains(text(),'普通发票')]")
-    normal_invoice_add = ('by.link_text', '+新增普通发票')
-    choose_invoice_title = ('by.name', 'sub_type')
-    # invoice_title = ('by.name', 'title')
-    invoice_title = ('by.xpath', '//p[2]/span[2]/input')
-    tax_no = ('by.name', 'tax_no')
-    normal_invoice_save = ('by.class_name', 'confirm')
-    invoice_layer = ('by.xpath', '//*[@id="js-layer-notice"]')
-    first_normal_invoice = ('by.xpath', '//div[2]/div/p[1]')
-    normal_invoice_del = ('by.xpath', '//p[1]/span[2]/a[2]')
-    normal_invoice_edit = ('by.xpath', '//*[@id="js-invoice-info-1"]/p[1]/span[2]/a[1]')
-    normal_invoice_del_confirm = ('by.xpath', '//div[3]/div[1]/button[2]')
-    normal_invoice_tab = ('by.xpath', "//ul/li[1][contains(text(),'普通发票')]")
-    div_alert = ('by.xpath', '//*[@id="js-layer-alert"]/div[1]/div[2]/div')    
-    alert_confirm = ('by.xpath', '//div[1]/div[3]/div[1]/button')
-    confirm = ('by.class_name', 'confirm')
+    choose = (By.LINK_TEXT, '请选择')
+    normal_invoice_tab = (By.XPATH, "//ul/li[2][contains(text(),'普通发票')]")
+    normal_invoice_add = (By.LINK_TEXT, '+新增普通发票')
+    choose_invoice_title = (By.NAME, 'sub_type')
+    # invoice_title = (By.NAME, 'title')
+    invoice_title = (By.XPATH, '//p[2]/span[2]/input')
+    tax_no = (By.NAME, 'tax_no')
+    normal_invoice_save = (By.CLASS_NAME, 'confirm')
+    invoice_layer = (By.XPATH, '//*[@id="js-layer-notice"]')
+    first_normal_invoice = (By.XPATH, '//div[2]/div/p[1]')
+    normal_invoice_del = (By.XPATH, '//p[1]/span[2]/a[2]')
+    normal_invoice_edit = (By.XPATH, '//*[@id="js-invoice-info-1"]/p[1]/span[2]/a[1]')
+    normal_invoice_del_confirm = (By.XPATH, '//div[3]/div[1]/button[2]')
+    normal_invoice_tab = (By.XPATH, "//ul/li[1][contains(text(),'普通发票')]")
+    div_alert = (By.XPATH, '//*[@id="js-layer-alert"]/div[1]/div[2]/div')    
+    alert_confirm = (By.XPATH, '//div[1]/div[3]/div[1]/button')
+    confirm = (By.CLASS_NAME, 'confirm')
 
     # 增值税发票
-    vat_invoice_tab = ('by.xpath', "//ul/li[2][contains(text(),'增值税发票')]")
-    bill_add = ('by.link_text', '+新增增值税发票')
-    bill_title = ('by.name', 'title')
-    bill_tax_no = ('by.name', 'tax_no')
-    bill_address = ('by.name', 'company_address')
-    bill_phone = ('by.name', 'telephone')
-    bill_bank = ('by.name', 'bank_name')
-    bill_bank_account = ('by.name', 'bank_account')
-    bill_set_default = ('by.name', 'is_default_invoice')
-    bill_save = ('by.class_name', 'confirm')
-    first_bill = ('by.xpath', '//*[@id="js-invoice-info-2"]/p')
-    bill_del = ('by.xpath', '//*[@id="js-invoice-info-2"]/p[1]/span[2]/a[2]')
-    bill_edit = ('by.xpath', '//*[@id="js-invoice-info-2"]/p[1]/span[2]/a[1]')
-    bill_del_confirm = ('by.xpath', '//div[3]/div[1]/button[2]')
+    vat_invoice_tab = (By.XPATH, "//ul/li[2][contains(text(),'增值税发票')]")
+    bill_add = (By.LINK_TEXT, '+新增增值税发票')
+    bill_title = (By.NAME, 'title')
+    bill_tax_no = (By.NAME, 'tax_no')
+    bill_address = (By.NAME, 'company_address')
+    bill_phone = (By.NAME, 'telephone')
+    bill_bank = (By.NAME, 'bank_name')
+    bill_bank_account = (By.NAME, 'bank_account')
+    bill_set_default = (By.NAME, 'is_default_invoice')
+    bill_save = (By.CLASS_NAME, 'confirm')
+    first_bill = (By.XPATH, '//*[@id="js-invoice-info-2"]/p')
+    bill_del = (By.XPATH, '//*[@id="js-invoice-info-2"]/p[1]/span[2]/a[2]')
+    bill_edit = (By.XPATH, '//*[@id="js-invoice-info-2"]/p[1]/span[2]/a[1]')
+    bill_del_confirm = (By.XPATH, '//div[3]/div[1]/button[2]')
 
     # 不开发票
-    none_invoice_tab = ('by.xpath', "//ul/li[3][contains(text(),'不开发票')]")
+    none_invoice_tab = (By.XPATH, "//ul/li[3][contains(text(),'不开发票')]")
 
     # 提交订单
-    submit_order_button = ('by.class_name', 'btn-order-submit')
-    notice_layer = ('by.xpath', '//button[@class="confirm"]')
-    # none_invoice_layer = ('by.class_name', 'layui-layer-btn0')
-    # choose_approve_flow = ('by.name', 'approveFlowItem')
-    # submit_approve_flow = ('by.class_name', 'eps-submit-btn')
+    submit_order_button = (By.CLASS_NAME, 'btn-order-submit')
+    notice_layer = (By.XPATH, '//button[@class="confirm"]')
+    # none_invoice_layer = (By.CLASS_NAME, 'layui-layer-btn0')
+    # choose_approve_flow = (By.NAME, 'approveFlowItem')
+    # submit_approve_flow = (By.CLASS_NAME, 'eps-submit-btn')
 
-    choose_eas_flow = ('by.class_name', 'eps-approveflowId ')
+    choose_eas_flow = (By.CLASS_NAME, 'eps-approveflowId ')
 
-    layer = ('by.id', 'ajax-layer-loading')
+    layer = (By.ID, 'ajax-layer-loading')
 
     def add_receiving_address(self):
         self.wait_click(self.receiving_address_add)

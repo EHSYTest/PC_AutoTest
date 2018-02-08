@@ -1,48 +1,49 @@
 from Page_Base import Page
 from selenium.webdriver.common.action_chains import ActionChains
 import time
+from selenium.webdriver.common.by import By
 
 
 class UserInvoice(Page):
-    my_invoice = ('by.link_text', '我的发票')
-    invoice_num = ('by.class_name', 'ii-list-title')
-    receipt_invoice = ('by.link_text', '增值税发票')
+    my_invoice = (By.LINK_TEXT, '我的发票')
+    invoice_num = (By.CLASS_NAME, 'ii-list-title')
+    receipt_invoice = (By.LINK_TEXT, '增值税发票')
 
     # 添加普通发票
-    add_invoice = ('by.class_name', 'mod-ra-add-btn')
-    invoice_type = ('by.name', 'sub_type')
-    invoice_title = ('by.xpath', '//p[2]/span[2]/input')
-    tax_no = ('by.name', 'tax_no')
-    default_invoice = ('by.name', 'is_default_invoice')
-    confirm_button = ('by.xpath', '//button[2]')
-    serial_number = ('by.xpath', '//div[2]/ul/li[2]/div[1]')
+    add_invoice = (By.CLASS_NAME, 'mod-ra-add-btn')
+    invoice_type = (By.NAME, 'sub_type')
+    invoice_title = (By.XPATH, '//p[2]/span[2]/input')
+    tax_no = (By.NAME, 'tax_no')
+    default_invoice = (By.NAME, 'is_default_invoice')
+    confirm_button = (By.XPATH, '//button[2]')
+    serial_number = (By.XPATH, '//div[2]/ul/li[2]/div[1]')
 
     # 普票修改
-    edit_invoice_btn = ('by.link_text', '修改')
-    invoice_title_name = ('by.xpath', '//ul/li[2]/div[3]')
-    invoice_type_name = ('by.xpath', '//ul/li[2]/div[2]')
-    invoice_tax_no = ('by.xpath', '//div/div[2]/ul/li[2]/div[4]')
+    edit_invoice_btn = (By.LINK_TEXT, '修改')
+    invoice_title_name = (By.XPATH, '//ul/li[2]/div[3]')
+    invoice_type_name = (By.XPATH, '//ul/li[2]/div[2]')
+    invoice_tax_no = (By.XPATH, '//div/div[2]/ul/li[2]/div[4]')
 
     # 添加增值税发票
-    add_receipt_invoice_btn = ('by.class_name', 'mod-ra-add-btn')
-    company_name = ('by.xpath', '//p[1]/span[2]/input')
-    receipt_tax_no = ('by.name', 'tax_no')
-    company_address = ('by.name', 'company_address')
-    contact_number = ('by.xpath', '//p[4]/span[2]/input')
-    bank_name = ('by.name', 'bank_name')
-    bank_account = ('by.name', 'bank_account')
-    default_receipt_invoice = ('by.name', 'is_default_invoice')
+    add_receipt_invoice_btn = (By.CLASS_NAME, 'mod-ra-add-btn')
+    company_name = (By.XPATH, '//p[1]/span[2]/input')
+    receipt_tax_no = (By.NAME, 'tax_no')
+    company_address = (By.NAME, 'company_address')
+    contact_number = (By.XPATH, '//p[4]/span[2]/input')
+    bank_name = (By.NAME, 'bank_name')
+    bank_account = (By.NAME, 'bank_account')
+    default_receipt_invoice = (By.NAME, 'is_default_invoice')
 
     # 增票修改
-    edit_receipt_invoice_btn = ('by.link_text', '修改')
-    invoice_company_name = ('by.xpath', '//ul/li[2]/div[1]/p[1]')
+    edit_receipt_invoice_btn = (By.LINK_TEXT, '修改')
+    invoice_company_name = (By.XPATH, '//ul/li[2]/div[1]/p[1]')
 
     # 设置默认发票
-    set_default_invoice_btn = ('by.class_name', 'default-btn')
-    default_invoice_lable = ('by.xpath', '//ul/li[2]/div[5]/span')
+    set_default_invoice_btn = (By.CLASS_NAME, 'default-btn')
+    default_invoice_lable = (By.XPATH, '//ul/li[2]/div[5]/span')
 
     # 删除发票
-    del_invoice_btn = ('by.link_text', '删除')
+    del_invoice_btn = (By.LINK_TEXT, '删除')
 
     def add_company_invoice(self):
         """新增公司类型发票"""

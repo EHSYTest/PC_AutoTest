@@ -1,14 +1,15 @@
 from Page_Base import Page
+from selenium.webdriver.common.by import By
 
 
 class OrderResult(Page):
     """订单提交成功页"""
-    order_id = ('by.xpath', "//span[@ng-bind='orderId']")
+    order_id = (By.XPATH, "//span[@ng-bind='orderId']")
 
     # 您提交的请购单已审批通过，请做好收货准备！
-    eas_message = ('by.xpath', '//div[1]/strong')
+    eas_message = (By.XPATH, '//div[1]/strong')
 
-    eis_message = ('by.xpath', '//h2/span')
+    eis_message = (By.XPATH, '//h2/span')
 
     def get_so_by_url(self):
         order_id = ''

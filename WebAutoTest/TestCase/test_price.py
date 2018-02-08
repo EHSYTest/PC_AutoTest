@@ -13,7 +13,7 @@ from Page_OrderResult import OrderResult
 from Page_ProductList import ProductList
 from Page_QuickOrder import QuickOrder
 from Page_ReportOrder import ReportOrder
-from selenium.webdriver.common.action_chains import ActionChains
+from selenium.webdriver.common.by import By
 
 
 class TestPrice(unittest.TestCase):
@@ -176,7 +176,7 @@ class TestPrice(unittest.TestCase):
 if __name__ == '__main__':
     # unittest.main()
     suite = unittest.TestSuite()
-    suite.addTests([TestPrice('test_price_01')])
+    suite.addTests([TestPrice('test_price_08')])
     file = open('../TestResult/EHSY_AutoTest.html', 'wb')
     runner = HTMLTestRunner(stream=file, title='WWW下单——测试报告', description='测试情况')
     runner.run(suite)

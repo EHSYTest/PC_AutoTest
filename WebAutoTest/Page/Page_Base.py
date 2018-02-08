@@ -17,37 +17,11 @@ class Page(object):
         self.driver = driver
 
     def element_find(self, element):
-        if element[0] == 'by.id':
-            element_find = self.driver.find_element_by_id(element[1])
-        if element[0] == 'by.xpath':
-            element_find = self.driver.find_element_by_xpath(element[1])
-        if element[0] == 'by.class_name':
-            element_find = self.driver.find_element_by_class_name(element[1])
-        if element[0] == 'by.name':
-            element_find = self.driver.find_element_by_name(element[1])
-        if element[0] == 'by.tag_name':
-            element_find = self.driver.find_element_by_tag_name(element[1])
-        if element[0] == 'by.link_text':
-            element_find = self.driver.find_element_by_link_text(element[1])
-        if element[0] == 'by.partial_link_text':
-            element_find = self.driver.find_element_by_partial_link_text(element[1])
+        element_find = self.driver.find_element(element[0], element[1])
         return element_find
 
     def elements_find(self, element):
-        if element[0] == 'by.id':
-            elements_find = self.driver.find_elements_by_id(element[1])
-        if element[0] == 'by.xpath':
-            elements_find = self.driver.find_elements_by_xpath(element[1])
-        if element[0] == 'by.class_name':
-            elements_find = self.driver.find_elements_by_class_name(element[1])
-        if element[0] == 'by.name':
-            elements_find = self.driver.find_elements_by_name(element[1])
-        if element[0] == 'by.tag_name':
-            elements_find = self.driver.find_elements_by_tag_name(element[1])
-        if element[0] == 'by.link_text':
-            elements_find = self.driver.find_elements_by_link_text(element[1])
-        if element[0] == 'by.partial_link_text':
-            elements_find = self.driver.find_elements_by_partial_link_text(element[1])
+        elements_find = self.driver.find_elements(element[0], element[1])
         return elements_find
 
     def switch_to_new_window(self, handle_quantity=2):
@@ -89,45 +63,17 @@ class Page(object):
                 break
 
     def wait_to_clickable(self, ele):
-        if ele[0] == 'by.id':
-            way = By.ID
-        if ele[0] == 'by.class_name':
-            way = By.CLASS_NAME
-        if ele[0] == 'by.xpath':
-            way = By.XPATH
-        if ele[0] == 'by.link_text':
-            way = By.LINK_TEXT
-        if ele[0] == 'by.name':
-            way = By.NAME
-        if ele[0] == 'by.partial_link_text':
-            way = By.PARTIAL_LINK_TEXT
-        if ele[0] == 'by.tag_name':
-            way = By.TAG_NAME
         element = WebDriverWait(self.driver, 10, 0.5).until(
             expected_conditions.element_to_be_clickable(
-                (way, ele[1])
+                (ele[0], ele[1])
             )
         )
         return element
 
     def wait_to_visibility(self,ele):
-        if ele[0] == 'by.id':
-            way = By.ID
-        if ele[0] == 'by.class_name':
-            way = By.CLASS_NAME
-        if ele[0] == 'by.xpath':
-            way = By.XPATH
-        if ele[0] == 'by.link_text':
-            way = By.LINK_TEXT
-        if ele[0] == 'by.name':
-            way = By.NAME
-        if ele[0] == 'by.partial_link_text':
-            way = By.PARTIAL_LINK_TEXT
-        if ele[0] == 'by.tag_name':
-            way = By.TAG_NAME
         element = WebDriverWait(self.driver, 10, 0.2).until(
             expected_conditions.visibility_of_element_located(
-                (way,ele[1])
+                (ele[0], ele[1])
             )
         )
         return element

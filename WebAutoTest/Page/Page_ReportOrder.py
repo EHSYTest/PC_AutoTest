@@ -1,19 +1,20 @@
 from Page_Base import Page
 from selenium.common.exceptions import StaleElementReferenceException
 import time
+from selenium.webdriver.common.by import By
 
 
 class ReportOrder(Page):
     """报价单页面"""
-    report_order_title = ('by.name', 'quotation_name')
-    report_order_province = ('by.name', 'province_id')
-    report_order_city = ('by.name', 'city_id')
-    report_order_invoice = ('by.name', 'receipt_type')
-    report_order_price = ('by.name', 'price_config')
-    create_report_order = ('by.class_name', 'sub_cart_form')
-    report_order_change_to_order = ('by.class_name', 'btn-change-order')
+    report_order_title = (By.NAME, 'quotation_name')
+    report_order_province = (By.NAME, 'province_id')
+    report_order_city = (By.NAME, 'city_id')
+    report_order_invoice = (By.NAME, 'receipt_type')
+    report_order_price = (By.NAME, 'price_config')
+    create_report_order = (By.CLASS_NAME, 'sub_cart_form')
+    report_order_change_to_order = (By.CLASS_NAME, 'btn-change-order')
 
-    layer = ('by.id', 'ajax-layer-loading')
+    layer = (By.ID, 'ajax-layer-loading')
 
     def create_order_by_report_order(self, province, city):
         self.element_find(self.report_order_title).send_keys('测试报价单')

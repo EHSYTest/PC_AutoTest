@@ -3,38 +3,40 @@ from Page_Home import Home
 from selenium.webdriver.common.action_chains import ActionChains
 from selenium.webdriver.support import expected_conditions
 import time
+from selenium.webdriver.common.by import By
+
 
 class NormalCart(Page):
 
-    product_name = ('by.class_name', 'product-title') #商品名称
-    product_img = ('by.xpath', '//ul/li[1]/a/img') #商品图片
-    skuContent_product_name = ('by.xpath', '//div[2]/div[2]/div[1]/a[2]') #详情页商品名称
-    quantity_input = ('by.class_name', 'item-num-input')  ##购物车中商品数量文本框
-    quantity_add = ('by.class_name', 'a-add')  #购物车中商品数量增加+
-    quantity_sub = ('by.class_name', 'a-sub')  #购物车中商品数量减少-
-    quantity_sub_disable = ('by.class_name', 'disable-sub')
-    checkbox = ('by.class_name', 'check-box-center')  #选中某个商品
-    checkboxs_top = ('by.class_name', 'check-box-top')  #全选
-    checkboxs_bottom = ('by.class_name', 'check-box-bottom')  #全选
-    collect = ('by.class_name', 'product-favorite')  #单个商品加入收藏
-    collects = ('by.class_name', 'btn-add-favorite')  #购物车商品全部加入收藏
-    delete = ('by.class_name', 'product-remove')  #单个商品删除
-    deletes = ('by.class_name', 'btn-delete')  #购物车商品全部删除
-    sku_num = ('by.class_name','price-num') #商品数量
-    empty_cart = ('by.class_name', 'empty-cart-words') #购物车为空
-    delete_confirm = ('by.xpath', '//div[1]/button[2]') #清空购物车确认提示
-    collect_prompt = ('by.xpath', '//*[@id="js-layer-notice"]/div[1]/div/div') #加入收藏提示
-    collects_prompt = ('by.xpath', '//*[@id="js-layer-notice"]/div[1]/div/div') #加入收藏提示
-    cart_sku = ('by.xpath', '//p[1]/span') #购物车商品sku
-    area_limit_flag = ('by.class_name', 'area-limit-span') #区域限制
-    confirm_button = ('by.class_name', 'confirm') #区域限制弹窗确认
-    bj_button = ('by.class_name', 'cart-to-bj-btn')  #报价单
-    bj_Crumb = ('by.xpath', '//div[2]/div[2]/div[1]/a[3]') #报价单页面面包屑
-    check_button = ('by.class_name', 'cart-to-checkout-btn') #去结算
-    delivery_addr = ('by.xpath', '//div[2]/div/div/div[1]')#提交订单页面“送货地址”
-    blank = ('by.xpath', '//div[2]/ul/li[4]')
-    layer = ('by.id', 'ajax-layer-loading')
-    layer_notice = ('by.id', 'js-layer-notice')
+    product_name = (By.CLASS_NAME, 'product-title') #商品名称
+    product_img = (By.XPATH, '//ul/li[1]/a/img') #商品图片
+    skuContent_product_name = (By.XPATH, '//div[2]/div[2]/div[1]/a[2]') #详情页商品名称
+    quantity_input = (By.CLASS_NAME, 'item-num-input')  ##购物车中商品数量文本框
+    quantity_add = (By.CLASS_NAME, 'a-add')  #购物车中商品数量增加+
+    quantity_sub = (By.CLASS_NAME, 'a-sub')  #购物车中商品数量减少-
+    quantity_sub_disable = (By.CLASS_NAME, 'disable-sub')
+    checkbox = (By.CLASS_NAME, 'check-box-center')  #选中某个商品
+    checkboxs_top = (By.CLASS_NAME, 'check-box-top')  #全选
+    checkboxs_bottom = (By.CLASS_NAME, 'check-box-bottom')  #全选
+    collect = (By.CLASS_NAME, 'product-favorite')  #单个商品加入收藏
+    collects = (By.CLASS_NAME, 'btn-add-favorite')  #购物车商品全部加入收藏
+    delete = (By.CLASS_NAME, 'product-remove')  #单个商品删除
+    deletes = (By.CLASS_NAME, 'btn-delete')  #购物车商品全部删除
+    sku_num = (By.CLASS_NAME,'price-num') #商品数量
+    empty_cart = (By.CLASS_NAME, 'empty-cart-words') #购物车为空
+    delete_confirm = (By.XPATH, '//div[1]/button[2]') #清空购物车确认提示
+    collect_prompt = (By.XPATH, '//*[@id="js-layer-notice"]/div[1]/div/div') #加入收藏提示
+    collects_prompt = (By.XPATH, '//*[@id="js-layer-notice"]/div[1]/div/div') #加入收藏提示
+    cart_sku = (By.XPATH, '//p[1]/span') #购物车商品sku
+    area_limit_flag = (By.CLASS_NAME, 'area-limit-span') #区域限制
+    confirm_button = (By.CLASS_NAME, 'confirm') #区域限制弹窗确认
+    bj_button = (By.CLASS_NAME, 'cart-to-bj-btn')  #报价单
+    bj_Crumb = (By.XPATH, '//div[2]/div[2]/div[1]/a[3]') #报价单页面面包屑
+    check_button = (By.CLASS_NAME, 'cart-to-checkout-btn') #去结算
+    delivery_addr = (By.XPATH, '//div[2]/div/div/div[1]')#提交订单页面“送货地址”
+    blank = (By.XPATH, '//div[2]/ul/li[4]')
+    layer = (By.ID, 'ajax-layer-loading')
+    layer_notice = (By.ID, 'js-layer-notice')
 
     def quantity_add_or_sub(self):
         sku_quantity_default = self.element_find(self.quantity_input).get_attribute('value')

@@ -1,41 +1,42 @@
 from Page_Base import Page
 from selenium.webdriver.common.action_chains import ActionChains
 import time
+from selenium.webdriver.common.by import By
 
 
 class UserAddress(Page):
-    my_address = ('by.link_text', '我的地址') #进入我的（通用）地址标签页
-    receive_address = ('by.xpath', '//div/div[1]/div[2]/a') #进入收货地址标签页
-    invoice_address = ('by.xpath', '//div/div/div/div[1]/div[3]/a') #进入发票地址标签页
-    add_address_btn = ('by.class_name', 'mod-ra-add-btn') #添加新地址按钮
-    address_num = ('by.xpath', '//div/div/div/div[2]/div/div/span') #地址数量
+    my_address = (By.LINK_TEXT, '我的地址') #进入我的（通用）地址标签页
+    receive_address = (By.XPATH, '//div/div[1]/div[2]/a') #进入收货地址标签页
+    invoice_address = (By.XPATH, '//div/div/div/div[1]/div[3]/a') #进入发票地址标签页
+    add_address_btn = (By.CLASS_NAME, 'mod-ra-add-btn') #添加新地址按钮
+    address_num = (By.XPATH, '//div/div/div/div[2]/div/div/span') #地址数量
     # 添加地址弹窗
-    receiver_name = ('by.name', 'receiver_name')
-    company_name = ('by.name', 'company_name')
-    province = ('by.name', 'province_id')
-    city = ('by.name', 'city_id')
-    area = ('by.name', 'area_id')
-    detail_address = ('by.name', 'detail_address')
-    phone = ('by.name', 'cell_phone')
-    telephone = ('by.name', 'telephone')
-    checkbox_defaultAddress = ('by.name', 'is_default')
-    confirm_button = ('by.class_name', 'confirm')
-    cancel_button = ('by.class_name', 'cancel')
+    receiver_name = (By.NAME, 'receiver_name')
+    company_name = (By.NAME, 'company_name')
+    province = (By.NAME, 'province_id')
+    city = (By.NAME, 'city_id')
+    area = (By.NAME, 'area_id')
+    detail_address = (By.NAME, 'detail_address')
+    phone = (By.NAME, 'cell_phone')
+    telephone = (By.NAME, 'telephone')
+    checkbox_defaultAddress = (By.NAME, 'is_default')
+    confirm_button = (By.CLASS_NAME, 'confirm')
+    cancel_button = (By.CLASS_NAME, 'cancel')
 
     # 修改地址
-    edit_address_btn = ('by.xpath', '//div/ul/li[2]/div[4]/a[1]')
-    receiver = ('by.xpath', '//div/div/div[2]/div/div/ul/li[2]/div[1]')
+    edit_address_btn = (By.XPATH, '//div/ul/li[2]/div[4]/a[1]')
+    receiver = (By.XPATH, '//div/div/div[2]/div/div/ul/li[2]/div[1]')
 
     # 设置默认地址
-    default_address_button = ('by.class_name', 'default-btn')
-    default_address_lable = ('by.xpath', '//ul/li[2]/div[4]/span')
+    default_address_button = (By.CLASS_NAME, 'default-btn')
+    default_address_lable = (By.XPATH, '//ul/li[2]/div[4]/span')
 
     # 删除地址
-    delete_address_btn = ('by.xpath', '//ul/li[2]/div[4]/a[2]')
-    confirm = ('by.xpath', '//button[2]')
+    delete_address_btn = (By.XPATH, '//ul/li[2]/div[4]/a[2]')
+    confirm = (By.XPATH, '//button[2]')
 
-    #loading
-    layer = ('by.id', 'ajax-layer-loading')
+    # loading
+    layer = (By.ID, 'ajax-layer-loading')
 
     def add_address(self):
         '''添加地址'''

@@ -7,9 +7,12 @@ from Page_Base import Page
 from Page_NormalCart import NormalCart
 from Page_Home import Home
 from Page_ProductList import ProductList
+import pytest
+
 
 class TestCart(unittest.TestCase):
-    def setUp(self):
+
+    def setup_method(self, method):
         self.driver = webdriver.Chrome()
         self.page = Page(self.driver)
         self.environment = self.page.config_reader('environment.conf', 'Environment', 'environment')
@@ -67,18 +70,17 @@ class TestCart(unittest.TestCase):
         self.home.login(loginname, password)
         self.normal_cart.cart_delete()
 
-    def tearDown(self):
+    def teardown_method(self, method):
         test_method_name = self._testMethodName
         self.driver.save_screenshot('../TestResult/ScreenShot/%s.png' % test_method_name)
         self.driver.quit()
-
-if __name__ == '__main__':
-    unittest.main()
-    # suite = unittest.TestSuite()
-    # suite.addTest(TestCart('test_cart_combine'))
-    # file = open('../TestResult/EHSY_AutoTest.html', 'wb')
-    # runner = HTMLTestRunner(stream=file, title='WWW下单——测试报告', description='测试情况')
-    # runner.run(suite)
-    # file.close()
+# if __name__ == '__main__':
+#     # unittest.main()
+#     suite = unittest.TestSuite()
+#     suite.addTest(TestCart('test_cart_bj'))
+#     file = open('../TestResult/EHSY_AutoTest.html', 'wb')
+#     runner = HTMLTestRunner(stream=file, title='WWW下单——测试报告', description='测试情况')
+#     runner.run(suite)
+#     file.close()
 
 

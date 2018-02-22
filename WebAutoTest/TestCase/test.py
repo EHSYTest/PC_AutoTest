@@ -14,6 +14,6 @@ class Test_a():
 
     @staticmethod
     def teardown_method(method):
-        f = open('../testresult/screenshot/test.png', 'rb').read()
-        allure.attach('this is a img', f, allure.attach_type.PNG)
+        f = open('../testresult/screenshot/	test_address_1.png', 'rb').read()
+        allure.attach('IMG', f, allure.attach_type.PNG)
         print('teardown')

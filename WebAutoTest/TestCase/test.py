@@ -1,4 +1,4 @@
-import pytest
+import pytest, allure
 
 class Test_a():
     # @pytest.fixture('module', autouse=True)
@@ -14,4 +14,6 @@ class Test_a():
 
     @staticmethod
     def teardown_method(method):
+        f = open('../testresult/screenshot/test.png', 'rb').read()
+        allure.attach('this is a img', f, allure.attach_type.PNG)
         print('teardown')

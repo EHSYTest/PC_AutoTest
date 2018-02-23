@@ -21,7 +21,7 @@ class TestCart(unittest.TestCase):
             self.environment = self.page.config_reader('environment.conf', 'Environment', 'environment')
         if self.environment == 'staging':
             with allure.step('访问：http://ps.ehsy.com'):
-                self.driver.get('http://new.ehsy.com')
+                self.driver.get('http://ps.ehsy.com')
         else:
             with allure.step('访问：http://new.ehsy.com'):
                 self.driver.get('http://new.ehsy.com')

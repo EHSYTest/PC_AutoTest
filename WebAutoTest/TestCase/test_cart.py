@@ -29,7 +29,8 @@ class TestCart(unittest.TestCase):
         self.home = Home(self.driver)
         self.productList = ProductList(self.driver)
         self.normal_cart = NormalCart(self.driver)
-        with allure.step('---Start---\nenvironment: '+self.environment+'\nurl: '+self.url+'\n'):
+        with allure.step('---Start---'):
+            allure.attach('初始化参数:', 'environment: '+self.environment+'\nurl: '+self.url+'\n')
             pass
 
     @allure.story('数量、复选框、商品详情跳转')
@@ -62,7 +63,6 @@ class TestCart(unittest.TestCase):
 
     @allure.story('跳转报价单')
     def test_cart_bj(self):
-        allure.environment(report='Cart_BJ Report', browser='Chrome 63', url='http://ps.ehsy.com')
         sku = self.page.config_reader('data.conf', '普通商品', 'product')
         self.home.search_sku(sku)
         self.productList.searchResult_add_to_cart()

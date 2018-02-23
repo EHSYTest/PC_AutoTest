@@ -15,7 +15,7 @@ class Test_a():
     @allure.story('Story1')
     @pytest.allure.severity(pytest.allure.severity_level.MINOR)
     def test_a(self):
-        with pytest.allure.step('打印a'):
+        with pytest.allure.title('打印a'):
             print(self.a)
         with pytest.allure.step('结束'):
             pass
@@ -28,6 +28,7 @@ class Test_a():
 
     @allure.feature('Feature2')
     @allure.story('Story1')
+    @allure.title('这是标题')
     @pytest.allure.BLOCKER
     def test_c(self):
         print(self.a + '------------')

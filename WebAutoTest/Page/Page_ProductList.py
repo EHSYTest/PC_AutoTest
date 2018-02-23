@@ -62,10 +62,11 @@ class ProductList(Page):
             self.wait_click(self.bigImg_add_button)
             self.wait_click(self.jump_to_cart)
 
-    def detail_add_to_cart(self):
+    def detail_add_to_cart(self, switch=True):
         with allure.step('详情页加入购物车'):
             self.wait_click(self.sku_result_click)
-            self.switch_to_new_window()
+            if switch:
+                self.switch_to_new_window()
             self.wait_click(self.skuContent_add_button)
             self.wait_click(self.jump_to_cart)
 

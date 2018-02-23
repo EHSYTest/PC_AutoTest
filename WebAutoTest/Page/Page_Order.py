@@ -52,7 +52,7 @@ class Order(Page):
     normal_invoice_edit = (By.XPATH, '//*[@id="js-invoice-info-1"]/p[1]/span[2]/a[1]')
     normal_invoice_del_confirm = (By.XPATH, '//div[3]/div[1]/button[2]')
     normal_invoice_tab = (By.XPATH, "//ul/li[1][contains(text(),'普通发票')]")
-    div_alert = (By.XPATH, '//*[@id="js-layer-alert"]/div[1]/div[2]/div')    
+    div_alert = (By.CLASS_NAME, 'content')
     alert_confirm = (By.XPATH, '//div[1]/div[3]/div[1]/button')
     confirm = (By.CLASS_NAME, 'confirm')
 

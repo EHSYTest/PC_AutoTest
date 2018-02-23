@@ -282,7 +282,7 @@ class TestOrder(unittest.TestCase):
             sku = self.page.config_reader('data.conf', '普通商品', 'product')
             allure.attach('SKU: ', sku)
         self.home.search_sku(sku)
-        self.product_list.detail_add_to_cart()
+        self.product_list.detail_add_to_cart(switch=False)
         self.cart.wait_click(self.cart.go_to_order)
         self.cart.wait_click(self.cart.eis_confirm)
         with allure.step('断言页面提示为: 推送成功'):
@@ -352,6 +352,7 @@ class TestOrder(unittest.TestCase):
         with allure.step('提交订单'):
             self.order.wait_click(self.order.submit_order_button)
             self.order.wait_click(self.order.notice_layer)
+        time.sleep(2)
         with allure.step('断言页面提示为: 收货地址和报价城市不一致'):
             alert_text = self.order.element_find(self.order.div_alert).text
             assert alert_text == '收货地址和报价城市不一致'

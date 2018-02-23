@@ -3,9 +3,6 @@ import pytest, allure
 
 class Test_a():
 
-    def pytest_configure(config):
-        allure.environment(report='Allure report', browser='chrome', version='JiuYiBao2.0.6')
-
     # @pytest.fixture('module', autouse=True)
     def setup_method(self, method):
         self.a = 'a'
@@ -15,6 +12,7 @@ class Test_a():
     @allure.story('Story1')
     @pytest.allure.severity(pytest.allure.severity_level.MINOR)
     def test_a(self):
+        allure.environment(report='Allure report', browser='chrome', version='JiuYiBao2.0.6')
         with pytest.allure.step('打印a'):
             print(self.a)
         with pytest.allure.step('结束'):

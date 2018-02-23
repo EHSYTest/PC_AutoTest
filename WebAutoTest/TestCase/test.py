@@ -1,9 +1,11 @@
 import pytest, allure
 
-def pytest_configure(config):
-    allure.environment(report='Allure report', browser='Chrome 63')
 
 class Test_a():
+
+    def pytest_configure(config):
+        allure.environment(report='Allure report', browser='chrome', version='JiuYiBao2.0.6')
+
     # @pytest.fixture('module', autouse=True)
     def setup_method(self, method):
         self.a = 'a'
@@ -29,6 +31,6 @@ class Test_a():
 
     @staticmethod
     def teardown_method(method):
-        f = open('../testresult/screenshot/test_address_1.png', 'rb').read()
+        f = open('../testresult/screenshot/test.png', 'rb').read()
         allure.attach('IMG', f, allure.attach_type.PNG)
         print('teardown')

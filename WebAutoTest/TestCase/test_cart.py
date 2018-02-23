@@ -33,6 +33,7 @@ class TestCart(unittest.TestCase):
 
     @allure.story('数量、复选框、收藏、商品详情跳转')
     def test_cart_check(self):
+        allure.environment(report='Cart_Check Report', browser='Chrome 63', url='http://ps.ehsy.com')
         with allure.step('读取配置的普通产品SKU'):
             sku = self.page.config_reader('data.conf', '普通商品', 'product')
         with allure.step('搜索SKU'):
@@ -61,6 +62,7 @@ class TestCart(unittest.TestCase):
 
     @allure.story('跳转报价单')
     def test_cart_bj(self):
+        allure.environment(report='Cart_BJ Report', browser='Chrome 63', url='http://ps.ehsy.com')
         sku = self.page.config_reader('data.conf', '普通商品', 'product')
         self.home.search_sku(sku)
         self.productList.searchResult_add_to_cart()

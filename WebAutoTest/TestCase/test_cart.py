@@ -11,31 +11,33 @@ import pytest, allure
 
 
 @allure.feature('购物车页面测试')
+@pytest.allure.severity(pytest.allure.severity_level.MINOR)
 class TestCart(unittest.TestCase):
 
     def setup_method(self, method):
-        with allure.step('Start'):
-            self.driver = webdriver.Chrome()
-            self.page = Page(self.driver)
-        with allure.step('读取环境配置信息'):
-            self.environment = self.page.config_reader('environment.conf', 'Environment', 'environment')
+        self.driver = webdriver.Chrome()
+        self.page = Page(self.driver)
+        self.environment = self.page.config_reader('environment.conf', 'Environment', 'environment')
         if self.environment == 'staging':
-            with allure.step('访问：http://ps.ehsy.com'):
-                self.driver.get('http://ps.ehsy.com')
+            self.url = 'http://ps.ehsy.com'
+            self.driver.get(self.url)
         else:
-            with allure.step('访问：http://new.ehsy.com'):
-                self.driver.get('http://new.ehsy.com')
+            self.url = 'http://new.ehsy.com'
+            self.driver.get(self.url)
         self.driver.implicitly_wait(30)
         self.driver.maximize_window()
         self.home = Home(self.driver)
         self.productList = ProductList(self.driver)
         self.normal_cart = NormalCart(self.driver)
+        with allure.step('---Start---\nenvironment: '+self.environment+'\nurl: '+self.url+'\n'):
+            pass
 
-    @allure.story('数量、复选框、收藏、商品详情跳转')
+    @allure.story('数量、复选框、商品详情跳转')
     def test_cart_check(self):
         allure.environment(report='Cart_Check Report', browser='Chrome 63', url='http://ps.ehsy.com')
         with allure.step('读取配置的普通产品SKU'):
             sku = self.page.config_reader('data.conf', '普通商品', 'product')
+            allure.attach('SKU', sku)
         with allure.step('搜索SKU'):
             self.home.search_sku(sku)
         with allure.step('加入购物车'):
@@ -48,8 +50,6 @@ class TestCart(unittest.TestCase):
         self.normal_cart.wait_to_stale(self.normal_cart.layer)
         with allure.step('复选框勾选'):
             self.normal_cart.cart_checkboxs_select()
-        with allure.step('SKU加入收藏'):
-            self.normal_cart.cart_collect()
         with allure.step('点击SKU图片跳转详情'):
             self.normal_cart.product_click()
 

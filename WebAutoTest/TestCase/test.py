@@ -15,7 +15,7 @@ class Test_a():
     @allure.story('Story1')
     @pytest.allure.severity(pytest.allure.severity_level.MINOR)
     def test_a(self):
-        with pytest.allure.title('打印a'):
+        with pytest.allure.step('打印a'):
             print(self.a)
         with pytest.allure.step('结束'):
             pass

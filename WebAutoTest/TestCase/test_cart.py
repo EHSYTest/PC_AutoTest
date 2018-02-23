@@ -15,27 +15,26 @@ import pytest, allure
 class TestCart(unittest.TestCase):
 
     def setup_method(self, method):
-        self.driver = webdriver.Chrome()
-        self.page = Page(self.driver)
-        self.environment = self.page.config_reader('environment.conf', 'Environment', 'environment')
-        if self.environment == 'staging':
-            self.url = 'http://ps.ehsy.com'
-            self.driver.get(self.url)
-        else:
-            self.url = 'http://new.ehsy.com'
-            self.driver.get(self.url)
-        self.driver.implicitly_wait(30)
-        self.driver.maximize_window()
-        self.home = Home(self.driver)
-        self.productList = ProductList(self.driver)
-        self.normal_cart = NormalCart(self.driver)
         with allure.step('---Start---'):
+            self.driver = webdriver.Chrome()
+            self.page = Page(self.driver)
+            self.environment = self.page.config_reader('environment.conf', 'Environment', 'environment')
+            if self.environment == 'staging':
+                self.url = 'http://ps.ehsy.com'
+                self.driver.get(self.url)
+            else:
+                self.url = 'http://new.ehsy.com'
+                self.driver.get(self.url)
+            self.driver.implicitly_wait(30)
+            self.driver.maximize_window()
+            self.home = Home(self.driver)
+            self.productList = ProductList(self.driver)
+            self.normal_cart = NormalCart(self.driver)
             allure.attach('初始化参数:', 'environment: '+self.environment+'\nurl: '+self.url+'\n')
-            pass
 
     @allure.story('数量、复选框、商品详情跳转')
     def test_cart_check(self):
-        allure.environment(report='Cart_Check Report', browser='Chrome 63', url='http://ps.ehsy.com')
+        allure.environment(report='Cart_Check Report', browser='Chrome 63', url=self.url)
         with allure.step('读取配置的普通产品SKU'):
             sku = self.page.config_reader('data.conf', '普通商品', 'product')
             allure.attach('SKU', sku)
@@ -89,8 +88,8 @@ class TestCart(unittest.TestCase):
         test_method_name = self._testMethodName
         with allure.step('保存截图'):
             self.driver.save_screenshot('../TestResult/ScreenShot/%s.png' % test_method_name)
-        f = open('../TestResult/ScreenShot/%s.png' % test_method_name, 'rb').read()
-        allure.attach('IMG', f, allure.attach_type.PNG)
+            f = open('../TestResult/ScreenShot/%s.png' % test_method_name, 'rb').read()
+            allure.attach('自动化截图', f, allure.attach_type.PNG)
         with allure.step('End'):
             self.driver.quit()
 

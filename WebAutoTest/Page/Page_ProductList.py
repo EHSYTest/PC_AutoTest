@@ -4,7 +4,7 @@ import time
 from selenium.webdriver.common.by import By
 from selenium.webdriver.common.action_chains import ActionChains
 from selenium.webdriver.common.by import By
-
+import allure, pytest
 
 class ProductList(Page):
     """产品列表、大图、品牌页、sku搜索结果页"""
@@ -41,21 +41,31 @@ class ProductList(Page):
     layer_sku = (By.ID, 'ajax-layer-add-cart')
 
     def list_add_to_cart(self):
-        self.wait_click(self.list_add_button)
-        self.wait_click(self.cart_button)
-        self.wait_click(self.go_cart)
+        with allure.step('产线页加入购物车'):
+            self.wait_click(self.list_add_button)
+            self.wait_click(self.cart_button)
+            self.wait_click(self.go_cart)
 
     def bigImg_add_to_cart(self):
-        self.wait_click(self.big_img_icon)
-        self.wait_click(self.bigImg_add_button)
-        self.wait_click(self.go_cart)
+        with allure.step('大图页加入购物车'):
+            self.wait_click(self.big_img_icon)
+            self.wait_click(self.bigImg_add_button)
+            self.wait_click(self.go_cart)
 
     def brand_add_to_cart(self):
-        self.wait_click(self.brand_add_button)
-        self.wait_click(self.go_cart)
+        with allure.step('品牌页加入购物车'):
+            self.wait_click(self.brand_add_button)
+            self.wait_click(self.go_cart)
 
     def searchResult_add_to_cart(self):
-        self.wait_click(self.bigImg_add_button)
-        self.wait_click(self.go_cart)
+        with allure.step('搜索结果页加入购物车'):
+            self.wait_click(self.bigImg_add_button)
+            self.wait_click(self.jump_to_cart)
 
+    def detail_add_to_cart(self):
+        with allure.step('详情页加入购物车'):
+            self.wait_click(self.sku_result_click)
+            self.switch_to_new_window()
+            self.wait_click(self.skuContent_add_button)
+            self.wait_click(self.jump_to_cart)
 

@@ -2,7 +2,7 @@ from Page_Base import Page
 from selenium.webdriver.common.action_chains import ActionChains
 from selenium.common.exceptions import ElementNotVisibleException, WebDriverException
 from selenium.webdriver.common.by import By
-
+import allure, pytest
 
 class Home(Page):
     """首页"""
@@ -40,34 +40,42 @@ class Home(Page):
     cxml_url = (By.XPATH, '//url')
 
     def login(self, login_name, password):
-        self.wait_click(self.login_button)
-        self.element_find(self.username_send).send_keys(login_name)
-        self.element_find(self.password_send).send_keys(password)
-        self.wait_click(self.login_action)
+        with allure.step('登录'):
+            self.wait_click(self.login_button)
+            self.element_find(self.username_send).send_keys(login_name)
+            self.element_find(self.password_send).send_keys(password)
+            self.wait_click(self.login_action)
 
     def login_other(self, login_name, password):
-        self.element_find(self.username_send).send_keys(login_name)
-        self.element_find(self.password_send).send_keys(password)
-        self.element_find(self.login_action).click()
+        with allure.step('登录'):
+            self.element_find(self.username_send).send_keys(login_name)
+            self.element_find(self.password_send).send_keys(password)
+            self.element_find(self.login_action).click()
 
     def category_tree_click(self, l1_category=category_tool, l2_category=category_taozhuang):
-        l1_category = self.element_find(l1_category)
-        ActionChains(self.driver).move_to_element(l1_category).perform()
-        self.wait_click(l2_category)
+        with allure.step('点击产线进入产品列表页'):
+            l1_category = self.element_find(l1_category)
+            ActionChains(self.driver).move_to_element(l1_category).perform()
+            self.wait_click(l2_category)
 
-    def search_sku(self, sku = 'MAD618'):
-        self.element_find(self.search_send).send_keys(sku)
-        self.wait_click(self.search_button)
+    def search_sku(self, sku='MAD618'):
+        with allure.step('搜索SKU'):
+            allure.attach('SKU', sku)
+            self.element_find(self.search_send).send_keys(sku)
+            self.wait_click(self.search_button)
 
     def quick_order_click(self):
-        self.wait_click(self.quick_order)
+        with allure.step('进入快速下单页'):
+            self.wait_click(self.quick_order)
 
     def brand_click(self):
-        self.wait_click(self.brand_center)
-        self.wait_click(self.brand_bosch)
+        with allure.step('进入品牌页'):
+            self.wait_click(self.brand_center)
+            self.wait_click(self.brand_bosch)
 
     def go_user_center(self):
-        self.wait_click(self.my_ehsy)
+        with allure.step('进入个人中心'):
+            self.wait_click(self.my_ehsy)
 
 
 

@@ -9,6 +9,7 @@ import pymysql
 import smtplib
 from email.mime.text import MIMEText
 from email.header import Header
+import pytest, allure
 
 
 class Page(object):
@@ -38,15 +39,17 @@ class Page(object):
 
     @staticmethod
     def cancel_order(orderId, environment='staging', userId='508107841'):
-        if environment == 'staging':
-            url = 'http://oc-staging.ehsy.com/orderCenter/cancel'
-        elif environment == 'production':
-            url = 'http://oc.ehsy.com/orderCenter/cancel'
-        data = {'orderId': orderId, 'userId': userId}
-        r = requests.post(url, data=data)
-        result = r.json()
-        print(result['message'])
-        assert result['message'] == '订单取消申请提交成功'
+        with allure.step('接口取消订单'):
+            if environment == 'staging':
+                url = 'http://oc-staging.ehsy.com/orderCenter/cancel'
+            elif environment == 'production':
+                url = 'http://oc.ehsy.com/orderCenter/cancel'
+            data = {'orderId': orderId, 'userId': userId}
+            r = requests.post(url, data=data)
+            result = r.json()
+            allure.attach('接口返回message', result['message'])
+            with allure.step("断言result['message']==订单取消申请提交成功"):
+                assert result['message'] == '订单取消申请提交成功'
 
     @staticmethod
     def config_reader(file, section, option):

@@ -34,7 +34,7 @@ class TestCart(unittest.TestCase):
 
     @allure.story('数量、复选框、商品详情跳转')
     def test_cart_check(self):
-        allure.environment(report='Cart_Check Report', browser='Chrome 63', url=self.url)
+        allure.environment(Report='Cart Report', Browser='Chrome 63', URL=self.url)
         with allure.step('读取配置的普通产品SKU'):
             sku = self.page.config_reader('data.conf', '普通商品', 'product')
             allure.attach('SKU', sku)

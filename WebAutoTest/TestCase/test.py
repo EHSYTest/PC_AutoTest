@@ -28,7 +28,6 @@ class Test_a():
 
     @allure.feature('Feature2')
     @allure.story('Story1')
-    @allure.title('这是标题')
     @pytest.allure.BLOCKER
     def test_c(self):
         print(self.a + '------------')

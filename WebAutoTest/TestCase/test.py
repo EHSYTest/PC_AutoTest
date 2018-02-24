@@ -23,7 +23,7 @@ class Test_a():
     @pytest.allure.severity(pytest.allure.severity_level.CRITICAL)
     def test_b(self):
         print(self.a+'------------')
-
+        assert  self.a == 'b'
     @allure.feature('Feature2')
     @allure.story('Story1')
     @pytest.allure.BLOCKER

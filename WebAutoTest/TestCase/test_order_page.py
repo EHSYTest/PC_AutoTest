@@ -14,18 +14,24 @@ from Page_ProductList import ProductList
 from Page_QuickOrder import QuickOrder
 from Page_ReportOrder import ReportOrder
 from selenium.webdriver.common.action_chains import ActionChains
+import allure, pytest
 
 
+@allure.feature('下单页发票地址测试')
+@pytest.allure.severity(pytest.allure.severity_level.CRITICAL)
 class TestOrderPage(unittest.TestCase):
 
-    def setUp(self):
-        self.driver = webdriver.Chrome()
-        self.page = Page(self.driver)
-        self.environment = self.page.config_reader('environment.conf', 'Environment', 'environment')
-        if self.environment == 'staging':
-            self.driver.get('http://ps.ehsy.com')
-        elif self.environment == 'production':
-            self.driver.get('http://new.ehsy.com')
+    def setup_method(self, method):
+        with allure.step('---Start---'):
+            self.driver = webdriver.Chrome()
+            self.page = Page(self.driver)
+            self.environment = self.page.config_reader('environment.conf', 'Environment', 'environment')
+            if self.environment == 'staging':
+                self.url = 'http://ps.ehsy.com'
+                self.driver.get(self.url)
+            else:
+                self.url = 'http://new.ehsy.com'
+                self.driver.get(self.url)
         self.driver.implicitly_wait(30)
         self.driver.maximize_window()
         self.cart = Cart(self.driver)
@@ -35,15 +41,21 @@ class TestOrderPage(unittest.TestCase):
         self.product_list = ProductList(self.driver)
         self.quick_order = QuickOrder(self.driver)
         self.report_order = ReportOrder(self.driver)
+        allure.attach('初始化参数:', 'environment: ' + self.environment + '\nurl: ' + self.url + '\n')
 
     def test_invoice_1(self):
         """发票信息增删改-个人"""
-        login_name = self.page.config_reader('test_order.conf', '个人地址发票账号', 'login_name')
-        password = self.page.config_reader('test_order.conf', '个人地址发票账号', 'password')
+        allure.environment(Report='TestOrderPage Report', Browser='Chrome 63', URL=self.url)
+        with allure.step('读取账号配置信息'):
+            login_name = self.page.config_reader('test_order.conf', '个人地址发票账号', 'login_name')
+            password = self.page.config_reader('test_order.conf', '个人地址发票账号', 'password')
+            allure.attach('账号信息: ', 'login_name: %s\npassword: %s' % (login_name, password))
         self.home.login(login_name, password)
-        ActionChains(self.driver).move_to_element(self.cart.element_find(self.product_list.cart)).perform()
-        self.product_list.wait_click(self.product_list.go_cart)
-        self.cart.wait_click(self.cart.go_to_order)
+        with allure.step('进入购物车页面'):
+            ActionChains(self.driver).move_to_element(self.cart.element_find(self.product_list.cart)).perform()
+            self.product_list.wait_click(self.product_list.go_cart)
+        with allure.step('进入订单提交页'):
+            self.cart.wait_click(self.cart.go_to_order)
         self.order.invoice_normal_personal_add()
         self.order.wait_click(self.order.confirm)
         self.order.invoice_normal_personal_edit()
@@ -65,12 +77,16 @@ class TestOrderPage(unittest.TestCase):
 
     def test_invoice_2(self):
         """发票信息增删改-分销"""
-        login_name = self.page.config_reader('test_order.conf', '分销地址发票账号', 'login_name')
-        password = self.page.config_reader('test_order.conf', '分销地址发票账号', 'password')
+        with allure.step('读取账号配置信息'):
+            login_name = self.page.config_reader('test_order.conf', '分销地址发票账号', 'login_name')
+            password = self.page.config_reader('test_order.conf', '分销地址发票账号', 'password')
+            allure.attach('账号信息: ', 'login_name: %s\npassword: %s' % (login_name, password))
         self.home.login(login_name, password)
-        ActionChains(self.driver).move_to_element(self.cart.element_find(self.product_list.cart)).perform()
-        self.product_list.wait_click(self.product_list.go_cart)
-        self.cart.wait_click(self.cart.go_to_order)
+        with allure.step('进入购物车页面'):
+            ActionChains(self.driver).move_to_element(self.cart.element_find(self.product_list.cart)).perform()
+            self.product_list.wait_click(self.product_list.go_cart)
+        with allure.step('进入订单提交页'):
+            self.cart.wait_click(self.cart.go_to_order)
         self.order.invoice_normal_personal_add()
         self.order.wait_click(self.order.confirm)
         self.order.invoice_normal_personal_edit()
@@ -92,12 +108,16 @@ class TestOrderPage(unittest.TestCase):
 
     def test_invoice_3(self):
         """发票信息增删改-终端"""
-        login_name = self.page.config_reader('test_order.conf', '终端地址发票账号', 'login_name')
-        password = self.page.config_reader('test_order.conf', '终端地址发票账号', 'password')
+        with allure.step('读取账号配置信息'):
+            login_name = self.page.config_reader('test_order.conf', '终端地址发票账号', 'login_name')
+            password = self.page.config_reader('test_order.conf', '终端地址发票账号', 'password')
+            allure.attach('账号信息: ', 'login_name: %s\npassword: %s' % (login_name, password))
         self.home.login(login_name, password)
-        ActionChains(self.driver).move_to_element(self.cart.element_find(self.product_list.cart)).perform()
-        self.product_list.wait_click(self.product_list.go_cart)
-        self.cart.wait_click(self.cart.go_to_order)
+        with allure.step('进入购物车页面'):
+            ActionChains(self.driver).move_to_element(self.cart.element_find(self.product_list.cart)).perform()
+            self.product_list.wait_click(self.product_list.go_cart)
+        with allure.step('进入订单提交页'):
+            self.cart.wait_click(self.cart.go_to_order)
         self.order.invoice_normal_personal_add()
         self.order.wait_click(self.order.confirm)
         self.order.invoice_normal_personal_edit()
@@ -119,66 +139,90 @@ class TestOrderPage(unittest.TestCase):
 
     def test_address_1(self):
         """收货地址增删改-个人"""
-        login_name = self.page.config_reader('test_order.conf', '个人地址发票账号', 'login_name')
-        password = self.page.config_reader('test_order.conf', '个人地址发票账号', 'password')
+        with allure.step('读取账号配置信息'):
+            login_name = self.page.config_reader('test_order.conf', '个人地址发票账号', 'login_name')
+            password = self.page.config_reader('test_order.conf', '个人地址发票账号', 'password')
+            allure.attach('账号信息: ', 'login_name: %s\npassword: %s' % (login_name, password))
         self.home.login(login_name, password)
-        ActionChains(self.driver).move_to_element(self.cart.element_find(self.product_list.cart)).perform()
-        self.product_list.wait_click(self.product_list.go_cart)
-        self.cart.wait_click(self.cart.go_to_order)
+        with allure.step('进入购物车页面'):
+            ActionChains(self.driver).move_to_element(self.cart.element_find(self.product_list.cart)).perform()
+            self.product_list.wait_click(self.product_list.go_cart)
+        with allure.step('进入订单提交页'):
+            self.cart.wait_click(self.cart.go_to_order)
         self.order.add_receiving_address()
         self.order.receiving_address_edit()
         self.order.receiving_address_delete()
 
     def test_address_2(self):
         """收货地址增删改-分销"""
-        login_name = self.page.config_reader('test_order.conf', '分销地址发票账号', 'login_name')
-        password = self.page.config_reader('test_order.conf', '分销地址发票账号', 'password')
+        with allure.step('读取账号配置信息'):
+            login_name = self.page.config_reader('test_order.conf', '分销地址发票账号', 'login_name')
+            password = self.page.config_reader('test_order.conf', '分销地址发票账号', 'password')
+            allure.attach('账号信息: ', 'login_name: %s\npassword: %s' % (login_name, password))
         self.home.login(login_name, password)
-        ActionChains(self.driver).move_to_element(self.cart.element_find(self.product_list.cart)).perform()
-        self.product_list.wait_click(self.product_list.go_cart)
-        self.cart.wait_click(self.cart.go_to_order)
+        with allure.step('进入购物车页面'):
+            ActionChains(self.driver).move_to_element(self.cart.element_find(self.product_list.cart)).perform()
+            self.product_list.wait_click(self.product_list.go_cart)
+        with allure.step('进入订单提交页'):
+            self.cart.wait_click(self.cart.go_to_order)
         self.order.add_receiving_address()
         self.order.receiving_address_edit()
         self.order.receiving_address_delete()
 
     def test_address_3(self):
         """收货地址增删改-终端"""
-        login_name = self.page.config_reader('test_order.conf', '终端地址发票账号', 'login_name')
-        password = self.page.config_reader('test_order.conf', '终端地址发票账号', 'password')
+        with allure.step('读取账号配置信息'):
+            login_name = self.page.config_reader('test_order.conf', '终端地址发票账号', 'login_name')
+            password = self.page.config_reader('test_order.conf', '终端地址发票账号', 'password')
+            allure.attach('账号信息: ', 'login_name: %s\npassword: %s' % (login_name, password))
         self.home.login(login_name, password)
-        ActionChains(self.driver).move_to_element(self.cart.element_find(self.product_list.cart)).perform()
-        self.product_list.wait_click(self.product_list.go_cart)
-        self.cart.wait_click(self.cart.go_to_order)
+        with allure.step('进入购物车页面'):
+            ActionChains(self.driver).move_to_element(self.cart.element_find(self.product_list.cart)).perform()
+            self.product_list.wait_click(self.product_list.go_cart)
+        with allure.step('进入订单提交页'):
+            self.cart.wait_click(self.cart.go_to_order)
         self.order.add_receiving_address()
         self.order.receiving_address_edit()
         self.order.receiving_address_delete()
 
     def test_invoice_check(self):
         """发票信息填写校验"""
-        login_name = self.page.config_reader('test_order.conf', '个人地址发票账号', 'login_name')
-        password = self.page.config_reader('test_order.conf', '个人地址发票账号', 'password')
+        with allure.step('读取账号配置信息'):
+            login_name = self.page.config_reader('test_order.conf', '个人地址发票账号', 'login_name')
+            password = self.page.config_reader('test_order.conf', '个人地址发票账号', 'password')
+            allure.attach('账号信息: ', 'login_name: %s\npassword: %s' % (login_name, password))
         self.home.login(login_name, password)
-        ActionChains(self.driver).move_to_element(self.cart.element_find(self.product_list.cart)).perform()
-        self.product_list.wait_click(self.product_list.go_cart)
-        self.cart.wait_click(self.cart.go_to_order)
+        with allure.step('进入购物车页面'):
+            ActionChains(self.driver).move_to_element(self.cart.element_find(self.product_list.cart)).perform()
+            self.product_list.wait_click(self.product_list.go_cart)
+        with allure.step('进入订单提交页'):
+            self.cart.wait_click(self.cart.go_to_order)
         self.order.normal_invoice_check()
         self.order.wait_click(self.order.confirm)
         self.order.vat_invoice_check()
 
     def test_address_check(self):
         """收货地址信息填写校验"""
-        login_name = self.page.config_reader('test_order.conf', '个人地址发票账号', 'login_name')
-        password = self.page.config_reader('test_order.conf', '个人地址发票账号', 'password')
+        with allure.step('读取账号配置信息'):
+            login_name = self.page.config_reader('test_order.conf', '个人地址发票账号', 'login_name')
+            password = self.page.config_reader('test_order.conf', '个人地址发票账号', 'password')
+            allure.attach('账号信息: ', 'login_name: %s\npassword: %s' % (login_name, password))
         self.home.login(login_name, password)
-        ActionChains(self.driver).move_to_element(self.cart.element_find(self.product_list.cart)).perform()
-        self.product_list.wait_click(self.product_list.go_cart)
-        self.cart.wait_click(self.cart.go_to_order)
+        with allure.step('进入购物车页面'):
+            ActionChains(self.driver).move_to_element(self.cart.element_find(self.product_list.cart)).perform()
+            self.product_list.wait_click(self.product_list.go_cart)
+        with allure.step('进入订单提交页'):
+            self.cart.wait_click(self.cart.go_to_order)
         self.order.receiving_address_check()
 
-    def tearDown(self):
+    def teardown_method(self, method):
         test_method_name = self._testMethodName
-        self.driver.save_screenshot("../TestResult/ScreenShot/%s.png" % test_method_name)
-        self.driver.quit()
+        with allure.step('保存截图'):
+            self.driver.save_screenshot('../TestResult/ScreenShot/%s.png' % test_method_name)
+            f = open('../TestResult/ScreenShot/%s.png' % test_method_name, 'rb').read()
+            allure.attach('自动化截图', f, allure.attach_type.PNG)
+        with allure.step('---End---'):
+            self.driver.quit()
 
 if __name__ == '__main__':
     # unittest.main()

@@ -369,7 +369,7 @@ class Order(Page):
 
     def invoice_vat_edit(self):
         """编辑增值税发票"""
-        with allure.step('删除增值税发票'):
+        with allure.step('编辑增值税发票'):
             self.wait_click(self.choose)  # 请选择按钮
             self.wait_click(self.vat_invoice_tab)
             element = self.element_find(self.first_bill)

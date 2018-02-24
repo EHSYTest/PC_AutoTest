@@ -38,20 +38,14 @@ class TestCart(unittest.TestCase):
         with allure.step('读取配置的普通产品SKU'):
             sku = self.page.config_reader('data.conf', '普通商品', 'product')
             allure.attach('SKU', sku)
-        with allure.step('搜索SKU'):
-            self.home.search_sku(sku)
-        with allure.step('加入购物车'):
-            self.productList.searchResult_add_to_cart()
-        with allure.step('SKU数量加减'):
-            self.normal_cart.quantity_add_or_sub()
+        self.home.search_sku(sku)
+        self.productList.searchResult_add_to_cart()
+        self.normal_cart.quantity_add_or_sub()
         self.normal_cart.wait_to_stale(self.normal_cart.layer)
-        with allure.step('SKU数量编辑'):
-            self.normal_cart.quantity_edit_check()
+        self.normal_cart.quantity_edit_check()
         self.normal_cart.wait_to_stale(self.normal_cart.layer)
-        with allure.step('复选框勾选'):
-            self.normal_cart.cart_checkboxs_select()
-        with allure.step('点击SKU图片跳转详情'):
-            self.normal_cart.product_click()
+        self.normal_cart.cart_checkboxs_select()
+        self.normal_cart.product_click()
 
     # def test_cart_areaLimit(self):
     #     ###购物车区域限制商品###
@@ -62,26 +56,35 @@ class TestCart(unittest.TestCase):
 
     @allure.story('跳转报价单')
     def test_cart_bj(self):
-        sku = self.page.config_reader('data.conf', '普通商品', 'product')
+        with allure.step('读取普通商品配置信息'):
+            sku = self.page.config_reader('data.conf', '普通商品', 'product')
+            allure.attach('SKU: ', sku)
         self.home.search_sku(sku)
         self.productList.searchResult_add_to_cart()
         self.normal_cart.bj_page()
 
     @allure.story('未登录—>登录购物车SKU合并')
     def test_cart_combine(self):
-        sku = self.page.config_reader('data.conf', '普通商品', 'product')
+        with allure.step('读取普通商品配置信息'):
+            sku = self.page.config_reader('data.conf', '普通商品', 'product')
+            allure.attach('SKU: ', sku)
         self.home.search_sku(sku)
         self.productList.searchResult_add_to_cart()
         self.normal_cart.cart_combine()
 
     @allure.story('商品删除')
     def test_cart_delete(self):
-        sku = self.page.config_reader('data.conf', '区域限制产品', 'product')
+        with allure.step('读取普通商品配置信息'):
+            sku = self.page.config_reader('data.conf', '区域限制产品', 'product')
+            allure.attach('SKU: ', sku)
         self.home.search_sku(sku)
         self.productList.searchResult_add_to_cart()
-        loginname = self.page.config_reader('test_order.conf', '个人账号', 'login_name')
-        password = self.page.config_reader('test_order.conf', '个人账号', 'password')
-        self.home.login(loginname, password)
+        with allure.step('读取账号配置信息'):
+            loginname = self.page.config_reader('test_order.conf', '个人账号', 'login_name')
+            password = self.page.config_reader('test_order.conf', '个人账号', 'password')
+            allure.attach('账号: ', 'loginname: '+loginname+'\npassword: '+password)
+        with allure.step('登录'):
+            self.home.login(loginname, password)
         self.normal_cart.cart_delete()
 
     def teardown_method(self, method):

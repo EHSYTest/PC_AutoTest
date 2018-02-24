@@ -51,7 +51,7 @@ class TestPrice(unittest.TestCase):
                     product = self.page.config_reader('data.conf', 'csp_price_product', 'csp_product')
                     price = self.page.config_reader('data.conf', 'csp_price_product', 'csp_price')
                     price = float(price)
-                    allure.attach('参数值: ', 'Product： '+product+'\nPrice: '+price)
+                    allure.attach('参数值: ', 'Product： '+product+'\nPrice: '+str(price))
             with allure.step('判断是否促销'):
                 if promotion:     # 若促销，取促销产品和价格
                     product = self.page.config_reader('data.conf', 'promotion_price_product', 'promotion_product')
@@ -59,13 +59,13 @@ class TestPrice(unittest.TestCase):
                     promotion_price = self.page.config_reader('data.conf', 'promotion_price_product', 'promotion_price')
                     discount_price = float('%.2f' % (float(origin_price) * dis))
                     price = min(float(promotion_price), discount_price)
-                    allure.attach('参数值: ', 'Product： '+product+'\nPrice: '+price)
+                    allure.attach('参数值: ', 'Product： '+product+'\nPrice: '+str(price))
             with allure.step('判断是否普通商品'):
                 if not (promotion or csp):   # 若普通，取普通产品和价格
                     product = self.page.config_reader('data.conf', 'price_product', 'product')
                     price = self.page.config_reader('data.conf', 'price_product', 'price')
                     price = float('%.2f' % (float(price) * dis))
-                    allure.attach('参数值: ', 'Product： '+product+'\nPrice: '+price)
+                    allure.attach('参数值: ', 'Product： '+product+'\nPrice: '+str(price))
             print('price: %.2f' % price)
             with allure.step('搜索结果页价格验证'):
                 self.home.search_sku(product)
@@ -98,7 +98,7 @@ class TestPrice(unittest.TestCase):
                 total_assert = self.cart.element_find(self.cart.total_price).text[2:]
                 discount_assert = self.cart.element_find(self.cart.discount).text[9:]
                 print('total: %.2f, total_assert: %s, discount: %.2f, discount_assert: %s' % (total, total_assert, discount, discount_assert))
-                allure.attach('参数值: ', 'Discount： ' + discount + '\nDiscount_Assert: ' + discount_assert + '\nTotal: ' + total + '\nTotal_Assert: ' + total_assert)
+                allure.attach('参数值: ', 'Discount： ' + str(discount) + '\nDiscount_Assert: ' + discount_assert + '\nTotal: ' + str(total) + '\nTotal_Assert: ' + total_assert)
                 assert (total == float(total_assert)) and (discount == float(discount_assert))   # float == float
             with allure.step('删除商品'):
                 self.cart.wait_click(self.cart.delete_line)

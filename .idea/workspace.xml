@@ -2,7 +2,21 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a665631f-422e-4f1d-88e9-64ed59718bad" name="Default" comment="">
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebAutoTest/TestCase/test.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebAutoTest/Tools/HTMLTestRunner.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebAutoTest/Tools/allure-2.6.0.zip" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/WebAutoTest/TestResult/ScreenShot/test_order_10.png" afterPath="$PROJECT_DIR$/WebAutoTest/TestResult/ScreenShot/test_order_10.png" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/WebAutoTest/Page/Page_Base.py" afterPath="$PROJECT_DIR$/WebAutoTest/Page/Page_Base.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/WebAutoTest/Page/Page_Home.py" afterPath="$PROJECT_DIR$/WebAutoTest/Page/Page_Home.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/WebAutoTest/Page/Page_Order.py" afterPath="$PROJECT_DIR$/WebAutoTest/Page/Page_Order.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/WebAutoTest/Page/Page_OrderResult.py" afterPath="$PROJECT_DIR$/WebAutoTest/Page/Page_OrderResult.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/WebAutoTest/Page/Page_ProductList.py" afterPath="$PROJECT_DIR$/WebAutoTest/Page/Page_ProductList.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/WebAutoTest/Page/Page_QuickOrder.py" afterPath="$PROJECT_DIR$/WebAutoTest/Page/Page_QuickOrder.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/WebAutoTest/TestCase/test_cart.py" afterPath="$PROJECT_DIR$/WebAutoTest/TestCase/test_cart.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/WebAutoTest/TestCase/test_order.py" afterPath="$PROJECT_DIR$/WebAutoTest/TestCase/test_order.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/WebAutoTest/TestCase/test_order_page.py" afterPath="$PROJECT_DIR$/WebAutoTest/TestCase/test_order_page.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/WebAutoTest/TestCase/test_useraddress.py" afterPath="$PROJECT_DIR$/WebAutoTest/TestCase/test_useraddress.py" />
     </list>
     <ignored path=".idea/" />
     <ignored path="WebAutoTest/.idea/" />
@@ -21,21 +35,11 @@
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="data.conf" pinned="false" current-in-tab="true">
+      <file leaf-file-name="data.conf" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/WebAutoTest/config/data.conf">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="340">
-              <caret line="17" column="21" lean-forward="false" selection-start-line="17" selection-start-column="21" selection-end-line="17" selection-end-column="21" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="__init__.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/WebAutoTest/Page/__init__.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <caret line="17" column="21" lean-forward="true" selection-start-line="17" selection-start-column="21" selection-end-line="17" selection-end-column="21" />
               <folding />
             </state>
           </provider>
@@ -44,20 +48,28 @@
       <file leaf-file-name="Page_Order.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/WebAutoTest/Page/Page_Order.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="108">
-              <caret line="54" column="42" lean-forward="false" selection-start-line="54" selection-start-column="42" selection-end-line="54" selection-end-column="42" />
-              <folding>
-                <element signature="e#0#26#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="5200">
+              <caret line="266" column="0" lean-forward="false" selection-start-line="266" selection-start-column="0" selection-end-line="266" selection-end-column="0" />
+              <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="test_order.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/WebAutoTest/TestCase/test_order.py">
+      <file leaf-file-name="powerchina.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/WebAutoTest/TestCase/powerchina.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="3815">
-              <caret line="355" column="44" lean-forward="false" selection-start-line="355" selection-start-column="44" selection-end-line="355" selection-end-column="44" />
+            <state relative-caret-position="3940">
+              <caret line="197" column="52" lean-forward="false" selection-start-line="197" selection-start-column="52" selection-end-line="197" selection-end-column="52" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="environment.conf" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/WebAutoTest/config/environment.conf">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="40">
+              <caret line="2" column="0" lean-forward="false" selection-start-line="2" selection-start-column="0" selection-end-line="2" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -66,33 +78,39 @@
       <file leaf-file-name="test_order.conf" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/WebAutoTest/config/test_order.conf">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="287">
-              <caret line="25" column="28" lean-forward="false" selection-start-line="25" selection-start-column="13" selection-end-line="25" selection-end-column="28" />
+            <state relative-caret-position="600">
+              <caret line="30" column="17" lean-forward="false" selection-start-line="30" selection-start-column="17" selection-end-line="30" selection-end-column="17" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Page_ProductList.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/WebAutoTest/Page/Page_ProductList.py">
+      <file leaf-file-name="test_price.conf" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/WebAutoTest/config/test_price.conf">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="278">
-              <caret line="64" column="8" lean-forward="false" selection-start-line="64" selection-start-column="8" selection-end-line="64" selection-end-column="8" />
-              <folding>
-                <element signature="e#0#26#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="420">
+              <caret line="21" column="27" lean-forward="false" selection-start-line="21" selection-start-column="27" selection-end-line="21" selection-end-column="27" />
+              <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Page_Base.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/WebAutoTest/Page/Page_Base.py">
+      <file leaf-file-name="test_order.py" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/WebAutoTest/TestCase/test_order.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="346">
-              <caret line="48" column="29" lean-forward="false" selection-start-line="48" selection-start-column="29" selection-end-line="48" selection-end-column="29" />
-              <folding>
-                <element signature="e#0#21#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="120">
+              <caret line="18" column="20" lean-forward="false" selection-start-line="18" selection-start-column="20" selection-end-line="18" selection-end-column="20" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="test_cart.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/WebAutoTest/TestCase/test_cart.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="378">
+              <caret line="64" column="39" lean-forward="false" selection-start-line="64" selection-start-column="39" selection-end-line="64" selection-end-column="39" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -107,21 +125,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="test.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/WebAutoTest/TestCase/test.py">
+      <file leaf-file-name="test_userinvoice.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/WebAutoTest/TestCase/test_userinvoice.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="80">
-              <caret line="14" column="0" lean-forward="false" selection-start-line="14" selection-start-column="0" selection-end-line="15" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="test_cart.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/WebAutoTest/TestCase/test_cart.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="424">
-              <caret line="43" column="45" lean-forward="true" selection-start-line="43" selection-start-column="45" selection-end-line="43" selection-end-column="45" />
+            <state relative-caret-position="960">
+              <caret line="48" column="22" lean-forward="false" selection-start-line="48" selection-start-column="22" selection-end-line="48" selection-end-column="22" />
               <folding />
             </state>
           </provider>
@@ -139,6 +147,11 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
+      <find>elements</find>
+      <find>[1]</find>
+      <find>[1].text</find>
+      <find>ps.</find>
+      <find>search</find>
       <find>search_add_to_cart</find>
       <find>ActionChains</find>
       <find>jump_to</find>
@@ -164,11 +177,6 @@
       <find>skuContent_add_button</find>
       <find>invoice_normal_company_edit</find>
       <find>产线定制-分销</find>
-      <find>unittest</find>
-      <find>can</find>
-      <find>with</find>
-      <find>div_a</find>
-      <find>表单</find>
     </findStrings>
     <replaceStrings>
       <replace>TestOrder</replace>
@@ -190,11 +198,12 @@
     </replaceStrings>
   </component>
   <component name="Git.Settings">
+    <option name="UPDATE_TYPE" value="MERGE" />
     <option name="ROOT_SYNC" value="DONT_SYNC" />
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="staging" />
+        <entry key="$PROJECT_DIR$" value="develop" />
       </map>
     </option>
     <option name="WARN_ABOUT_DETACHED_HEAD" value="false" />
@@ -211,13 +220,14 @@
       <list>
         <option value="$PROJECT_DIR$/WebAutoTest/Page/Page_MiniCart.py" />
         <option value="$PROJECT_DIR$/WebAutoTest/config/data" />
+        <option value="$PROJECT_DIR$/WebAutoTest/TestCase/test.py" />
         <option value="$PROJECT_DIR$/WebAutoTest/TestCase/test_invoice.py" />
         <option value="$PROJECT_DIR$/WebAutoTest/.gitignore" />
         <option value="$PROJECT_DIR$/WebAutoTest/.idea/misc.xml" />
         <option value="$PROJECT_DIR$/WebAutoTest/.idea/workspace.xml" />
         <option value="$PROJECT_DIR$/WebAutoTest/.idea/WebAutoTest.iml" />
         <option value="$USER_HOME$/AppData/Local/Programs/Python/Python36/Lib/site-packages/selenium/webdriver/remote/webelement.py" />
-        <option value="$USER_HOME$/m.py" />
+        <option value="$PROJECT_DIR$/../m.py" />
         <option value="$PROJECT_DIR$/WebAutoTest/config/test_price" />
         <option value="$PROJECT_DIR$/WebAutoTest/Page/page.py" />
         <option value="$PROJECT_DIR$/WebAutoTest/Page/Page_Price.py" />
@@ -229,30 +239,27 @@
         <option value="$PROJECT_DIR$/WebAutoTest/Page/Page_PersonalCenter.py" />
         <option value="$PROJECT_DIR$/WebAutoTest/TestCase/My_Function.py" />
         <option value="$PROJECT_DIR$/WebAutoTest/TestCase/test_powerchina.py" />
+        <option value="$PROJECT_DIR$/WebAutoTest/Page/Page_OrderResult.py" />
+        <option value="$PROJECT_DIR$/WebAutoTest/Page/Page_Home.py" />
         <option value="$PROJECT_DIR$/WebAutoTest/Page/Page_UserAddress.py" />
         <option value="$PROJECT_DIR$/WebAutoTest/Page/Page_UserInvoice.py" />
+        <option value="$PROJECT_DIR$/WebAutoTest/Page/Page_QuickOrder.py" />
         <option value="$PROJECT_DIR$/WebAutoTest/Page/Page_NormalCart.py" />
         <option value="$PROJECT_DIR$/README.md" />
+        <option value="$PROJECT_DIR$/WebAutoTest/Page/Page_ProductList.py" />
+        <option value="$PROJECT_DIR$/WebAutoTest/TestCase/test_order_page.py" />
         <option value="$PROJECT_DIR$/WebAutoTest/TestCase/test_useraddress.py" />
         <option value="$PROJECT_DIR$/WebAutoTest/TestCase/test_userinvoice.py" />
         <option value="$PROJECT_DIR$/WebAutoTest/TestCase/threads_run.py" />
+        <option value="$PROJECT_DIR$/WebAutoTest/Page/Page_Order.py" />
         <option value="$PROJECT_DIR$/WebAutoTest/Page/Page_Cart.py" />
         <option value="$PROJECT_DIR$/WebAutoTest/TestCase/test_price.py" />
         <option value="$PROJECT_DIR$/WebAutoTest/config/test_order.conf" />
+        <option value="$PROJECT_DIR$/WebAutoTest/Page/Page_Base.py" />
         <option value="$PROJECT_DIR$/WebAutoTest/TestCase/powerchina.py" />
+        <option value="$PROJECT_DIR$/WebAutoTest/TestCase/test_order.py" />
         <option value="$PROJECT_DIR$/WebAutoTest/TestCase/run_test.py" />
         <option value="$PROJECT_DIR$/WebAutoTest/config/environment.conf" />
-        <option value="$PROJECT_DIR$/WebAutoTest/TestCase/test_order_page.py" />
-        <option value="$PROJECT_DIR$/WebAutoTest/TestCase/report/environment.properties" />
-        <option value="$PROJECT_DIR$/WebAutoTest/TestCase/environment.properties" />
-        <option value="$PROJECT_DIR$/WebAutoTest/TestCase/test.py" />
-        <option value="$PROJECT_DIR$/WebAutoTest/Page/Page_OrderResult.py" />
-        <option value="$PROJECT_DIR$/WebAutoTest/Page/Page_Home.py" />
-        <option value="$PROJECT_DIR$/WebAutoTest/Page/Page_QuickOrder.py" />
-        <option value="$PROJECT_DIR$/WebAutoTest/Page/Page_Base.py" />
-        <option value="$PROJECT_DIR$/WebAutoTest/Page/Page_ProductList.py" />
-        <option value="$PROJECT_DIR$/WebAutoTest/Page/Page_Order.py" />
-        <option value="$PROJECT_DIR$/WebAutoTest/TestCase/test_order.py" />
         <option value="$PROJECT_DIR$/WebAutoTest/config/data.conf" />
         <option value="$PROJECT_DIR$/WebAutoTest/TestCase/test_cart.py" />
       </list>
@@ -279,45 +286,25 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
-      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
             <PATH_ELEMENT>
-              <option name="myItemId" value="PC_AutoTest" />
+              <option name="myItemId" value="WebAutoTest_EHSY_PageObject" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="PC_AutoTest" />
+              <option name="myItemId" value="WebAutoTest_EHSY_PageObject" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
           <PATH>
             <PATH_ELEMENT>
-              <option name="myItemId" value="PC_AutoTest" />
+              <option name="myItemId" value="WebAutoTest_EHSY_PageObject" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="PC_AutoTest" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="WebAutoTest" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Tools" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="PC_AutoTest" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="PC_AutoTest" />
+              <option name="myItemId" value="WebAutoTest_EHSY_PageObject" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
@@ -327,11 +314,11 @@
           </PATH>
           <PATH>
             <PATH_ELEMENT>
-              <option name="myItemId" value="PC_AutoTest" />
+              <option name="myItemId" value="WebAutoTest_EHSY_PageObject" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="PC_AutoTest" />
+              <option name="myItemId" value="WebAutoTest_EHSY_PageObject" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
@@ -345,11 +332,11 @@
           </PATH>
           <PATH>
             <PATH_ELEMENT>
-              <option name="myItemId" value="PC_AutoTest" />
+              <option name="myItemId" value="WebAutoTest_EHSY_PageObject" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="PC_AutoTest" />
+              <option name="myItemId" value="WebAutoTest_EHSY_PageObject" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
@@ -363,11 +350,11 @@
           </PATH>
           <PATH>
             <PATH_ELEMENT>
-              <option name="myItemId" value="PC_AutoTest" />
+              <option name="myItemId" value="WebAutoTest_EHSY_PageObject" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="PC_AutoTest" />
+              <option name="myItemId" value="WebAutoTest_EHSY_PageObject" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
@@ -381,20 +368,17 @@
           </PATH>
         </subPane>
       </pane>
+      <pane id="Scratches" />
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="Git.Branch.Popup.ShowAllRemotes" value="true" />
     <property name="settings.editor.selected.configurable" value="settings.github" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../WebAutoTest_EHSY_PageObject" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="Git.Branch.Popup.ShowAllRemotes" value="true" />
   </component>
   <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\Users\rick_zhang\Desktop\PC_AutoTest\WebAutoTest\Tools" />
-    </key>
     <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\Users\rick_zhang\Desktop\PC_AutoTest\WebAutoTest\TestCase" />
-      <recent name="C:\Users\rick_zhang\Desktop\PC_AutoTest\WebAutoTest\Tools" />
       <recent name="C:\Users\rick_zhang\Desktop\EHSY_WebAutoTest_New\WebAutoTest\TestCase" />
     </key>
   </component>
@@ -410,7 +394,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python.test_cart">
+  <component name="RunManager" selected="Python.powerchina">
     <configuration default="false" name="test_useraddress" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -424,6 +408,24 @@
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <module name="WebAutoTest_EHSY_PageObject" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/WebAutoTest/TestCase/test_useraddress.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <method />
+    </configuration>
+    <configuration default="false" name="test_userinvoice" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/WebAutoTest/TestCase" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="WebAutoTest_EHSY_PageObject" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/WebAutoTest/TestCase/test_userinvoice.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -478,24 +480,6 @@
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <module name="WebAutoTest_EHSY_PageObject" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/WebAutoTest/TestCase/powerchina.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <method />
-    </configuration>
-    <configuration default="false" name="test_cart" type="PythonConfigurationType" factoryName="Python" temporary="true">
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/WebAutoTest/TestCase" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <module name="WebAutoTest_EHSY_PageObject" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/WebAutoTest/TestCase/test_cart.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -583,18 +567,18 @@
     </configuration>
     <list size="5">
       <item index="0" class="java.lang.String" itemvalue="Python.test_useraddress" />
-      <item index="1" class="java.lang.String" itemvalue="Python.test_order_page" />
-      <item index="2" class="java.lang.String" itemvalue="Python.run_test" />
-      <item index="3" class="java.lang.String" itemvalue="Python.powerchina" />
-      <item index="4" class="java.lang.String" itemvalue="Python.test_cart" />
+      <item index="1" class="java.lang.String" itemvalue="Python.test_userinvoice" />
+      <item index="2" class="java.lang.String" itemvalue="Python.test_order_page" />
+      <item index="3" class="java.lang.String" itemvalue="Python.run_test" />
+      <item index="4" class="java.lang.String" itemvalue="Python.powerchina" />
     </list>
     <recent_temporary>
       <list size="5">
-        <item index="0" class="java.lang.String" itemvalue="Python.test_cart" />
-        <item index="1" class="java.lang.String" itemvalue="Python.test_order_page" />
-        <item index="2" class="java.lang.String" itemvalue="Python.powerchina" />
-        <item index="3" class="java.lang.String" itemvalue="Python.run_test" />
-        <item index="4" class="java.lang.String" itemvalue="Python.test_useraddress" />
+        <item index="0" class="java.lang.String" itemvalue="Python.powerchina" />
+        <item index="1" class="java.lang.String" itemvalue="Python.run_test" />
+        <item index="2" class="java.lang.String" itemvalue="Python.test_order_page" />
+        <item index="3" class="java.lang.String" itemvalue="Python.test_useraddress" />
+        <item index="4" class="java.lang.String" itemvalue="Python.test_userinvoice" />
       </list>
     </recent_temporary>
   </component>
@@ -611,6 +595,181 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1506390215075</updated>
+    </task>
+    <task id="LOCAL-00078" summary="By Rick">
+      <created>1512553914448</created>
+      <option name="number" value="00078" />
+      <option name="presentableId" value="LOCAL-00078" />
+      <option name="project" value="LOCAL" />
+      <updated>1512553914448</updated>
+    </task>
+    <task id="LOCAL-00079" summary="By Rick">
+      <created>1514443160578</created>
+      <option name="number" value="00079" />
+      <option name="presentableId" value="LOCAL-00079" />
+      <option name="project" value="LOCAL" />
+      <updated>1514443160579</updated>
+    </task>
+    <task id="LOCAL-00080" summary="By Rick">
+      <created>1514450590791</created>
+      <option name="number" value="00080" />
+      <option name="presentableId" value="LOCAL-00080" />
+      <option name="project" value="LOCAL" />
+      <updated>1514450590792</updated>
+    </task>
+    <task id="LOCAL-00081" summary="By Rick">
+      <created>1514451356149</created>
+      <option name="number" value="00081" />
+      <option name="presentableId" value="LOCAL-00081" />
+      <option name="project" value="LOCAL" />
+      <updated>1514451356149</updated>
+    </task>
+    <task id="LOCAL-00082" summary="By Rick">
+      <created>1514452217843</created>
+      <option name="number" value="00082" />
+      <option name="presentableId" value="LOCAL-00082" />
+      <option name="project" value="LOCAL" />
+      <updated>1514452217843</updated>
+    </task>
+    <task id="LOCAL-00083" summary="By Rick">
+      <created>1514874791325</created>
+      <option name="number" value="00083" />
+      <option name="presentableId" value="LOCAL-00083" />
+      <option name="project" value="LOCAL" />
+      <updated>1514874791328</updated>
+    </task>
+    <task id="LOCAL-00084" summary="By Rick">
+      <created>1514878684222</created>
+      <option name="number" value="00084" />
+      <option name="presentableId" value="LOCAL-00084" />
+      <option name="project" value="LOCAL" />
+      <updated>1514878684222</updated>
+    </task>
+    <task id="LOCAL-00085" summary="By Rick">
+      <created>1515568752588</created>
+      <option name="number" value="00085" />
+      <option name="presentableId" value="LOCAL-00085" />
+      <option name="project" value="LOCAL" />
+      <updated>1515568752589</updated>
+    </task>
+    <task id="LOCAL-00086" summary="By Rick">
+      <created>1516081189591</created>
+      <option name="number" value="00086" />
+      <option name="presentableId" value="LOCAL-00086" />
+      <option name="project" value="LOCAL" />
+      <updated>1516081189592</updated>
+    </task>
+    <task id="LOCAL-00087" summary="By Rick">
+      <created>1516082073242</created>
+      <option name="number" value="00087" />
+      <option name="presentableId" value="LOCAL-00087" />
+      <option name="project" value="LOCAL" />
+      <updated>1516082073245</updated>
+    </task>
+    <task id="LOCAL-00088" summary="By Rick">
+      <created>1516082197440</created>
+      <option name="number" value="00088" />
+      <option name="presentableId" value="LOCAL-00088" />
+      <option name="project" value="LOCAL" />
+      <updated>1516082197440</updated>
+    </task>
+    <task id="LOCAL-00089" summary="By Rick">
+      <created>1516166700459</created>
+      <option name="number" value="00089" />
+      <option name="presentableId" value="LOCAL-00089" />
+      <option name="project" value="LOCAL" />
+      <updated>1516166700459</updated>
+    </task>
+    <task id="LOCAL-00090" summary="By Rick">
+      <created>1516166762873</created>
+      <option name="number" value="00090" />
+      <option name="presentableId" value="LOCAL-00090" />
+      <option name="project" value="LOCAL" />
+      <updated>1516166762873</updated>
+    </task>
+    <task id="LOCAL-00091" summary="By Rick">
+      <created>1516181443346</created>
+      <option name="number" value="00091" />
+      <option name="presentableId" value="LOCAL-00091" />
+      <option name="project" value="LOCAL" />
+      <updated>1516181443349</updated>
+    </task>
+    <task id="LOCAL-00092" summary="By Rick">
+      <created>1516181503041</created>
+      <option name="number" value="00092" />
+      <option name="presentableId" value="LOCAL-00092" />
+      <option name="project" value="LOCAL" />
+      <updated>1516181503041</updated>
+    </task>
+    <task id="LOCAL-00093" summary="By Rick">
+      <created>1516623221259</created>
+      <option name="number" value="00093" />
+      <option name="presentableId" value="LOCAL-00093" />
+      <option name="project" value="LOCAL" />
+      <updated>1516623221259</updated>
+    </task>
+    <task id="LOCAL-00094" summary="By Rick">
+      <created>1516625994256</created>
+      <option name="number" value="00094" />
+      <option name="presentableId" value="LOCAL-00094" />
+      <option name="project" value="LOCAL" />
+      <updated>1516625994256</updated>
+    </task>
+    <task id="LOCAL-00095" summary="By Rick">
+      <created>1516626079144</created>
+      <option name="number" value="00095" />
+      <option name="presentableId" value="LOCAL-00095" />
+      <option name="project" value="LOCAL" />
+      <updated>1516626079144</updated>
+    </task>
+    <task id="LOCAL-00096" summary="By Rick">
+      <created>1516626276407</created>
+      <option name="number" value="00096" />
+      <option name="presentableId" value="LOCAL-00096" />
+      <option name="project" value="LOCAL" />
+      <updated>1516626276407</updated>
+    </task>
+    <task id="LOCAL-00097" summary="By Rick">
+      <created>1516675186618</created>
+      <option name="number" value="00097" />
+      <option name="presentableId" value="LOCAL-00097" />
+      <option name="project" value="LOCAL" />
+      <updated>1516675186618</updated>
+    </task>
+    <task id="LOCAL-00098" summary="By Rick">
+      <created>1516675784312</created>
+      <option name="number" value="00098" />
+      <option name="presentableId" value="LOCAL-00098" />
+      <option name="project" value="LOCAL" />
+      <updated>1516675784312</updated>
+    </task>
+    <task id="LOCAL-00099" summary="By Rick">
+      <created>1516681758148</created>
+      <option name="number" value="00099" />
+      <option name="presentableId" value="LOCAL-00099" />
+      <option name="project" value="LOCAL" />
+      <updated>1516681758148</updated>
+    </task>
+    <task id="LOCAL-00100" summary="By Rick">
+      <created>1516692270363</created>
+      <option name="number" value="00100" />
+      <option name="presentableId" value="LOCAL-00100" />
+      <option name="project" value="LOCAL" />
+      <updated>1516692270363</updated>
+    </task>
+    <task id="LOCAL-00101" summary="By Rick">
+      <created>1516698012335</created>
+      <option name="number" value="00101" />
+      <option name="presentableId" value="LOCAL-00101" />
+      <option name="project" value="LOCAL" />
+      <updated>1516698012335</updated>
+    </task>
+    <task id="LOCAL-00102" summary="By Rick">
+      <created>1516698953877</created>
+      <option name="number" value="00102" />
+      <option name="presentableId" value="LOCAL-00102" />
+      <option name="project" value="LOCAL" />
+      <updated>1516698953877</updated>
     </task>
     <task id="LOCAL-00103" summary="By Rick">
       <created>1516699153744</created>
@@ -767,195 +926,20 @@
       <updated>1518080871403</updated>
     </task>
     <task id="LOCAL-00125" summary="By Rick">
-      <created>1519288422862</created>
+      <created>1519435901213</created>
       <option name="number" value="00125" />
       <option name="presentableId" value="LOCAL-00125" />
       <option name="project" value="LOCAL" />
-      <updated>1519288422863</updated>
+      <updated>1519435901213</updated>
     </task>
     <task id="LOCAL-00126" summary="By Rick">
-      <created>1519288593542</created>
+      <created>1519435939495</created>
       <option name="number" value="00126" />
       <option name="presentableId" value="LOCAL-00126" />
       <option name="project" value="LOCAL" />
-      <updated>1519288593542</updated>
+      <updated>1519435939497</updated>
     </task>
-    <task id="LOCAL-00127" summary="By Rick">
-      <created>1519292489695</created>
-      <option name="number" value="00127" />
-      <option name="presentableId" value="LOCAL-00127" />
-      <option name="project" value="LOCAL" />
-      <updated>1519292489695</updated>
-    </task>
-    <task id="LOCAL-00128" summary="By Rick">
-      <created>1519292721678</created>
-      <option name="number" value="00128" />
-      <option name="presentableId" value="LOCAL-00128" />
-      <option name="project" value="LOCAL" />
-      <updated>1519292721678</updated>
-    </task>
-    <task id="LOCAL-00129" summary="By Rick">
-      <created>1519292865245</created>
-      <option name="number" value="00129" />
-      <option name="presentableId" value="LOCAL-00129" />
-      <option name="project" value="LOCAL" />
-      <updated>1519292865245</updated>
-    </task>
-    <task id="LOCAL-00130" summary="By Rick">
-      <created>1519294144290</created>
-      <option name="number" value="00130" />
-      <option name="presentableId" value="LOCAL-00130" />
-      <option name="project" value="LOCAL" />
-      <updated>1519294144290</updated>
-    </task>
-    <task id="LOCAL-00131" summary="By Rick">
-      <created>1519351232929</created>
-      <option name="number" value="00131" />
-      <option name="presentableId" value="LOCAL-00131" />
-      <option name="project" value="LOCAL" />
-      <updated>1519351232930</updated>
-    </task>
-    <task id="LOCAL-00132" summary="By Rick">
-      <created>1519352630132</created>
-      <option name="number" value="00132" />
-      <option name="presentableId" value="LOCAL-00132" />
-      <option name="project" value="LOCAL" />
-      <updated>1519352630133</updated>
-    </task>
-    <task id="LOCAL-00133" summary="By Rick">
-      <created>1519353292824</created>
-      <option name="number" value="00133" />
-      <option name="presentableId" value="LOCAL-00133" />
-      <option name="project" value="LOCAL" />
-      <updated>1519353292824</updated>
-    </task>
-    <task id="LOCAL-00134" summary="By Rick">
-      <created>1519353517575</created>
-      <option name="number" value="00134" />
-      <option name="presentableId" value="LOCAL-00134" />
-      <option name="project" value="LOCAL" />
-      <updated>1519353517575</updated>
-    </task>
-    <task id="LOCAL-00135" summary="By Rick">
-      <created>1519353667063</created>
-      <option name="number" value="00135" />
-      <option name="presentableId" value="LOCAL-00135" />
-      <option name="project" value="LOCAL" />
-      <updated>1519353667064</updated>
-    </task>
-    <task id="LOCAL-00136" summary="By Rick">
-      <created>1519353737659</created>
-      <option name="number" value="00136" />
-      <option name="presentableId" value="LOCAL-00136" />
-      <option name="project" value="LOCAL" />
-      <updated>1519353737660</updated>
-    </task>
-    <task id="LOCAL-00137" summary="By Rick">
-      <created>1519353952409</created>
-      <option name="number" value="00137" />
-      <option name="presentableId" value="LOCAL-00137" />
-      <option name="project" value="LOCAL" />
-      <updated>1519353952409</updated>
-    </task>
-    <task id="LOCAL-00138" summary="By Rick">
-      <created>1519354139034</created>
-      <option name="number" value="00138" />
-      <option name="presentableId" value="LOCAL-00138" />
-      <option name="project" value="LOCAL" />
-      <updated>1519354139034</updated>
-    </task>
-    <task id="LOCAL-00139" summary="By Rick">
-      <created>1519354504956</created>
-      <option name="number" value="00139" />
-      <option name="presentableId" value="LOCAL-00139" />
-      <option name="project" value="LOCAL" />
-      <updated>1519354504957</updated>
-    </task>
-    <task id="LOCAL-00140" summary="By Rick">
-      <created>1519364642311</created>
-      <option name="number" value="00140" />
-      <option name="presentableId" value="LOCAL-00140" />
-      <option name="project" value="LOCAL" />
-      <updated>1519364642311</updated>
-    </task>
-    <task id="LOCAL-00141" summary="By Rick">
-      <created>1519364783428</created>
-      <option name="number" value="00141" />
-      <option name="presentableId" value="LOCAL-00141" />
-      <option name="project" value="LOCAL" />
-      <updated>1519364783428</updated>
-    </task>
-    <task id="LOCAL-00142" summary="By Rick">
-      <created>1519364925257</created>
-      <option name="number" value="00142" />
-      <option name="presentableId" value="LOCAL-00142" />
-      <option name="project" value="LOCAL" />
-      <updated>1519364925258</updated>
-    </task>
-    <task id="LOCAL-00143" summary="By Rick">
-      <created>1519365170006</created>
-      <option name="number" value="00143" />
-      <option name="presentableId" value="LOCAL-00143" />
-      <option name="project" value="LOCAL" />
-      <updated>1519365170009</updated>
-    </task>
-    <task id="LOCAL-00144" summary="By Rick">
-      <created>1519366889500</created>
-      <option name="number" value="00144" />
-      <option name="presentableId" value="LOCAL-00144" />
-      <option name="project" value="LOCAL" />
-      <updated>1519366889500</updated>
-    </task>
-    <task id="LOCAL-00145" summary="By Rick">
-      <created>1519367554368</created>
-      <option name="number" value="00145" />
-      <option name="presentableId" value="LOCAL-00145" />
-      <option name="project" value="LOCAL" />
-      <updated>1519367554368</updated>
-    </task>
-    <task id="LOCAL-00146" summary="By Rick">
-      <created>1519375997855</created>
-      <option name="number" value="00146" />
-      <option name="presentableId" value="LOCAL-00146" />
-      <option name="project" value="LOCAL" />
-      <updated>1519375997855</updated>
-    </task>
-    <task id="LOCAL-00147" summary="By Rick">
-      <created>1519376127432</created>
-      <option name="number" value="00147" />
-      <option name="presentableId" value="LOCAL-00147" />
-      <option name="project" value="LOCAL" />
-      <updated>1519376127432</updated>
-    </task>
-    <task id="LOCAL-00148" summary="By Rick">
-      <created>1519376432441</created>
-      <option name="number" value="00148" />
-      <option name="presentableId" value="LOCAL-00148" />
-      <option name="project" value="LOCAL" />
-      <updated>1519376432447</updated>
-    </task>
-    <task id="LOCAL-00149" summary="By Rick">
-      <created>1519378271055</created>
-      <option name="number" value="00149" />
-      <option name="presentableId" value="LOCAL-00149" />
-      <option name="project" value="LOCAL" />
-      <updated>1519378271055</updated>
-    </task>
-    <task id="LOCAL-00150" summary="By Rick">
-      <created>1519379538359</created>
-      <option name="number" value="00150" />
-      <option name="presentableId" value="LOCAL-00150" />
-      <option name="project" value="LOCAL" />
-      <updated>1519379538359</updated>
-    </task>
-    <task id="LOCAL-00151" summary="By Rick">
-      <created>1519435726805</created>
-      <option name="number" value="00151" />
-      <option name="presentableId" value="LOCAL-00151" />
-      <option name="project" value="LOCAL" />
-      <updated>1519435726805</updated>
-    </task>
-    <option name="localTasksCounter" value="152" />
+    <option name="localTasksCounter" value="127" />
     <servers />
   </component>
   <component name="TodoView">
@@ -971,14 +955,14 @@
     <frame x="-8" y="-8" width="1382" height="754" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.20485584" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.27162367" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32888147" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32520324" sideWeight="0.5060698" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24227643" sideWeight="0.5060698" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24227643" sideWeight="0.4939302" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32554257" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3284553" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32520324" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32888147" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32520324" sideWeight="0.4939302" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32724252" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.39899832" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Data View" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -1065,6 +1049,30 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
+    <entry file="file://$USER_HOME$/AppData/Local/Programs/Python/Python36/Lib/email/header.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-44">
+          <caret line="179" column="8" lean-forward="false" selection-start-line="179" selection-start-column="8" selection-end-line="179" selection-end-column="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/AppData/Local/Programs/Python/Python36/Lib/unittest/result.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="345">
+          <caret line="134" column="13" lean-forward="true" selection-start-line="134" selection-start-column="13" selection-end-line="134" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/WebAutoTest/Page/page.py" />
+    <entry file="file://$PROJECT_DIR$/WebAutoTest/Page/Page_Price.py" />
+    <entry file="file://$PROJECT_DIR$/WebAutoTest/Page/my_test.py" />
+    <entry file="file://$USER_HOME$/AppData/Local/Programs/Python/Python36/Lib/site-packages/selenium/webdriver/common/action_chains.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="356">
+          <caret line="360" column="8" lean-forward="true" selection-start-line="360" selection-start-column="8" selection-end-line="360" selection-end-column="8" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$USER_HOME$/AppData/Local/Programs/Python/Python36/Lib/HTMLTestRunner.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="15100">
@@ -1110,6 +1118,13 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/WebAutoTest/TestResult/PowerChina.html" />
     <entry file="file://$PROJECT_DIR$/WebAutoTest/TestCase/My_Function.py" />
+    <entry file="file://$PROJECT_DIR$/WebAutoTest/Page/Page_PersonalCenter.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="500">
+          <caret line="25" column="46" lean-forward="false" selection-start-line="25" selection-start-column="46" selection-end-line="25" selection-end-column="46" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$USER_HOME$/.PyCharmCE2017.1/system/python_stubs/-1631578159/builtins.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="390">
@@ -1143,6 +1158,27 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="141">
           <caret line="652" column="8" lean-forward="false" selection-start-line="652" selection-start-column="8" selection-end-line="652" selection-end-column="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/WebAutoTest/Page/Page_OrderResult.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="220">
+          <caret line="11" column="0" lean-forward="true" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/WebAutoTest/Page/Page_QuickOrder.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="161">
+          <caret line="14" column="29" lean-forward="false" selection-start-line="14" selection-start-column="29" selection-end-line="14" selection-end-column="29" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/WebAutoTest/Page/Page_NormalCart.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="190">
+          <caret line="188" column="8" lean-forward="false" selection-start-line="188" selection-start-column="8" selection-end-line="188" selection-end-column="8" />
         </state>
       </provider>
     </entry>
@@ -1210,6 +1246,34 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/WebAutoTest/Page/Page_Home.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="460">
+          <caret line="25" column="49" lean-forward="false" selection-start-line="25" selection-start-column="49" selection-end-line="25" selection-end-column="49" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/WebAutoTest/Page/Page_ProductList.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="160">
+          <caret line="12" column="39" lean-forward="false" selection-start-line="12" selection-start-column="35" selection-end-line="12" selection-end-column="39" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/WebAutoTest/Page/Page_Base.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="3800">
+          <caret line="200" column="38" lean-forward="false" selection-start-line="200" selection-start-column="38" selection-end-line="200" selection-end-column="38" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/WebAutoTest/TestCase/test_order_page.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="3180">
+          <caret line="159" column="25" lean-forward="false" selection-start-line="159" selection-start-column="25" selection-end-line="159" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/WebAutoTest/TestCase/test_price.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1640">
@@ -1232,10 +1296,26 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/WebAutoTest/Page/Page_Order.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="5200">
+          <caret line="266" column="0" lean-forward="false" selection-start-line="266" selection-start-column="0" selection-end-line="266" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/WebAutoTest/TestCase/powerchina.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="3940">
           <caret line="197" column="52" lean-forward="false" selection-start-line="197" selection-start-column="52" selection-end-line="197" selection-end-column="52" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/WebAutoTest/config/test_order.conf">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="600">
+          <caret line="30" column="17" lean-forward="false" selection-start-line="30" selection-start-column="17" selection-end-line="30" selection-end-column="17" />
           <folding />
         </state>
       </provider>
@@ -1248,34 +1328,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/WebAutoTest/TestCase/test_order_page.py">
+    <entry file="file://$PROJECT_DIR$/WebAutoTest/TestCase/run_test.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="295">
-          <caret line="189" column="16" lean-forward="false" selection-start-line="189" selection-start-column="16" selection-end-line="189" selection-end-column="16" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/WebAutoTest/TestCase/.pytest_cache/v/cache/lastfailed">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$USER_HOME$/AppData/Local/Programs/Python/Python36/Lib/site-packages/_pytest/fixtures.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-711">
-          <caret line="854" column="4" lean-forward="false" selection-start-line="854" selection-start-column="4" selection-end-line="854" selection-end-column="4" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$USER_HOME$/AppData/Local/Programs/Python/Python36/Lib/site-packages/allure/__init__.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="47">
-          <caret line="11" column="10" lean-forward="false" selection-start-line="11" selection-start-column="10" selection-end-line="11" selection-end-column="10" />
+        <state relative-caret-position="220">
+          <caret line="12" column="10" lean-forward="false" selection-start-line="12" selection-start-column="10" selection-end-line="12" selection-end-column="10" />
           <folding />
         </state>
       </provider>
@@ -1288,134 +1344,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/WebAutoTest/TestCase/environment.properties">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="3" column="0" lean-forward="true" selection-start-line="3" selection-start-column="0" selection-end-line="3" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/WebAutoTest/Page/Page_NormalCart.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-471">
-          <caret line="40" column="34" lean-forward="true" selection-start-line="40" selection-start-column="34" selection-end-line="40" selection-end-column="34" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/WebAutoTest/Page/Page_OrderResult.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="280">
-          <caret line="32" column="37" lean-forward="false" selection-start-line="32" selection-start-column="37" selection-end-line="32" selection-end-column="37" />
-          <folding>
-            <element signature="e#0#26#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/WebAutoTest/Page/Page_Home.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="398">
-          <caret line="76" column="32" lean-forward="false" selection-start-line="76" selection-start-column="32" selection-end-line="76" selection-end-column="32" />
-          <folding>
-            <element signature="e#0#26#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/WebAutoTest/Page/Page_Base.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="346">
-          <caret line="48" column="29" lean-forward="false" selection-start-line="48" selection-start-column="29" selection-end-line="48" selection-end-column="29" />
-          <folding>
-            <element signature="e#0#21#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/WebAutoTest/Page/Page_QuickOrder.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="80">
-          <caret line="4" column="21" lean-forward="false" selection-start-line="4" selection-start-column="21" selection-end-line="4" selection-end-column="21" />
-          <folding>
-            <element signature="e#0#26#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/WebAutoTest/Page/Page_PersonalCenter.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="195">
-          <caret line="20" column="8" lean-forward="false" selection-start-line="20" selection-start-column="8" selection-end-line="20" selection-end-column="8" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/WebAutoTest/TestCase/test.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="80">
-          <caret line="14" column="0" lean-forward="false" selection-start-line="14" selection-start-column="0" selection-end-line="15" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/WebAutoTest/Page/Page_Order.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="108">
-          <caret line="54" column="42" lean-forward="false" selection-start-line="54" selection-start-column="42" selection-end-line="54" selection-end-column="42" />
-          <folding>
-            <element signature="e#0#26#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/WebAutoTest/Page/Page_ProductList.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="278">
-          <caret line="64" column="8" lean-forward="false" selection-start-line="64" selection-start-column="8" selection-end-line="64" selection-end-column="8" />
-          <folding>
-            <element signature="e#0#26#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/WebAutoTest/config/test_order.conf">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="287">
-          <caret line="25" column="28" lean-forward="false" selection-start-line="25" selection-start-column="13" selection-end-line="25" selection-end-column="28" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/WebAutoTest/TestCase/test_order.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="3815">
-          <caret line="355" column="44" lean-forward="false" selection-start-line="355" selection-start-column="44" selection-end-line="355" selection-end-column="44" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/WebAutoTest/Page/__init__.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/WebAutoTest/TestCase/run_test.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="220">
-          <caret line="12" column="10" lean-forward="false" selection-start-line="12" selection-start-column="10" selection-end-line="12" selection-end-column="10" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/WebAutoTest/TestCase/test_cart.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="424">
-          <caret line="43" column="45" lean-forward="true" selection-start-line="43" selection-start-column="45" selection-end-line="43" selection-end-column="45" />
+        <state relative-caret-position="378">
+          <caret line="64" column="39" lean-forward="false" selection-start-line="64" selection-start-column="39" selection-end-line="64" selection-end-column="39" />
           <folding />
         </state>
       </provider>
@@ -1423,7 +1355,15 @@
     <entry file="file://$PROJECT_DIR$/WebAutoTest/config/data.conf">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="340">
-          <caret line="17" column="21" lean-forward="false" selection-start-line="17" selection-start-column="21" selection-end-line="17" selection-end-column="21" />
+          <caret line="17" column="21" lean-forward="true" selection-start-line="17" selection-start-column="21" selection-end-line="17" selection-end-column="21" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/WebAutoTest/TestCase/test_order.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="120">
+          <caret line="18" column="20" lean-forward="false" selection-start-line="18" selection-start-column="20" selection-end-line="18" selection-end-column="20" />
           <folding />
         </state>
       </provider>

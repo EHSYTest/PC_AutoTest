@@ -47,3 +47,5 @@ class Test_a():
         f = open('../testresult/screenshot/test.png', 'rb').read()
         allure.attach('IMG', f, allure.attach_type.PNG)
         print('teardown')
+
+        pytest.main()

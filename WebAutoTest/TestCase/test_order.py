@@ -104,32 +104,6 @@ class TestCase(unittest.TestCase):
         self.page.cancel_order(orderId, environment=self.environment)  # 接口取消订单
 
     def test_order_6(self):
-        """产线列表页入口-国电用户下单-普票"""
-        login_name = self.page.config_reader('test_order.conf', '国电账号', 'login_name')
-        password = self.page.config_reader('test_order.conf', '国电账号', 'password')
-        self.home.login(login_name, password)
-        self.home.category_tree_click()
-        self.product_list.list_add_to_cart()
-        self.cart.element_find(self.cart.go_to_order).click()
-        self.order.choose_vat_invoice()
-        self.order.submit_order(account_period=True)
-        orderId = self.order_result.get_so_by_url()
-        self.page.cancel_order(orderId, environment=self.environment)  # 接口取消订单
-
-    def test_order_7(self):
-        """快速下单页入口-国电用户下单-增票"""
-        login_name = self.page.config_reader('test_order.conf', '国电账号', 'login_name')
-        password = self.page.config_reader('test_order.conf', '国电账号', 'password')
-        self.home.login(login_name, password)
-        self.home.quick_order_click()
-        self.quick_order.quick_add_to_cart()
-        self.cart.element_find(self.cart.go_to_order).click()
-        self.order.choose_vat_invoice()
-        self.order.submit_order(account_period=True)
-        orderId = self.order_result.get_so_by_url()
-        self.page.cancel_order(orderId, environment=self.environment)  # 接口取消订单
-
-    def test_order_8(self):
         """产线列表页入口-EAS用户下单-不开票-超过审批额"""
         login_name = self.page.config_reader('test_order.conf', 'EAS账号', 'login_name')
         password = self.page.config_reader('test_order.conf', 'EAS账号', 'password')
@@ -154,7 +128,7 @@ class TestCase(unittest.TestCase):
             except AssertionError:
                 continue
 
-    def test_order_9(self):
+    def test_order_7(self):
         """产品详情页入口-EAS用户下单-增票-不超过审批额"""
         login_name = self.page.config_reader('test_order.conf', 'EAS账号', 'login_name')
         password = self.page.config_reader('test_order.conf', 'EAS账号', 'password')
@@ -175,7 +149,7 @@ class TestCase(unittest.TestCase):
                 continue
         self.page.cancel_order(orderId, environment=self.environment)  # 接口取消订单
 
-    def test_order_10(self):
+    def test_order_8(self):
         """产品详情页入口-EIS用户下单"""
         url = self.page.config_reader('test_order.conf', 'EIS_URL', 'URL')
         self.driver.get(url)
@@ -197,7 +171,7 @@ class TestCase(unittest.TestCase):
                 else:
                     continue
 
-    def test_order_11(self):
+    def test_order_9(self):
         """报价单入口-终端用户下单-增票"""
         login_name = self.page.config_reader('test_order.conf', '终端账号', 'login_name')
         password = self.page.config_reader('test_order.conf', '终端账号', 'password')
@@ -232,8 +206,6 @@ if __name__ == '__main__':
                   TestCase('test_order_7'),
                   TestCase('test_order_8'),
                   TestCase('test_order_9'),
-                  TestCase('test_order_10'),
-                  TestCase('test_order_11'),
                   ]
     suit.addTests(case_list)
     # now = time.strftime("%Y_%m_%d %H_%M_%S")

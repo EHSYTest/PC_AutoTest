@@ -6,40 +6,48 @@ from selenium import webdriver
 from Page_Base import Page
 from Page_Home import Home
 from Page_UserAddress import UserAddress
-
+import allure, pytest
 
 class TestUserAddress(unittest.TestCase):
-    def setUp(self):
-        self.driver = webdriver.Chrome()
-        self.page = Page(self.driver)
-        self.environment = self.page.config_reader('environment.conf', 'Environment', 'environment')
-        if self.environment == 'staging':
-            self.driver.get('http://ps.ehsy.com')
-        else:
-            self.driver.get('http://new.ehsy.com')
+    def setup_method(self, method):
+        with allure.step('---Start---'):
+            self.driver = webdriver.Chrome()
+            self.page = Page(self.driver)
+            self.environment = self.page.config_reader('environment.conf', 'Environment', 'environment')
+            if self.environment == 'staging':
+                self.url = 'http://ps.ehsy.com'
+                self.driver.get(self.url)
+            else:
+                self.url = 'http://new.ehsy.com'
+                self.driver.get(self.url)
         self.driver.implicitly_wait(30)
         self.driver.maximize_window()
         self.home = Home(self.driver)
         self.page = Page(self.driver)
         self.user_address = UserAddress(self.driver)
+        allure.attach('初始化参数:', 'environment: ' + self.environment + '\nurl: ' + self.url + '\n')
 
     def test_address_personal(self):
-        loginname = self.page.config_reader('test_order.conf', '个人地址发票账号', 'login_name')
-        password = self.page.config_reader('test_order.conf', '个人地址发票账号', 'password')
+        with allure.step('读取账号配置信息'):
+            loginname = self.page.config_reader('test_order.conf', '个人地址发票账号', 'login_name')
+            password = self.page.config_reader('test_order.conf', '个人地址发票账号', 'password')
+            allure.attach('账号信息: ', 'login_name: %s\npassword: %s' % (loginname, password))
         self.home.login(loginname, password)
         self.home.go_user_center()
         self.page.wait_click(self.user_address.my_address)
         # 通用地址
-        self.user_address.add_address()
-        self.user_address.edit_address()
-        self.user_address.set_default_currency_address()
-        self.user_address.delete_address()
+        with allure.step('通用地址测试'):
+            self.user_address.add_address()
+            self.user_address.edit_address()
+            self.user_address.set_default_currency_address()
+            self.user_address.delete_address()
         # 收货地址
-        self.page.wait_click(self.user_address.receive_address)
-        self.user_address.add_address()
-        self.user_address.edit_address()
-        self.user_address.set_default_receive_address()
-        self.user_address.delete_address()
+        with allure.step('收货地址测试'):
+            self.page.wait_click(self.user_address.receive_address)
+            self.user_address.add_address()
+            self.user_address.edit_address()
+            self.user_address.set_default_receive_address()
+            self.user_address.delete_address()
         # 发票地址
         self.page.wait_click(self.user_address.invoice_address)
         self.user_address.add_address()

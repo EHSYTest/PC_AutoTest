@@ -45,7 +45,7 @@ class TestOrderPage(unittest.TestCase):
 
     def test_invoice_1(self):
         """发票信息增删改-个人"""
-        allure.environment(Report='TestOrderPage Report', Browser='Chrome 63', URL=self.url)
+        # allure.environment(Report='TestOrderPage Report', Browser='Chrome 63', URL=self.url)
         with allure.step('读取账号配置信息'):
             login_name = self.page.config_reader('test_order.conf', '个人地址发票账号', 'login_name')
             password = self.page.config_reader('test_order.conf', '个人地址发票账号', 'password')

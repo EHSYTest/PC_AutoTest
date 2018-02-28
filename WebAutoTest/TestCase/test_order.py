@@ -44,7 +44,7 @@ class TestOrder(unittest.TestCase):
     @allure.story('个人用户下单-产线大图页入口')
     def test_order_01(self):
         """产线大图页入口-个人用户下单-不开票"""
-        allure.environment(Report='TestOrder Report', Browser='Chrome 63', URL=self.url)
+        allure.environment(Report='AutoTest Report', Browser='Chrome 63', URL=self.url)
         with allure.step('读取账号配置信息'):
             login_name = self.page.config_reader('test_order.conf', '个人账号', 'login_name')
             password = self.page.config_reader('test_order.conf', '个人账号', 'password')

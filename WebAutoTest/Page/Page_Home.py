@@ -6,7 +6,7 @@ from selenium.webdriver.common.by import By
 
 class Home(Page):
     """首页"""
-    login_button = (By.XPATH, '//*[@id="js-logininfo"]/div[1]/div/a[1]')
+    login_button = (By.XPATH, '//*[@id="s-logininfo"]/div[1]/div/a[1]')
     logout_button = (By.XPATH, '//div[1]/span/a[2]')
     username_send = (By.NAME, 'username')
     password_send = (By.NAME, 'password')

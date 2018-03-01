@@ -92,8 +92,9 @@ class Page(object):
         for i in range(50):
             if i == 40:     # 长时间点击无效，刷新页面
                 self.driver.refresh()
+            element = self.element_find(ele)
             try:
-                self.element_find(ele).click()
+                element.click()
                 break
             except exceptions.WebDriverException:
                 time.sleep(1)

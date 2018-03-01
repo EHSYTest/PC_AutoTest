@@ -12,13 +12,12 @@ from Page_ProductList import ProductList
 from Page_QuickOrder import QuickOrder
 from Page_ReportOrder import ReportOrder
 from Page_PersonalCenter import PersonalCenter
-
+from selenium.webdriver.common.by import By
 
 class TestOrder(unittest.TestCase):
 
     def setUp(self):
         self.driver = webdriver.Chrome()
-        self.driver.implicitly_wait(20)
         self.driver.set_page_load_timeout(20)
         self.page = Page(self.driver)
         self.environment = self.page.config_reader('environment.conf', 'Environment', 'environment')
@@ -26,6 +25,7 @@ class TestOrder(unittest.TestCase):
             self.driver.get('http://ps.ehsy.com')
         elif self.environment == 'production':
             self.driver.get('http://new.ehsy.com')
+        self.driver.implicitly_wait(30)
         self.driver.maximize_window()
         self.cart = Cart(self.driver)
         self.home = Home(self.driver)
@@ -324,6 +324,7 @@ class TestOrder(unittest.TestCase):
         test_method_name = self._testMethodName
         self.driver.save_screenshot("../TestResult/ScreenShot/%s.png" % test_method_name)
         self.driver.quit()
+
 
 if __name__ == '__main__':
     suit = unittest.TestSuite()

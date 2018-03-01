@@ -30,6 +30,7 @@ class TestOrder(unittest.TestCase):
             else:
                 self.url = 'http://new.ehsy.com'
                 self.driver.get(self.url)
+            self.driver.implicitly_wait(30)
             self.driver.maximize_window()
             self.cart = Cart(self.driver)
             self.home = Home(self.driver)

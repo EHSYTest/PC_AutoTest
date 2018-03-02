@@ -25,7 +25,7 @@ class TestOrder(unittest.TestCase):
             self.page = Page(self.driver)
             self.environment = self.page.config_reader('environment.conf', 'Environment', 'environment')
             if self.environment == 'staging':
-                self.url = 'http://www-test2.ehsy.com'
+                self.url = 'http://ps.ehsy.com'
                 self.driver.get(self.url)
             else:
                 self.url = 'http://new.ehsy.com'

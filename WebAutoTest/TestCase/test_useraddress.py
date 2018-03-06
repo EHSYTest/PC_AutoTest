@@ -9,6 +9,8 @@ from Page_UserAddress import UserAddress
 import allure, pytest
 
 
+@allure.feature('个人中心-用户地址测试')
+@pytest.allure.severity(pytest.allure.severity_level.MINOR)
 class TestUserAddress(unittest.TestCase):
     def setup_method(self, method):
         with allure.step('---Start---'):

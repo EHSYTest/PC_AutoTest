@@ -9,6 +9,8 @@ from Page_UserInvoice import UserInvoice
 import pytest, allure
 
 
+@allure.feature('个人中心-用户发票测试')
+@pytest.allure.severity(pytest.allure.severity_level.MINOR)
 class TestUserInvoice(unittest.TestCase):
     def setup_method(self, method):
         with allure.step('---Start---'):

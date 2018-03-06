@@ -17,8 +17,8 @@ from selenium.webdriver.common.action_chains import ActionChains
 import allure, pytest
 
 
-@allure.feature('下单页发票地址测试')
-@pytest.allure.severity(pytest.allure.severity_level.CRITICAL)
+@allure.feature('下单页-发票地址测试')
+@pytest.allure.severity(pytest.allure.severity_level.MINOR)
 class TestOrderPage(unittest.TestCase):
 
     def setup_method(self, method):

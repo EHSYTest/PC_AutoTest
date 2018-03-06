@@ -71,21 +71,21 @@ class TestPrice(unittest.TestCase):
                 self.home.search_sku(product)
                 search_price = self.product_list.element_find(self.product_list.unit_price).text[2:]
                 print('search_price: %s' % float(search_price))
-                allure.attach('参数值: ', 'Price： ' + price + '\nSearch_Price: ' + search_price)
+                allure.attach('参数值: ', 'Price： ' + str(price) + '\nSearch_Price: ' + search_price)
                 assert price == float(search_price)
             with allure.step('产品详情页价格验证'):
                 self.page.wait_click(self.product_list.sku_result_click)
                 self.page.switch_to_new_window()
                 detail_price = self.product_list.element_find(self.product_list.discount_price).text[2:]
                 print('detail_price: %s' % detail_price)
-                allure.attach('参数值: ', 'Price： ' + price + '\nDetail_Price: ' + detail_price)
+                allure.attach('参数值: ', 'Price： ' + str(price) + '\nDetail_Price: ' + detail_price)
                 assert price == float(detail_price)
             with allure.step('购物车页价格验证-单价'):
                 self.product_list.wait_click(self.product_list.skuContent_add_button)
                 self.product_list.wait_click(self.product_list.jump_to_cart)
                 cart_unit_price = self.cart.element_find(self.cart.unit_price).text[2:]
                 print('cart_unit_price: %s' % cart_unit_price)
-                allure.attach('参数值: ', 'Price： ' + price + '\nCart_Unit_Price: ' + cart_unit_price)
+                allure.attach('参数值: ', 'Price： ' + str(price) + '\nCart_Unit_Price: ' + cart_unit_price)
                 assert price == float(cart_unit_price)
             with allure.step('购物车页价格验证-总价、折扣优惠'):
                 qty = self.cart.element_find(self.cart.quantity_input).get_attribute('value')

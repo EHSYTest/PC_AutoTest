@@ -2,10 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a665631f-422e-4f1d-88e9-64ed59718bad" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/WebAutoTest_EHSY_PageObject.iml" afterPath="$PROJECT_DIR$/.idea/WebAutoTest_EHSY_PageObject.iml" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/WebAutoTest/Page/Page_Order.py" afterPath="$PROJECT_DIR$/WebAutoTest/Page/Page_Order.py" />
+      <change beforePath="$PROJECT_DIR$/WebAutoTest/TestCase/test_price.py" afterPath="$PROJECT_DIR$/WebAutoTest/TestCase/test_price.py" />
     </list>
     <ignored path=".idea/" />
     <ignored path="WebAutoTest/.idea/" />
@@ -47,21 +45,21 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="test_price.py" pinned="false" current-in-tab="false">
+      <file leaf-file-name="test_price.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/WebAutoTest/TestCase/test_price.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="506">
-              <caret line="23" column="35" lean-forward="false" selection-start-line="23" selection-start-column="35" selection-end-line="23" selection-end-column="35" />
+            <state relative-caret-position="330">
+              <caret line="54" column="39" lean-forward="true" selection-start-line="54" selection-start-column="39" selection-end-line="54" selection-end-column="39" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="pytest.ini" pinned="false" current-in-tab="true">
+      <file leaf-file-name="pytest.ini" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/WebAutoTest/pytest.ini">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="22">
-              <caret line="1" column="55" lean-forward="false" selection-start-line="1" selection-start-column="55" selection-end-line="1" selection-end-column="55" />
+            <state relative-caret-position="66">
+              <caret line="3" column="0" lean-forward="true" selection-start-line="3" selection-start-column="0" selection-end-line="3" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -80,7 +78,7 @@
       <file leaf-file-name="Page_Order.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/WebAutoTest/Page/Page_Order.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="179">
+            <state relative-caret-position="11000">
               <caret line="507" column="58" lean-forward="false" selection-start-line="507" selection-start-column="45" selection-end-line="507" selection-end-column="58" />
               <folding />
             </state>
@@ -90,7 +88,7 @@
       <file leaf-file-name="test_order_page.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/WebAutoTest/TestCase/test_order_page.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="352">
+            <state relative-caret-position="4378">
               <caret line="199" column="23" lean-forward="true" selection-start-line="199" selection-start-column="23" selection-end-line="199" selection-end-column="23" />
               <folding />
             </state>
@@ -232,7 +230,6 @@
         <option value="$PROJECT_DIR$/WebAutoTest/Page/Page_UserAddress.py" />
         <option value="$PROJECT_DIR$/WebAutoTest/Page/Page_Home.py" />
         <option value="$PROJECT_DIR$/WebAutoTest/TestCase/test_order.py" />
-        <option value="$PROJECT_DIR$/WebAutoTest/TestCase/test_price.py" />
         <option value="$PROJECT_DIR$/WebAutoTest/TestCase/test.py" />
         <option value="$PROJECT_DIR$/WebAutoTest/Page/Page_UserInvoice.py" />
         <option value="$PROJECT_DIR$/WebAutoTest/TestCase/test_useraddress.py" />
@@ -240,6 +237,7 @@
         <option value="$PROJECT_DIR$/WebAutoTest/TestCase/test_order_page.py" />
         <option value="$PROJECT_DIR$/WebAutoTest/Page/Page_Order.py" />
         <option value="$PROJECT_DIR$/WebAutoTest/pytest.ini" />
+        <option value="$PROJECT_DIR$/WebAutoTest/TestCase/test_price.py" />
       </list>
     </option>
   </component>
@@ -270,8 +268,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scratches" />
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -290,16 +286,12 @@
               <item name="WebAutoTest" type="462c0819:PsiDirectoryNode" />
               <item name="config" type="9de27aec:PuppetPsiDirectoryNode$Environment" />
             </path>
-            <path>
-              <item name="PC_AutoTest" type="b2602c69:ProjectViewProjectNode" />
-              <item name="PC_AutoTest" type="462c0819:PsiDirectoryNode" />
-              <item name="WebAutoTest" type="462c0819:PsiDirectoryNode" />
-              <item name="TestCase" type="462c0819:PsiDirectoryNode" />
-            </path>
           </expand>
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
+      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -471,13 +463,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1506390215075</updated>
-    </task>
-    <task id="LOCAL-00118" summary="By Rick">
-      <created>1517397358729</created>
-      <option name="number" value="00118" />
-      <option name="presentableId" value="LOCAL-00118" />
-      <option name="project" value="LOCAL" />
-      <updated>1517397358729</updated>
     </task>
     <task id="LOCAL-00119" summary="By Rick">
       <created>1517472534481</created>
@@ -815,7 +800,14 @@
       <option name="project" value="LOCAL" />
       <updated>1520314875280</updated>
     </task>
-    <option name="localTasksCounter" value="167" />
+    <task id="LOCAL-00167" summary="By Rick">
+      <created>1520320370417</created>
+      <option name="number" value="00167" />
+      <option name="presentableId" value="LOCAL-00167" />
+      <option name="project" value="LOCAL" />
+      <updated>1520320370417</updated>
+    </task>
+    <option name="localTasksCounter" value="168" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -838,17 +830,17 @@
     <layout>
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32888147" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32435465" sideWeight="0.5060698" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.23976608" sideWeight="0.4939302" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32520324" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3284553" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.23976608" sideWeight="0.4939302" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3239766" sideWeight="0.4939302" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.1869612" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.18965517" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Docker" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="SciView" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.39899832" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.39899832" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -1194,7 +1186,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="264">
           <caret line="12" column="25" lean-forward="false" selection-start-line="12" selection-start-column="25" selection-end-line="12" selection-end-column="25" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1202,14 +1193,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="770">
           <caret line="35" column="18" lean-forward="false" selection-start-line="35" selection-start-column="18" selection-end-line="35" selection-end-column="18" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/WebAutoTest/TestCase/test_price.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="506">
-          <caret line="23" column="35" lean-forward="false" selection-start-line="23" selection-start-column="35" selection-end-line="23" selection-end-column="35" />
           <folding />
         </state>
       </provider>
@@ -1224,7 +1207,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/WebAutoTest/TestCase/test_order_page.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="352">
+        <state relative-caret-position="4378">
           <caret line="199" column="23" lean-forward="true" selection-start-line="199" selection-start-column="23" selection-end-line="199" selection-end-column="23" />
           <folding />
         </state>
@@ -1232,7 +1215,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/WebAutoTest/Page/Page_Order.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="179">
+        <state relative-caret-position="11000">
           <caret line="507" column="58" lean-forward="false" selection-start-line="507" selection-start-column="45" selection-end-line="507" selection-end-column="58" />
           <folding />
         </state>
@@ -1240,8 +1223,16 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/WebAutoTest/pytest.ini">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="22">
-          <caret line="1" column="55" lean-forward="false" selection-start-line="1" selection-start-column="55" selection-end-line="1" selection-end-column="55" />
+        <state relative-caret-position="66">
+          <caret line="3" column="0" lean-forward="true" selection-start-line="3" selection-start-column="0" selection-end-line="3" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/WebAutoTest/TestCase/test_price.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="330">
+          <caret line="54" column="39" lean-forward="true" selection-start-line="54" selection-start-column="39" selection-end-line="54" selection-end-column="39" />
           <folding />
         </state>
       </provider>

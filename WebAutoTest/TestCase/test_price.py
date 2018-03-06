@@ -51,7 +51,7 @@ class TestPrice(unittest.TestCase):
                     product = self.page.config_reader('data.conf', 'csp_price_product', 'csp_product')
                     price = self.page.config_reader('data.conf', 'csp_price_product', 'csp_price')
                     price = float(price)
-                    allure.attach('参数值: ', 'Product： '+product+'\nPrice: '+(price))
+                    allure.attach('参数值: ', 'Product： '+product+'\nPrice: '+str(price))
             with allure.step('判断是否促销'):
                 if promotion:     # 若促销，取促销产品和价格
                     product = self.page.config_reader('data.conf', 'promotion_price_product', 'promotion_product')

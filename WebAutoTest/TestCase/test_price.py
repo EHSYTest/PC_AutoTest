@@ -105,6 +105,7 @@ class TestPrice(unittest.TestCase):
             with allure.step('删除商品'):
                 self.cart.wait_click(self.cart.delete_line)
 
+    @allure.story('价格测试-个人')
     def test_price_01(self):
         """价格测试-个人"""
         with allure.step('读取账号配置信息'):
@@ -113,7 +114,8 @@ class TestPrice(unittest.TestCase):
             allure.attach('账号信息: ', 'login_name: %s\npassword: %s' % (login_name, password))
         self.home.login(login_name, password)
         self.price_assert(dis=1)
-    
+
+    @allure.story('价格测试-分销-待审核')
     def test_price_02(self):
         """价格测试-分销-待审核"""
         with allure.step('读取账号配置信息'):
@@ -123,6 +125,7 @@ class TestPrice(unittest.TestCase):
         self.home.login(login_name, password)
         self.price_assert(dis=0.98)
 
+    @allure.story('价格测试-分销-被驳回')
     def test_price_03(self):
         """价格测试-分销-被驳回"""
         with allure.step('读取账号配置信息'):
@@ -132,6 +135,7 @@ class TestPrice(unittest.TestCase):
         self.home.login(login_name, password)
         self.price_assert(dis=1)
 
+    @allure.story('价格测试-分销-认证通过')
     def test_price_04(self):
         """价格测试-分销-认证通过"""
         with allure.step('读取账号配置信息'):
@@ -141,6 +145,7 @@ class TestPrice(unittest.TestCase):
         self.home.login(login_name, password)
         self.price_assert(dis=0.90)
 
+    @allure.story('价格测试-终端-待审核')
     def test_price_05(self):
         """价格测试-终端-待审核"""
         with allure.step('读取账号配置信息'):
@@ -150,6 +155,7 @@ class TestPrice(unittest.TestCase):
         self.home.login(login_name, password)
         self.price_assert(dis=0.98)
 
+    @allure.story('价格测试-终端-被驳回')
     def test_price_06(self):
         """价格测试-终端-被驳回"""
         with allure.step('读取账号配置信息'):
@@ -159,6 +165,7 @@ class TestPrice(unittest.TestCase):
         self.home.login(login_name, password)
         self.price_assert(dis=1)
 
+    @allure.story('价格测试-终端-认证通过')
     def test_price_07(self):
         """价格测试-终端-认证通过"""
         with allure.step('读取账号配置信息'):
@@ -168,6 +175,7 @@ class TestPrice(unittest.TestCase):
         self.home.login(login_name, password)
         self.price_assert(dis=0.98)
 
+    @allure.story('CSP价格测试-分销-认证通过')
     def test_price_08(self):
         """CSP价格测试-分销-认证通过"""
         with allure.step('读取账号配置信息'):
@@ -177,6 +185,7 @@ class TestPrice(unittest.TestCase):
         self.home.login(login_name, password)
         self.price_assert(dis=1, csp=True)
 
+    @allure.story('CSP价格测试-终端-认证通过')
     def test_price_09(self):
         """CSP价格测试-终端-认证通过"""
         with allure.step('读取账号配置信息'):
@@ -186,6 +195,7 @@ class TestPrice(unittest.TestCase):
         self.home.login(login_name, password)
         self.price_assert(dis=1, csp=True)
 
+    @allure.story('促销价格测试-个人')
     def test_price_10(self):
         """促销价格测试-个人"""
         with allure.step('读取账号配置信息'):
@@ -195,6 +205,7 @@ class TestPrice(unittest.TestCase):
         self.home.login(login_name, password)
         self.price_assert(dis=1, promotion=True)
 
+    @allure.story('促销价格测试-分销-已认证')
     def test_price_11(self):
         """促销价格测试-分销-已认证"""
         with allure.step('读取账号配置信息'):
@@ -204,6 +215,7 @@ class TestPrice(unittest.TestCase):
         self.home.login(login_name, password)
         self.price_assert(dis=0.90, promotion=True)
 
+    @allure.story('促销价格测试-终端-已认证')
     def test_price_12(self):
         """促销价格测试-终端-已认证"""
         with allure.step('读取账号配置信息'):

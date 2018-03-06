@@ -43,6 +43,7 @@ class TestOrderPage(unittest.TestCase):
         self.report_order = ReportOrder(self.driver)
         allure.attach('初始化参数:', 'environment: ' + self.environment + '\nurl: ' + self.url + '\n')
 
+    @allure.story('个人-发票信息增删改')
     def test_invoice_1(self):
         """发票信息增删改-个人"""
         # allure.environment(Report='TestOrderPage Report', Browser='Chrome 63', URL=self.url)
@@ -75,6 +76,7 @@ class TestOrderPage(unittest.TestCase):
         self.order.invoice_vat_delete()
         self.order.wait_click(self.order.confirm)
 
+    @allure.story('分销-发票信息增删改')
     def test_invoice_2(self):
         """发票信息增删改-分销"""
         with allure.step('读取账号配置信息'):
@@ -106,6 +108,7 @@ class TestOrderPage(unittest.TestCase):
         self.order.invoice_vat_delete()
         self.order.wait_click(self.order.confirm)
 
+    @allure.story('终端-发票信息增删改')
     def test_invoice_3(self):
         """发票信息增删改-终端"""
         with allure.step('读取账号配置信息'):
@@ -137,6 +140,7 @@ class TestOrderPage(unittest.TestCase):
         self.order.invoice_vat_delete()
         self.order.wait_click(self.order.confirm)
 
+    @allure.story('个人-收货地址增删改')
     def test_address_1(self):
         """收货地址增删改-个人"""
         with allure.step('读取账号配置信息'):
@@ -153,6 +157,7 @@ class TestOrderPage(unittest.TestCase):
         self.order.receiving_address_edit()
         self.order.receiving_address_delete()
 
+    @allure.story('分销-收货地址增删改')
     def test_address_2(self):
         """收货地址增删改-分销"""
         with allure.step('读取账号配置信息'):
@@ -169,6 +174,7 @@ class TestOrderPage(unittest.TestCase):
         self.order.receiving_address_edit()
         self.order.receiving_address_delete()
 
+    @allure.story('终端-收货地址增删改')
     def test_address_3(self):
         """收货地址增删改-终端"""
         with allure.step('读取账号配置信息'):
@@ -185,6 +191,7 @@ class TestOrderPage(unittest.TestCase):
         self.order.receiving_address_edit()
         self.order.receiving_address_delete()
 
+    @allure.story('发票信息填写校验')
     def test_invoice_check(self):
         """发票信息填写校验"""
         with allure.step('读取账号配置信息'):
@@ -201,6 +208,7 @@ class TestOrderPage(unittest.TestCase):
         self.order.wait_click(self.order.confirm)
         self.order.vat_invoice_check()
 
+    @allure.story('收货地址信息填写校验')
     def test_address_check(self):
         """收货地址信息填写校验"""
         with allure.step('读取账号配置信息'):

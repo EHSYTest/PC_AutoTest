@@ -28,6 +28,7 @@ class TestUserInvoice(unittest.TestCase):
         self.home = Home(self.driver)
         self.user_invoice = UserInvoice(self.driver)
 
+    @allure.story('个人发票测试')
     def test_invoice_personal(self):
         with allure.step('读取账号配置信息'):
             loginname = self.page.config_reader('test_order.conf', '个人地址发票账号', 'login_name')
@@ -57,6 +58,7 @@ class TestUserInvoice(unittest.TestCase):
             self.user_invoice.set_default_receipt_invoice()
             self.user_invoice.delete_invoice()
 
+    @allure.story('分销发票测试')
     def test_invoice_company_distribution(self):
         with allure.step('读取账号配置信息'):
             loginname = self.page.config_reader('test_order.conf', '分销地址发票账号', 'login_name')
@@ -86,6 +88,7 @@ class TestUserInvoice(unittest.TestCase):
             self.user_invoice.set_default_receipt_invoice()
             self.user_invoice.delete_invoice()
 
+    @allure.story('终端发票测试')
     def test_invoice_company_terminal(self):
         with allure.step('读取账号配置信息'):
             loginname = self.page.config_reader('test_order.conf', '终端地址发票账号', 'login_name')

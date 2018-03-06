@@ -30,6 +30,7 @@ class TestUserAddress(unittest.TestCase):
         self.user_address = UserAddress(self.driver)
         allure.attach('初始化参数:', 'environment: ' + self.environment + '\nurl: ' + self.url + '\n')
 
+    @allure.story('个人地址测试')
     def test_address_personal(self):
         with allure.step('读取账号配置信息'):
             loginname = self.page.config_reader('test_order.conf', '个人地址发票账号', 'login_name')
@@ -59,6 +60,7 @@ class TestUserAddress(unittest.TestCase):
             self.user_address.set_default_invoice_address()
             self.user_address.delete_address()
 
+    @allure.story('分销地址测试')
     def test_address_company_distribution(self):
         with allure.step('读取账号配置信息'):
             loginname = self.page.config_reader('test_order.conf', '分销地址发票账号', 'login_name')
@@ -88,6 +90,7 @@ class TestUserAddress(unittest.TestCase):
             self.user_address.set_default_invoice_address()
             self.user_address.delete_address()
 
+    @allure.story('终端地址测试')
     def test_address_company_terminal(self):
         with allure.step('读取账号配置信息'):
             loginname = self.page.config_reader('test_order.conf', '终端地址发票账号', 'login_name')

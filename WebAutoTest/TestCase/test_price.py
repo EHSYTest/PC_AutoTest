@@ -92,9 +92,11 @@ class TestPrice(unittest.TestCase):
                 if csp:
                     discount = 0.00
                     total = price * int(qty)
+                    total = float('%.2f' % total)
                 else:
                     discount = float('%.2f' % (price * int(qty) * 0.02))
                     total = price * int(qty) - discount
+                    total = float('%.2f' % total)
                 total_assert = self.cart.element_find(self.cart.total_price).text[2:]
                 discount_assert = self.cart.element_find(self.cart.discount).text[9:]
                 print('total: %.2f, total_assert: %s, discount: %.2f, discount_assert: %s' % (total, total_assert, discount, discount_assert))

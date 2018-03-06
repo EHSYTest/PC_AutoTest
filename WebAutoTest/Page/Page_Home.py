@@ -1,6 +1,7 @@
 from Page_Base import Page
 from selenium.webdriver.common.action_chains import ActionChains
 from selenium.common.exceptions import ElementNotVisibleException, WebDriverException
+import time
 
 
 class Home(Page):
@@ -28,6 +29,7 @@ class Home(Page):
 
     def login(self, login_name, password):
         self.element_find(self.login_button).click()
+        time.sleep(1)
         self.driver.switch_to_frame(self.frame)
         self.element_find(self.username_send).send_keys(login_name)
         self.element_find(self.password_send).send_keys(password)

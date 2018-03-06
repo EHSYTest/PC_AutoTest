@@ -22,7 +22,7 @@ class TestCase(unittest.TestCase):
         self.page = Page(self.driver)
         self.environment = self.page.config_reader('environment.conf', 'Environment', 'environment')
         if self.environment == 'staging':
-            self.driver.get('http://www-staging.ehsy.com')
+            self.driver.get('http://www-test2.ehsy.com/')
         elif self.environment == 'production':
             self.driver.get('http://www.ehsy.com')
         self.driver.implicitly_wait(30)
@@ -193,6 +193,7 @@ class TestCase(unittest.TestCase):
         test_method_name = self._testMethodName
         self.driver.save_screenshot("../TestResult/ScreenShot/%s.png" % test_method_name)
         self.driver.quit()
+
 
 if __name__ == '__main__':
     suit = unittest.TestSuite()

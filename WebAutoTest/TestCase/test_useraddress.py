@@ -8,6 +8,7 @@ from Page_Home import Home
 from Page_UserAddress import UserAddress
 import allure, pytest
 
+
 class TestUserAddress(unittest.TestCase):
     def setup_method(self, method):
         with allure.step('---Start---'):
@@ -49,64 +50,80 @@ class TestUserAddress(unittest.TestCase):
             self.user_address.set_default_receive_address()
             self.user_address.delete_address()
         # 发票地址
-        self.page.wait_click(self.user_address.invoice_address)
-        self.user_address.add_address()
-        self.user_address.edit_address()
-        self.user_address.set_default_invoice_address()
-        self.user_address.delete_address()
+        with allure.step('发票地址测试'):
+            self.page.wait_click(self.user_address.invoice_address)
+            self.user_address.add_address()
+            self.user_address.edit_address()
+            self.user_address.set_default_invoice_address()
+            self.user_address.delete_address()
 
     def test_address_company_distribution(self):
-        loginname = self.page.config_reader('test_order.conf', '分销地址发票账号', 'login_name')
-        password = self.page.config_reader('test_order.conf', '分销地址发票账号', 'password')
+        with allure.step('读取账号配置信息'):
+            loginname = self.page.config_reader('test_order.conf', '分销地址发票账号', 'login_name')
+            password = self.page.config_reader('test_order.conf', '分销地址发票账号', 'password')
+            allure.attach('账号信息: ', 'login_name: %s\npassword: %s' % (loginname, password))
         self.home.login(loginname, password)
         self.home.go_user_center()
         self.page.wait_click(self.user_address.my_address)
         # 通用地址
-        self.user_address.add_address()
-        self.user_address.edit_address()
-        self.user_address.set_default_currency_address()
-        self.user_address.delete_address()
+        with allure.step('通用地址测试'):
+            self.user_address.add_address()
+            self.user_address.edit_address()
+            self.user_address.set_default_currency_address()
+            self.user_address.delete_address()
         # 收货地址
-        self.page.wait_click(self.user_address.receive_address)
-        self.user_address.add_address()
-        self.user_address.edit_address()
-        self.user_address.set_default_receive_address()
-        self.user_address.delete_address()
+        with allure.step('收货地址测试'):
+            self.page.wait_click(self.user_address.receive_address)
+            self.user_address.add_address()
+            self.user_address.edit_address()
+            self.user_address.set_default_receive_address()
+            self.user_address.delete_address()
         # 发票地址
-        self.page.wait_click(self.user_address.invoice_address)
-        self.user_address.add_address()
-        self.user_address.edit_address()
-        self.user_address.set_default_invoice_address()
-        self.user_address.delete_address()
+        with allure.step('发票地址测试'):
+            self.page.wait_click(self.user_address.invoice_address)
+            self.user_address.add_address()
+            self.user_address.edit_address()
+            self.user_address.set_default_invoice_address()
+            self.user_address.delete_address()
 
     def test_address_company_terminal(self):
-        loginname = self.page.config_reader('test_order.conf', '终端地址发票账号', 'login_name')
-        password = self.page.config_reader('test_order.conf', '终端地址发票账号', 'password')
+        with allure.step('读取账号配置信息'):
+            loginname = self.page.config_reader('test_order.conf', '终端地址发票账号', 'login_name')
+            password = self.page.config_reader('test_order.conf', '终端地址发票账号', 'password')
+            allure.attach('账号信息: ', 'login_name: %s\npassword: %s' % (loginname, password))
         self.home.login(loginname, password)
         self.home.go_user_center()
         self.page.wait_click(self.user_address.my_address)
         # 通用地址
-        self.user_address.add_address()
-        self.user_address.edit_address()
-        self.user_address.set_default_currency_address()
-        self.user_address.delete_address()
+        with allure.step('通用地址测试'):
+            self.user_address.add_address()
+            self.user_address.edit_address()
+            self.user_address.set_default_currency_address()
+            self.user_address.delete_address()
         # 收货地址
-        self.page.wait_click(self.user_address.receive_address)
-        self.user_address.add_address()
-        self.user_address.edit_address()
-        self.user_address.set_default_receive_address()
-        self.user_address.delete_address()
+        with allure.step('收货地址测试'):
+            self.page.wait_click(self.user_address.receive_address)
+            self.user_address.add_address()
+            self.user_address.edit_address()
+            self.user_address.set_default_receive_address()
+            self.user_address.delete_address()
         # 发票地址
-        self.page.wait_click(self.user_address.invoice_address)
-        self.user_address.add_address()
-        self.user_address.edit_address()
-        self.user_address.set_default_invoice_address()
-        self.user_address.delete_address()
+        with allure.step('发票地址测试'):
+            self.page.wait_click(self.user_address.invoice_address)
+            self.user_address.add_address()
+            self.user_address.edit_address()
+            self.user_address.set_default_invoice_address()
+            self.user_address.delete_address()
 
-    def tearDown(self):
+    def teardown_method(self, method):
         test_method_name = self._testMethodName
-        self.driver.save_screenshot('../TestResult/ScreenShot/%s.png' % test_method_name)
-        self.driver.quit()
+        with allure.step('保存截图'):
+            self.driver.save_screenshot('../TestResult/ScreenShot/%s.png' % test_method_name)
+            f = open('../TestResult/ScreenShot/%s.png' % test_method_name, 'rb').read()
+            allure.attach('自动化截图', f, allure.attach_type.PNG)
+        with allure.step('---End---'):
+            self.driver.quit()
+
 
 if __name__ == '__main__':
     unittest.main()

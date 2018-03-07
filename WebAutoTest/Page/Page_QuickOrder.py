@@ -2,7 +2,7 @@ from Page_Base import Page
 from selenium.webdriver.common.action_chains import ActionChains
 from selenium.common.exceptions import StaleElementReferenceException, ElementNotVisibleException
 from selenium.webdriver.common.by import By
-
+import allure, pytest
 
 class QuickOrder(Page):
     """快速下单页"""
@@ -13,9 +13,10 @@ class QuickOrder(Page):
     go_cart = (By.LINK_TEXT, '去购物车结算')
 
     def quick_add_to_cart(self, product='MAD618'):
-        self.element_find(self.sku_send).send_keys(product)
-        self.element_find(self.quantity_send).send_keys(10)
-        self.wait_click(self.add_to_cart)
+        with allure.step('快速下单页加入购物车'):
+            self.element_find(self.sku_send).send_keys(product)
+            self.element_find(self.quantity_send).send_keys(10)
+            self.wait_click(self.add_to_cart)
 
 
 

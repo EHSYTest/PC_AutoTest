@@ -1,6 +1,6 @@
 from Page_Base import Page
 from selenium.common.exceptions import StaleElementReferenceException
-import time
+import time, allure
 from selenium.webdriver.common.by import By
 
 
@@ -17,11 +17,13 @@ class ReportOrder(Page):
     layer = (By.ID, 'ajax-layer-loading')
 
     def create_order_by_report_order(self, province, city):
-        self.element_find(self.report_order_title).send_keys('测试报价单')
-        self.element_find(self.report_order_province).send_keys(province)
-        self.element_find(self.report_order_city).send_keys(city)
-        self.wait_click(self.report_order_invoice)
-        self.wait_click(self.report_order_price)
-        self.wait_click(self.create_report_order)
-        self.wait_click(self.report_order_change_to_order)
+        with allure.step('创建报价单'):
+            self.element_find(self.report_order_title).send_keys('测试报价单')
+            self.element_find(self.report_order_province).send_keys(province)
+            self.element_find(self.report_order_city).send_keys(city)
+            self.wait_click(self.report_order_invoice)
+            self.wait_click(self.report_order_price)
+            self.wait_click(self.create_report_order)
+        with allure.step('报价单转订单'):
+            self.wait_click(self.report_order_change_to_order)
 

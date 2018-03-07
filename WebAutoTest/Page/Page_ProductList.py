@@ -1,6 +1,6 @@
 from Page_Base import Page
 from selenium.common.exceptions import ElementNotVisibleException
-import time
+import time, allure, pytest
 
 
 class ProductList(Page):
@@ -26,21 +26,24 @@ class ProductList(Page):
     skuContent_jump_to_cart = ('by.class_name', 'jumpToCart')
 
     def list_add_to_cart(self):
-        self.element_find(self.list_add_button).click()
-        self.element_find(self.cart_button).click()
+        with allure.step('列表页加入购物车'):
+            self.element_find(self.list_add_button).click()
+            self.element_find(self.cart_button).click()
 
     def bigImg_add_to_cart(self):
-        self.element_find(self.big_img_icon).click()
-        time.sleep(2)
-        self.element_find(self.bigImg_add_button).click()
-        self.element_find(self.jump_to_cart).click()
+        with allure.step('大图页加入购物车'):
+            self.element_find(self.big_img_icon).click()
+            time.sleep(2)
+            self.element_find(self.bigImg_add_button).click()
+            self.element_find(self.jump_to_cart).click()
 
     def brand_add_to_cart(self):
-        for i in range(10):
-            try:
-                self.element_find(self.brand_add_button).click()
-                break
-            except ElementNotVisibleException:
-                time.sleep(0.2)
-                continue
-        self.element_find(self.jump_to_cart).click()
+        with allure.step('品牌页加入购物车'):
+            for i in range(10):
+                try:
+                    self.element_find(self.brand_add_button).click()
+                    break
+                except ElementNotVisibleException:
+                    time.sleep(0.2)
+                    continue
+            self.element_find(self.jump_to_cart).click()

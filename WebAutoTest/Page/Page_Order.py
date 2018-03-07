@@ -1,5 +1,5 @@
 from Page_Base import Page
-import time
+import time, allure, pytest
 from selenium.webdriver.common.action_chains import ActionChains
 from selenium.webdriver.common.keys import Keys
 from selenium.common.exceptions import NoSuchElementException, ElementNotVisibleException, WebDriverException
@@ -73,227 +73,240 @@ class Order(Page):
     submit_approve_flow = ('by.class_name', 'eps-submit-btn')
 
     def add_receiving_address(self):
-        self.element_find(self.receiving_address_add).click()
-        self.element_find(self.receiving_name).send_keys('自动化测试')
-        self.element_find(self.company_name).send_keys('自动化测试公司')
-        self.element_find(self.province).send_keys('安徽省')
-        self.element_find(self.city).send_keys('安庆市')
-        self.element_find(self.area).send_keys('望江县')
-        self.element_find(self.detailed_address).send_keys('自动化测试地址')
-        self.element_find(self.receiving_phone).send_keys('15150681507')
-        self.element_find(self.setDefaultAddress).click()
-        self.element_find(self.add_confirm).click()
-        time.sleep(0.5)
-        message = self.element_find(self.receiving_address_layer).text
-        assert message == '收货地址已添加'
-        print('收货地址添加成功')
-        time.sleep(4)
+        with allure.step('新增收货地址'):
+            self.element_find(self.receiving_address_add).click()
+            self.element_find(self.receiving_name).send_keys('自动化测试')
+            self.element_find(self.company_name).send_keys('自动化测试公司')
+            self.element_find(self.province).send_keys('安徽省')
+            self.element_find(self.city).send_keys('安庆市')
+            self.element_find(self.area).send_keys('望江县')
+            self.element_find(self.detailed_address).send_keys('自动化测试地址')
+            self.element_find(self.receiving_phone).send_keys('15150681507')
+            self.element_find(self.setDefaultAddress).click()
+            self.element_find(self.add_confirm).click()
+            time.sleep(0.5)
+            message = self.element_find(self.receiving_address_layer).text
+            assert message == '收货地址已添加'
+            print('收货地址添加成功')
+            time.sleep(4)
 
     def receiving_address_edit(self):
-        element = self.element_find(self.address_edit)
-        ActionChains(self.driver).move_to_element(element).perform()     # 鼠标悬停展现不可见的编辑按钮
-        element.click()
-        self.element_find(self.receiving_name).send_keys('修改')
-        self.element_find(self.company_name).send_keys('修改')
-        self.element_find(self.province).send_keys('江苏省')
-        self.element_find(self.city).send_keys('南京市')
-        self.element_find(self.area).send_keys('江宁区')
-        self.element_find(self.detailed_address).send_keys('修改')
-        mobile = self.element_find(self.receiving_phone)
-        mobile.send_keys(Keys.BACK_SPACE)
-        mobile.send_keys('8')
-        self.element_find(self.edit_confirm).click()
-        time.sleep(0.5)
-        message = self.element_find(self.receiving_address_layer).text
-        assert message == '收货地址已修改'
-        print('收货地址修改成功')
-        time.sleep(4)
+        with allure.step('编辑收货地址'):
+            element = self.element_find(self.address_edit)
+            ActionChains(self.driver).move_to_element(element).perform()     # 鼠标悬停展现不可见的编辑按钮
+            element.click()
+            self.element_find(self.receiving_name).send_keys('修改')
+            self.element_find(self.company_name).send_keys('修改')
+            self.element_find(self.province).send_keys('江苏省')
+            self.element_find(self.city).send_keys('南京市')
+            self.element_find(self.area).send_keys('江宁区')
+            self.element_find(self.detailed_address).send_keys('修改')
+            mobile = self.element_find(self.receiving_phone)
+            mobile.send_keys(Keys.BACK_SPACE)
+            mobile.send_keys('8')
+            self.element_find(self.edit_confirm).click()
+            time.sleep(0.5)
+            message = self.element_find(self.receiving_address_layer).text
+            assert message == '收货地址已修改'
+            print('收货地址修改成功')
+            time.sleep(4)
 
     def receiving_address_delete(self):
-        element = self.element_find(self.address_del)
-        ActionChains(self.driver).move_to_element(element).perform()
-        element.click()
-        self.element_find(self.del_confirm).click()
-        time.sleep(0.5)
-        message = self.element_find(self.receiving_address_layer).text
-        assert message == '收货地址已删除'
-        print('收货地址删除成功')
-        time.sleep(4)
+        with allure.step('删除收货地址'):
+            element = self.element_find(self.address_del)
+            ActionChains(self.driver).move_to_element(element).perform()
+            element.click()
+            self.element_find(self.del_confirm).click()
+            time.sleep(0.5)
+            message = self.element_find(self.receiving_address_layer).text
+            assert message == '收货地址已删除'
+            print('收货地址删除成功')
+            time.sleep(4)
 
     def invoice_normal_company_add(self):
         """新增公司抬头的普票"""
-        self.element_find(self.choose).click()  # 请选择按钮
-        time.sleep(1)
-        self.element_find(self.normal_invoice_add).click()
-        self.element_find(self.company_title).send_keys('公司抬头普票')
-        self.element_find(self.tax_no).send_keys('1234567890qwert')
-        self.element_find(self.normal_invoice_save).click()
-        time.sleep(0.5)
-        message = self.element_find(self.invoice_layer).text
-        assert message == '普通发票已添加'
-        print('普通发票添加成功')
-        time.sleep(4)
-        self.element_find(self.first_normal_invoice).click()
-        self.element_find(self.normal_invoice_confirm).click()
-        time.sleep(0.5)
+        with allure.step('新增公司抬头普票'):
+            self.element_find(self.choose).click()  # 请选择按钮
+            time.sleep(1)
+            self.element_find(self.normal_invoice_add).click()
+            self.element_find(self.company_title).send_keys('公司抬头普票')
+            self.element_find(self.tax_no).send_keys('1234567890qwert')
+            self.element_find(self.normal_invoice_save).click()
+            time.sleep(0.5)
+            message = self.element_find(self.invoice_layer).text
+            assert message == '普通发票已添加'
+            print('普通发票添加成功')
+            time.sleep(4)
+            self.element_find(self.first_normal_invoice).click()
+            self.element_find(self.normal_invoice_confirm).click()
+            time.sleep(0.5)
 
     def invoice_normal_personal_add(self):
         """新增个人抬头的普票"""
-        self.element_find(self.choose).click()  # 请选择按钮
-        time.sleep(0.5)
-        self.element_find(self.normal_invoice_add).click()
-        self.element_find(self.choose_invoice_title).send_keys('个人抬头')
-        self.element_find(self.personal_title).send_keys('个人抬头普票')
-        self.element_find(self.normal_invoice_save).click()
-        time.sleep(0.5)
-        message = self.element_find(self.invoice_layer).text
-        assert message == '普通发票已添加'
-        print('普通发票添加成功')
-        time.sleep(4)
-        self.element_find(self.first_normal_invoice).click()
-        self.element_find(self.normal_invoice_confirm).click()
-        time.sleep(0.5)
+        with allure.step('新增个人抬头普票'):
+            self.element_find(self.choose).click()  # 请选择按钮
+            time.sleep(0.5)
+            self.element_find(self.normal_invoice_add).click()
+            self.element_find(self.choose_invoice_title).send_keys('个人抬头')
+            self.element_find(self.personal_title).send_keys('个人抬头普票')
+            self.element_find(self.normal_invoice_save).click()
+            time.sleep(0.5)
+            message = self.element_find(self.invoice_layer).text
+            assert message == '普通发票已添加'
+            print('普通发票添加成功')
+            time.sleep(4)
+            self.element_find(self.first_normal_invoice).click()
+            self.element_find(self.normal_invoice_confirm).click()
+            time.sleep(0.5)
 
     def invoice_normal_delete(self):
         """删除普通发票"""
-        self.element_find(self.choose).click()  # 请选择按钮
-        time.sleep(0.5)
-        self.element_find(self.normal_invoice_tab).click()
-        try:
-            """如果没有普票则不删除原发票"""
-            element = self.element_find(self.first_normal_invoice)
-            ActionChains(self.driver).move_to_element(element).perform()
-            self.element_find(self.normal_invoice_del).click()
-            self.element_find(self.normal_invoice_del_confirm).click()
+        with allure.step('删除普通发票'):
+            self.element_find(self.choose).click()  # 请选择按钮
             time.sleep(0.5)
-            message = self.element_find(self.invoice_layer).text
-            assert message == '普通发票已删除'
-            print('普通发票删除成功')
-            time.sleep(4)
-        except NoSuchElementException:
-            print('没有可以删除的普通发票')
-        self.element_find(self.normal_invoice_cancel).click()
-        time.sleep(0.5)
+            self.element_find(self.normal_invoice_tab).click()
+            try:
+                """如果没有普票则不删除原发票"""
+                element = self.element_find(self.first_normal_invoice)
+                ActionChains(self.driver).move_to_element(element).perform()
+                self.element_find(self.normal_invoice_del).click()
+                self.element_find(self.normal_invoice_del_confirm).click()
+                time.sleep(0.5)
+                message = self.element_find(self.invoice_layer).text
+                assert message == '普通发票已删除'
+                print('普通发票删除成功')
+                time.sleep(4)
+            except NoSuchElementException:
+                print('没有可以删除的普通发票')
+            self.element_find(self.normal_invoice_cancel).click()
+            time.sleep(0.5)
 
     def invoice_vat_delete(self):
         """删除增值税发票"""
-        self.element_find(self.choose).click()  # 请选择按钮
-        time.sleep(0.5)
-        self.element_find(self.vat_invoice_tab).click()
-        try:
-            element = self.element_find(self.first_bill)
-            ActionChains(self.driver).move_to_element(element).perform()
-            self.element_find(self.bill_del).click()
-            self.element_find(self.bill_del_confirm).click()
+        with allure.step('删除增值税发票'):
+            self.element_find(self.choose).click()  # 请选择按钮
             time.sleep(0.5)
-            message = self.element_find(self.invoice_layer).text
-            assert message == '增值税发票已删除'
-            print('增值税发票删除成功')
-            time.sleep(4)
-        except NoSuchElementException:
-            print('没有可以删除的增值税发票')
-        self.element_find(self.vat_invoice_cancel).click()
-        time.sleep(0.5)
+            self.element_find(self.vat_invoice_tab).click()
+            try:
+                element = self.element_find(self.first_bill)
+                ActionChains(self.driver).move_to_element(element).perform()
+                self.element_find(self.bill_del).click()
+                self.element_find(self.bill_del_confirm).click()
+                time.sleep(0.5)
+                message = self.element_find(self.invoice_layer).text
+                assert message == '增值税发票已删除'
+                print('增值税发票删除成功')
+                time.sleep(4)
+            except NoSuchElementException:
+                print('没有可以删除的增值税发票')
+            self.element_find(self.vat_invoice_cancel).click()
+            time.sleep(0.5)
 
     def invoice_vat_add(self):
-        self.element_find(self.choose).click()  # 请选择按钮
-        time.sleep(0.5)
-        self.element_find(self.vat_invoice_tab).click()
-        self.element_find(self.bill_add).click()
-        self.element_find(self.bill_title).send_keys('自动化测试增票')
-        self.element_find(self.bill_tax_no).send_keys('1234567890123qwert')
-        self.element_find(self.bill_address).send_keys('上海市浦东新区凌阳大厦')
-        self.element_find(self.bill_phone).send_keys('15150681507')
-        self.element_find(self.bill_bank).send_keys('上海银行')
-        self.element_find(self.bill_bank_account).send_keys('123456')
-        self.element_find(self.bill_set_default).click()
-        self.element_find(self.bill_save).click()
-        time.sleep(1)
-        self.element_find(self.first_bill).click()   # 选中第一张增票
-        self.element_find(self.bill_confirm).click()
-        print('增值税发票添加成功')
-        time.sleep(0.5)
+        with allure.step('新增增票'):
+            self.element_find(self.choose).click()  # 请选择按钮
+            time.sleep(0.5)
+            self.element_find(self.vat_invoice_tab).click()
+            self.element_find(self.bill_add).click()
+            self.element_find(self.bill_title).send_keys('自动化测试增票')
+            self.element_find(self.bill_tax_no).send_keys('1234567890123qwert')
+            self.element_find(self.bill_address).send_keys('上海市浦东新区凌阳大厦')
+            self.element_find(self.bill_phone).send_keys('15150681507')
+            self.element_find(self.bill_bank).send_keys('上海银行')
+            self.element_find(self.bill_bank_account).send_keys('123456')
+            self.element_find(self.bill_set_default).click()
+            self.element_find(self.bill_save).click()
+            time.sleep(1)
+            self.element_find(self.first_bill).click()   # 选中第一张增票
+            self.element_find(self.bill_confirm).click()
+            print('增值税发票添加成功')
+            time.sleep(0.5)
 
     def choose_normal_invoice(self):
         """选择普票"""
-        while True:
-            try:
-                self.element_find(self.choose).click()
-                break
-            except ElementNotVisibleException:
-                continue
-            except WebDriverException:
-                continue
-        for i in range(30):
-            try:
-                self.element_find(self.normal_invoice_tab).click()
-                self.element_find(self.first_normal_invoice).click()
-                self.element_find(self.normal_invoice_confirm).click()
-                break
-            except ElementNotVisibleException:
-                continue
-            except WebDriverException:
-                continue
+        with allure.step('选择普票'):
+            while True:
+                try:
+                    self.element_find(self.choose).click()
+                    break
+                except ElementNotVisibleException:
+                    continue
+                except WebDriverException:
+                    continue
+            for i in range(30):
+                try:
+                    self.element_find(self.normal_invoice_tab).click()
+                    self.element_find(self.first_normal_invoice).click()
+                    self.element_find(self.normal_invoice_confirm).click()
+                    break
+                except ElementNotVisibleException:
+                    continue
+                except WebDriverException:
+                    continue
 
     def choose_vat_invoice(self):
         """选择增票"""
-        while True:
-            try:
-                element = self.element_find(self.choose)
-                element.click()
-                break
-            except ElementNotVisibleException:
-                continue
-            except WebDriverException:
-                continue
-        for i in range(30):
-            try:
-                self.element_find(self.vat_invoice_tab).click()
-                self.element_find(self.first_bill).click()
-                self.element_find(self.bill_confirm).click()
-                break
-            except ElementNotVisibleException:
-                continue
-            except WebDriverException:
-                continue
+        with allure.step('选择增票'):
+            while True:
+                try:
+                    element = self.element_find(self.choose)
+                    element.click()
+                    break
+                except ElementNotVisibleException:
+                    continue
+                except WebDriverException:
+                    continue
+            for i in range(30):
+                try:
+                    self.element_find(self.vat_invoice_tab).click()
+                    self.element_find(self.first_bill).click()
+                    self.element_find(self.bill_confirm).click()
+                    break
+                except ElementNotVisibleException:
+                    continue
+                except WebDriverException:
+                    continue
 
     def choose_none_invoice(self):
         """选择不开票"""
-        while True:
-            try:
-                self.element_find(self.choose).click()
-                break
-            except ElementNotVisibleException:
-                continue
-            except WebDriverException:
-                continue
-        for i in range(30):
-            try:
-                self.element_find(self.none_invoice_tab).click()
-                self.element_find(self.none_invoice_confirm).click()
-                break
-            except ElementNotVisibleException:
-                continue
-            except WebDriverException:
-                continue
+        with allure.step('选择不开票'):
+            while True:
+                try:
+                    self.element_find(self.choose).click()
+                    break
+                except ElementNotVisibleException:
+                    continue
+                except WebDriverException:
+                    continue
+            for i in range(30):
+                try:
+                    self.element_find(self.none_invoice_tab).click()
+                    self.element_find(self.none_invoice_confirm).click()
+                    break
+                except ElementNotVisibleException:
+                    continue
+                except WebDriverException:
+                    continue
 
     def submit_order(self, none_invoice=False, account_period=False):
-        element = self.element_find(self.submit_order_button)
-        self.wait_visible_and_click(element)
-        if none_invoice:
-            self.element_find(self.none_invoice_layer).click()
-        if account_period:
-            self.element_find(self.account_layer).click()
+        with allure.step('提交订单'):
+            element = self.element_find(self.submit_order_button)
+            self.wait_visible_and_click(element)
+            if none_invoice:
+                self.element_find(self.none_invoice_layer).click()
+            if account_period:
+                self.element_find(self.account_layer).click()
 
     def submit_order_eas(self, none_invoice=False, account_period=False):
-        element = self.element_find(self.submit_order_button)
-        self.wait_visible_and_click(element)
-        if none_invoice:
-            self.element_find(self.none_invoice_layer).click()
-        if account_period:
-            self.element_find(self.account_layer).click()
-        element = self.element_find(self.choose_approve_flow)
-        self.wait_dom(element)
-        element.click()
-        self.element_find(self.submit_approve_flow).click()
+        with allure.step('EAS用户提交订单'):
+            element = self.element_find(self.submit_order_button)
+            self.wait_visible_and_click(element)
+            if none_invoice:
+                self.element_find(self.none_invoice_layer).click()
+            if account_period:
+                self.element_find(self.account_layer).click()
+            element = self.element_find(self.choose_approve_flow)
+            self.wait_dom(element)
+            element.click()
+            self.element_find(self.submit_approve_flow).click()
 

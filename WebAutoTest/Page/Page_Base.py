@@ -1,4 +1,4 @@
-import requests
+import requests, pytest, allure
 from selenium.common.exceptions import ElementNotVisibleException
 from configobj import ConfigObj
 
@@ -61,15 +61,16 @@ class Page():
 
     @staticmethod
     def cancel_order(orderId, environment='staging', userId='508107841'):
-        if environment == 'staging':
-            url = 'http://oc-staging.ehsy.com/orderCenter/cancel'
-        elif environment == 'production':
-            url = 'http://oc.ehsy.com/orderCenter/cancel'
-        data = {'orderId': orderId, 'userId': userId}
-        r = requests.post(url, data=data)
-        result = r.json()
-        print(result['message'])
-        assert result['message'] == '订单取消申请提交成功'
+        with allure.step('接口取消订单'):
+            if environment == 'staging':
+                url = 'http://oc-staging.ehsy.com/orderCenter/cancel'
+            elif environment == 'production':
+                url = 'http://oc.ehsy.com/orderCenter/cancel'
+            data = {'orderId': orderId, 'userId': userId}
+            r = requests.post(url, data=data)
+            result = r.json()
+            print(result['message'])
+            assert result['message'] == '订单取消申请提交成功'
 
     @staticmethod
     def wait_visible_and_click(element):

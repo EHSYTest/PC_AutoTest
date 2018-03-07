@@ -1,5 +1,6 @@
 from Page_Base import Page
 from selenium.common.exceptions import StaleElementReferenceException
+import allure, pytest
 
 
 class ReportOrder(Page):
@@ -13,15 +14,16 @@ class ReportOrder(Page):
     report_order_change_to_order = ('by.class_name', 'btn-change-order')
 
     def create_order_by_report_order(self):
-        self.element_find(self.report_order_title).send_keys('测试报价单')
-        self.element_find(self.report_order_province).send_keys('北京市')
-        self.element_find(self.report_order_city).send_keys('北京市')
-        self.element_find(self.report_order_invoice).click()
-        self.element_find(self.report_order_price).click()
-        self.element_find(self.create_report_order).click()
-        for i in range(10):
-            try:
-                self.element_find(self.report_order_change_to_order).click()
-                break
-            except StaleElementReferenceException:
-                continue
+        with allure.step('创建报价单-报价单转订单'):
+            self.element_find(self.report_order_title).send_keys('测试报价单')
+            self.element_find(self.report_order_province).send_keys('北京市')
+            self.element_find(self.report_order_city).send_keys('北京市')
+            self.element_find(self.report_order_invoice).click()
+            self.element_find(self.report_order_price).click()
+            self.element_find(self.create_report_order).click()
+            for i in range(10):
+                try:
+                    self.element_find(self.report_order_change_to_order).click()
+                    break
+                except StaleElementReferenceException:
+                    continue

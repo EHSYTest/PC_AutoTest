@@ -1,7 +1,7 @@
 from Page_Base import Page
 from selenium.webdriver.common.action_chains import ActionChains
 from selenium.common.exceptions import ElementNotVisibleException, WebDriverException
-import time
+import time, pytest, allure
 
 
 class Home(Page):
@@ -28,42 +28,48 @@ class Home(Page):
     brand_bosch = ('by.xpath', "//a[@href='/brand-57']")
 
     def login(self, login_name, password):
-        self.element_find(self.login_button).click()
-        time.sleep(1)
-        self.driver.switch_to_frame(self.frame)
-        self.element_find(self.username_send).send_keys(login_name)
-        self.element_find(self.password_send).send_keys(password)
-        self.element_find(self.login_action).click()
-        self.driver.switch_to_default_content
+        with allure.step('登陆'):
+            self.element_find(self.login_button).click()
+            time.sleep(1)
+            self.driver.switch_to_frame(self.frame)
+            self.element_find(self.username_send).send_keys(login_name)
+            self.element_find(self.password_send).send_keys(password)
+            self.element_find(self.login_action).click()
+            self.driver.switch_to_default_content
 
     def category_tree_click(self):
-        category_tool = self.element_find(self.category_tool)
-        ActionChains(self.driver).move_to_element(category_tool).perform()
-        self.element_find(self.category_taozhuang).click()
+        with allure.step('进入二级产线产品列表'):
+            category_tool = self.element_find(self.category_tool)
+            ActionChains(self.driver).move_to_element(category_tool).perform()
+            self.element_find(self.category_taozhuang).click()
 
     def search_sku(self):
-        self.element_find(self.search_send).send_keys('MAD618')
-        self.element_find(self.search_button).click()
+        with allure.step('搜索SKU-MAD618'):
+            self.element_find(self.search_send).send_keys('MAD618')
+            self.element_find(self.search_button).click()
 
     def quick_order_click(self):
-        self.element_find(self.quick_order).click()
-        self.switch_to_new_window()
+        with allure.step('进入快速下单页'):
+            self.element_find(self.quick_order).click()
+            self.switch_to_new_window()
 
     def brand_click(self):
-        self.element_find(self.brand_bosch).click()
-        self.switch_to_new_window()
+        with allure.step('进入品牌页'):
+            self.element_find(self.brand_bosch).click()
+            self.switch_to_new_window()
 
     def go_my_collection(self):
-        element = self.element_find(self.my_ehsy)
-        ActionChains(self.driver).move_to_element(element).perform()
-        for i in range(10):
-            try:
-                self.element_find(self.my_collection).click()
-                break
-            except ElementNotVisibleException:
-                continue
-            except WebDriverException:
-                continue
+        with allure.step('进入个人中心-我的收藏'):
+            element = self.element_find(self.my_ehsy)
+            ActionChains(self.driver).move_to_element(element).perform()
+            for i in range(10):
+                try:
+                    self.element_find(self.my_collection).click()
+                    break
+                except ElementNotVisibleException:
+                    continue
+                except WebDriverException:
+                    continue
 
 
 

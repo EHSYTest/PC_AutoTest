@@ -1,4 +1,5 @@
 from Page_Base import Page
+import allure, pytest
 
 
 class OrderResult(Page):
@@ -12,14 +13,16 @@ class OrderResult(Page):
     eis_production_url = 'http://www.ehsy.com/utils/punchout-request'
 
     def get_so_by_url(self):
-        order_id = ''
-        while not order_id.startswith('SO'):
-            url = self.driver.current_url
-            order_id = url[-20:]
-        print(order_id)
-        return order_id
+        with allure.step('通过URL获取SO单号'):
+            order_id = ''
+            while not order_id.startswith('SO'):
+                url = self.driver.current_url
+                order_id = url[-20:]
+            print(order_id)
+            return order_id
 
     def get_order_id(self):
-        orderId = self.element_find(self.order_id).text
-        print(orderId)
-        return orderId
+        with allure.step('通过文本获取SO单号'):
+            orderId = self.element_find(self.order_id).text
+            print(orderId)
+            return orderId

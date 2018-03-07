@@ -23,12 +23,12 @@ class TestUserAddress(unittest.TestCase):
             else:
                 self.url = 'http://new.ehsy.com'
                 self.driver.get(self.url)
-        self.driver.implicitly_wait(30)
-        self.driver.maximize_window()
-        self.home = Home(self.driver)
-        self.page = Page(self.driver)
-        self.user_address = UserAddress(self.driver)
-        allure.attach('初始化参数:', 'environment: ' + self.environment + '\nurl: ' + self.url + '\n')
+            self.driver.implicitly_wait(30)
+            self.driver.maximize_window()
+            self.home = Home(self.driver)
+            self.page = Page(self.driver)
+            self.user_address = UserAddress(self.driver)
+            allure.attach('初始化参数:', 'environment: ' + self.environment + '\nurl: ' + self.url + '\n')
 
     @allure.story('个人地址测试')
     def test_address_personal(self):

@@ -32,16 +32,16 @@ class TestOrderPage(unittest.TestCase):
             else:
                 self.url = 'http://new.ehsy.com'
                 self.driver.get(self.url)
-        self.driver.implicitly_wait(30)
-        self.driver.maximize_window()
-        self.cart = Cart(self.driver)
-        self.home = Home(self.driver)
-        self.order = Order(self.driver)
-        self.order_result = OrderResult(self.driver)
-        self.product_list = ProductList(self.driver)
-        self.quick_order = QuickOrder(self.driver)
-        self.report_order = ReportOrder(self.driver)
-        allure.attach('初始化参数:', 'environment: ' + self.environment + '\nurl: ' + self.url + '\n')
+            self.driver.implicitly_wait(30)
+            self.driver.maximize_window()
+            self.cart = Cart(self.driver)
+            self.home = Home(self.driver)
+            self.order = Order(self.driver)
+            self.order_result = OrderResult(self.driver)
+            self.product_list = ProductList(self.driver)
+            self.quick_order = QuickOrder(self.driver)
+            self.report_order = ReportOrder(self.driver)
+            allure.attach('初始化参数:', 'environment: ' + self.environment + '\nurl: ' + self.url + '\n')
 
     @allure.story('个人-发票信息增删改')
     def test_invoice_1(self):

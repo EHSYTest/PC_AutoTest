@@ -23,10 +23,11 @@ class TestUserInvoice(unittest.TestCase):
             else:
                 self.url = 'http://new.ehsy.com'
                 self.driver.get(self.url)
-        self.driver.implicitly_wait(30)
-        self.driver.maximize_window()
-        self.home = Home(self.driver)
-        self.user_invoice = UserInvoice(self.driver)
+            self.driver.implicitly_wait(30)
+            self.driver.maximize_window()
+            self.home = Home(self.driver)
+            self.user_invoice = UserInvoice(self.driver)
+            allure.attach('初始化参数:', 'environment: ' + self.environment + '\nurl: ' + self.url + '\n')
 
     @allure.story('个人发票测试')
     def test_invoice_personal(self):

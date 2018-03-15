@@ -1,19 +1,30 @@
-from selenium import webdriver
-import unittest
-from Page_Base import Page
-from xmlrpc import client
+def twice(func):
+    print('get in twice')
+    def new_func(*args):
+        print('twice')
+        result = func(*args)
+        result = result*2
+        print('2倍%s'%str(result))
+        return result
+    return new_func
 
 
-dbname = 'odoo-staging'
-usr = 'admin'
-pwd = 'admin'
-# oe_ip = 'odoo-staging.ehsy.com'
-oe_ip = 'localhost:8069'
+def square(func):
+    print('get in square')
+    def new_func(*args):
+        print('square')
+        result = func(*args)
+        result = result ** 2
+        print('平方%s'%str(result))
+        return result
+    return new_func
 
-vals = {'ks_no': 'KS2018030763'}
+@square
+@twice
+def add(a, b):
+    print(a+b)
+    return a+b
 
-sock_common = client.ServerProxy('http://' + oe_ip + '/xmlrpc/common')
-uid = sock_common.login(dbname, usr, pwd)
-sock = client.ServerProxy('http://' + oe_ip + '/xmlrpc/object')
-result = sock.execute(dbname, uid, pwd, 'used.by.tester', 'so_invoice', vals)
-print(result)
+
+if __name__ == '__main__':
+    add(1, 2)

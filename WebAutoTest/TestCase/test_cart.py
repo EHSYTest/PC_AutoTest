@@ -54,14 +54,14 @@ class TestCart(unittest.TestCase):
     #     self.productList.searchResult_add_to_cart()
     #     self.normal_cart.area_limit_sku()
 
-    # @allure.story('跳转报价单')
-    # def test_cart_bj(self):
-    #     with allure.step('读取普通商品配置信息'):
-    #         sku = self.page.config_reader('data.conf', '普通商品', 'product')
-    #         allure.attach('SKU: ', sku)
-    #     self.home.search_sku(sku)
-    #     self.productList.searchResult_add_to_cart()
-    #     self.normal_cart.bj_page()
+    @allure.story('跳转报价单')
+    def test_cart_bj(self):
+        with allure.step('读取普通商品配置信息'):
+            sku = self.page.config_reader('data.conf', '普通商品', 'product')
+            allure.attach('SKU: ', sku)
+        self.home.search_sku(sku)
+        self.productList.searchResult_add_to_cart()
+        self.normal_cart.bj_page()
 
     @allure.story('未登录—>登录购物车SKU合并')
     def test_cart_combine(self):

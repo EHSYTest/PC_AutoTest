@@ -16,7 +16,7 @@ class TestCart(unittest.TestCase):
 
     def setup_method(self, method):
         with allure.step('---Start---'):
-            self.driver = webdriver.Chrome()
+            self.driver = webdriver.Chrome('/desktop/chromedriver')
             self.page = Page(self.driver)
             self.environment = self.page.config_reader('environment.conf', 'Environment', 'environment')
             if self.environment == 'staging':

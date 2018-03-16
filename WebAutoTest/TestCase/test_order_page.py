@@ -53,8 +53,8 @@ class TestOrderPage(unittest.TestCase):
             allure.attach('账号信息: ', 'login_name: %s\npassword: %s' % (login_name, password))
         self.home.login(login_name, password)
         with allure.step('进入购物车页面'):
-            ActionChains(self.driver).move_to_element(self.cart.element_find(self.product_list.cart)).perform()
-            self.product_list.wait_click(self.product_list.go_cart)
+            self.home.search_sku()
+            self.product_list.searchResult_add_to_cart()
         with allure.step('进入订单提交页'):
             self.cart.wait_click(self.cart.go_to_order)
         self.order.invoice_normal_personal_add()
@@ -85,8 +85,8 @@ class TestOrderPage(unittest.TestCase):
             allure.attach('账号信息: ', 'login_name: %s\npassword: %s' % (login_name, password))
         self.home.login(login_name, password)
         with allure.step('进入购物车页面'):
-            ActionChains(self.driver).move_to_element(self.cart.element_find(self.product_list.cart)).perform()
-            self.product_list.wait_click(self.product_list.go_cart)
+            self.home.search_sku()
+            self.product_list.searchResult_add_to_cart()
         with allure.step('进入订单提交页'):
             self.cart.wait_click(self.cart.go_to_order)
         self.order.invoice_normal_personal_add()
@@ -117,8 +117,8 @@ class TestOrderPage(unittest.TestCase):
             allure.attach('账号信息: ', 'login_name: %s\npassword: %s' % (login_name, password))
         self.home.login(login_name, password)
         with allure.step('进入购物车页面'):
-            ActionChains(self.driver).move_to_element(self.cart.element_find(self.product_list.cart)).perform()
-            self.product_list.wait_click(self.product_list.go_cart)
+            self.home.search_sku()
+            self.product_list.searchResult_add_to_cart()
         with allure.step('进入订单提交页'):
             self.cart.wait_click(self.cart.go_to_order)
         self.order.invoice_normal_personal_add()
@@ -149,8 +149,8 @@ class TestOrderPage(unittest.TestCase):
             allure.attach('账号信息: ', 'login_name: %s\npassword: %s' % (login_name, password))
         self.home.login(login_name, password)
         with allure.step('进入购物车页面'):
-            ActionChains(self.driver).move_to_element(self.cart.element_find(self.product_list.cart)).perform()
-            self.product_list.wait_click(self.product_list.go_cart)
+            self.home.search_sku()
+            self.product_list.searchResult_add_to_cart()
         with allure.step('进入订单提交页'):
             self.cart.wait_click(self.cart.go_to_order)
         self.order.add_receiving_address()
@@ -166,8 +166,8 @@ class TestOrderPage(unittest.TestCase):
             allure.attach('账号信息: ', 'login_name: %s\npassword: %s' % (login_name, password))
         self.home.login(login_name, password)
         with allure.step('进入购物车页面'):
-            ActionChains(self.driver).move_to_element(self.cart.element_find(self.product_list.cart)).perform()
-            self.product_list.wait_click(self.product_list.go_cart)
+            self.home.search_sku()
+            self.product_list.searchResult_add_to_cart()
         with allure.step('进入订单提交页'):
             self.cart.wait_click(self.cart.go_to_order)
         self.order.add_receiving_address()
@@ -183,8 +183,8 @@ class TestOrderPage(unittest.TestCase):
             allure.attach('账号信息: ', 'login_name: %s\npassword: %s' % (login_name, password))
         self.home.login(login_name, password)
         with allure.step('进入购物车页面'):
-            ActionChains(self.driver).move_to_element(self.cart.element_find(self.product_list.cart)).perform()
-            self.product_list.wait_click(self.product_list.go_cart)
+            self.home.search_sku()
+            self.product_list.searchResult_add_to_cart()
         with allure.step('进入订单提交页'):
             self.cart.wait_click(self.cart.go_to_order)
         self.order.add_receiving_address()
@@ -200,8 +200,8 @@ class TestOrderPage(unittest.TestCase):
             allure.attach('账号信息: ', 'login_name: %s\npassword: %s' % (login_name, password))
         self.home.login(login_name, password)
         with allure.step('进入购物车页面'):
-            ActionChains(self.driver).move_to_element(self.cart.element_find(self.product_list.cart)).perform()
-            self.product_list.wait_click(self.product_list.go_cart)
+            self.home.search_sku()
+            self.product_list.searchResult_add_to_cart()
         with allure.step('进入订单提交页'):
             self.cart.wait_click(self.cart.go_to_order)
         self.order.normal_invoice_check()
@@ -217,8 +217,8 @@ class TestOrderPage(unittest.TestCase):
             allure.attach('账号信息: ', 'login_name: %s\npassword: %s' % (login_name, password))
         self.home.login(login_name, password)
         with allure.step('进入购物车页面'):
-            ActionChains(self.driver).move_to_element(self.cart.element_find(self.product_list.cart)).perform()
-            self.product_list.wait_click(self.product_list.go_cart)
+            self.home.search_sku()
+            self.product_list.searchResult_add_to_cart()
         with allure.step('进入订单提交页'):
             self.cart.wait_click(self.cart.go_to_order)
         self.order.receiving_address_check()
@@ -231,6 +231,7 @@ class TestOrderPage(unittest.TestCase):
             allure.attach('自动化截图', f, allure.attach_type.PNG)
         with allure.step('---End---'):
             self.driver.quit()
+
 
 if __name__ == '__main__':
     # unittest.main()

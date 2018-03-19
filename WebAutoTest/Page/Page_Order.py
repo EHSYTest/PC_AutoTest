@@ -100,7 +100,7 @@ class Order(Page):
             self.wait_click(self.add_confirm)
             ele = self.element_find(self.receiving_address_layer)
             message = ele.text
-            self.wait_to_stale(self.receiving_address_layer)
+            # self.wait_to_stale(self.receiving_address_layer)
             assert message == '地址添加成功！'
             print('收货地址添加成功')
 
@@ -121,7 +121,7 @@ class Order(Page):
             self.wait_click(self.edit_confirm)
             ele = self.element_find(self.receiving_address_layer)
             message = ele.text
-            self.wait_to_stale(self.receiving_address_layer)
+            # self.wait_to_stale(self.receiving_address_layer)
             assert message == '地址编辑成功！'
             print('收货地址修改成功')
 
@@ -133,7 +133,7 @@ class Order(Page):
             self.wait_click(self.del_confirm)
             ele = self.element_find(self.receiving_address_layer)
             message = ele.text
-            self.wait_to_stale(self.receiving_address_layer)
+            # self.wait_to_stale(self.receiving_address_layer)
             assert message == '地址删除成功！'
             print('收货地址删除成功')
 

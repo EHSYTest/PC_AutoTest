@@ -272,42 +272,42 @@ class TestOrder(unittest.TestCase):
         # 取消订单
         self.page.cancel_order(so, environment=self.environment)
 
-    # @allure.story('EIS用户下单-表单')
-    # def test_order_10(self):
-    #     """产品详情页入口-EIS用户下单-表单"""
-    #     with allure.step('读取EIS-URL配置信息'):
-    #         url = self.page.config_reader('test_order.conf', 'EIS_URL', 'URL_FORM')
-    #         allure.attach('URL: ', url)
-    #     self.driver.get(url)
-    #     with allure.step('读取普通商品配置信息'):
-    #         sku = self.page.config_reader('data.conf', '普通商品', 'product')
-    #         allure.attach('SKU: ', sku)
-    #     self.home.search_sku(sku)
-    #     self.product_list.detail_add_to_cart(switch=False)
-    #     self.cart.wait_click(self.cart.go_to_order)
-    #     self.cart.wait_click(self.cart.eis_confirm)
-    #     with allure.step('断言页面提示为: 推送成功'):
-    #         message = self.order_result.element_find(self.order_result.eis_message).text
-    #         assert message == '推送成功'
-    #
-    # @allure.story('EIS用户下单-CXML')
-    # def test_order_11(self):
-    #     """产品列表页入口-EIS用户下单-CXML"""
-    #     with allure.step('读取EIS-URL配置信息'):
-    #         url = self.page.config_reader('test_order.conf', 'EIS_URL', 'URL_CXML')
-    #         allure.attach('URL: ', url)
-    #     self.driver.get(url)
-    #     with allure.step('读取页面显示的URL信息'):
-    #         url = self.home.element_find(self.home.cxml_url).text
-    #         allure.attach('URL: ', url)
-    #     self.driver.get(url)
-    #     self.home.category_tree_click()
-    #     self.product_list.list_add_to_cart()
-    #     self.cart.wait_click(self.cart.go_to_order)
-    #     self.cart.wait_click(self.cart.eis_confirm)
-    #     with allure.step('断言页面提示为: 推送成功'):
-    #         message = self.order_result.element_find(self.order_result.eis_message).text
-    #         assert message == '推送成功'
+    @allure.story('EIS用户下单-表单')
+    def test_order_10(self):
+        """产品详情页入口-EIS用户下单-表单"""
+        with allure.step('读取EIS-URL配置信息'):
+            url = self.page.config_reader('test_order.conf', 'EIS_URL', 'URL_FORM')
+            allure.attach('URL: ', url)
+        self.driver.get(url)
+        with allure.step('读取普通商品配置信息'):
+            sku = self.page.config_reader('data.conf', '普通商品', 'product')
+            allure.attach('SKU: ', sku)
+        self.home.search_sku(sku)
+        self.product_list.detail_add_to_cart(switch=False)
+        self.cart.wait_click(self.cart.go_to_order)
+        self.cart.wait_click(self.cart.eis_confirm)
+        with allure.step('断言页面提示为: 推送成功'):
+            message = self.order_result.element_find(self.order_result.eis_message).text
+            assert message == '推送成功'
+
+    @allure.story('EIS用户下单-CXML')
+    def test_order_11(self):
+        """产品列表页入口-EIS用户下单-CXML"""
+        with allure.step('读取EIS-URL配置信息'):
+            url = self.page.config_reader('test_order.conf', 'EIS_URL', 'URL_CXML')
+            allure.attach('URL: ', url)
+        self.driver.get(url)
+        with allure.step('读取页面显示的URL信息'):
+            url = self.home.element_find(self.home.cxml_url).text
+            allure.attach('URL: ', url)
+        self.driver.get(url)
+        self.home.category_tree_click()
+        self.product_list.list_add_to_cart()
+        self.cart.wait_click(self.cart.go_to_order)
+        self.cart.wait_click(self.cart.eis_confirm)
+        with allure.step('断言页面提示为: 推送成功'):
+            message = self.order_result.element_find(self.order_result.eis_message).text
+            assert message == '推送成功'
 
     @allure.story('报价单转订单-报价地址与收货地址一致')
     def test_order_12(self):

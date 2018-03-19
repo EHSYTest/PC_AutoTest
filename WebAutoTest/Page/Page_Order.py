@@ -262,6 +262,14 @@ class Order(Page):
             message = ele.text
             assert message == '地址编辑成功！'
 
+            # 删除添加的地址
+            element = self.element_find(self.address_del)
+            ActionChains(self.driver).move_to_element(element).perform()
+            self.wait_click(self.address_del)
+            self.wait_click(self.del_confirm)
+            message = self.element_find(self.invoice_layer).text
+            assert message == '地址删除成功！'
+
     def invoice_normal_company_add(self):
         """新增公司抬头的普票"""
         with allure.step('新增公司抬头普票'):

@@ -23,7 +23,7 @@ class TestCart(unittest.TestCase):
                 self.url = 'http://ps.ehsy.com'
                 self.driver.get(self.url)
             else:
-                self.url = 'http://www.ehsy.com'
+                self.url = 'http://new.ehsy.com'
                 self.driver.get(self.url)
             self.driver.implicitly_wait(30)
             self.driver.maximize_window()

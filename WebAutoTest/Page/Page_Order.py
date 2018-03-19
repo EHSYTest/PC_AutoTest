@@ -22,7 +22,7 @@ class Order(Page):
     receiving_telephone = (By.NAME, 'telephone')
     setDefaultAddress = (By.NAME, 'is_default')
     add_confirm = (By.CLASS_NAME, 'confirm')
-    receiving_address_layer = (By.CLASS_NAME, 'content')
+    receiving_address_layer = (By.XPATH, '//*[@id="js-layer-notice"]')
     receiving_address = (By.CLASS_NAME, 'list-li')   # find elements
 
     # 编辑收货地址
@@ -267,7 +267,7 @@ class Order(Page):
             ActionChains(self.driver).move_to_element(element).perform()
             self.wait_click(self.address_del)
             self.wait_click(self.del_confirm)
-            message = self.element_find(self.invoice_layer).text
+            message = self.element_find(self.receiving_address_layer).text
             assert message == '地址删除成功！'
 
     def invoice_normal_company_add(self):

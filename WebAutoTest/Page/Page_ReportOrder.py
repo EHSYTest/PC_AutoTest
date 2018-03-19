@@ -21,6 +21,7 @@ class ReportOrder(Page):
             self.element_find(self.report_order_title).send_keys('测试报价单')
             self.element_find(self.report_order_province).send_keys(province)
             self.element_find(self.report_order_city).send_keys(city)
+            time.sleep(2)
             self.wait_click(self.report_order_invoice)
             self.wait_click(self.report_order_price)
             self.wait_click(self.create_report_order)

@@ -1,5 +1,3 @@
-import sys
-sys.path.append('../Page')
 import time
 import unittest
 from HTMLTestRunner import HTMLTestRunner

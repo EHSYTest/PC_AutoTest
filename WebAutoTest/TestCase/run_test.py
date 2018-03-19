@@ -1,6 +1,5 @@
-import unittest, sys
+import unittest
 from HTMLTestRunner import HTMLTestRunner
-sys.path.append('../Page')
 from Page_Base import AssistFunction
 import threading
 

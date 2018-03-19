@@ -1,5 +1,5 @@
 import sys
-sys.path.append('../Page')
+# sys.path.append('../Page')
 import unittest
 from selenium import webdriver
 from HTMLTestRunner import HTMLTestRunner

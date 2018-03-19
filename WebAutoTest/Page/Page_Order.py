@@ -100,7 +100,6 @@ class Order(Page):
             self.wait_click(self.add_confirm)
             ele = self.element_find(self.receiving_address_layer)
             message = ele.text
-            self.wait_to_stale(self.layer)
             assert message == '地址添加成功！'
             print('收货地址添加成功')
 
@@ -121,7 +120,6 @@ class Order(Page):
             self.wait_click(self.edit_confirm)
             ele = self.element_find(self.receiving_address_layer)
             message = ele.text
-            self.wait_to_stale(self.layer)
             assert message == '地址编辑成功！'
             print('收货地址修改成功')
 
@@ -133,7 +131,6 @@ class Order(Page):
             self.wait_click(self.del_confirm)
             ele = self.element_find(self.receiving_address_layer)
             message = ele.text
-            self.wait_to_stale(self.layer)
             assert message == '地址删除成功！'
             print('收货地址删除成功')
 
@@ -208,7 +205,6 @@ class Order(Page):
             self.wait_click(self.add_confirm)
             ele = self.element_find(self.receiving_address_layer)
             message = ele.text
-            self.wait_to_stale(self.layer)
             assert message == '地址添加成功！'
             for i in ('4', '5', '7', '8'):
                 element = self.element_find(self.address_edit)
@@ -219,7 +215,6 @@ class Order(Page):
                 self.wait_click(self.add_confirm)
                 ele = self.element_find(self.receiving_address_layer)
                 message = ele.text
-                self.wait_to_stale(self.layer)
                 assert message == '地址编辑成功！'
 
             # 手机固话至少填一个
@@ -232,7 +227,6 @@ class Order(Page):
             self.wait_click(self.add_confirm)
             ele = self.element_find(self.receiving_address_layer)
             message = ele.text
-            self.wait_to_stale(self.layer)
             assert message == '地址编辑成功！'
 
             element = self.element_find(self.address_edit)
@@ -244,7 +238,6 @@ class Order(Page):
             self.wait_click(self.add_confirm)
             ele = self.element_find(self.receiving_address_layer)
             message = ele.text
-            self.wait_to_stale(self.layer)
             assert message == '地址编辑成功！'
 
             element = self.element_find(self.address_edit)
@@ -257,7 +250,6 @@ class Order(Page):
             self.wait_click(self.add_confirm)
             ele = self.element_find(self.receiving_address_layer)
             message = ele.text
-            self.wait_to_stale(self.layer)
             assert message == '地址编辑成功！'
 
             # 公司名称选填
@@ -268,7 +260,6 @@ class Order(Page):
             self.wait_click(self.add_confirm)
             ele = self.element_find(self.receiving_address_layer)
             message = ele.text
-            self.wait_to_stale(self.layer)
             assert message == '地址编辑成功！'
 
     def invoice_normal_company_add(self):

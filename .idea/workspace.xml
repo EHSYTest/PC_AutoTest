@@ -3,7 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="a665631f-422e-4f1d-88e9-64ed59718bad" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/WebAutoTest/TestCase/test_order.py" afterPath="$PROJECT_DIR$/WebAutoTest/TestCase/test_order.py" />
+      <change beforePath="$PROJECT_DIR$/WebAutoTest/TestCase/test_cart.py" afterPath="$PROJECT_DIR$/WebAutoTest/TestCase/test_cart.py" />
     </list>
     <ignored path=".idea/" />
     <ignored path="WebAutoTest/.idea/" />
@@ -82,28 +82,28 @@
       <file leaf-file-name="pytest.ini" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/WebAutoTest/pytest.ini">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="44">
-              <caret line="2" column="0" lean-forward="false" selection-start-line="2" selection-start-column="0" selection-end-line="2" selection-end-column="0" />
+            <state relative-caret-position="66">
+              <caret line="3" column="0" lean-forward="true" selection-start-line="3" selection-start-column="0" selection-end-line="3" selection-end-column="0" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="test_order_page.py" pinned="false" current-in-tab="false">
+      <file leaf-file-name="test_order_page.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/WebAutoTest/TestCase/test_order_page.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="25">
-              <caret line="86" column="30" lean-forward="false" selection-start-line="86" selection-start-column="30" selection-end-line="86" selection-end-column="30" />
+            <state relative-caret-position="487">
+              <caret line="29" column="47" lean-forward="true" selection-start-line="29" selection-start-column="47" selection-end-line="29" selection-end-column="47" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="test_order.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="test_order.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/WebAutoTest/TestCase/test_order.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="88">
-              <caret line="274" column="31" lean-forward="true" selection-start-line="274" selection-start-column="31" selection-end-line="274" selection-end-column="31" />
+            <state relative-caret-position="461">
+              <caret line="32" column="43" lean-forward="true" selection-start-line="32" selection-start-column="43" selection-end-line="32" selection-end-column="43" />
               <folding>
                 <marker date="1521426256945" expanded="true" signature="9736:9816" ph="select a.ORD... order_info" />
               </folding>
@@ -111,11 +111,21 @@
           </provider>
         </entry>
       </file>
+      <file leaf-file-name="test_userinvoice.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/WebAutoTest/TestCase/test_userinvoice.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="120">
+              <caret line="23" column="48" lean-forward="true" selection-start-line="23" selection-start-column="48" selection-end-line="23" selection-end-column="48" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file leaf-file-name="test_cart.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/WebAutoTest/TestCase/test_cart.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="528">
-              <caret line="69" column="38" lean-forward="false" selection-start-line="69" selection-start-column="38" selection-end-line="69" selection-end-column="38" />
+            <state relative-caret-position="572">
+              <caret line="26" column="41" lean-forward="true" selection-start-line="26" selection-start-column="41" selection-end-line="26" selection-end-column="41" />
               <folding />
             </state>
           </provider>
@@ -253,9 +263,9 @@
         <option value="$PROJECT_DIR$/WebAutoTest/TestCase/test_price.py" />
         <option value="$PROJECT_DIR$/WebAutoTest/TestCase/test_order_page.py" />
         <option value="$PROJECT_DIR$/WebAutoTest/config/test_order.conf" />
-        <option value="$PROJECT_DIR$/WebAutoTest/TestCase/test_cart.py" />
         <option value="$PROJECT_DIR$/WebAutoTest/pytest.ini" />
         <option value="$PROJECT_DIR$/WebAutoTest/TestCase/test_order.py" />
+        <option value="$PROJECT_DIR$/WebAutoTest/TestCase/test_cart.py" />
       </list>
     </option>
   </component>
@@ -529,13 +539,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1506390215075</updated>
-    </task>
-    <task id="LOCAL-00124" summary="By Rick">
-      <created>1518080871403</created>
-      <option name="number" value="00124" />
-      <option name="presentableId" value="LOCAL-00124" />
-      <option name="project" value="LOCAL" />
-      <updated>1518080871403</updated>
     </task>
     <task id="LOCAL-00125" summary="By Rick">
       <created>1519288422862</created>
@@ -873,7 +876,14 @@
       <option name="project" value="LOCAL" />
       <updated>1521423534832</updated>
     </task>
-    <option name="localTasksCounter" value="173" />
+    <task id="LOCAL-00173" summary="By Rick">
+      <created>1521426262297</created>
+      <option name="number" value="00173" />
+      <option name="presentableId" value="LOCAL-00173" />
+      <option name="project" value="LOCAL" />
+      <updated>1521426262297</updated>
+    </task>
+    <option name="localTasksCounter" value="174" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -1207,13 +1217,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/WebAutoTest/TestCase/test_userinvoice.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="120">
-          <caret line="23" column="48" lean-forward="true" selection-start-line="23" selection-start-column="48" selection-end-line="23" selection-end-column="48" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/WebAutoTest/Page/Page_Cart.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-1386">
@@ -1282,38 +1285,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/WebAutoTest/TestCase/test.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="374">
-          <caret line="17" column="0" lean-forward="false" selection-start-line="17" selection-start-column="0" selection-end-line="17" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/WebAutoTest/pytest.ini">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="44">
-          <caret line="2" column="0" lean-forward="false" selection-start-line="2" selection-start-column="0" selection-end-line="2" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/WebAutoTest/TestCase/test_cart.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="528">
-          <caret line="69" column="38" lean-forward="false" selection-start-line="69" selection-start-column="38" selection-end-line="69" selection-end-column="38" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/WebAutoTest/TestCase/test_order_page.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="25">
-          <caret line="86" column="30" lean-forward="false" selection-start-line="86" selection-start-column="30" selection-end-line="86" selection-end-column="30" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/WebAutoTest/config/test_order.conf">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="396">
@@ -1322,13 +1293,53 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/WebAutoTest/pytest.ini">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="66">
+          <caret line="3" column="0" lean-forward="true" selection-start-line="3" selection-start-column="0" selection-end-line="3" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/WebAutoTest/TestCase/test_userinvoice.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="120">
+          <caret line="23" column="48" lean-forward="true" selection-start-line="23" selection-start-column="48" selection-end-line="23" selection-end-column="48" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/WebAutoTest/TestCase/test_cart.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="572">
+          <caret line="26" column="41" lean-forward="true" selection-start-line="26" selection-start-column="41" selection-end-line="26" selection-end-column="41" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/WebAutoTest/TestCase/test.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="374">
+          <caret line="17" column="0" lean-forward="false" selection-start-line="17" selection-start-column="0" selection-end-line="17" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/WebAutoTest/TestCase/test_order.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="88">
-          <caret line="274" column="31" lean-forward="true" selection-start-line="274" selection-start-column="31" selection-end-line="274" selection-end-column="31" />
+        <state relative-caret-position="461">
+          <caret line="32" column="43" lean-forward="true" selection-start-line="32" selection-start-column="43" selection-end-line="32" selection-end-column="43" />
           <folding>
             <marker date="1521426256945" expanded="true" signature="9736:9816" ph="select a.ORD... order_info" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/WebAutoTest/TestCase/test_order_page.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="487">
+          <caret line="29" column="47" lean-forward="true" selection-start-line="29" selection-start-column="47" selection-end-line="29" selection-end-column="47" />
+          <folding />
         </state>
       </provider>
     </entry>

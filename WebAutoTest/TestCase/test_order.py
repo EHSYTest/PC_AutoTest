@@ -29,7 +29,7 @@ class TestCase(unittest.TestCase):
                 self.url = 'http://www-staging.ehsy.com'
                 self.driver.get(self.url)
             else:
-                self.url = 'http://www.ehsy.com'
+                self.url = 'http://purchase.ehsy.com'
                 self.driver.get(self.url)
             self.driver.implicitly_wait(30)
             self.driver.maximize_window()

@@ -1,7 +1,8 @@
 import sys
 sys.path.append('../Page')
 import time
-import unittest
+import unittest, sys
+sys.path.append('../Page')
 from HTMLTestRunner import HTMLTestRunner
 from selenium import webdriver
 from selenium.common.exceptions import StaleElementReferenceException, NoSuchElementException
@@ -30,7 +31,7 @@ class TestOrderPage(unittest.TestCase):
                 self.url = 'http://ps.ehsy.com'
                 self.driver.get(self.url)
             else:
-                self.url = 'http://new.ehsy.com'
+                self.url = 'http://www.ehsy.com'
                 self.driver.get(self.url)
             self.driver.implicitly_wait(30)
             self.driver.maximize_window()

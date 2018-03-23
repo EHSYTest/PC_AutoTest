@@ -1,6 +1,5 @@
-import sys
+import unittest, sys
 sys.path.append('../Page')
-import unittest
 from selenium import webdriver
 from HTMLTestRunner import HTMLTestRunner
 from Page_Base import Page
@@ -23,7 +22,7 @@ class TestCart(unittest.TestCase):
                 self.url = 'http://ps.ehsy.com'
                 self.driver.get(self.url)
             else:
-                self.url = 'http://new.ehsy.com'
+                self.url = 'http://www.ehsy.com'
                 self.driver.get(self.url)
             self.driver.implicitly_wait(30)
             self.driver.maximize_window()

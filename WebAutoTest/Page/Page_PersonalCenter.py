@@ -1,6 +1,6 @@
 from Page_Base import Page
 from selenium.webdriver.common.by import By
-import  allure, pytest
+import allure, pytest
 
 class PersonalCenter(Page):
 

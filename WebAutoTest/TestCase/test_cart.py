@@ -1,3 +1,5 @@
+import sys
+sys.path.append('../Page')
 import unittest
 from selenium import webdriver
 from HTMLTestRunner import HTMLTestRunner
@@ -94,5 +96,6 @@ class TestCart(unittest.TestCase):
         with allure.step('End'):
             self.driver.quit()
 
-
+if __name__ == '__main__':
+    unittest.main()
 

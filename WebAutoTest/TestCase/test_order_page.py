@@ -1,7 +1,8 @@
 import sys
 sys.path.append('../Page')
 import time
-import unittest
+import unittest, sys
+sys.path.append('../Page')
 from HTMLTestRunner import HTMLTestRunner
 from selenium import webdriver
 from selenium.common.exceptions import StaleElementReferenceException, NoSuchElementException

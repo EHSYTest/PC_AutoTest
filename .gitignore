@@ -1,1 +1,6 @@
 *.conf
+*.xml
+*.iml
+*.png
+*.jpg
+*.html

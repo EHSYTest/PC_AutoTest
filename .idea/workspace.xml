@@ -1,49 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="a665631f-422e-4f1d-88e9-64ed59718bad" name="Default" comment="By Rick">
-      <change beforePath="" afterPath="$PROJECT_DIR$/.pytest_cache/v/cache/lastfailed" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/WebAutoTest/.pytest_cache/v/cache/lastfailed" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/WebAutoTest/TestCase/debug.log" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/WebAutoTest/TestCase/report/3d0d7b33-c7f2-4f12-b191-8af9117c61b4-attachment.txt" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/WebAutoTest/TestCase/report/7d9cd937-2467-4038-b3c1-94f46fcaf38b-attachment.txt" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/WebAutoTest/TestCase/report/d460e756-fa17-4a21-84b8-04963af400fb-attachment.txt" />
-      <change beforePath="$PROJECT_DIR$/.idea/WebAutoTest_EHSY_PageObject.iml" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/WebAutoTest/.idea/WebAutoTest.iml" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/WebAutoTest/.idea/inspectionProfiles/Project_Default.xml" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/WebAutoTest/.idea/misc.xml" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/WebAutoTest/.idea/modules.xml" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/WebAutoTest/.idea/workspace.xml" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/WebAutoTest/TestResult/ScreenShot/test.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/WebAutoTest/TestResult/ScreenShot/test_checkbox.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/WebAutoTest/TestResult/ScreenShot/test_collect.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/WebAutoTest/TestResult/ScreenShot/test_delete.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/WebAutoTest/TestResult/ScreenShot/test_invoice.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/WebAutoTest/TestResult/ScreenShot/test_order_1.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/WebAutoTest/TestResult/ScreenShot/test_order_10.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/WebAutoTest/TestResult/ScreenShot/test_order_11.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/WebAutoTest/TestResult/ScreenShot/test_order_2.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/WebAutoTest/TestResult/ScreenShot/test_order_3.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/WebAutoTest/TestResult/ScreenShot/test_order_4.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/WebAutoTest/TestResult/ScreenShot/test_order_5.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/WebAutoTest/TestResult/ScreenShot/test_order_6.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/WebAutoTest/TestResult/ScreenShot/test_order_7.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/WebAutoTest/TestResult/ScreenShot/test_order_8.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/WebAutoTest/TestResult/ScreenShot/test_order_9.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/WebAutoTest/TestResult/ScreenShot/test_quantity.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/WebAutoTest/TestResult/ScreenShot/test_receiving_address.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/WebAutoTest/TestResult/cart&amp;invoice_report.html" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/WebAutoTest/TestResult/cart_report.html" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/WebAutoTest/TestResult/order.html" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/WebAutoTest/TestResult/order_page.html" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/WebAutoTest/config/data.conf" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/WebAutoTest/config/environment.conf" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/WebAutoTest/config/test_order.conf" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/WebAutoTest/config/test_price.conf" afterPath="" />
+    <list default="true" id="a665631f-422e-4f1d-88e9-64ed59718bad" name="Default" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change beforePath="$PROJECT_DIR$/WebAutoTest/config/test_order.conf" afterPath="$PROJECT_DIR$/WebAutoTest/config/test_order.conf" />
     </list>
     <ignored path=".idea/" />
     <ignored path="WebAutoTest/.idea/" />
@@ -95,7 +55,7 @@
       <file leaf-file-name="test_order.conf" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/WebAutoTest/config/test_order.conf">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="376">
+            <state relative-caret-position="370">
               <caret line="49" column="32" lean-forward="true" selection-start-line="49" selection-start-column="32" selection-end-line="49" selection-end-column="32" />
               <folding />
             </state>
@@ -607,13 +567,6 @@
       <option name="presentableId" value="Default" />
       <updated>1506390215075</updated>
     </task>
-    <task id="LOCAL-00136" summary="By Rick">
-      <created>1519353737659</created>
-      <option name="number" value="00136" />
-      <option name="presentableId" value="LOCAL-00136" />
-      <option name="project" value="LOCAL" />
-      <updated>1519353737660</updated>
-    </task>
     <task id="LOCAL-00137" summary="By Rick">
       <created>1519353952409</created>
       <option name="number" value="00137" />
@@ -950,7 +903,14 @@
       <option name="project" value="LOCAL" />
       <updated>1523157546071</updated>
     </task>
-    <option name="localTasksCounter" value="185" />
+    <task id="LOCAL-00185" summary="By Rick">
+      <created>1523166001656</created>
+      <option name="number" value="00185" />
+      <option name="presentableId" value="LOCAL-00185" />
+      <option name="project" value="LOCAL" />
+      <updated>1523166001656</updated>
+    </task>
+    <option name="localTasksCounter" value="186" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -980,9 +940,9 @@
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32888147" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32435465" sideWeight="0.5060698" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.29850745" sideWeight="0.4939302" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32520324" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3249139" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32748538" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.31802526" sideWeight="0.4939302" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.31802526" sideWeight="0.4939302" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24784483" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Docker" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -1265,6 +1225,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1411,7 +1372,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/WebAutoTest/config/test_order.conf">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="376">
+        <state relative-caret-position="370">
           <caret line="49" column="32" lean-forward="true" selection-start-line="49" selection-start-column="32" selection-end-line="49" selection-end-column="32" />
           <folding />
         </state>

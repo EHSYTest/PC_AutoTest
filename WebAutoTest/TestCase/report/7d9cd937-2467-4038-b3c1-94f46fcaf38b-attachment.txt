@@ -1,2 +1,0 @@
-environment: staging
-url: http://ps.ehsy.com

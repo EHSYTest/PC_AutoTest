@@ -1,1 +1,0 @@
-http://ps.ehsy.com/punchout-login?code=clariant&checkoutRedirectUrl=ehsy-test

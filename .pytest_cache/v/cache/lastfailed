@@ -1,0 +1,9 @@
+{
+  "WebAutoTest/TestCase/run_test.py": true,
+  "WebAutoTest/TestCase/test_cart.py": true,
+  "WebAutoTest/TestCase/test_order.py": true,
+  "WebAutoTest/TestCase/test_order_page.py": true,
+  "WebAutoTest/TestCase/test_price.py": true,
+  "WebAutoTest/TestCase/test_useraddress.py": true,
+  "WebAutoTest/TestCase/test_userinvoice.py": true
+}

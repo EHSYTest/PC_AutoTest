@@ -1,1 +1,0 @@
-http://ps.ehsy.com/index.php?route=punchout/cxml_login&code=clariant&buyerCookie=&includeTax=0&createFrom=CLARIANT&checkoutRedirectUrl=ehsy-test

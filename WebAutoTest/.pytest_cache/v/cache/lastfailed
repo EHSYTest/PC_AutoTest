@@ -1,5 +1,4 @@
 {
-  "TestCase/test_cart.py::TestCart::test_cart_bj": true,
   "TestCase/test_cart.py::TestCart::test_cart_check": true,
   "TestCase/test_cart.py::TestCart::test_cart_combine": true,
   "TestCase/test_cart.py::TestCart::test_cart_delete": true,

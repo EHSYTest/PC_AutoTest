@@ -1,3 +1,4 @@
-import datetime
+import pytest
 
-datetime.timedelta
+if __name__ == '__main__':
+    pytest.main()

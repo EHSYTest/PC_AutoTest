@@ -12,7 +12,7 @@ class QuickOrder(Page):
     cart = (By.XPATH, '/html/body/div[1]/div[2]/div[3]/a')
     go_cart = (By.LINK_TEXT, '去购物车结算')
 
-    def quick_add_to_cart(self, product='MAD618'):
+    def quick_add_to_cart(self, product='MAA904'):
         with allure.step('快速下单页加入购物车'):
             self.element_find(self.sku_send).send_keys(product)
             self.element_find(self.quantity_send).send_keys(10)

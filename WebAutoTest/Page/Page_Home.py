@@ -4,6 +4,7 @@ from selenium.common.exceptions import ElementNotVisibleException, WebDriverExce
 from selenium.webdriver.common.by import By
 import allure, pytest
 
+
 class Home(Page):
     """首页"""
     login_button = (By.XPATH, '//*[@id="js-logininfo"]/div[1]/div/a[1]')
@@ -58,7 +59,7 @@ class Home(Page):
             ActionChains(self.driver).move_to_element(l1_category).perform()
             self.wait_click(l2_category)
 
-    def search_sku(self, sku='MAD618'):
+    def search_sku(self, sku='MAA904'):
         with allure.step('搜索SKU'):
             allure.attach('SKU', sku)
             self.element_find(self.search_send).send_keys(sku)

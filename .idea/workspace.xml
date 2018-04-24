@@ -3,8 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="a665631f-422e-4f1d-88e9-64ed59718bad" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/WebAutoTest/.pytest_cache/v/cache/lastfailed" afterPath="$PROJECT_DIR$/WebAutoTest/.pytest_cache/v/cache/lastfailed" />
-      <change beforePath="$PROJECT_DIR$/WebAutoTest/TestCase/test.py" afterPath="$PROJECT_DIR$/WebAutoTest/TestCase/test.py" />
+      <change beforePath="$PROJECT_DIR$/WebAutoTest/config/data.conf" afterPath="$PROJECT_DIR$/WebAutoTest/config/data.conf" />
     </list>
     <ignored path=".idea/" />
     <ignored path="WebAutoTest/.idea/" />
@@ -38,8 +37,8 @@
       <file leaf-file-name="test_cart.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/WebAutoTest/TestCase/test_cart.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="356">
-              <caret line="97" column="0" lean-forward="true" selection-start-line="97" selection-start-column="0" selection-end-line="97" selection-end-column="0" />
+            <state relative-caret-position="1649">
+              <caret line="97" column="0" lean-forward="false" selection-start-line="97" selection-start-column="0" selection-end-line="97" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -58,18 +57,38 @@
       <file leaf-file-name="test_userinvoice.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/WebAutoTest/TestCase/test_userinvoice.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="709">
+            <state relative-caret-position="2346">
               <caret line="138" column="0" lean-forward="false" selection-start-line="138" selection-start-column="0" selection-end-line="138" selection-end-column="0" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="pytest.ini" pinned="false" current-in-tab="true">
+      <file leaf-file-name="pytest.ini" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/WebAutoTest/pytest.ini">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="17">
               <caret line="1" column="47" lean-forward="false" selection-start-line="1" selection-start-column="47" selection-end-line="1" selection-end-column="47" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="data.conf" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/WebAutoTest/config/data.conf">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="136">
+              <caret line="8" column="10" lean-forward="true" selection-start-line="8" selection-start-column="10" selection-end-line="8" selection-end-column="10" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="environment.conf" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/WebAutoTest/config/environment.conf">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="34">
+              <caret line="2" column="0" lean-forward="false" selection-start-line="2" selection-start-column="0" selection-end-line="2" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -89,7 +108,7 @@
         <entry file="file://$PROJECT_DIR$/WebAutoTest/TestCase/test.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="51">
-              <caret line="3" column="17" lean-forward="true" selection-start-line="3" selection-start-column="17" selection-end-line="3" selection-end-column="17" />
+              <caret line="3" column="17" lean-forward="false" selection-start-line="3" selection-start-column="17" selection-end-line="3" selection-end-column="17" />
               <folding />
             </state>
           </provider>
@@ -204,7 +223,6 @@
         <option value="$PROJECT_DIR$/WebAutoTest/Page/Page_OrderResult.py" />
         <option value="$PROJECT_DIR$/WebAutoTest/Page/Page_QuickOrder.py" />
         <option value="$PROJECT_DIR$/WebAutoTest/Page/Page_ProductList.py" />
-        <option value="$PROJECT_DIR$/WebAutoTest/config/data.conf" />
         <option value="$PROJECT_DIR$/WebAutoTest/Tools/Pytest dependence" />
         <option value="$PROJECT_DIR$/WebAutoTest/Page/Page_NormalCart.py" />
         <option value="$PROJECT_DIR$/WebAutoTest/TestCase/report/categories.json" />
@@ -231,6 +249,7 @@
         <option value="$PROJECT_DIR$/WebAutoTest/TestCase/test.py" />
         <option value="$PROJECT_DIR$/WebAutoTest/TestCase/test_cart.py" />
         <option value="$PROJECT_DIR$/WebAutoTest/pytest.ini" />
+        <option value="$PROJECT_DIR$/WebAutoTest/config/data.conf" />
       </list>
     </option>
   </component>
@@ -260,7 +279,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scratches" />
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -272,6 +291,12 @@
               <item name="PC_AutoTest" type="b2602c69:ProjectViewProjectNode" />
               <item name="PC_AutoTest" type="462c0819:PsiDirectoryNode" />
               <item name="WebAutoTest" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="PC_AutoTest" type="b2602c69:ProjectViewProjectNode" />
+              <item name="PC_AutoTest" type="462c0819:PsiDirectoryNode" />
+              <item name="WebAutoTest" type="462c0819:PsiDirectoryNode" />
+              <item name="config" type="9de27aec:PuppetPsiDirectoryNode$Environment" />
             </path>
             <path>
               <item name="PC_AutoTest" type="b2602c69:ProjectViewProjectNode" />
@@ -295,7 +320,7 @@
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
+      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -918,17 +943,17 @@
     <layout>
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3283582" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32435465" sideWeight="0.5060698" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.29850745" sideWeight="0.4939302" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3249139" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32748538" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3662457" sideWeight="0.4939302" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.26023707" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.29850745" sideWeight="0.4939302" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.36540663" sideWeight="0.4939302" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.26885775" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Docker" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="SciView" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.37543055" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.37543055" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -1131,22 +1156,6 @@
     <entry file="file://$PROJECT_DIR$/WebAutoTest/TestCase/threads_run.py" />
     <entry file="file://$PROJECT_DIR$/WebAutoTest/TestCase/test_order.py" />
     <entry file="file://$PROJECT_DIR$/.gitignore" />
-    <entry file="file://$PROJECT_DIR$/WebAutoTest/config/data.conf">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/WebAutoTest/config/environment.conf">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="2" column="0" lean-forward="false" selection-start-line="2" selection-start-column="0" selection-end-line="2" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/WebAutoTest/Page/Page_Base.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="748">
@@ -1159,7 +1168,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="270">
           <caret line="309" column="6" lean-forward="false" selection-start-line="309" selection-start-column="6" selection-end-line="309" selection-end-column="6" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1167,7 +1175,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-485">
           <caret line="18" column="6" lean-forward="false" selection-start-line="18" selection-start-column="6" selection-end-line="18" selection-end-column="6" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1181,7 +1188,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/WebAutoTest/TestCase/test_userinvoice.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="709">
+        <state relative-caret-position="2346">
           <caret line="138" column="0" lean-forward="false" selection-start-line="138" selection-start-column="0" selection-end-line="138" selection-end-column="0" />
           <folding />
         </state>
@@ -1190,7 +1197,7 @@
     <entry file="file://$PROJECT_DIR$/WebAutoTest/TestCase/test.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="51">
-          <caret line="3" column="17" lean-forward="true" selection-start-line="3" selection-start-column="17" selection-end-line="3" selection-end-column="17" />
+          <caret line="3" column="17" lean-forward="false" selection-start-line="3" selection-start-column="17" selection-end-line="3" selection-end-column="17" />
           <folding />
         </state>
       </provider>
@@ -1199,7 +1206,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="654">
           <caret line="622" column="34" lean-forward="false" selection-start-line="622" selection-start-column="34" selection-end-line="622" selection-end-column="34" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1207,7 +1213,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-1964">
           <caret line="450" column="4" lean-forward="false" selection-start-line="450" selection-start-column="4" selection-end-line="450" selection-end-column="4" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1215,7 +1220,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="76">
           <caret line="352" column="6" lean-forward="false" selection-start-line="352" selection-start-column="6" selection-end-line="352" selection-end-column="6" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1223,7 +1227,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="612">
           <caret line="41" column="21" lean-forward="false" selection-start-line="41" selection-start-column="13" selection-end-line="41" selection-end-column="21" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1231,7 +1234,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1190">
           <caret line="72" column="7" lean-forward="true" selection-start-line="72" selection-start-column="7" selection-end-line="72" selection-end-column="7" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1239,7 +1241,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="441">
           <caret line="496" column="31" lean-forward="false" selection-start-line="496" selection-start-column="23" selection-end-line="496" selection-end-column="31" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1247,14 +1248,13 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="307">
           <caret line="46" column="8" lean-forward="false" selection-start-line="46" selection-start-column="8" selection-end-line="46" selection-end-column="8" />
-          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/WebAutoTest/TestCase/test_cart.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="356">
-          <caret line="97" column="0" lean-forward="true" selection-start-line="97" selection-start-column="0" selection-end-line="97" selection-end-column="0" />
+        <state relative-caret-position="1649">
+          <caret line="97" column="0" lean-forward="false" selection-start-line="97" selection-start-column="0" selection-end-line="97" selection-end-column="0" />
           <folding />
         </state>
       </provider>
@@ -1263,6 +1263,22 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="17">
           <caret line="1" column="47" lean-forward="false" selection-start-line="1" selection-start-column="47" selection-end-line="1" selection-end-column="47" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/WebAutoTest/config/environment.conf">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="34">
+          <caret line="2" column="0" lean-forward="false" selection-start-line="2" selection-start-column="0" selection-end-line="2" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/WebAutoTest/config/data.conf">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="136">
+          <caret line="8" column="10" lean-forward="true" selection-start-line="8" selection-start-column="10" selection-end-line="8" selection-end-column="10" />
           <folding />
         </state>
       </provider>

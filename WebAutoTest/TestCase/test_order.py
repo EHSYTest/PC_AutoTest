@@ -415,6 +415,7 @@ class TestOrder(unittest.TestCase):
         with allure.step('---End---'):
             self.driver.quit()
 
+
 if __name__ == '__main__':
     suit = unittest.TestSuite()
     case_list = [

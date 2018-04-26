@@ -1,6 +1,6 @@
 from Page_Base import Page
 from selenium.webdriver.common.by import By
-import allure
+import allure, time
 
 
 class OrderResult(Page):
@@ -14,17 +14,27 @@ class OrderResult(Page):
 
     def get_so_by_url(self):
         order_id = ''
-        while not order_id.startswith('SO'):
-            url = self.driver.current_url
-            order_id = url[-20:]
+        for i in range(20):
+            if not order_id.startswith('SO'):
+                url = self.driver.current_url
+                order_id = url[-20:]
+                time.sleep(1)
+                continue
+            else:
+                break
         allure.attach('SO单号', order_id)
         return order_id
 
     def get_pr_by_url(self):
         pr_number = ''
-        while not pr_number.startswith('PR'):
-            url = self.driver.current_url
-            pr_number = url[-21:]
+        for i in range(20):
+            if not pr_number.startswith('PR'):
+                url = self.driver.current_url
+                pr_number = url[-21:]
+                time.sleep(1)
+                continue
+            else:
+                break
         allure.attach('PR单号', pr_number)
         return pr_number
 

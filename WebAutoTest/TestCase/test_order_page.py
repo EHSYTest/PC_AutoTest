@@ -225,7 +225,7 @@ class TestOrderPage(unittest.TestCase):
         self.order.receiving_address_check()
 
     def teardown_method(self, method):
-        self.order.check_no_address()
+        # self.order.check_no_address()
         test_method_name = self._testMethodName
         with allure.step('保存截图'):
             self.driver.save_screenshot('../TestResult/ScreenShot/%s.png' % test_method_name)

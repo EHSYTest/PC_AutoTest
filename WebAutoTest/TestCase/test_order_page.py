@@ -222,7 +222,7 @@ class TestOrderPage(unittest.TestCase):
             self.product_list.searchResult_add_to_cart()
         with allure.step('进入订单提交页'):
             self.cart.wait_click(self.cart.go_to_order)
-        self.order.receiving_address_check()
+        # self.order.receiving_address_check()
 
     def teardown_method(self, method):
         self.order.check_no_address()

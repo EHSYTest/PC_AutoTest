@@ -12,6 +12,7 @@ class Order(Page):
     """下单页"""
     # 新增收货地址
     receiving_address_add = (By.LINK_TEXT, '+添加新地址')
+    receiving_address_count = (By.XPATH, '//*[@id="js-shipping-address-id"]/ul/li')
     receiving_name = (By.NAME, 'receiver_name')
     company_name = (By.NAME, 'company_name')
     province = (By.NAME, 'province_id')
@@ -272,6 +273,24 @@ class Order(Page):
             self.wait_click(self.del_confirm)
             message = self.element_find(self.receiving_address_layer).text
             assert message == '地址删除成功！'
+
+    def check_no_address(self):
+        time.sleep(5)
+        try:
+            self.element_find(self.receiving_address_count)
+        except NoSuchElementException:
+            return True
+        else:
+            count = len(self.elements_find(self.receiving_address_count))
+            print('count: %s'%count)
+            for i in range(count):
+                print('i: %s'%i)
+                element = self.element_find(self.address_del)
+                ActionChains(self.driver).move_to_element(element).perform()
+                self.wait_click(self.address_del)
+                self.wait_click(self.del_confirm)
+                message = self.element_find(self.receiving_address_layer).text
+                assert message == '地址删除成功！'
 
     def invoice_normal_company_add(self):
         """新增公司抬头的普票"""

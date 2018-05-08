@@ -84,6 +84,10 @@ class TestPrice(unittest.TestCase):
             with allure.step('购物车页价格验证-单价'):
                 self.product_list.wait_click(self.product_list.skuContent_add_button)
                 self.product_list.wait_click(self.product_list.jump_to_cart)
+
+                # check购物车产品行数=1
+                self.cart.check_cart_empty()
+
                 cart_unit_price = self.cart.element_find(self.cart.unit_price).text[2:]
                 print('cart_unit_price: %s' % cart_unit_price)
                 allure.attach('参数值: ', 'Price： ' + str(price) + '\nCart_Unit_Price: ' + cart_unit_price)

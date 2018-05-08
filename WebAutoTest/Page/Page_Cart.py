@@ -1,5 +1,5 @@
 from Page_Base import Page
-import time
+import time, pytest, allure
 from selenium.common.exceptions import NoSuchElementException
 from selenium.webdriver.common.keys import Keys
 from selenium.webdriver.common.action_chains import ActionChains
@@ -20,7 +20,8 @@ class Cart(Page):
 
     delete_line = (By.CLASS_NAME, 'product-remove')
     delete_bottom = (By.CLASS_NAME, 'btn-delete')
-    delete_all_confirm = (By.CLASS_NAME, 'confirm')
+    delete_all_confirm = (By.XPATH, '//div[1]/button[2]')
+    product_line = (By.CLASS_NAME, 'product-list-body')
 
     go_to_order = (By.CLASS_NAME, 'cart-to-checkout-btn')
     report_order = (By.CLASS_NAME, 'cart-to-bj-btn')
@@ -126,3 +127,18 @@ class Cart(Page):
         assert value2 == '20'
         print('数量输入修改成功')
 
+    def check_cart_empty(self):
+        with allure.step('检查购物车是否为空'):
+            count = len(self.elements_find(self.product_line))
+            allure.attach('购物车产品行:', 'Count: {}'.format({count}))
+            if count <= 1:
+                return True
+            else:
+                ele = self.element_find(self.checkbox_bottom)
+                if not ele.is_selected():
+                    ele.click()
+                self.wait_click(self.checkbox_line)
+                self.wait_click(self.delete_bottom)
+                self.wait_click(self.delete_all_confirm)
+            self.wait_click(self.checkbox_line)
+            time.sleep(2)

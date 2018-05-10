@@ -5,6 +5,7 @@ from selenium import webdriver
 from Page_Base import Page
 from Page_Home import Home
 from Page_UserAddress import UserAddress
+from Page_Order import Order
 import allure, pytest
 
 
@@ -22,11 +23,12 @@ class TestUserAddress(unittest.TestCase):
             else:
                 self.url = 'http://www.ehsy.com'
                 self.driver.get(self.url)
-            self.driver.implicitly_wait(30)
+            self.driver.implicitly_wait(10)
             self.driver.maximize_window()
             self.home = Home(self.driver)
             self.page = Page(self.driver)
             self.user_address = UserAddress(self.driver)
+            self.order = Order(self.driver)
             allure.attach('初始化参数:', 'environment: ' + self.environment + '\nurl: ' + self.url + '\n')
 
     @allure.story('个人地址测试')
@@ -44,6 +46,7 @@ class TestUserAddress(unittest.TestCase):
             self.user_address.edit_address()
             self.user_address.set_default_currency_address()
             self.user_address.delete_address()
+            self.user_address.check_no_address()
         # 收货地址
         with allure.step('收货地址测试'):
             self.page.wait_click(self.user_address.receive_address)
@@ -51,6 +54,7 @@ class TestUserAddress(unittest.TestCase):
             self.user_address.edit_address()
             self.user_address.set_default_receive_address()
             self.user_address.delete_address()
+            self.user_address.check_no_address()
         # 发票地址
         with allure.step('发票地址测试'):
             self.page.wait_click(self.user_address.invoice_address)
@@ -58,6 +62,7 @@ class TestUserAddress(unittest.TestCase):
             self.user_address.edit_address()
             self.user_address.set_default_invoice_address()
             self.user_address.delete_address()
+            self.user_address.check_no_address()
 
     @allure.story('分销地址测试')
     def test_address_company_distribution(self):
@@ -74,6 +79,7 @@ class TestUserAddress(unittest.TestCase):
             self.user_address.edit_address()
             self.user_address.set_default_currency_address()
             self.user_address.delete_address()
+            self.user_address.check_no_address()
         # 收货地址
         with allure.step('收货地址测试'):
             self.page.wait_click(self.user_address.receive_address)
@@ -81,6 +87,7 @@ class TestUserAddress(unittest.TestCase):
             self.user_address.edit_address()
             self.user_address.set_default_receive_address()
             self.user_address.delete_address()
+            self.user_address.check_no_address()
         # 发票地址
         with allure.step('发票地址测试'):
             self.page.wait_click(self.user_address.invoice_address)
@@ -88,6 +95,7 @@ class TestUserAddress(unittest.TestCase):
             self.user_address.edit_address()
             self.user_address.set_default_invoice_address()
             self.user_address.delete_address()
+            self.user_address.check_no_address()
 
     @allure.story('终端地址测试')
     def test_address_company_terminal(self):
@@ -104,6 +112,7 @@ class TestUserAddress(unittest.TestCase):
             self.user_address.edit_address()
             self.user_address.set_default_currency_address()
             self.user_address.delete_address()
+            self.user_address.check_no_address()
         # 收货地址
         with allure.step('收货地址测试'):
             self.page.wait_click(self.user_address.receive_address)
@@ -111,6 +120,7 @@ class TestUserAddress(unittest.TestCase):
             self.user_address.edit_address()
             self.user_address.set_default_receive_address()
             self.user_address.delete_address()
+            self.user_address.check_no_address()
         # 发票地址
         with allure.step('发票地址测试'):
             self.page.wait_click(self.user_address.invoice_address)
@@ -118,6 +128,7 @@ class TestUserAddress(unittest.TestCase):
             self.user_address.edit_address()
             self.user_address.set_default_invoice_address()
             self.user_address.delete_address()
+            self.user_address.check_no_address()
 
     def teardown_method(self, method):
         test_method_name = self._testMethodName

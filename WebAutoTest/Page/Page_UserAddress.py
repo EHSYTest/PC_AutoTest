@@ -3,7 +3,7 @@ from selenium.webdriver.common.action_chains import ActionChains
 import time
 from selenium.webdriver.common.by import By
 import allure
-
+from selenium.common.exceptions import NoSuchElementException
 
 class UserAddress(Page):
     my_address = (By.LINK_TEXT, '我的地址') #进入我的（通用）地址标签页
@@ -33,8 +33,11 @@ class UserAddress(Page):
     default_address_lable = (By.XPATH, '//ul/li[2]/div[4]/span')
 
     # 删除地址
-    delete_address_btn = (By.XPATH, '//ul/li[2]/div[4]/a[2]')
+    delete_address_btn = (By.PARTIAL_LINK_TEXT, '删除')
     confirm = (By.XPATH, '//button[2]')
+
+    # 地址条目
+    address_count = (By.CLASS_NAME, 'ra-list-li-content')
 
     # loading
     layer = (By.ID, 'ajax-layer-loading')
@@ -125,3 +128,19 @@ class UserAddress(Page):
             default_address_lable = self.element_find(self.default_address_lable).text
             assert default_address_lable == '默认发票地址'
             print('默认发票地址设置成功！')
+
+    def check_no_address(self):
+        with allure.step('check_no_address'):
+            time.sleep(3)
+            try:
+                self.element_find(self.address_count)
+            except NoSuchElementException:
+                return True
+            else:
+                count = len(self.elements_find(self.address_count))
+                print('count: %s' % count)
+                for i in range(count):
+                    print('i: %s' % i)
+                    self.wait_click(self.delete_address_btn)
+                    self.wait_click(self.confirm)
+

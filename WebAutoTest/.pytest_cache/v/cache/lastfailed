@@ -2,7 +2,6 @@
   "TestCase/test_cart.py::TestCart::test_cart_bj": true,
   "TestCase/test_cart.py::TestCart::test_cart_check": true,
   "TestCase/test_cart.py::TestCart::test_cart_combine": true,
-  "TestCase/test_cart.py::TestCart::test_cart_delete": true,
   "TestCase/test_order.py::TestOrder::test_order_01": true,
   "TestCase/test_order.py::TestOrder::test_order_02": true,
   "TestCase/test_order.py::TestOrder::test_order_03": true,

@@ -223,21 +223,12 @@ class NormalCart(Page):
             print('成功进入提交订单页面！')
 
     def cart_delete(self):
-        with allure.step('购物车删除商品'):
-            with allure.step('单个商品删除'):
-                sku_quantity = self.element_find(self.quantity_input).get_attribute('value')
-                sku_num1 = self.element_find(self.sku_num).text
-                self.wait_click(self.delete)
-                self.wait_to_stale(self.layer_notice)
-                sku_num2 = self.element_find(self.sku_num).text
-                assert int(sku_num2) == int(sku_num1) - int(sku_quantity)
-                print('删除商品成功！')
-            with allure.step('清空购物车'):
-                self.wait_click(self.deletes)
-                self.wait_click(self.delete_confirm)
-                self.wait_to_stale(self.layer_notice)
-                empty_message = self.element_find(self.empty_cart).text
-                assert empty_message == '购物车内暂时没有商品~'
-                print('删除商品成功！')
+        with allure.step('清空购物车'):
+            self.wait_click(self.deletes)
+            self.wait_click(self.delete_confirm)
+            self.wait_to_stale(self.layer_notice)
+            empty_message = self.element_find(self.empty_cart).text
+            assert empty_message == '购物车内暂时没有商品~'
+            print('删除商品成功！')
 
 

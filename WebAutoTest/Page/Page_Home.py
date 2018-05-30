@@ -2,7 +2,7 @@ from Page_Base import Page
 from selenium.webdriver.common.action_chains import ActionChains
 from selenium.common.exceptions import ElementNotVisibleException, WebDriverException
 from selenium.webdriver.common.by import By
-import allure, pytest
+import allure, pytest, time
 
 
 class Home(Page):
@@ -46,6 +46,7 @@ class Home(Page):
             self.element_find(self.username_send).send_keys(login_name)
             self.element_find(self.password_send).send_keys(password)
             self.wait_click(self.login_action)
+            time.sleep(3)
 
     def login_other(self, login_name, password):
         with allure.step('登录'):

@@ -1,11 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="a665631f-422e-4f1d-88e9-64ed59718bad" name="Default" comment="">
+    <list default="true" id="a665631f-422e-4f1d-88e9-64ed59718bad" name="Default" comment="By Rick">
+      <change beforePath="" afterPath="$PROJECT_DIR$/.gitignore" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/WebAutoTest/.pytest_cache/v/cache/lastfailed" afterPath="$PROJECT_DIR$/WebAutoTest/.pytest_cache/v/cache/lastfailed" />
-      <change beforePath="$PROJECT_DIR$/WebAutoTest/Page/Page_Home.py" afterPath="$PROJECT_DIR$/WebAutoTest/Page/Page_Home.py" />
-      <change beforePath="$PROJECT_DIR$/WebAutoTest/pytest.ini" afterPath="$PROJECT_DIR$/WebAutoTest/pytest.ini" />
+      <change beforePath="$PROJECT_DIR$/WebAutoTest/config/environment.conf" afterPath="$PROJECT_DIR$/WebAutoTest/config/environment.conf" />
     </list>
     <ignored path=".idea/" />
     <ignored path="WebAutoTest/.idea/" />
@@ -47,10 +46,30 @@
           </provider>
         </entry>
       </file>
+      <file leaf-file-name="environment.conf" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/WebAutoTest/config/environment.conf">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="34">
+              <caret line="2" column="0" lean-forward="true" selection-start-line="2" selection-start-column="0" selection-end-line="2" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name=".gitignore" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/.gitignore">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="0">
+              <caret line="0" column="6" lean-forward="false" selection-start-line="0" selection-start-column="6" selection-end-line="0" selection-end-column="6" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file leaf-file-name="Page_UserInvoice.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/WebAutoTest/Page/Page_UserInvoice.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="833">
+            <state relative-caret-position="901">
               <caret line="53" column="45" lean-forward="false" selection-start-line="53" selection-start-column="45" selection-end-line="53" selection-end-column="45" />
               <folding>
                 <element signature="e#0#26#0" expanded="true" />
@@ -81,7 +100,7 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="pytest.ini" pinned="false" current-in-tab="true">
+      <file leaf-file-name="pytest.ini" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/WebAutoTest/pytest.ini">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="17">
@@ -104,7 +123,7 @@
       <file leaf-file-name="Page_Home.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/WebAutoTest/Page/Page_Home.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="454">
+            <state relative-caret-position="867">
               <caret line="51" column="31" lean-forward="false" selection-start-line="51" selection-start-column="31" selection-end-line="51" selection-end-column="31" />
               <folding>
                 <element signature="e#0#26#0" expanded="true" />
@@ -116,31 +135,11 @@
       <file leaf-file-name="Page_UserAddress.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/WebAutoTest/Page/Page_UserAddress.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="561">
+            <state relative-caret-position="646">
               <caret line="38" column="10" lean-forward="false" selection-start-line="38" selection-start-column="10" selection-end-line="38" selection-end-column="10" />
               <folding>
                 <element signature="e#0#26#0" expanded="true" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="data.conf" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/WebAutoTest/config/data.conf">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="68">
-              <caret line="4" column="11" lean-forward="false" selection-start-line="4" selection-start-column="11" selection-end-line="4" selection-end-column="11" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="test_order.conf" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/WebAutoTest/config/test_order.conf">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="799">
-              <caret line="47" column="0" lean-forward="false" selection-start-line="47" selection-start-column="0" selection-end-line="47" selection-end-column="0" />
-              <folding />
             </state>
           </provider>
         </entry>
@@ -265,8 +264,6 @@
         <option value="$PROJECT_DIR$/../sale_order.py.py" />
         <option value="$PROJECT_DIR$/../../test.py" />
         <option value="$PROJECT_DIR$/WebAutoTest/config/test_order.conf" />
-        <option value="$PROJECT_DIR$/.gitignore" />
-        <option value="$PROJECT_DIR$/WebAutoTest/config/environment.conf" />
         <option value="$PROJECT_DIR$/WebAutoTest/TestCase/test.py" />
         <option value="$PROJECT_DIR$/WebAutoTest/config/data.conf" />
         <option value="$PROJECT_DIR$/WebAutoTest/TestCase/test_cart.py" />
@@ -281,6 +278,8 @@
         <option value="$PROJECT_DIR$/WebAutoTest/Page/Page_NormalCart.py" />
         <option value="$PROJECT_DIR$/WebAutoTest/Page/Page_Home.py" />
         <option value="$PROJECT_DIR$/WebAutoTest/pytest.ini" />
+        <option value="$PROJECT_DIR$/.gitignore" />
+        <option value="$PROJECT_DIR$/WebAutoTest/config/environment.conf" />
       </list>
     </option>
   </component>
@@ -332,12 +331,6 @@
               <item name="PC_AutoTest" type="b2602c69:ProjectViewProjectNode" />
               <item name="PC_AutoTest" type="462c0819:PsiDirectoryNode" />
               <item name="WebAutoTest" type="462c0819:PsiDirectoryNode" />
-              <item name="Page" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="PC_AutoTest" type="b2602c69:ProjectViewProjectNode" />
-              <item name="PC_AutoTest" type="462c0819:PsiDirectoryNode" />
-              <item name="WebAutoTest" type="462c0819:PsiDirectoryNode" />
               <item name="TestCase" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
@@ -355,15 +348,16 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
   </component>
   <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\Users\rick_zhang\Desktop\WJ\PC_AutoTest\WebAutoTest" />
-      <recent name="C:\Users\rick_zhang\Desktop\PC_AutoTest\WebAutoTest\Tools" />
-    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\rick_zhang\Desktop\WJ\PC_AutoTest\WebAutoTest\TestCase" />
       <recent name="C:\Users\rick_zhang\Desktop\WJ\PC_AutoTest\WebAutoTest" />
       <recent name="C:\Users\rick_zhang\Desktop\WJ\PC_AutoTest\WebAutoTest\Page" />
       <recent name="C:\Users\rick_zhang\Desktop\PC_AutoTest\WebAutoTest\TestCase" />
+      <recent name="C:\Users\rick_zhang\Desktop\PC_AutoTest\WebAutoTest\Tools" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\rick_zhang\Desktop\WJ\PC_AutoTest" />
+      <recent name="C:\Users\rick_zhang\Desktop\WJ\PC_AutoTest\WebAutoTest" />
       <recent name="C:\Users\rick_zhang\Desktop\PC_AutoTest\WebAutoTest\Tools" />
     </key>
   </component>
@@ -967,20 +961,21 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3283582" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32435465" sideWeight="0.5060698" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.29850745" sideWeight="0.4939302" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3249139" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32748538" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.29850745" sideWeight="0.4939302" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2835821" sideWeight="0.4939302" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.30603448" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2835821" sideWeight="0.4939302" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3108836" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Docker" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="SciView" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.37543055" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -1142,7 +1137,6 @@
     <entry file="file://$PROJECT_DIR$/WebAutoTest/TestCase/debug.log" />
     <entry file="file://$PROJECT_DIR$/WebAutoTest/TestCase/geckodriver.log" />
     <entry file="file://$PROJECT_DIR$/WebAutoTest/TestCase/threads_run.py" />
-    <entry file="file://$PROJECT_DIR$/.gitignore" />
     <entry file="file://$USER_HOME$/AppData/Local/Programs/Python/Python36/Lib/site-packages/_pytest/mark.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="270">
@@ -1242,13 +1236,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/WebAutoTest/config/environment.conf">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="2" column="0" lean-forward="false" selection-start-line="2" selection-start-column="0" selection-end-line="2" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$USER_HOME$/.PyCharm2017.3/system/python_stubs/963646154/builtins.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="197">
@@ -1323,7 +1310,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/WebAutoTest/Page/Page_UserAddress.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="561">
+        <state relative-caret-position="646">
           <caret line="38" column="10" lean-forward="false" selection-start-line="38" selection-start-column="10" selection-end-line="38" selection-end-column="10" />
           <folding>
             <element signature="e#0#26#0" expanded="true" />
@@ -1341,7 +1328,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/WebAutoTest/Page/Page_UserInvoice.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="833">
+        <state relative-caret-position="901">
           <caret line="53" column="45" lean-forward="false" selection-start-line="53" selection-start-column="45" selection-end-line="53" selection-end-column="45" />
           <folding>
             <element signature="e#0#26#0" expanded="true" />
@@ -1377,7 +1364,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/WebAutoTest/Page/Page_Home.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="454">
+        <state relative-caret-position="867">
           <caret line="51" column="31" lean-forward="false" selection-start-line="51" selection-start-column="31" selection-end-line="51" selection-end-column="31" />
           <folding>
             <element signature="e#0#26#0" expanded="true" />
@@ -1389,6 +1376,22 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="17">
           <caret line="1" column="41" lean-forward="false" selection-start-line="1" selection-start-column="41" selection-end-line="1" selection-end-column="41" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.gitignore">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="6" lean-forward="false" selection-start-line="0" selection-start-column="6" selection-end-line="0" selection-end-column="6" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/WebAutoTest/config/environment.conf">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="34">
+          <caret line="2" column="0" lean-forward="true" selection-start-line="2" selection-start-column="0" selection-end-line="2" selection-end-column="0" />
           <folding />
         </state>
       </provider>

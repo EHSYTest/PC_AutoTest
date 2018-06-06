@@ -44,7 +44,7 @@ class TestPrice(unittest.TestCase):
 
     def get_promotion_sku(self):
         """随机获取促销产品、销售价、促销价"""
-        with allure.step('随机获取促销产品、销售价、促销价')
+        with allure.step('随机获取促销产品、销售价、促销价'):
             sql = "SELECT SKU_CODE, promotion_value FROM pc.promotion_sku WHERE promotion_id IN(SELECT id FROM pc.promotion WHERE TYPE='1' AND promotion_type='1' AND `status`='1' and CURRENT_DATE BETWEEN start_date AND end_date ) AND CURRENT_DATE BETWEEN start_date AND end_date"
             con = self.page.db_con(self.environment)
             cr = con.cursor()

@@ -1,6 +1,3 @@
-import sys
-sys.path.append('../Page')
-import time
 import unittest, sys
 sys.path.append('../Page')
 from HTMLTestRunner import HTMLTestRunner
@@ -15,7 +12,7 @@ from Page_ProductList import ProductList
 from Page_QuickOrder import QuickOrder
 from Page_ReportOrder import ReportOrder
 from selenium.webdriver.common.by import By
-import allure, pytest
+import allure, pytest,random
 
 
 @allure.feature('价格测试')
@@ -43,6 +40,25 @@ class TestPrice(unittest.TestCase):
             self.quick_order = QuickOrder(self.driver)
             self.report_order = ReportOrder(self.driver)
             allure.attach('初始化参数:', 'environment: ' + self.environment + '\nurl: ' + self.url + '\n')
+
+    def get_promotion_sku(self):
+        """随机获取促销产品、销售价、促销价"""
+        with allure.step('随机获取促销产品、销售价、促销价')
+            sql = "SELECT SKU_CODE, promotion_value FROM pc.promotion_sku WHERE promotion_id IN(SELECT id FROM pc.promotion WHERE TYPE='1' AND promotion_type='1' AND `status`='1' and CURRENT_DATE BETWEEN start_date AND end_date ) AND CURRENT_DATE BETWEEN start_date AND end_date"
+            con = self.page.db_con(self.environment)
+            cr = con.cursor()
+            cr.execute(sql)
+            r = cr.fetchall()
+            result = random.choice(r)
+            print(r, result)
+            sku = result['SKU_CODE']
+            promotion_price = str(result['promotion_value'])
+            sql = "SELECT market_price FROM pc.price WHERE CURRENT_DATE BETWEEN valid_time_start AND valid_time_end AND sku_code='"+sku+"'"
+            cr.execute(sql)
+            r = cr.fetchall()
+            market_price = str(r[0]['market_price'])
+            allure.attach('促销产品参数:', 'SKU: '+ sku + '/n promotion_price: '+ promotion_price + '/n market_price'+ market_price)
+            return {'sku': sku, 'promotion_price': promotion_price, 'market_price': market_price}
 
     def price_assert(self, dis, csp=False, promotion=False):
         # csp: csp产品标志； promotion: 促销产品标志

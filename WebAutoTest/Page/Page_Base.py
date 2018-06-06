@@ -111,7 +111,7 @@ class Page(object):
             return False
 
     @staticmethod
-    def db_con(database, sql):
+    def db_con(database):
         if database == 'staging':
             con = pymysql.connect(
                     host='118.178.189.137',

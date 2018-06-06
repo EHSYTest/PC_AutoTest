@@ -130,12 +130,12 @@ class Page(object):
                 charset='utf8',
                 cursorclass=pymysql.cursors.DictCursor  # sql查询结果转为字典类型
             )
-        cr = con.cursor()
-        cr.execute(sql)
-        con.commit()
-        result = cr.fetchall()
-        con.close()
-        return result
+        # cr = con.cursor()
+        # cr.execute(sql)
+        # con.commit()
+        # result = cr.fetchall()
+        # con.close()
+        return con
 
 
 class AssistFunction():

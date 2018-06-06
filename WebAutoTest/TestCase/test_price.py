@@ -1,7 +1,5 @@
-import sys
-sys.path.append('../Page')
 import time
-import unittest, sys
+import unittest, sys, random
 sys.path.append('../Page')
 from HTMLTestRunner import HTMLTestRunner
 from selenium import webdriver
@@ -44,6 +42,26 @@ class TestPrice(unittest.TestCase):
             self.report_order = ReportOrder(self.driver)
             allure.attach('初始化参数:', 'environment: ' + self.environment + '\nurl: ' + self.url + '\n')
 
+    def get_promotion_sku(self):
+        """随机获取促销产品、销售价、促销价"""
+        with allure.step('随机获取促销产品、销售价、促销价')
+            sql = "SELECT SKU_CODE, promotion_value FROM pc.promotion_sku WHERE promotion_id IN(SELECT id FROM pc.promotion WHERE TYPE='1' AND promotion_type='1' AND `status`='1' and CURRENT_DATE BETWEEN start_date AND end_date ) AND CURRENT_DATE BETWEEN start_date AND end_date"
+            con = self.page.db_con(self.environment)
+            cr = con.cursor()
+            cr.execute(sql)
+            r = cr.fetchall()
+            result = random.choice(r)
+            print(r, result)
+            sku = result['SKU_CODE']
+            promotion_price = str(result['promotion_value'])
+            sql = "SELECT market_price FROM pc.price WHERE CURRENT_DATE BETWEEN valid_time_start AND valid_time_end AND sku_code='"+sku+"'"
+            cr.execute(sql)
+            r = cr.fetchall()
+            market_price = str(r[0]['market_price'])
+            con.close()
+            allure.attach('促销产品参数:', 'SKU: '+ sku + '/n promotion_price: '+ promotion_price + '/n market_price'+ market_price)
+            return {'sku': sku, 'promotion_price': promotion_price, 'market_price': market_price}
+
     def price_assert(self, dis, csp=False, promotion=False):
         # csp: csp产品标志； promotion: 促销产品标志
         with allure.step('测试价格'):
@@ -55,9 +73,10 @@ class TestPrice(unittest.TestCase):
                     allure.attach('参数值: ', 'Product： '+product+'\nPrice: '+str(price))
             with allure.step('判断是否促销'):
                 if promotion:     # 若促销，取促销产品和价格
-                    product = self.page.config_reader('data.conf', 'promotion_price_product', 'promotion_product')
-                    origin_price = self.page.config_reader('data.conf', 'promotion_price_product', 'origin_price')
-                    promotion_price = self.page.config_reader('data.conf', 'promotion_price_product', 'promotion_price')
+                    result = self.get_promotion_sku()
+                    product = result['sku']
+                    origin_price = result['market_price']
+                    promotion_price = result['promotion_price']
                     discount_price = float('%.2f' % (float(origin_price) * dis))
                     price = min(float(promotion_price), discount_price)
                     allure.attach('参数值: ', 'Product： '+product+'\nPrice: '+str(price))

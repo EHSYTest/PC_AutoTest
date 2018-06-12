@@ -111,7 +111,7 @@ class Page(object):
             return False
 
     @staticmethod
-    def db_con(database):
+    def db_con(database, sql):
         if database == 'staging':
             con = pymysql.connect(
                     host='118.178.189.137',
@@ -130,12 +130,12 @@ class Page(object):
                 charset='utf8',
                 cursorclass=pymysql.cursors.DictCursor  # sql查询结果转为字典类型
             )
-        # cr = con.cursor()
-        # cr.execute(sql)
-        # con.commit()
-        # result = cr.fetchall()
-        # con.close()
-        return con
+        cr = con.cursor()
+        cr.execute(sql)
+        con.commit()
+        result = cr.fetchall()
+        con.close()
+        return result
 
 
 class AssistFunction():

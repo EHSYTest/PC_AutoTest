@@ -17,5 +17,6 @@
   "TestCase/test_order.py::TestOrder::test_order_13": true,
   "TestCase/test_order.py::TestOrder::test_order_14": true,
   "TestCase/test_order.py::TestOrder::test_order_15": true,
+  "TestCase/test_order_page.py::TestOrderPage::test_address_check": true,
   "TestCase/test_order_page.py::TestOrderPage::test_invoice_2": true
 }

@@ -1,9 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="a665631f-422e-4f1d-88e9-64ed59718bad" name="Default" comment="Merge branch 'develop2' into staging&#10;&#10;# Conflicts:&#10;#&#9;.idea/workspace.xml&#10;#&#9;WebAutoTest/TestCase/test_price.py">
+    <list default="true" id="a665631f-422e-4f1d-88e9-64ed59718bad" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/WebAutoTest/Page/Page_Order.py" afterPath="$PROJECT_DIR$/WebAutoTest/Page/Page_Order.py" />
       <change beforePath="$PROJECT_DIR$/WebAutoTest/pytest.ini" afterPath="$PROJECT_DIR$/WebAutoTest/pytest.ini" />
     </list>
     <ignored path=".idea/" />
@@ -68,7 +67,7 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Page_Order.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="Page_Order.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/WebAutoTest/Page/Page_Order.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="442">
@@ -108,11 +107,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="pytest.ini" pinned="false" current-in-tab="false">
+      <file leaf-file-name="pytest.ini" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/WebAutoTest/pytest.ini">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="17">
-              <caret line="1" column="117" lean-forward="false" selection-start-line="1" selection-start-column="117" selection-end-line="1" selection-end-column="117" />
+              <caret line="1" column="63" lean-forward="false" selection-start-line="1" selection-start-column="63" selection-end-line="1" selection-end-column="63" />
               <folding />
             </state>
           </provider>
@@ -274,8 +273,8 @@
         <option value="$PROJECT_DIR$/WebAutoTest/Page/Page_Base.py" />
         <option value="$PROJECT_DIR$/WebAutoTest/TestCase/test_price.py" />
         <option value="$PROJECT_DIR$/WebAutoTest/TestCase/test.py" />
-        <option value="$PROJECT_DIR$/WebAutoTest/pytest.ini" />
         <option value="$PROJECT_DIR$/WebAutoTest/Page/Page_Order.py" />
+        <option value="$PROJECT_DIR$/WebAutoTest/pytest.ini" />
       </list>
     </option>
   </component>
@@ -567,13 +566,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1506390215075</updated>
-    </task>
-    <task id="LOCAL-00148" summary="By Rick">
-      <created>1519376432441</created>
-      <option name="number" value="00148" />
-      <option name="presentableId" value="LOCAL-00148" />
-      <option name="project" value="LOCAL" />
-      <updated>1519376432447</updated>
     </task>
     <task id="LOCAL-00149" summary="By Rick">
       <created>1519378271055</created>
@@ -911,7 +903,14 @@
       <option name="project" value="LOCAL" />
       <updated>1528853773357</updated>
     </task>
-    <option name="localTasksCounter" value="197" />
+    <task id="LOCAL-00197" summary="Merge branch 'develop2' into staging&#10;&#10;# Conflicts:&#10;#&#9;.idea/workspace.xml&#10;#&#9;WebAutoTest/TestCase/test_price.py">
+      <created>1530200257542</created>
+      <option name="number" value="00197" />
+      <option name="presentableId" value="LOCAL-00197" />
+      <option name="project" value="LOCAL" />
+      <updated>1530200257544</updated>
+    </task>
+    <option name="localTasksCounter" value="198" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -1353,14 +1352,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/WebAutoTest/pytest.ini">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="1" column="117" lean-forward="false" selection-start-line="1" selection-start-column="117" selection-end-line="1" selection-end-column="117" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/WebAutoTest/TestCase/test_order_page.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="3859">
@@ -1383,6 +1374,14 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="442">
           <caret line="215" column="50" lean-forward="true" selection-start-line="215" selection-start-column="50" selection-end-line="215" selection-end-column="50" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/WebAutoTest/pytest.ini">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17">
+          <caret line="1" column="63" lean-forward="false" selection-start-line="1" selection-start-column="63" selection-end-line="1" selection-end-column="63" />
           <folding />
         </state>
       </provider>

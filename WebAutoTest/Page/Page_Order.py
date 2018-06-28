@@ -198,7 +198,7 @@ class Order(Page):
                 assert message == '请输入正确的手机号码'
 
             # 手机号第二位为3,4,5,7,8
-            for i in ('0', '1', '2', '6', '9'):
+            for i in ('0', '1', '2'):
                 self.element_find(self.receiving_phone).clear()
                 self.element_find(self.receiving_phone).send_keys('1'+i+'150681507')
                 self.wait_click(self.add_confirm)

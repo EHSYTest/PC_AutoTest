@@ -1,0 +1,9 @@
+selenium==3.6.0
+pytest_allure_adaptor==1.7.10
+PyMySQL==0.7.11
+configobj==5.0.6
+pytest==3.4.1
+requests==2.19.1
+pytest-rerunfailures==4.0
+pytest-timeout==1.2.1
+pytest-xdist==1.22.2

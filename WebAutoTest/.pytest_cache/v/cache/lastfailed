@@ -1,0 +1,13 @@
+{
+  "TestCase/test_cart.py::TestCart::test_cart_bj": true,
+  "TestCase/test_cart.py::TestCart::test_cart_check": true,
+  "TestCase/test_order.py::TestOrder::test_order_04": true,
+  "TestCase/test_order.py::TestOrder::test_order_06": true,
+  "TestCase/test_order.py::TestOrder::test_order_07": true,
+  "TestCase/test_order_page.py::TestOrderPage::test_address_1": true,
+  "TestCase/test_order_page.py::TestOrderPage::test_invoice_1": true,
+  "TestCase/test_order_page.py::TestOrderPage::test_invoice_2": true,
+  "TestCase/test_order_page.py::TestOrderPage::test_invoice_3": true,
+  "TestCase/test_order_page.py::TestOrderPage::test_invoice_check": true,
+  "TestCase/test_userinvoice.py::TestUserInvoice::test_invoice_personal": true
+}
